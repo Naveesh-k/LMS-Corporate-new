@@ -13,7 +13,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { CommonHeaderComponent } from './common/common-header/common-header.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 
 @NgModule({
@@ -35,6 +35,7 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
     StructureRoutingModule,
     SlickCarouselModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [StructureComponent],
 })
