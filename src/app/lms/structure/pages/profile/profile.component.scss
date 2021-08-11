@@ -38,6 +38,21 @@ input.email_input1 {
   border-radius: 7px;
   height: 63px;
 }
+
+.button_flx {
+  display: flex;
+  justify-content: flex-end;
+}
+button.btn-register {
+  background: #f6f6f6;
+  font-weight: 600;
+}
+button.btn-update_pro {
+  background: #229b9f;
+  color: #fff;
+  margin: 0 0 0 9px;
+  border-radius: 9px;
+}
 // end second page
 
 //  toggle css
@@ -139,6 +154,10 @@ input:checked + .slider:before {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+// --------------------------second dropdown
+button.dt {
+  background: #f6f6f6;
 }
 
 // end dropdown

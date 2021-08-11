@@ -43,6 +43,9 @@ export class ProfileComponent implements OnInit {
   showHide() {
     this.hide = true;
   }
+  hideShow() {
+    this.hide = false;
+  }
 
   // convenience getter for easy access to form fields
   get f() {
