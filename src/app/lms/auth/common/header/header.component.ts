@@ -25,8 +25,4 @@ export class HeaderComponent implements OnInit {
     });
     //end dark-light
   }
-  redirect(routeName: any) {
-    console.log('run');
-    this.router.navigate(['home']);
-  }
 }
