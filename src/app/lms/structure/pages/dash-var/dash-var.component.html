@@ -1,0 +1,200 @@
+<div class="container-fluid">
+  <div class="row">
+    <main
+      class="col-md-12 float-left col px-5 px-md-3 py-3 main"
+      style="background-color: #f6f6f6"
+    >
+      <app-common-header></app-common-header>
+
+      <div class="row mt-3">
+        <div class="col-md-4 col-lg-4 col-sm-4 col-12 pl-4 d-flex yo">
+          <div class="card p-2" style="width: 25rem; border-radius: 30px">
+            <div class="card-body">
+              <h5 class="card-title">Business Breakthrough</h5>
+              <p class="card-text">6 videos | Total: 19 minutes</p>
+              <hr />
+            </div>
+            <ul class="video-list">
+              <li>Introduction to Business Breakthrough (4 minutes)</li>
+              <li>What is a Breakthrough? (3 minutes)</li>
+
+              <li>Who can Breakthrough? (3 minutes)</li>
+
+              <li>Breakthrough with Confidence (5 minutes)</li>
+              <li>PIF’s mission and vision(4 minutes)</li>
+              <li>Quiz</li>
+            </ul>
+
+            <div class="card-body">
+              <h4 class="card-title">
+                Capital
+                <img src="assets/images/CaretDownFill.png" />
+              </h4>
+
+              <p class="card-text">3 videos | Total: 21 minutes</p>
+              <hr />
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">
+                Profits
+                <img src="assets/images/CaretDownFill.png" />
+              </h4>
+              <p class="card-text">3 videos | Total: 15 minutes</p>
+            </div>
+            <hr />
+            <div class="card-body"></div>
+          </div>
+        </div>
+        <!-- <div class="col-md-3 col-lg-3"></div> -->
+        <div class="col-md-8 col-lg-8 col-sm-8 col-12 text-right">
+          <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+              <div
+                class="input_parent"
+                [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+              >
+                <input
+                  type="text"
+                  placeholder="Search"
+                  class="input_search-filed"
+                />
+                <button class="btn btn_search">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <h3 class="p-4">Introduction to Business Breakthrough</h3>
+            <div class="card" style="border-radius: 20px">
+              <div class="card-body">
+                <img
+                  src="assets/images/Rectangle 25.png"
+                  class="img-fluid"
+                  alt="..."
+                />
+              </div>
+
+              <div class="d-grid gap-2 d-md-flex p-3">
+                <button
+                  class="btn btn-light p-2 me-md-2 mr-4"
+                  type="button"
+                  style="border-radius: 15px"
+                >
+                  <img
+                    src="assets/images/StickiesFill.png"
+                    style="padding-right: 10px"
+                  />Add Note
+                </button>
+                <button
+                  class="btn btn-light"
+                  type="button"
+                  style="border-radius: 15px"
+                >
+                  <img
+                    src="assets/images/Group 137.png"
+                    style="padding-right: 10px"
+                  />Download your note
+                </button>
+
+                <div class="social-media">
+                  <a
+                    ><img
+                      src="assets/images/Vector (2).png"
+                      class="rounded float-end"
+                      alt="..."
+                    />
+                  </a>
+                  <a> <img src="assets/images/Vector (1).png" /></a>
+                  <a> <img src="assets/images/HandThumbsUpFill.png" /></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 text-left">
+              <div class="container">
+                <ul class="nav nav-pills nav-fill pt-5">
+                  <li>
+                    <a
+                      data-toggle="pill"
+                      class="active about_lesson"
+                      href="#about"
+                      >ABOUT LESSON</a
+                    >
+                  </li>
+                  <li class="mr-5 ml-5 pr-5 pl-5">
+                    <a data-toggle="pill" href="#resour">RESOURCES1 </a>
+                  </li>
+                  <li><a data-toggle="pill" href="#tran">TRANSCRIPT</a></li>
+                </ul>
+
+                <div class="tab-content">
+                  <div id="about" class="tab-pane active">
+                    <div class="card mt-3" style="border-radius: 30px">
+                      <div class="card-body" style="text-align: justify">
+                        <h4 class="card-title">ABOUT LESSON</h4>
+
+                        <p class="card-text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore evt
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="resour" class="tab-pane fade">
+                    <div class="card mt-3" style="border-radius: 30px">
+                      <div class="card-body" style="text-align: justify">
+                        <h4 class="card-title">LESSON RESOURCES</h4>
+                        <ul class="down-load">
+                          <li>Download slides</li>
+                          <li>Download transcript</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tran" class="tab-pane fade">
+                    <div class="card p-2 mt-4" style="border-radius: 30px">
+                      <div class="card-body" style="text-align: justify">
+                        <a
+                          class="btn btn-secondary dropdown-toggle"
+                          href="#"
+                          role="button"
+                          id="dropdownMenuLink"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          English
+                        </a>
+                        <a class="more" style="padding-left: 50px"
+                          >Help Us Translate</a
+                        >
+
+                        <div class="num">
+                          <p>
+                            Amet minim mollit non deserunt ullamco est sit
+                            aliqua dolor do amet sint. Velit officia consequat
+                            duis enim velit mollit.
+                          </p>
+                          <p>
+                            Maecenas at nunc sed ipsum feugiat tristique sed a
+                            nisl. Cras porta mi vitae imperdiet sollicitudin.
+                            Interdum et malesuada.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

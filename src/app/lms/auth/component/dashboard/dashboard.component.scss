@@ -1,0 +1,32 @@
+@media screen and (min-device-width: 300px) and (max-device-width: 399px) {
+  section#dashboard-bg {
+    padding: 0;
+  }
+}
+@media screen and (min-device-width: 400px) and (max-device-width: 499px) {
+  section#dashboard-bg {
+    padding: 0;
+  }
+  nav.navbar_bg {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  img.facebook-img {
+    padding: 0 10px 0 0;
+  }
+  button.btn-socail {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  section#dashboard-bg h2 {
+    font-size: 19px;
+  }
+  .bg_col {
+    padding: 20px 10px 20px 10px;
+  }
+  img.facebook-img {
+    padding: 0 10px 0 0;
+  }
+}

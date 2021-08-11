@@ -1,0 +1,26 @@
+*{box-sizing: border-box;
+    margin: 0;
+    padding: 0;}
+    
+    
+    // .bg{
+    //     height: 100vh;
+    //      background-image: linear-gradient(rgba(0, 0, 0,0.6), rgba(0,0,0,0.8)),url(683553b74f6bec9373fe00a0e4202d13.jpg);
+    //      background-position: center;
+    //      background-size: cover;
+    //      overflow-y: hidden;
+    //      position: relative;
+    
+    //  }
+    
+     
+     .form-container{
+        position: absolute;
+         background-color: #fff;
+         padding: 20px;
+        box-shadow:0 0 10px 0 #000;
+       border-radius: 10px; 
+       top: 15vh;
+      }
+    
+    

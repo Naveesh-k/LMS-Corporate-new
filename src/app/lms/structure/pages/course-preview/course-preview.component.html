@@ -1,0 +1,176 @@
+<div class="container-fluid">
+  <div class="row">
+    <main
+      class="col-md-12 float-left col px-5 px-md-3 py-3 main"
+      [ngClass]="darkMode ? 'dark-bg' : 'light-bg'"
+    >
+      <app-common-header></app-common-header>
+
+      <div class="row mt-3">
+        <div class="col-md-6 pl-4">
+          <h4><u> Course Preview </u></h4>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3 text-right pr-4">
+          <div
+            class="input_parent"
+            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+          >
+            <input
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+              type="text"
+              placeholder="Search"
+              class="input_search-filed"
+            />
+            <button class="btn btn_search">
+              <i
+                class="fa fa-search"
+                [ngClass]="darkMode ? 'dark-text' : 'light-text'"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="row mt-4">
+          <div class="col-md-8">
+            <div
+              class="section_1"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <img
+                class="w-100 pb-3"
+                src="../../../assets/images/Rectangle 25.png"
+                alt=""
+              />
+              <h5>Master Capital Wisdom - M1</h5>
+              <h6>COURSE DESCRIPTION</h6>
+              <p class="amet_p">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit.
+                Exercitation veniam consequat sunt nostrud amet. Amet minim
+                mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                Velit officia consequat duis enim velit mollit. Exercitation
+                veniam consequat sunt nostrud amet. Velit officia consequat duis
+                enim velit mollit. Exercitation veniam consequat sunt nostrud
+                amet. Exercitation veniam consequat sunt nostrud amet.
+              </p>
+            </div>
+            <div
+              class="section_2 mt-5"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <h5>Other Relevant Courses</h5>
+              <div class="row mt-3">
+                <div class="col-md-4 col-sm-4 col-12">
+                  <img
+                    class="w-100"
+                    src="../../../assets/images/Rectangle 27.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-md-4 col-sm-4 col-12 mar_t">
+                  <img
+                    class="w-100"
+                    src="../../../assets/images/Rectangle 28.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-md-4 col-sm-4 col-12">
+                  <img
+                    class="w-100"
+                    src="../../../assets/images/Rectangle 29.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="sec_1"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <h5>About the speaker</h5>
+              <hr />
+              <div class="row">
+                <div class="col-md-2 col-2">
+                  <img src="../../../assets/images/Ellipse 6.png" alt="" />
+                </div>
+                <div class="col-md-9 pl-5 col-9">
+                  <p class="detail_p m-0">Sarah Simmons</p>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-2" aria-hidden="true"></i>
+                    <i class="fa fa-envelope pt-2 px-4" aria-hidden="true"></i>
+                    <i class="fa fa-map-marker pt-2" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 detail_p">Details :-</p>
+              <p class="an_acca_p">
+                An ACCA since 1998, Grace Lim is a CFMAS Module 4A PMC Certified
+                Accountant and the Co-founder of PIF Capital. She also owns
+                Singapore’s No. 1 Wood Flooring Brand - Supreme Floors Holding
+                and has advised numerous projects around the world...
+              </p>
+            </div>
+            <div
+              class="sec_2 mt-3"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <h5>More about the course</h5>
+              <hr />
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <p class="duration_p">Duration :</p>
+                  <p class="duration_p">Number of Videos :</p>
+                  <p class="duration_p">Resources :</p>
+                  <p class="duration_p">Transcript :</p>
+                </div>
+                <div class="col-md-6 col-6">
+                  <p class="min_p">19 minutes</p>
+                  <p class="min_p">6 videos</p>
+                  <p class="min_p">Available</p>
+                  <p class="min_p">English & Chinese</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sec_2 mt-3"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <h5>More actions</h5>
+              <hr />
+              <div class="row">
+                <div class="col-md-2 col-2">
+                  <img src="../../../assets/images/Vector 6.png" alt="" />
+                  <br /><br />
+                  <img src="../../../assets/images/Vector 6.png" alt="" />
+                </div>
+                <div class="col-md-10 col-10">
+                  <a href="#" [ngClass]="darkMode ? 'dark-text' : 'light-text'"
+                    ><u> Bookmark class </u></a
+                  >
+                  <br />
+                  <br />
+                  <a href="#" [ngClass]="darkMode ? 'dark-text' : 'light-text'">
+                    <u>Share with friends </u></a
+                  >
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12">
+                  <a href="#" class="btn begin_btn w-100 h-100">
+                    Begin Course
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

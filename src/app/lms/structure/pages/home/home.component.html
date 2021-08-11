@@ -1,0 +1,263 @@
+<div class="container-fluid">
+  <div class="row">
+    <main
+      class="col-md-12 float-left col px-5 px-md-3 py-3 main"
+      [ngClass]="darkMode ? 'dark-bg' : 'light-bg'"
+      id="home-dash"
+    >
+      <app-common-header></app-common-header>
+
+      <div class="pl-2 pt-2 pb-2 pad">
+        <div class="row mt-4">
+          <div class="col-md-12 border-bottom">
+            <h3>Welcome Back <span> Jason Tan </span></h3>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-4 col-lg-4 col-sm-4 col-12">
+            <p class="heading_p">Current Progress</p>
+            <div
+              class="card_one"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <div class="d-flex justify-content-between">
+                <div class="pro_bg">
+                  <i class="fa fa_fnt fa-file-text" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <p class="your_p">Your progress</p>
+                  <p class="per_p">39% to complete</p>
+                  <div class="progress pro">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 50%"
+                      aria-valuenow="50"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="eclips">
+                  <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="mt-2">
+                <h5 class="font-weight-bold h5_head">
+                  <u> Recently completed </u>
+                </h5>
+              </div>
+              <div class="mt-2">
+                <p class="bitcoin_p">
+                  Bitcoin Secrets Unlocked
+                  <i class="fa fa-check pl-3 text-muted"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-4 col-12">
+            <p class="heading_p">Continue from where you left off...</p>
+            <div
+              class="card_two"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <div class="d-flex justify-content-between">
+                <div class="pro_bg">
+                  <i class="fa fa_fnt fa-file-text" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <p class="mastering_p">MASTERING CAPITAL WISDOM</p>
+                </div>
+                <div>
+                  <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="mt-2">
+                <h5 class="font-weight-bold h5_head">
+                  <u> Capital Awakening </u>
+                </h5>
+              </div>
+              <hr />
+              <div class="d-flex">
+                <div class="progress pro-1">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 50%"
+                    aria-valuenow="50"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <span class="two_hrs">2 hr </span>
+                <i class="fa fa_hrt fa-heart" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-4 col-12">
+            <p class="heading_p">Personal recommendations for other videos</p>
+            <div
+              class="card_three"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <video
+                controls
+                class="video"
+                src="../../../assets/videos/vide.mp4"
+              ></video>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-12">
+            <div
+              class="bg_bigCard"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <h5 class="latest_news">Latest News Feed</h5>
+              <hr />
+              <div class="row">
+                <div class="col-md-4">
+                  <p class="date_p">
+                    <img
+                      class="check_all_img"
+                      src="../../../assets/images/CheckAll.jpg"
+                      alt=""
+                    />
+                    24-06-2021
+                  </p>
+                </div>
+                <div class="col-md-8">
+                  <p class="date_p">
+                    Yinson invests in EV battery startuo Oyika; analysys
+                    positive on its green-tech..
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p class="date_p">
+                    <img
+                      class="check_all_img"
+                      src="../../../assets/images/CheckAll.jpg"
+                      alt=""
+                    />
+                    24-06-2021
+                  </p>
+                </div>
+                <div class="col-md-8">
+                  <p class="date_p">
+                    Yinson invests in EV battery startuo Oyika; analysys
+                    positive on its green-tech..
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p class="date_p">
+                    <img
+                      class="check_all_img"
+                      src="../../../assets/images/CheckAll.jpg"
+                      alt=""
+                    />
+                    24-06-2021
+                  </p>
+                </div>
+                <div class="col-md-8">
+                  <p class="date_p">
+                    Yinson invests in EV battery startuo Oyika; analysys
+                    positive on its green-tech..
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <p class="latest_p">Latest forum replies</p>
+            <div
+              class="wh_bg"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <div
+                class="sil_bg"
+                [ngClass]="
+                  darkMode ? 'dark-nest-card-bg' : 'light-nest-card-bg'
+                "
+              >
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="name_p">GURU RICHARD says:</p>
+                    <p class="question_p">Questions about SPAC</p>
+                    <p class="para_p">
+                      Amet minim mollit non deserunt <br />
+                      ullamco est sit aliqua dolor do amet <br />
+                      sint.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grn_bg">
+              <div class="row">
+                <div class="col-md-12 text-right">
+                  <p class="see_more"><u>See More</u></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <p class="latest_p">Set your learning goals</p>
+            <div
+              class="wh_bg"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="this_week">THIS WEEK, I WANT TO COMPLETE:</p>
+                  <ul>
+                    <li>How to fundraise for my enterprise</li>
+                    <li>SPAC IPO</li>
+                    <li>Employee Share Motivation Scheme</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="grn_bg">
+              <div class="row">
+                <div class="col-md-12 text-right">
+                  <p class="see_more"><u>See More</u></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <p class="latest_p">Quote of the day</p>
+            <div
+              class="wh_bg"
+              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+            >
+              <div class="row">
+                <div class="col-md-12 text-right">
+                  <h5 class="to_recive">“To Recieve Is To Give”</h5>
+                  <p class="question_p">Mother Theresa</p>
+                </div>
+              </div>
+            </div>
+            <div class="grn_bg">
+              <div class="row">
+                <div class="col-md-12 text-right">
+                  <p class="see_more"><u>See More</u></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

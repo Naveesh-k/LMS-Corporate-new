@@ -1,0 +1,146 @@
+<section id="login-bg">
+  <div
+    class="container-fluid"
+    [ngClass]="darkMode ? 'dark-bg' : 'light-bg-log'"
+  >
+    <div class="row">
+      <div class="col-md-5 col-lg-5 col-sm-6 col-12 pd">
+        <div
+          class="bg_gre-blu"
+          [ngClass]="
+            darkMode ? 'dark-login-sidebar-bg' : 'light-login-sidebar-bg'
+          "
+        >
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <img
+                class="log-img"
+                src="../../../../../../assets/images/log.png"
+                alt=""
+              />
+              <hr class="col_hr" />
+            </div>
+          </div>
+
+          <h4>LOG IN TO PIF</h4>
+          <div class="px-5">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-row"></div>
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="text"
+                  formControlName="email"
+                  class="form-control email_input"
+                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                />
+                <div
+                  *ngIf="submitted && f.email.errors"
+                  class="invalid-feedback"
+                >
+                  <div class="email_validation" *ngIf="f.email.errors.required">
+                    Email is required
+                  </div>
+                  <div *ngIf="f.email.errors.email">
+                    Email must be a valid email address
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    formControlName="password"
+                    class="form-control email_input"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                  />
+                  <div
+                    *ngIf="submitted && f.password.errors"
+                    class="invalid-feedback"
+                  >
+                    <div
+                      class="email_validation"
+                      *ngIf="f.password.errors.required"
+                    >
+                      Password is required
+                    </div>
+                    <div *ngIf="f.password.errors.minlength">
+                      Password must be at least 6 characters
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-6 col-6">
+                  <div class="form-group form-check">
+                    <input
+                      type="checkbox"
+                      formControlName="acceptTerms"
+                      id="acceptTerms"
+                      class="form-check-input"
+                    />
+                    <!-- [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" -->
+                    <label
+                      for="acceptTerms"
+                      class="form-check-label forget_pass_a"
+                      >Remember me</label
+                    >
+                    <div
+                      *ngIf="submitted && f.acceptTerms.errors"
+                      class="invalid-feedback"
+                    >
+                      Accept Ts & Cs is required
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6 col-6 text-right">
+                  <a class="forget_pass_a">Forgot password?</a>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button class="btn btn-register mr-1">LOGIN</button>
+              </div>
+            </form>
+            <img
+              class="or-img mt-5"
+              src="../../../assets/images/or.png"
+              alt=""
+            />
+            <div class="row mt-3">
+              <div class="col-md-12 col-lg-12 col-sm-12 col-12 text-center">
+                <img
+                  class="img_fb"
+                  src="../../../assets/images/facebook.png"
+                  alt=""
+                />
+                <img
+                  class="img_fb"
+                  src="../../../assets/images/google.png"
+                  alt=""
+                />
+                <img
+                  class="img_fb"
+                  src="../../../assets/images/linkedin.png"
+                  alt=""
+                />
+                <p class="mt-4">
+                  Don't have an account yet?
+                  <a class="text-white" routerLink="/lms/sign-up">
+                    Sign up here
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 col-lg-7 col-sm-6 col-12 text-center">
+        <div class="pad_img">
+          <img class="image_log" src="../../../assets/images/img.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

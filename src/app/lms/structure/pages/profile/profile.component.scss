@@ -1,0 +1,163 @@
+p.profile_sm {
+  font-size: 14px;
+  margin: 8px 0 8px 0;
+  font-weight: 500;
+}
+p.profile_sm span {
+  color: #9a9898;
+}
+.bg_sl {
+  padding: 10px 15px 4px 15px;
+  border-radius: 21px;
+}
+.img-cur {
+  cursor: pointer;
+}
+
+// second page
+span.camera_img {
+  border: 2px solid #229b9f;
+  padding: 15px 5px 17px 14px;
+  border-radius: 36px;
+  background: #fff;
+}
+img.img_camera {
+  width: 73%;
+}
+span.camera_img {
+  margin: -26px;
+}
+// end second page
+
+//  toggle css
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+//  end toggle css
+
+// dropdown
+.dropbtn {
+  background-color: #fff;
+  color: #000;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+// end dropdown
+
+@media screen and (min-device-width: 300px) and (max-device-width: 499px) {
+  img.img_ar {
+    width: 41% !important;
+    padding: 19px 0 0 0 !important;
+  }
+  .mar_gin {
+    margin: 14px 0 0 0;
+  }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 768px) {
+  h5.quick_link_h5 {
+    font-size: 18px;
+  }
+  a.is-it_a {
+    font-size: 12px;
+  }
+  .bg_sl {
+    background: #f4f4f4;
+    padding: 10px 10px 4px 10px;
+    border-radius: 21px;
+  }
+  p.profile_sm {
+    font-size: 12px;
+  }
+  small.thr_lesson_sm {
+    font-size: 10px;
+  }
+}

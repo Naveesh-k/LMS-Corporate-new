@@ -1,0 +1,199 @@
+<app-header></app-header>
+
+<section id="dashboard-bg">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5 col-lg-4 col-sm-6 col-12">
+        <div
+          class="bg_col-1"
+          [ngClass]="
+            darkMode ? 'dark-login-sidebar-bg' : 'light-login-sidebar-bg'
+          "
+        >
+          <div
+            class="bg_form"
+            [ngClass]="darkMode ? 'dark-bg' : 'light-card-bg'"
+          >
+            <h5>Just a few details and we are good to go!</h5>
+
+            <form
+              class="mt-4"
+              [formGroup]="registerForm"
+              (ngSubmit)="onSubmit()"
+            >
+              <div class="form-group">
+                <label class="fnt_wigt">Email or phone number</label>
+                <input
+                  type="text"
+                  formControlName="email"
+                  class="form-control input_bg"
+                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                />
+                <div
+                  *ngIf="submitted && f.email.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.email.errors.required">
+                    Email or Phone number is required
+                  </div>
+                  <div *ngIf="f.email.errors.email">
+                    Email must be a valid email address
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="fnt_wigt">First Name</label>
+                <input
+                  type="text"
+                  formControlName="firstName"
+                  class="form-control input_bg"
+                  [ngClass]="{
+                    'is-invalid': submitted && f.firstName.errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f.firstName.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.firstName.errors.required">
+                    First Name is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="fnt_wigt">Last Name</label>
+                <input
+                  type="text"
+                  formControlName="lastName"
+                  class="form-control input_bg"
+                  [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                />
+                <div
+                  *ngIf="submitted && f.lastName.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.lastName.errors.required">
+                    Last Name is required
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="fnt_wigt">Profile</label>
+                <input
+                  type="text"
+                  formControlName="lastName"
+                  class="form-control input_bg"
+                  [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                />
+                <div
+                  *ngIf="submitted && f.lastName.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.lastName.errors.required">
+                    Profile is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button class="btn btn-next mr-1">Next</button>
+              </div>
+            </form>
+
+            <!-- <form
+              class="mt-4"
+              [formGroup]="registerFormSec"
+              (ngSubmit)="onNext()"
+            >
+              <div class="form-group">
+                <label class="fnt_wigt">What is your job title</label>
+                <select
+                  formControlName="title"
+                  class="form-control input_bg"
+                  [ngClass]="{ 'is-invalid': submittedSec && f1.title.errors }"
+                >
+                  <option value=""></option>
+                  <option value="Mr">Mr</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Miss">Miss</option>
+                  <option value="Ms">Ms</option>
+                </select>
+                <div
+                  *ngIf="submittedSec && f1.title.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f1.title.errors.required">Title is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="fnt_wigt">Position</label>
+                <input
+                  type="text"
+                  formControlName="position"
+                  class="form-control input_bg"
+                  [ngClass]="{
+                    'is-invalid': submittedSec && f1.position.errors
+                  }"
+                />
+                <div
+                  *ngIf="submittedSec && f1.position.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f1.position.errors.required">
+                    Position is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="fnt_wigt">How many years of experience?</label>
+                <input
+                  type="text"
+                  formControlName="experience"
+                  class="form-control input_bg"
+                  [ngClass]="{
+                    'is-invalid': submittedSec && f1.experience.errors
+                  }"
+                />
+                <div
+                  *ngIf="submittedSec && f1.experience.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f1.experience.errors.required">
+                    Experience is required
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="fnt_wigt">Profile</label>
+                <input
+                  type="text"
+                  formControlName="profile"
+                  class="form-control input_bg"
+                  [ngClass]="{
+                    'is-invalid': submittedSec && f1.profile.errors
+                  }"
+                />
+                <div
+                  *ngIf="submittedSec && f1.profile.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f1.profile.errors.required">
+                    Profile is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button class="btn btn-next mr-1">Next</button>
+              </div>
+            </form> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-lg-8 col-sm-6 col-12"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-9 col-lg-9 col-sm-9 col-6">
+    <a href="#" data-target="#sidebar" data-toggle="collapse" class="pl-2"
+      ><i
+        class="fa fa-list show_hide"
+        [ngClass]="darkMode ? 'dark-text' : 'light-text'"
+      ></i
+    ></a>
+    <span class="heading_dashboard">{{ title }}</span>
+  </div>
+  <div class="col-md-3 col-lg-3 col-sm-3 col-6 text-right">
+    <div class="flx">
+      <div class="dropdown">
+        <button
+          class="btn btn-img dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <img
+            class="logo-head-dropdown"
+            src="../../../assets/images/profile.png"
+            alt=""
+          />
+        </button>
+        <label class="switch">
+          <input
+            type="checkbox"
+            [(ngModel)]="darkMode"
+            (ngModelChange)="dark($event)"
+          />
+          <span class="slider round"></span>
+        </label>
+        <div class="dropdown-menu drop_dn" aria-labelledby="dropdownMenuButton">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="your_dd">Your progress</p>
+              <p class="complete_dd">39% to complete</p>
+              <div class="progress pro_bar">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 50%"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <hr />
+              <p class="your_dd">Registered courses</p>
+              <p class="complete_dd">10 Courses</p>
+              <hr />
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <p class="logout_dd">Logout</p>
+                </div>
+                <div class="col-md-6 col-6 text-right">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" data-target="#sidebar" data-toggle="collapse" class="pl-2 pdr"
+        ><i class="fa fa-list text-dark hide_show"></i
+      ></a>
+    </div>
+  </div>
+</div>

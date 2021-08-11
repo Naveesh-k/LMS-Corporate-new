@@ -1,0 +1,133 @@
+// section#login-bg {
+//   background: #f6f6f6;
+// }
+.pad_img {
+  padding: 83px 0 0 0;
+}
+img.image_log {
+  width: 72%;
+}
+.bg_gre-blu {
+  color: #fff;
+  height: 100vh;
+  // padding: 97px 42px 42px 42px;
+  padding: 10px 0 42px 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+hr.col_hr {
+  border-top: 2px solid;
+  margin: 6px 0 23px 0;
+}
+
+#login-bg h4 {
+  font-size: 42px;
+  line-height: 49.22px;
+  text-align: center;
+  font-weight: 700;
+}
+#login-bg a {
+  color: #ffbb54;
+}
+button.btn-register {
+  background: #fff;
+  width: 100%;
+  color: #28a0a4;
+  font-size: 17px;
+  font-weight: 700;
+  height: 49px;
+  border-radius: 11px;
+  margin-top: 34px;
+}
+input.email_input {
+  width: 100%;
+  height: 49px;
+  border-radius: 11px;
+}
+img.img_fb {
+  background: #f1f1f1;
+  margin: 0 17px 0 17px;
+  padding: 6px;
+  border-radius: 10px;
+}
+#login-bg p {
+  font-size: 15px;
+}
+.pd {
+  padding-left: 48px;
+}
+.email_validation {
+  background: #ffffff75;
+  padding: 4px;
+  border-radius: 4px;
+  color: red;
+  font-weight: 600;
+}
+// -------------
+@media screen and (min-device-width: 300px) and (max-device-width: 399px) {
+  .pd {
+    padding-left: 14px;
+    padding-top: 15px;
+  }
+  #login-bg h4 {
+    font-size: 30px;
+  }
+  .bg_gre-blu {
+    padding: 85px 12px 0px 12px;
+    height: 100vh !important;
+  }
+  button.btn-register {
+    margin-top: 0;
+  }
+  a.forget_pass_a,
+  label.forget_pass_a {
+    font-size: 15px;
+  }
+  img.or-img {
+    margin: 21px 0 0 0 !important;
+  }
+  #login-bg p {
+    font-size: 14px;
+  }
+}
+@media screen and (min-device-width: 400px) and (max-device-width: 499px) {
+  .pd {
+    padding-left: 14px;
+    padding-top: 15px;
+  }
+  .bg_gre-blu {
+    height: 100vh !important;
+    padding: 92px 15px 31px 15px !important;
+  }
+}
+@media screen and (min-device-width: 700px) and (max-device-width: 768px) {
+  .bg_gre-blu {
+    height: 58vh;
+    padding: 69px 15px 31px 15px;
+  }
+  #login-bg h4 {
+    font-size: 24px;
+  }
+  img.img_fb {
+    width: 16%;
+  }
+  a.forget_pass_a,
+  label.forget_pass_a {
+    font-size: 12px;
+  }
+  button.btn-register {
+    margin-top: 10px;
+  }
+  #login-bg p {
+    font-size: 12px;
+  }
+}
+@media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
+  .bg_gre-blu {
+    height: 55vh;
+  }
+  #login-bg h4 {
+    font-size: 31px;
+  }
+}
