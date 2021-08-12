@@ -64,6 +64,8 @@ img.img_fb {
   color: red;
   font-weight: 600;
 }
+
+
 // -------------
 @media screen and (min-device-width: 300px) and (max-device-width: 399px) {
   .pd {
@@ -91,6 +93,7 @@ img.img_fb {
     font-size: 14px;
   }
 }
+
 @media screen and (min-device-width: 400px) and (max-device-width: 499px) {
   .pd {
     padding-left: 14px;
@@ -130,4 +133,11 @@ img.img_fb {
   #login-bg h4 {
     font-size: 31px;
   }
+}
+
+@media only screen and (max-width: 1499px) {
+#login-bg {
+  overflow-y: hidden;
+  height: 100vh;
+}
 }
