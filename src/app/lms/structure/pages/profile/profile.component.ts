@@ -63,4 +63,17 @@ export class ProfileComponent implements OnInit {
     // display form values on success
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
   }
+
+  // dark-light
+  dark(e: any) {
+    console.log(e);
+    if (e) {
+      this.mode.changeMode('dark');
+      localStorage.setItem('mode', 'dark');
+    } else {
+      this.mode.changeMode('light');
+      localStorage.setItem('mode', 'light');
+    }
+  }
+  //end dark-light
 }

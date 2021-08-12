@@ -285,10 +285,11 @@ p.short_corse_p {
   }
   // --------
 }
+
 ul li {
   list-style: none;
 }
-.video-list {
+.video_list {
   li:before {
     content: url("assets/images/Vector.png");
     position: absolute;
@@ -326,7 +327,7 @@ ul li {
   padding-left: 20px;
 }
 
-.card-body {
+.card_body {
   h5::after {
     content: url("assets/images/CaretDownFill2.png");
     position: absolute;
