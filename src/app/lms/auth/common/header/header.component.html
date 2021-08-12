@@ -1,80 +1,51 @@
-<section style="background: #f6f6f6">
+<section style="background: #f6f6f6; padding: 0 0 0 39px; ">
   <div class="container-fluid">
-    <nav
-      class="navbar navbar-expand-lg navbar-light navbar_bg"
-      [ngClass]="darkMode ? 'dark-bg' : 'light-bg'"
-    >
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <!-- <img class="logo_img" src="../../../assets/images/logo.PNG" alt="" /> -->
-      <div
-        class="imyu"
-        [ngClass]="darkMode ? 'dark-card-bg' : 'light-login-sidebar-bg'"
-      >
-        <img class="logo_img" src="../../../assets/images/log.png" alt="" />
-      </div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-lg navbar-light navbar_bg" [ngClass]="darkMode ? 'dark-bg' : 'light-bg'">
+      <div class="row" style="width:100%">
+        <div class=" col-md-5 col-lg-4 col-sm-5 col-12 pad_icr">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
-        <form class="form-inline respo my-2 my-lg-0">
-          <ul class="navbar-nav mr-auto">
-            <!-- <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li> -->
-            <li class="nav-item nav_li">
-              <a
-                class="nav_fnt"
-                [ngClass]="darkMode ? 'dark-text' : 'light-text'"
-                routerLink="sign-up"
-                >Explore</a
-              >
-            </li>
+          <div class="imyu" [ngClass]="darkMode ? 'dark-card-bg' : 'light-login-sidebar-bg'">
+            <button class="btn btn_back" (click)="back()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+            <a routerLink="/lms/auth">
+              <img class="logo_img" src="../../../assets/images/log.png" alt="" />
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="col-md-7 col-lg-8 col-sm-7">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <form class="form-inline respo my-2 my-lg-0">
+              <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li> -->
+                <li class="nav-item nav_li">
+                  <a class="nav_fnt" [ngClass]="darkMode ? 'dark-text' : 'light-text'" routerLink="sign-up">Explore</a>
+                </li>
 
-            <li class="nav-item nav_li">
-              <a
-                class="nav_fnt"
-                [ngClass]="darkMode ? 'dark-text' : 'light-text'"
-                routerLink="customise-topic"
-                >Resources</a
-              >
-            </li>
-            <li class="nav-item nav_li">
-              <a
-                class="nav_fnt"
-                [ngClass]="darkMode ? 'dark-text' : 'light-text'"
-                href="#"
-                >Pricing</a
-              >
-            </li>
-            <li class="nav-item nav_li">
-              <a
-                class="nav_fnt"
-                [ngClass]="darkMode ? 'dark-text' : 'light-text'"
-                href="#"
-                >Support</a
-              >
-            </li>
-          </ul>
-          <a
-            class="btn btn_login my-2 my-sm-0"
-            type="submit"
-            routerLink="login"
-          >
-            Login
-          </a>
-        </form>
+                <li class="nav-item nav_li">
+                  <a class="nav_fnt" [ngClass]="darkMode ? 'dark-text' : 'light-text'"
+                    routerLink="customise-topic">Resources</a>
+                </li>
+                <li class="nav-item nav_li">
+                  <a class="nav_fnt" [ngClass]="darkMode ? 'dark-text' : 'light-text'" href="#">Pricing</a>
+                </li>
+                <li class="nav-item nav_li">
+                  <a class="nav_fnt" [ngClass]="darkMode ? 'dark-text' : 'light-text'" href="#">Support</a>
+                </li>
+              </ul>
+              <a class="btn btn_login my-2 my-sm-0" type="submit" routerLink="login">
+                Login
+              </a>
+            </form>
+          </div>
+        </div>
       </div>
     </nav>
   </div>

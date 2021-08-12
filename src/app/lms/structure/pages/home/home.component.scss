@@ -102,7 +102,7 @@ p.latest_p {
   border-radius: 24px;
   position: absolute;
   z-index: 99;
-  width: 91%;
+  width: 93%;
   top: 77px;
   height: 163px;
 }
@@ -237,7 +237,6 @@ i.fa_hrt {
     width: 17%;
   }
 }
-
 @media screen and (min-device-width: 500px) and (max-device-width: 768px) {
   h5.h5_head {
     font-size: 15px;
@@ -272,7 +271,6 @@ i.fa_hrt {
     padding-top: 5px;
   }
 }
-
 @media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
   h5.h5_head {
     font-size: 15px;
@@ -287,5 +285,17 @@ i.fa_hrt {
   }
   p.mastering_p {
     font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 1499px) {
+  .wh_bg {
+    padding: 15px 19px 15px 19px;
+    border-radius: 24px;
+    position: absolute;
+    z-index: 99;
+    width: 91%;
+    top: 77px;
+    height: 163px;
   }
 }
