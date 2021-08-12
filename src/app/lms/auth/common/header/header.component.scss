@@ -84,3 +84,12 @@ button.btn_back{
     top: 0;
   }
 }
+@media only screen and (max-width: 1499px) {
+  .bg_gre-blu {
+    color: #fff;
+    height: 100vh;
+  }
+  img.image_log {
+    height: 87vh;
+}
+}
