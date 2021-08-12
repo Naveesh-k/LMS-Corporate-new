@@ -33,3 +33,9 @@ body {
     padding: 0 10px 0 0;
   }
 }
+
+@media only screen and (max-width: 1499px) {
+  .bg_col {
+    height: 89vh;
+  }
+}
