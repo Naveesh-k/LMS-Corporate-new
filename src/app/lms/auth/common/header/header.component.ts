@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ColorModeService } from 'src/app/service/color-mode.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import { ColorModeService } from 'src/app/service/color-mode.service';
 export class HeaderComponent implements OnInit {
   darkMode: boolean = false;
   constructor(
+    private location: Location,
     public router: Router,
     public mode: ColorModeService // dark-light
   ) {}
@@ -24,5 +26,10 @@ export class HeaderComponent implements OnInit {
       }
     });
     //end dark-light
+  }
+
+  // back page location
+  back(): void {
+    this.location.back()
   }
 }

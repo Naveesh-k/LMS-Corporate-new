@@ -1,6 +1,4 @@
-// section#login-bg {
-//   background: #f6f6f6;
-// }
+
 .pad_img {
   padding: 83px 0 0 0;
 }
@@ -10,7 +8,6 @@ img.image_log {
 .bg_gre-blu {
   color: #fff;
   height: 100vh;
-  // padding: 97px 42px 42px 42px;
   padding: 10px 0 42px 0;
   width: 100%;
   background-repeat: no-repeat;
@@ -20,9 +17,11 @@ hr.col_hr {
   border-top: 2px solid;
   margin: 6px 0 23px 0;
 }
-
+button.btn_back {
+  font-size: 33px;
+  color: #fff;
+}
 #login-bg h4 {
-  // font-size: 42px;
   font-size: 31px;
   line-height: 49.22px;
   text-align: center;

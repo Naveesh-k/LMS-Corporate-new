@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ColorModeService } from 'src/app/service/color-mode.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-login',
@@ -12,6 +14,8 @@ export class LoginComponent implements OnInit {
   submitted = false;
   darkMode: boolean = false;
   constructor(
+    public router: Router,
+    private location : Location,
     private formBuilder: FormBuilder,
     public mode: ColorModeService // dark-light
   ) {}
@@ -37,6 +41,11 @@ export class LoginComponent implements OnInit {
       }
     });
     //end dark-light
+  }
+
+  // back location
+  back(): void {
+    this.location.back()
   }
 
   // convenience getter for easy access to form fields

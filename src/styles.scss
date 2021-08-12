@@ -1,11 +1,17 @@
 @import "./assets/styles/dark.scss"; // dark-light
 @import "./assets/styles/light.scss"; // dark-light
+html, body {
+  height: 100%;
+}
 // Login
+// body {
+//   overflow-y:auto;
+// }
 section#dashboard-bg {
   background: url(./assets/images/login-img.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 586px;
+  height: 100vh;
   // padding: 0 0 45px 24px;
   padding: 0 0 45px 39px;
   border-top: 1px solid #fff;
@@ -20,6 +26,7 @@ a {
 .bg_col {
   color: #fff;
   // padding: 33px;
+  height: 100vh;
   padding: 29px;
   text-align: center;
 }
@@ -41,7 +48,7 @@ button.btn-socail {
   color: #000;
   font-weight: 600;
   width: 87%;
-  height: 45px;
+  height: 41px;
   margin-bottom: 46px;
   text-align: left;
   border-radius: 10px;
@@ -65,7 +72,7 @@ img.or-img {
   color: #ffffff;
   padding: 33px 24px 77px 24px;
   text-align: center;
-  height: 590px;
+  height: 100vh;
 }
 .bg_form {
   padding: 20px;

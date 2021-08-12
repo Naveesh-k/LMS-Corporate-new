@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<section id="dashboard-bg">
+<section id="dashboard-bg" class="w-100">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-5 col-lg-4 col-sm-5 col-12">
@@ -21,7 +21,7 @@
               />
               Continue with Facebook
             </button>
-            <button class="btn btn-socail">
+            <button class="btn btn-socail" [routerLink]="'/lms/app'">
               <img
                 class="facebook-img"
                 src="../../../assets/images/google.png"
@@ -29,7 +29,7 @@
               />
               Continue with Google
             </button>
-            <button class="btn btn-socail">
+            <button class="btn btn-socail" [routerLink]="'/lms/app'">
               <img
                 class="facebook-img"
                 src="../../../assets/images/linkedin.png"

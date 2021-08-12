@@ -6,7 +6,6 @@ img.logo_img {
 }
 .imyu {
   padding: 8px 0 5px 0;
-  width: 407px;
 }
 li.nav_li {
   padding: 0 17px 0 9px;
@@ -25,11 +24,19 @@ a.btn_login {
   width: 89px;
 }
 nav.navbar_bg {
-  padding: 0 32px 0 39px;
-  // position: fixed;
-  // width: 100%;
-  // left: 0;
-  // z-index: 999;
+  padding: 0;
+}
+form.respo {
+    padding: 20px 0 0 0;
+  }
+  .pad_icr {
+    padding: 0 5px 0 15px;
+}
+button.btn_back{
+  position: absolute;
+  top: 6px;
+  font-size: 33px;
+    color: #fff;
 }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 499px) {
@@ -62,5 +69,14 @@ nav.navbar_bg {
   }
   nav.navbar_bg {
     padding: 3px 32px 2px 39px;
+  }
+}
+
+@media only screen and (max-width: 1499px) {
+  form.respo {
+    padding: 10px 0 0 0;
+  }
+  button.btn_back {
+    top: 0;
   }
 }
