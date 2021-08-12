@@ -3,3 +3,55 @@ iframe.iframe-video {
   height: 277px;
   border-radius: 10px;
 }
+li.li_fnt {
+  font-size: 13px;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+p.card_text {
+  font-size: 14px;
+  margin: 0;
+}
+h5.card_title {
+  font-size: 19px;
+  margin: 0 0 2px 0;
+}
+.card_body {
+  padding: 11px 13px 0 14px;
+}
+ul.video_list {
+  margin: 0;
+}
+h4.card_title {
+  margin: 0;
+  font-size: 19px;
+}
+.card_pad {
+  width: 100%;
+  border-radius: 23px;
+  padding: 5px 0 0 0;
+  border: none;
+}
+.card_pad-1 {
+  width: 98%;
+  border-radius: 23px;
+  padding: 5px 0 0 0;
+  border: none;
+}
+h4.intor_heading {
+  padding: 20px 0 12px 3px;
+}
+.card_bg {
+  background: #fff;
+  border-radius: 30px;
+  padding: 10px 0 10px 0;
+}
+.fl_pad {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px 0 19px;
+}
+hr.hr_wid {
+  border-top: 2px solid #e5e5e5;
+  margin: 6px 0 5px 0;
+}

@@ -7,45 +7,61 @@
       <app-common-header></app-common-header>
 
       <div class="row mt-3">
-        <div class="col-md-4 col-lg-4 col-sm-4 col-12 pl-4 d-flex yo">
-          <div class="card p-2" style="width: 25rem; border-radius: 30px">
-            <div class="card-body">
-              <h5 class="card-title">Business Breakthrough</h5>
-              <p class="card-text">6 videos | Total: 19 minutes</p>
+        <div class="col-md-4 col-lg-4 col-sm-4 col-12 pl-4 d-flex">
+          <div class="card card_pad">
+            <!-- style="width: 25rem; border-radius: 30px" -->
+            <div class="card_body">
+              <h5 class="card_title">Business Breakthrough</h5>
+              <p class="card_text">6 videos | Total: 19 minutes</p>
               <hr />
             </div>
-            <ul class="video-list">
-              <li>Introduction to Business Breakthrough (4 minutes)</li>
-              <li>What is a Breakthrough? (3 minutes)</li>
+            <ul class="video_list">
+              <li class="li_fnt">
+                Introduction to Business Breakthrough (4 minutes)
+              </li>
+              <li class="li_fnt">
+                What is a Breakthrough? <br />
+                (3 minutes)
+              </li>
 
-              <li>Who can Breakthrough? (3 minutes)</li>
+              <li class="li_fnt">
+                Who can Breakthrough? <br />
+                (3 minutes)
+              </li>
 
-              <li>Breakthrough with Confidence (5 minutes)</li>
-              <li>PIF’s mission and vision(4 minutes)</li>
-              <li>Quiz</li>
+              <li class="li_fnt">
+                Breakthrough with Confidence <br />
+                (5 minutes)
+              </li>
+              <li class="li_fnt">
+                PIF’s mission and vision <br />
+                (4 minutes)
+              </li>
+              <li class="li_fnt">Quiz</li>
             </ul>
 
-            <div class="card-body">
-              <h4 class="card-title">
-                Capital
+            <div class="card_body">
+              <div class="d-flex justify-content-between">
+                <h4 class="card_title text-secondary">Capital</h4>
                 <img src="assets/images/CaretDownFill.png" />
-              </h4>
-
-              <p class="card-text">3 videos | Total: 21 minutes</p>
-              <hr />
+              </div>
+              <p class="card_text text-secondary">
+                3 videos | Total: 21 minutes
+              </p>
+              <hr class="mt-2" />
             </div>
-            <div class="card-body">
-              <h4 class="card-title">
-                Profits
+            <div class="card_body">
+              <div class="d-flex justify-content-between">
+                <h4 class="card_title text-secondary">Profits</h4>
                 <img src="assets/images/CaretDownFill.png" />
-              </h4>
-              <p class="card-text">3 videos | Total: 15 minutes</p>
+              </div>
+              <p class="card_text text-secondary">
+                3 videos | Total: 15 minutes
+              </p>
             </div>
-            <hr />
-            <div class="card-body"></div>
+            <hr class="mt-2" />
           </div>
         </div>
-        <!-- <div class="col-md-3 col-lg-3"></div> -->
         <div class="col-md-8 col-lg-8 col-sm-8 col-12 text-right">
           <div class="row">
             <div class="col-md-8"></div>
@@ -66,15 +82,10 @@
             </div>
           </div>
 
-          <div class="row">
-            <h3 class="p-4">Introduction to Business Breakthrough</h3>
-            <div class="card" style="border-radius: 20px">
-              <div class="card-body">
-                <!-- <img
-                  src="assets/images/Rectangle 25.png"
-                  class="img-fluid"
-                  alt="..."
-                /> -->
+          <!-- <div class="row">
+            <h4 class="intor_heading">Introduction to Business Breakthrough</h4>
+            <div class="card card_pad-1">
+              <div class="card_body">
                 <iframe
                   class="iframe-video"
                   src="https://www.youtube.com/embed/2nmTwxMFfPk"
@@ -90,6 +101,7 @@
                   class="btn btn-light p-2 me-md-2 mr-4"
                   type="button"
                   style="border-radius: 15px"
+                  (click)="hideShow()"
                 >
                   <img
                     src="assets/images/StickiesFill.png"
@@ -117,14 +129,9 @@
                   </a>
                   <a>
                     <img src="assets/images/Vector (1).png" />
-                    <!-- <i
-                      class="fa fa-thumbs-o-up "
-                      aria-hidden="true"
-                    ></i> -->
                   </a>
                   <a>
                     <img src="assets/images/HandThumbsUpFill.png" />
-                    <!-- <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> -->
                   </a>
                 </div>
               </div>
@@ -207,6 +214,18 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card_bg mt-4">
+                <div class="fl_pad">
+                  <h6>Question 1 of 3</h6>
+                  <h6>Skip Quiz</h6>
+                </div>
+                <hr class="hr_wid" />
               </div>
             </div>
           </div>
