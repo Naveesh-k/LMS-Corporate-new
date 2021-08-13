@@ -1,7 +1,11 @@
 .drop_dn {
   transform: translate3d(-71px, 52px, 0px) !important;
 }
-
+iframe.iframe_video {
+  width: 95%;
+  height: 202px;
+  border-radius: 18px;
+}
 @media screen and (min-device-width: 300px) and (max-device-width: 320px) {
   img.slick-img {
     width: 66px;
