@@ -82,14 +82,16 @@
                     allowfullscreen></iframe>
                 </div>
 
-                <div class="d-grid gap-2 d-md-flex p-3">
-                  <button class="btn btn-light p-2 mr-4" type="button" style="border-radius: 15px"
+                <div class="d-grid gap-2 d-md-flex p-3 justify-content-between">
+                  <div>
+                  <button class="btn btn-addNote mr-4" type="button"
                     (click)="hideShow()">
                     <img src="assets/images/StickiesFill.png" style="padding-right: 10px" />Add Note
                   </button>
-                  <button class="btn btn-light" type="button" style="border-radius: 15px">
+                  <button class="btn btn-addNote" type="button" >
                     <img src="assets/images/Group 137.png" style="padding-right: 10px" />Download your note
                   </button>
+                   </div>
 
                   <div class="social-media">
                     <a>
@@ -105,72 +107,93 @@
                 </div>
               </div>
 
-              <div class="col-md-12 text-left">
-                <div class="container">
-                  <ul class="nav nav-pills nav-fill pt-5">
-                    <li>
-                      <a data-toggle="pill" class="active about_lesson" href="#about">ABOUT LESSON</a>
-                    </li>
-                    <li class="mr-5 ml-5 pr-5 pl-5">
-                      <a data-toggle="pill" href="#resour">RESOURCES1 </a>
-                    </li>
-                    <li><a data-toggle="pill" href="#tran">TRANSCRIPT</a></li>
-                  </ul>
 
-                  <div class="tab-content">
-                    <div id="about" class="tab-pane active">
-                      <div class="card mt-3" style="border-radius: 30px">
-                        <div class="card-body" style="text-align: justify">
-                          <h4 class="card-title">ABOUT LESSON</h4>
+               <div class="col-md-12 mt-5">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active check_col" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">RESOURCES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">TRANSCRIPT</a>
+                  </li>
+                </ul>
+                <div class="row">
+                  <div class="col-md-12 text-left">
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active mt-4" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="card mt-3" style="border-radius: 30px">
+                      <div class="card-body" style="text-align: justify">
+                        <h4 class="card_title mb-3">ABOUT LESSON</h4>
 
-                          <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore evt
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
+                        <p class="card_text" style="color:silver">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore evt
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade mt-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="card mt-3" style="border-radius: 30px">
+                      <div class="card-body" style="text-align: justify">
+                        <h4 class="card_title">LESSON RESOURCES</h4>
+                        <ul class="down-load">
+                          <li>Download slides</li>
+                          <li>Download transcript</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade mt-4" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="card p-2 mt-4" style="border-radius: 30px">
+
+
+
+                      <div class="card-body">
+
+                        <div class="d-flex justify-content-between">
+                          <div class="dropdown">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              English
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                          </div>
+                          <a class="more" >Help Us Translate</a>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12">
+                        <div class="num">
+                          <p class="amet_p">
+                            Amet minim mollit non deserunt ullamco est sit
+                            aliqua dolor do amet sint. Velit officia consequat
+                            duis enim velit mollit.
+                          </p>
+                          <p class="amet_p">
+                            Maecenas at nunc sed ipsum feugiat tristique sed a
+                            nisl. Cras porta mi vitae imperdiet sollicitudin.
+                            Interdum et malesuada.
                           </p>
                         </div>
                       </div>
-                    </div>
-                    <div id="resour" class="tab-pane fade">
-                      <div class="card mt-3" style="border-radius: 30px">
-                        <div class="card-body" style="text-align: justify">
-                          <h4 class="card-title">LESSON RESOURCES</h4>
-                          <ul class="down-load">
-                            <li>Download slides</li>
-                            <li>Download transcript</li>
-                          </ul>
-                        </div>
                       </div>
-                    </div>
-                    <div id="tran" class="tab-pane fade">
-                      <div class="card p-2 mt-4" style="border-radius: 30px">
-                        <div class="card-body" style="text-align: justify">
-                          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            English
-                          </a>
-                          <a class="more" style="padding-left: 50px">Help Us Translate</a>
-
-                          <div class="num">
-                            <p>
-                              Amet minim mollit non deserunt ullamco est sit
-                              aliqua dolor do amet sint. Velit officia consequat
-                              duis enim velit mollit.
-                            </p>
-                            <p>
-                              Maecenas at nunc sed ipsum feugiat tristique sed a
-                              nisl. Cras porta mi vitae imperdiet sollicitudin.
-                              Interdum et malesuada.
-                            </p>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              </div>
+              </div>
+
             </div>
 
             <div class="row" *ngIf="hide">

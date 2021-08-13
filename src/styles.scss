@@ -308,14 +308,21 @@ ul li {
   display: flex;
   justify-content: space-around;
   margin: 10px;
-  width: 190px;
+  width: 143px;
 }
-
+button.btn-addNote {
+  background: #f8f9fa;
+  padding: 8px 13px;
+  border-radius: 15px;
+  font-weight: 500;
+    font-size: 14px;
+    color: #229b9f;
+}
 .down-load {
   li:after {
     content: url("assets/images/Group 137.png");
     position: absolute;
-    left: 18pc;
+    left: 176px;
   }
 }
 .num {
