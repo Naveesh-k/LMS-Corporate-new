@@ -3,6 +3,40 @@ iframe.iframe-video {
   height: 277px;
   border-radius: 10px;
 }
+// --------------------- tabs
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: #f6f6f6;
+  border-color: #f6f6f6;
+  border-bottom: 3px solid #18969a;
+}
+.nav-tabs .nav-link:hover {
+  border-color: #f6f6f6 #f6f6f6 #18969a;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: space-around;
+}
+// --------------------- end tabs
+ul.down-load {
+  padding: 12px 0 0 0;
+}
+ul.down-load li {
+  font-size: 14px;
+  color: #18969a;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+a.more {
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+p.amet_p {
+  font-size: 14px;
+  color: silver;
+}
 li.li_fnt {
   font-size: 13px;
   margin-bottom: 22px;
