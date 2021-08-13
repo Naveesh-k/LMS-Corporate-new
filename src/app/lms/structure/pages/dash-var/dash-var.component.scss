@@ -69,4 +69,64 @@ p.question-para {
   padding: 7px 11px;
   border-radius: 8px;
   margin-left: 35px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+a.btn-confirm {
+  background: #229b9f;
+  margin-left: 36px;
+  color: #fff;
+  padding: 5px 66px;
+  font-size: 13px;
+  border-radius: 6px;
+  margin-top: 11px;
+}
+
+.card_bg-1 {
+  background: #fff;
+  border-radius: 14px;
+  padding: 21px;
+}
+.card_bg-2 {
+  background: #fff;
+  border-radius: 14px;
+  padding: 35px;
+}
+p.congratu-p {
+  margin: 0;
+  font-size: 15px;
+  text-decoration: underline;
+  color: #229B9F;
+  font-weight: 500;
+}
+.sm-card {
+  background: #F5F5F5;
+  padding: 8px 21px 10px 21px;
+  border-radius: 18px;
+}
+small.master_p {
+  font-weight: 500;
+  font-size: 14px;
+}
+a.btn-download {
+  background: #F6F6F6;
+  font-size: 12px;
+  padding: 6px 13px;
+  margin-top: 13px;
+  color: #18969A;
+  font-weight: 700;
+  border-radius: 8px;
+}
+p.earned_p {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 15px 0 0 0;
+}
+img.istock_img {
+  width: 100%;
+}
+p.employee_p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
 }
