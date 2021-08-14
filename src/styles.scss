@@ -341,11 +341,28 @@ button.btn-addNote {
   padding-top: 20px;
   padding-left: 20px;
 }
+// ----------------- Module bdTech---------------------
+section.form-bg{
+  height: 100vh;
+   background: linear-gradient(rgb(0 0 0 / 24%), rgba(0,0,0,0.8)),url(/assets/images/Group-789.png);
+   background-position: center;
+   background-size: 100% 100%;
+   position: relative;
+}
 
-// .card_body {
-//   h5::after {
-//     content: url("assets/images/CaretDownFill2.png");
-//     position: absolute;
-//     right: 0;
-//   }
-// }
+input.login_input {
+  border-radius: 8px;
+  background: #F7F8F9;
+  border: none;
+}
+select.login_input {
+  border-radius: 8px;
+  background: #F7F8F9;
+  border: none;
+}
+label.login_label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+}
+// ----------------- Module   end  bdTech---------------------

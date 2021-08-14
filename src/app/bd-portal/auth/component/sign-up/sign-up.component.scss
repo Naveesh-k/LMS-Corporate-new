@@ -18,9 +18,20 @@ p.signup-link {
 p.signup-link a {
   color: #28a0a4;
 }
+
+.bor_radio {
+  padding: 6px 15px;
+  border-radius: 8px;
+  background: #F7F8F9;
+}
 // -------------------------
+
    img.logo_img {
     width: 47%;
+  }
+  .radio_text {
+    font-size: 14px;
+    font-weight: 500;
 }
 
    .form-container{
@@ -35,7 +46,9 @@ p.signup-link a {
     .imge {
       margin-top: 39px;
       margin-bottom: 22px;
-    }
+  }
+
+
     .soical-media {
       display: flex;
         justify-content: space-around;
@@ -54,6 +67,8 @@ p.signup-link a {
       margin-top: 0;
       border: none;
     }
+
+
     .line{
         img{
             width: 45%;
