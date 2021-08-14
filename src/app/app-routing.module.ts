@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: 'bd-portal',
     loadChildren: () =>
-      import('./bd-portal/auth/auth.module').then((m) => m.AuthModule),
+      import('./bd-portal/bd-portal-routing.module').then((m) => m.BdPortalRoutingModule),
   },
   {
     path: 'lms',
