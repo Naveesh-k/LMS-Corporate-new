@@ -6,7 +6,7 @@
       <div class="col-md-4"></div>
       <div class="col-md-4">
         <div class=" imge text-center">
-              <img class="logo_img" src="assets/images/form logo.png ">
+              <img class="logo_img" routerLink="/bd-portal/app/profile" src="assets/images/form logo.png ">
             </div>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-container form_position">
 
@@ -41,7 +41,7 @@
               </div>
 
 
-              <button type="submit" class="btn btn-primary btn-block">Agree & jion</button>
+              <button type="submit" class="btn btn-agree btn-block">Agree & join</button>
               <div class="line">
                 <img src="../../../../../../assets/images/Vector 2.png">
                 or &nbsp;<img src="../../../../../../assets/images/Vector 2.png">
@@ -50,9 +50,9 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                   <div class="soical-media">
-                    <a><img src="../../../../../../assets/images/facebook (1) 1.png"></a>
-                    <a><img src="assets/images/google.png"></a>
-                    <a><img src="assets/images/linkedin.png"></a>
+                    <a routerLink="/bd-portal/app/profile"><img src="../../../../../../assets/images/facebook (1) 1.png"></a>
+                    <a routerLink="/bd-portal/app/profile"><img src="assets/images/google.png"></a>
+                    <a routerLink="/bd-portal/app/profile"><img src="assets/images/linkedin.png"></a>
                   </div>
                 </div>
                 <div class="col-md-2"></div>
@@ -62,7 +62,7 @@
               <div class="row">
                 <div class="col-md-12 text-center">
               <p class="signup-link">
-                Already on BD TECH? <a routerLink="/bd-portal/sign-up">Sign up</a>
+                Already on BD TECH? <a routerLink="/bd-portal/auth/sign-up">Sign up</a>
               </p>
             </div>
           </div>

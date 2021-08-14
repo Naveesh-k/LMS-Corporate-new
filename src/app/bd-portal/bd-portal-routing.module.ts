@@ -5,13 +5,11 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () =>
-      // import('./bd-portal/auth/auth.module').then((m) => m.AuthModule),
       import('../bd-portal/auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'structure',
+    path: 'app',
     loadChildren: () =>
-      // import('./bd-portal/structure/structure.module').then(
       import('../bd-portal/structure/structure.module').then(
         (m) => m.StructureModule
       ),
