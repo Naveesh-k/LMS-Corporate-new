@@ -8,7 +8,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavigatePortalComponent } from './navigate-portal/navigate-portal.component';
-
 @NgModule({
   declarations: [AppComponent, HomePageComponent, NavigatePortalComponent],
   imports: [BrowserModule, AppRoutingModule, SlickCarouselModule, FormsModule],

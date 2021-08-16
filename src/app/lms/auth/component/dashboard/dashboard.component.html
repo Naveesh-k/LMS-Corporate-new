@@ -13,7 +13,7 @@
           <h2>MASTER CAPITAL WISDOM</h2>
           <h6>What are you waiting for</h6>
           <div class="mar_top">
-            <div class="btn btn-socail" [routerLink]="'/lms/app'">
+            <div class="btn btn-socail" (click)="signInWithFB()">
               <img
                 class="facebook-img"
                 src="../../../assets/images/facebook.png"
@@ -21,7 +21,7 @@
               />
               Continue with Facebook
             </div>
-            <div class="btn btn-socail" [routerLink]="'/lms/app'">
+            <div class="btn btn-socail" (click)="signInWithGoogle()">
               <img
                 class="facebook-img"
                 src="../../../assets/images/google.png"
