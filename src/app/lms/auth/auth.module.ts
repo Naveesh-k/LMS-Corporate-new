@@ -8,6 +8,11 @@ import { LoginComponent } from './component/login/login.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,25 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignUpComponent,
     DashboardComponent,
   ],
-  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule],
+  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule],
+  providers: [{
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '533347858403-clm6imc210v9hrtdrt68ps7cssp6p82l.apps.googleusercontent.com'
+          )
+        },
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider('363462991980235')
+        }
+      ]
+    } as SocialAuthServiceConfig,
+  }],
+
 })
 export class AuthModule {}
