@@ -9,7 +9,6 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import { Observable, of } from 'rxjs'
 import {
   GoogleLoginProvider,
   FacebookLoginProvider
@@ -22,7 +21,7 @@ import {
     SignUpComponent,
     DashboardComponent,
   ],
-  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule, ],
+  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule,  ],
   providers: [{
     provide: 'SocialAuthServiceConfig',
     useValue: {
@@ -41,7 +40,9 @@ import {
       ]
     } as SocialAuthServiceConfig
 
-  }],
+  }
+
+],
 
 })
 export class AuthModule {}

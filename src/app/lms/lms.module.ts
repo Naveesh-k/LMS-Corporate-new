@@ -5,7 +5,7 @@ import { LmsRoutingModule } from './lms-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [BrowserModule],
-  imports: [CommonModule, LmsRoutingModule],
+  declarations: [],
+  imports: [CommonModule, LmsRoutingModule, BrowserModule],
 })
 export class LmsModule {}

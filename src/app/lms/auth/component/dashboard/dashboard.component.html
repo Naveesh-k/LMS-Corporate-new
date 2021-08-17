@@ -1,57 +1,39 @@
 <app-header></app-header>
 
 <section id="dashboard-bg" class="w-100">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-5 col-lg-4 col-sm-5 col-12">
-        <div
-          class="bg_col"
-          [ngClass]="
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-sm-5 col-12">
+                <div class="bg_col" [ngClass]="
             darkMode ? 'dark-login-sidebar-bg' : 'light-login-sidebar-bg'
-          "
-        >
-          <h2>MASTER CAPITAL WISDOM</h2>
-          <h6>What are you waiting for</h6>
-          <div class="mar_top">
-            <div class="btn btn-socail" (click)="signInWithFB()">
-              <img
-                class="facebook-img"
-                src="../../../assets/images/facebook.png"
-                alt=""
-              />
-              Continue with Facebook
-            </div>
-            <div class="btn btn-socail" (click)="signInWithGoogle()">
-              <img
-                class="facebook-img"
-                src="../../../assets/images/google.png"
-                alt=""
-              />
-              Continue with Google
-            </div>
-            <div class="btn btn-socail" (click)="signIn('linkedin')">
-              <img
-                class="facebook-img"
-                src="../../../assets/images/linkedin.png"
-                alt=""
-              />
-              Continue with Linkedin
-            </div>
-          </div>
-          <div>
-            <img class="or-img" src="../../../assets/images/or.png" alt="" />
-            <div class="mt-4">
-              <a routerLink="sign-up">Sign Up Using Email</a>
-              <br />
-              <small>
+          ">
+                    <h2>MASTER CAPITAL WISDOM</h2>
+                    <h6>What are you waiting for</h6>
+                    <div class="mar_top">
+                        <div class="btn btn-socail" (click)="signInWithFB()">
+                            <img class="facebook-img" src="../../../assets/images/facebook.png" alt="" /> Continue with Facebook
+                        </div>
+                        <div class="btn btn-socail" (click)="signInWithGoogle()">
+                            <img class="facebook-img" src="../../../assets/images/google.png" alt="" /> Continue with Google
+                        </div>
+                        <div class="btn btn-socail" (click)="subscribeToLogin()">
+                            <img class="facebook-img" src="../../../assets/images/linkedin.png" alt="" /> Continue with Linkedin
+                        </div>
+                    </div>
+                    <div>
+                        <img class="or-img" src="../../../assets/images/or.png" alt="" />
+                        <div class="mt-4">
+                            <a routerLink="sign-up">Sign Up Using Email</a>
+                            <br />
+                            <small>
                 By signing up you agree to PIF Terms of Service and Privacy
                 Policy.
               </small>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="col-md-7 col-lg-8 col-sm-7"></div>
         </div>
-      </div>
-      <div class="col-md-7 col-lg-8 col-sm-7"></div>
     </div>
-  </div>
 </section>
