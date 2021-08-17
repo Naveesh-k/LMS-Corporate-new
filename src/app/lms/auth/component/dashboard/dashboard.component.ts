@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
     response: ''
   };
   loggedIn: boolean = false;
+  sub: any;
   constructor(
     private authService: SocialAuthService,
     public mode: ColorModeService // dark-light
@@ -43,6 +44,10 @@ export class DashboardComponent implements OnInit {
       this.user = user;
       this.loggedIn = (user != null);
       console.log(this.user);
+      setTimeout(() => {
+        this.signOut();
+
+      }, 2000);
     });
   }
   signInWithGoogle(): void {
@@ -53,7 +58,13 @@ export class DashboardComponent implements OnInit {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
+  // signInWithLinkedIn(): void {
+  //   this.authService.signIn(LinkedInLoginProvider.PROVIDER_ID);
+  // }
+  signIn(provider: any){
+  }
   signOut(): void {
     this.authService.signOut();
   }
+
 }

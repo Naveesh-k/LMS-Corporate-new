@@ -9,11 +9,11 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { Observable, of } from 'rxjs'
 import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -22,7 +22,7 @@ import {
     SignUpComponent,
     DashboardComponent,
   ],
-  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule],
+  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule, ],
   providers: [{
     provide: 'SocialAuthServiceConfig',
     useValue: {
@@ -39,7 +39,8 @@ import {
           provider: new FacebookLoginProvider('363462991980235')
         }
       ]
-    } as SocialAuthServiceConfig,
+    } as SocialAuthServiceConfig
+
   }],
 
 })
