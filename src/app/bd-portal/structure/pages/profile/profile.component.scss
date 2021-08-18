@@ -496,15 +496,6 @@ img {
     width: 80%;
 }
 
-.input_msg_write input {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: medium none;
-    color: #4c4c4c;
-    font-size: 15px;
-    min-height: 48px;
-    width: 100%;
-}
-
 .type_msg {
     border-top: 1px solid #c4c4c4;
     position: relative;
@@ -616,3 +607,170 @@ img.twit-img {
 }
 
 // --------------------------------
+// ------------video call-------------
+nav.nav_bor {
+    border-bottom: 2px solid #c0c0c08f;
+}
+
+.navbar-brand {
+    color: #058B96;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+img.size_img {
+    width: 16px;
+}
+
+//full box//
+.content-table {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 #000;
+    border-radius: 15px;
+    left: 7vh;
+    top: 2vh;
+    width: 90%;
+}
+
+//video call images//
+.imag {
+    display: flex;
+    padding: 10px;
+}
+
+.imag img {
+    width: 100%;
+    position: relative;
+}
+
+.imag p {
+    position: absolute;
+    bottom: 5px;
+    color: #fff;
+    left: 20px;
+    font-size: 15px;
+}
+
+// call icon //
+.dox {
+    background-color: #058B96;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.dox a {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dox a img {
+    width: 12%;
+}
+
+#box2 img {
+    width: 6%;
+    text-align: center;
+}
+
+// chat box//
+.incoming_msg_img {
+    display: inline-block;
+    width: 16%;
+}
+
+.received_msg {
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+}
+
+.received_withd_msg p {
+    background: #ebebeb;
+    border-radius: 10px;
+    color: #646464;
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: justify;
+    // margin-left: 30px;
+}
+
+.received_withd_msg {
+    float: right;
+    width: 90%;
+}
+
+.mesgs {
+    float: left;
+    padding: 8px;
+}
+
+.sent_msg p {
+    background: #058B96;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #fff;
+    text-align: justify;
+    padding: 10px;
+}
+
+.outgoing_msg {
+    overflow: hidden;
+}
+
+.sent_msg {
+    float: right;
+    width: 80%;
+}
+
+.search-bar {
+    border: medium none;
+}
+
+.input_msg_top input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #4c4c4c;
+    font-size: 15px;
+    min-height: 48px;
+    width: 100%;
+    border-bottom: 1px solid #BDBDBD;
+    margin-bottom: 10px;
+}
+
+.type_msg {
+    position: relative;
+}
+
+.type_msg a {
+    font-size: 17px;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
+.input_msg_write img {
+    width: 70%;
+}
+
+//boder//
+#new {
+    border-right: 1px solid #BDBDBD;
+}
+
+.outgoing_msg-1 {
+    overflow: hidden;
+    margin: 7px 9px;
+}
+
+.type_msg {
+    position: absolute;
+    bottom: 0;
+    width: 88%;
+}
+
+// ------------ end video call-------------

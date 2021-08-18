@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" *ngIf="show">
+            <div class="row" *ngIf="showChat">
                 <div class="col-md-3">
                     <div class="card-bg">
                         <div class="row">
@@ -112,7 +112,7 @@
                                             </div>
                                             <div>
                                                 <a class="view-more">View more</a> <br><br>
-                                                <a class="btn btn_contact">Contact</a>
+                                                <a class="btn btn_contact" (click)="chat()">Contact</a>
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
                                             </div>
                                             <div>
                                                 <a class="view-more">View more</a> <br><br>
-                                                <a class="btn btn_contact">Contact</a>
+                                                <a class="btn btn_contact" (click)="chat()">Contact</a>
                                             </div>
                                         </div>
                                     </div>
@@ -566,7 +566,7 @@
             </div>
         </div>
 
-        <div *ngIf="!show">
+        <div *ngIf="showChat">
             <div class="tab-content">
                 <div class="row">
                     <div class="col-md-3">
@@ -744,4 +744,125 @@
             </div>
         </div>
 
+        <div *ngIf="!showChat">
+            <div class="tab-content">
+                <!-- ---------------- -->
+                <div class="row">
+                    <div class="col-md-9">
+                        <div id="new">
+                            <!-------------------navbaar------------------>
+                            <nav class="navbar px-4 py-2 nav_bor">
+                                <a class="navbar-brand">Video call</a>
+                                <div class="d-flex">
+                                    <img class="size_img" src="assets/images/Vector (17).png">
+                                </div>
+                            </nav>
+                            <div class="p-3">
+
+                                <!----------------------imags row-1------------------->
+                                <div class="row">
+                                    <div class="imag">
+                                        <div class="col-md-4">
+                                            <img src="assets/images/Rectangle 53.png">
+                                            <p>Arlene McCoy</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="assets/images/Rectangle 54.png">
+                                            <p>Cody Fisher</p>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <img src="assets/images/Rectangle 55.png">
+                                            <p>Kristin Watson</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="imag">
+                                        <div class="col-md-4">
+                                            <img src="assets/images/Rectangle 56.png">
+                                            <p>Darlene Robertson</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="assets/images/Rectangle 57.png">
+                                            <p>Guy Hawkins</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="assets/images/Rectangle 58.png">
+                                            <p>Theresa Webb</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!--------------------icon video-call-------------------->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="dox d-flex ">
+                                            <div class="col-md-3" id="box1">
+                                                <a><img src="assets/images/1vedio.png"> </a>
+                                                <a><img src="assets/images/CameraVideoOffFill.png"> </a>
+                                            </div>
+                                            <div class="col-md-6 ml-5" id="box2">
+                                                <a><img src="assets/images/PersonPlusFill.png"> </a>
+                                                <a><img src="assets/images/Vector (19).png"> </a>
+                                                <a><img src="assets/images/PencilSquare.png"> </a>
+                                                <a><img src="assets/images/RecordCircle.png"> </a>
+                                            </div>
+                                            <div class="col-md-3 ml-5">
+                                                <a><img src="assets/images/Vector (18).png"> </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-----------------side bar chat box----------------->
+                    <div class="col-md-3">
+                        <div class="borde">
+                            <div class="input_msg_top">
+                                <input type="text" class="write_top" placeholder="Yesterday" />
+                            </div>
+                            <div class="mesgs">
+                                <div class="msg_history">
+                                    <div class="incoming_msg">
+                                        <div class="incoming_msg_img"> <img src="assets/images/6chat.png" alt=""> </div>
+                                        <div class="received_msg">
+                                            <div class="received_withd_msg">
+                                                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outgoing_msg-1">
+                                        <div class="sent_msg">
+                                            <p>
+                                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="type_msg">
+                                    <div class="input_msg_write">
+                                        <input type="text" class="write_msg" placeholder="Type a message" />
+                                        <a class="mr-5"><img src="assets/images/Vector (11).png"></a>
+                                        <a><img src="assets/images/Vector (10).png"></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ---------------- -->
+            </div>
+        </div>
     </div>
+
+</div>
