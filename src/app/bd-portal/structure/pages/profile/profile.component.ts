@@ -10,6 +10,7 @@ export class ProfileComponent implements OnInit {
   submitted = false;
   hide: boolean = false;
   show: boolean = false;
+  showChat: boolean = false;
   constructor(public formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -42,6 +43,10 @@ get f() { return this.contactForm.controls; }
 // hide show
 showHide(){
   this.hide = true;
+}
+chat(){
+  // this.show = true;
+  this.showChat = true;
 }
 // end hide show
 
