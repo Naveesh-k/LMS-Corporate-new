@@ -9,6 +9,7 @@ export class ProfileComponent implements OnInit {
   contactForm: any = FormGroup;
   submitted = false;
   hide: boolean = false;
+  show: boolean = false;
   constructor(public formBuilder: FormBuilder) { }
 
   ngOnInit(): void {

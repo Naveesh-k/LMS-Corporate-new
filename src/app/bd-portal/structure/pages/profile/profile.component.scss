@@ -5,6 +5,7 @@
     border-left: #f7f8f9;
     border-right: #f7f8f9;
     border-top: #f7f8f9;
+    font-weight: 600;
 }
 
 .nav-tabs .nav-link:hover {
@@ -103,6 +104,12 @@ p.amet_para {
     font-size: 14px;
 }
 
+a.nav-link-1 {
+    border-bottom: 1px solid #f5f6f7 !important;
+    background-color: #ffffff !important;
+    color: #000 !important;
+}
+
 // ------------------------------------------
 nav.navbar1 {
     border-bottom: 1px solid #E5E5E5;
@@ -156,11 +163,6 @@ span.board {
 .media-icon {
     text-align: left;
     margin-right: 20px;
-}
-
-.media-icon img {
-    margin-right: 10px;
-    margin-bottom: 20px;
 }
 
 .Marketplace {
@@ -330,3 +332,287 @@ span {
     font-size: 14px;
     font-weight: bold;
 }
+
+// -----------------------------------------chat css-------------------------
+* {
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    padding: 50px;
+}
+
+.side-card img {
+    padding-top: 20px;
+    width: 80%;
+    margin-left: 10px;
+}
+
+.tab-content {
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 0 20px 0 #b9b8b829;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+/*-----------footer--------*/
+
+.input_msg_write input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #4c4c4c;
+    font-size: 15px;
+    min-height: 48px;
+    width: 100%;
+}
+
+.type_msg {
+    border-top: 1px solid #c4c4c4;
+    position: relative;
+}
+
+
+/*-------top------*/
+
+.type_top {
+    border-bottom: 1px solid #c4c4c4;
+    // border-right: 1px solid #c4c4c4;
+    position: relative;
+    padding: 12px 0;
+}
+
+.type_msg {
+    position: relative;
+}
+
+.type_msg a {
+    font-size: 17px;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
+.msg-top {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/*------------Side-card2-----------*/
+
+span.board {
+    border-bottom: 1px solid silver;
+    display: flex;
+}
+
+.side-card2 {
+    background-color: #fff;
+    padding-top: 7px;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    border-left: 1px solid silver;
+    height: 81vh;
+}
+
+img {
+    max-width: 100%;
+}
+
+.media-icon {
+    text-align: left;
+    margin-right: 20px;
+    font-size: 10px
+}
+
+#line {
+    border: 1px solid #E5E5E5;
+    border-left: none;
+}
+
+#line2 {
+    border: 1px solid #E5E5E5;
+    border-right: none;
+}
+
+.view {
+    text-align: right;
+    margin-right: 5px;
+}
+
+
+/*------------start chat box-------------*/
+
+.incoming_msg_img {
+    display: inline-block;
+    width: 6%;
+}
+
+.received_msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 92%;
+}
+
+.received_withd_msg p {
+    background: #ebebeb;
+    border-radius: 10px;
+    color: #646464;
+    font-size: 14px;
+    padding: 10px;
+    // margin-bottom: 20px;
+    text-align: justify;
+}
+
+.received_withd_msg {
+    width: 80%;
+}
+
+.mesgs {
+    float: left;
+    padding: 30px 30px 4px 30px;
+}
+
+.sent_msg p {
+    background: #058B96;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #fff;
+    padding: 5px 10px 5px 12px;
+    text-align: justify;
+}
+
+.outgoing_msg {
+    overflow: hidden;
+    margin: 7px 0;
+}
+
+.sent_msg {
+    float: right;
+    width: 80%;
+}
+
+.input_msg_write input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #4c4c4c;
+    font-size: 15px;
+    min-height: 48px;
+    width: 100%;
+}
+
+.type_msg {
+    border-top: 1px solid #c4c4c4;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+}
+
+.side-card {
+    position: relative;
+}
+
+// --------------------------------
+.inbox img {
+    margin-left: 10px;
+}
+
+p.yesterday_p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.inbox {
+    text-align: left;
+    font-size: 7px;
+    padding: 18px 0 0 0;
+}
+
+.box {
+    position: absolute;
+    background-color: #058B96;
+    top: 32px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    right: 29px;
+}
+
+.box img {
+    width: 60%;
+    position: absolute;
+    bottom: 5px;
+    right: 6px;
+}
+
+.side-card-1 {
+    padding: 0 0 0 17px;
+    border-right: 1px solid #BDBDBD
+}
+
+img.vec_serch_img {
+    position: absolute;
+    top: 17px;
+    width: 4%;
+    left: 34px
+}
+
+.search-bar {
+    width: 89%;
+    border: none;
+    margin: 3px 0 3px 26px;
+    font-size: 14px;
+}
+
+.stylish-input-group {
+    padding: 9px 0;
+    border-bottom: 1px solid #c0c0c063;
+}
+
+h6.user_name {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+small.user_name {
+    font-size: 10px;
+}
+
+img.pro_imgs {
+    width: 28%;
+    padding-top: 20px;
+}
+
+h6.name_alma {
+    font-size: 14px;
+    margin: 8px 0 4px 0;
+}
+
+small.name_active {
+    font-size: 11px;
+}
+
+p.nu_cont {
+    margin: 0;
+    font-size: 13px;
+}
+
+ul.ul_profl {
+    padding: 0 0 0 15px;
+}
+
+li.li_prof {
+    font-size: 14px;
+    margin: 0 0 0 9px;
+}
+
+img.twit-img {
+    margin: 0 19px 0 0;
+}
+
+// --------------------------------

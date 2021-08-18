@@ -1,412 +1,272 @@
 <app-header></app-header>
 <div style="background: #f7f8f9">
-    <div class="container-fluid px-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="navbar justify-content-center w-100">
-                    <ul class="nav nav-tabs" role="tablist ">
-                        <li class="nav-item">
-                            <!-- <a class="nav-link active" data-toggle="tab" href="#home">BD Execs</a> -->
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">BD Execs</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- <a class="nav-link" data-toggle="tab" href="#menu1"> Brokers </a> -->
-                            <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu1" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- <a class="nav-link" data-toggle="tab" href="#menu2">Vendors</a> -->
-                            <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu2" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- <a class="nav-link" data-toggle="tab" href="#menu3"> Suppliers </a> -->
-                            <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu3" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- <a class="nav-link" data-toggle="tab" href="#menu4"> Companies</a> -->
-                            <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu4" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
-                        </li>
-                    </ul>
+    <div class="container-fluid " style="padding: 0 50px 50px 50px;">
+        <div>
+            <div class="row" *ngIf="!show">
+                <div class="col-md-12">
+                    <div class="navbar justify-content-center w-100">
+                        <ul class="nav nav-tabs" role="tablist ">
+                            <li class="nav-item">
+                                <!-- <a class="nav-link active" data-toggle="tab" href="#home">BD Execs</a> -->
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">BD Execs</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- <a class="nav-link" data-toggle="tab" href="#menu1"> Brokers </a> -->
+                                <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu1" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- <a class="nav-link" data-toggle="tab" href="#menu2">Vendors</a> -->
+                                <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu2" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- <a class="nav-link" data-toggle="tab" href="#menu3"> Suppliers </a> -->
+                                <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu3" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- <a class="nav-link" data-toggle="tab" href="#menu4"> Companies</a> -->
+                                <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu4" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card-bg">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <img src="../../../../assets/images/Profile-jakson.png" alt="" />
-                            <h6 class="mt-3">Alma lawson</h6>
-                            <p class="mt-2">jackson.graham@example.com</p>
+            <div class="row" *ngIf="show">
+                <div class="col-md-3">
+                    <div class="card-bg">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <img src="../../../../assets/images/Profile-jakson.png" alt="" />
+                                <h6 class="mt-3">Alma lawson</h6>
+                                <p class="mt-2">jackson.graham@example.com</p>
+                            </div>
                         </div>
-                    </div>
-                    <hr class="bor" />
-                    <div class="row">
-                        <div class="col-md-6 text-center">
-                            <h6 class="mt-2 mb-0">358</h6>
-                            <p class="mb-2">Connection</p>
+                        <hr class="bor" />
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <h6 class="mt-2 mb-0">358</h6>
+                                <p class="mb-2">Connection</p>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <div class="bor">
+                                    <h6 class="mt-2 mb-0">25</h6>
+                                    <p class="mb-2">Views</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 text-center">
-                            <div class="bor">
-                                <h6 class="mt-2 mb-0">25</h6>
-                                <p class="mb-2">Views</p>
+                        <hr class="bor" />
+                        <div class="row my-3">
+                            <div class="col-md-12">
+                                <div class="pard">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="../../../../assets/images/person-icon.png" alt="" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p class="mt-2 mb-0 bdtech-p">
+                                                bdtech.com/jackson.graham
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-2">
+                                            <img class="mt-0 mb-0" src="../../../../assets/images/blak-linkedin.png" alt="" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p class="mb-0 bdtech-p">jackson.graham</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <hr class="bor" />
-                    <div class="row my-3">
-                        <div class="col-md-12">
-                            <div class="pard">
+                    <div class="card-bg mt-3">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="../../../../assets/images/mast.png" alt="" />
+                            </div>
+                            <div class="col-md-10">
+                                <p class="mb-0 bdtech-p">Deals Marketplace</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="content-table">
+                                <nav class="navbar1 pt-3">
+                                    <h5 style="color:#000">People</h5>
+                                    <p>368 Connection</p>
+                                </nav>
+                                <div class="row pt-4">
+                                    <div class="col-md-1">
+                                        <img src="assets/images/Ellipse 1.png" class="pro_imggs">
+                                    </div>
+                                    <div class="col-md-11 pl-5">
+                                        <div class=" bordrr">
+                                            <div>
+                                                <h6 class="name_profile ">Guy Hawkins</h6>
+                                                <p class="broker-p">Broker</p>
+                                                <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
+                                                    est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                            </div>
+                                            <div>
+                                                <a class="view-more">View more</a> <br><br>
+                                                <a class="btn btn_contact">Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-md-1">
+                                        <img src="assets/images/Ellipse 1 (1).png" class="pro_imggs">
+                                    </div>
+                                    <div class="col-md-11 pl-5">
+                                        <div class=" bordrr">
+                                            <div>
+                                                <h6 class="name_profile ">Cameron Williamson</h6>
+                                                <p class="broker-p">Broker</p>
+                                                <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
+                                                    est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                            </div>
+                                            <div>
+                                                <a class="view-more">View more</a> <br><br>
+                                                <a class="btn btn_contact">Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-md-1">
+                                        <img src="assets/images/Ellipse 1 (2).png" class="pro_imggs">
+                                    </div>
+                                    <div class="col-md-11 pl-5">
+                                        <div class=" bordrr">
+                                            <div>
+                                                <h6 class="name_profile ">Wade Warren</h6>
+                                                <p class="broker-p">Broker</p>
+                                                <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
+                                                    est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                            </div>
+                                            <div>
+                                                <a class="view-more">View more</a> <br><br>
+                                                <a class="btn btn_contact">Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------------------------Tabs-2------------------------->
+                        <div id="menu1" class="tab-pane fade">
+                            <div class="content-table">
+                                <nav class="navbar1 pt-3">
+                                    <h5 style="color:#000">People</h5>
+                                    <p>368 Connection</p>
+                                </nav>
+                                <div class="row pt-4">
+                                    <div class="col-md-1">
+                                        <img src="assets/images/Ellipse 1.png" class="pro_imggs">
+                                    </div>
+                                    <div class="col-md-11 pl-5">
+                                        <div class=" bordrr">
+                                            <div>
+                                                <h6 class="name_profile ">Guy Hawkins</h6>
+                                                <p class="broker-p">Broker</p>
+                                                <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
+                                                    est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                            </div>
+                                            <div>
+                                                <a class="view-more">View more</a> <br><br>
+                                                <a class="btn btn_contact">Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-md-1">
+                                        <img src="assets/images/Ellipse 1 (1).png" class="pro_imggs">
+                                    </div>
+                                    <div class="col-md-11 pl-5">
+                                        <div class=" bordrr">
+                                            <div>
+                                                <h6 class="name_profile ">Cameron Williamson</h6>
+                                                <p class="broker-p">Broker</p>
+                                                <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
+                                                    est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                            </div>
+                                            <div>
+                                                <a class="view-more">View more</a> <br><br>
+                                                <a class="btn btn_contact">Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-md-1">
+                                        <img src="assets/images/Ellipse 1 (2).png" class="pro_imggs">
+                                    </div>
+                                    <div class="col-md-11 pl-5">
+                                        <div class=" bordrr">
+                                            <div>
+                                                <h6 class="name_profile ">Wade Warren</h6>
+                                                <p class="broker-p">Broker</p>
+                                                <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
+                                                    est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                            </div>
+                                            <div>
+                                                <a class="view-more">View more</a> <br><br>
+                                                <a class="btn btn_contact">Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---------------------------Tabs-3----------------->
+                        <div id="menu2" class="tab-pane fade">
+                            <div class="content-table py-4">
+
                                 <div class="row">
-                                    <div class="col-md-2">
-                                        <img src="../../../../assets/images/person-icon.png" alt="" />
+                                    <div class="col-md-3">
+                                        <img src="assets/images/round-square.png" class="pro_img-1">
                                     </div>
-                                    <div class="col-md-10">
-                                        <p class="mt-2 mb-0 bdtech-p">
-                                            bdtech.com/jackson.graham
-                                        </p>
+                                    <div class="col-md-6">
+                                        <h6 class="name_profile ">PIF Capital Pte Ltd</h6>
+                                        <p class="broker-p">pifCapital.com</p>
+                                        <p class="minmi_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est
+                                            sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                                     </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-md-2">
-                                        <img class="mt-0 mb-0" src="../../../../assets/images/blak-linkedin.png" alt="" />
-                                    </div>
-                                    <div class="col-md-10">
-                                        <p class="mb-0 bdtech-p">jackson.graham</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-bg mt-3">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img src="../../../../assets/images/mast.png" alt="" />
-                        </div>
-                        <div class="col-md-10">
-                            <p class="mb-0 bdtech-p">Deals Marketplace</p>
+                                    <div class="col-md-3 text-center">
+                                        <div class="border-box">
+                                            <small class="contact-info">Contact Information</small>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="content-table">
-                            <nav class="navbar1 pt-3">
-                                <h5 style="color:#000">People</h5>
-                                <p>368 Connection</p>
-                            </nav>
-                            <div class="row pt-4">
-                                <div class="col-md-1">
-                                    <img src="assets/images/Ellipse 1.png" class="pro_imggs">
-                                </div>
-                                <div class="col-md-11 pl-5">
-                                    <div class=" bordrr">
-                                        <div>
-                                            <h6 class="name_profile ">Guy Hawkins</h6>
-                                            <p class="broker-p">Broker</p>
-                                            <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
-                                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                        <div>
-                                            <a class="view-more">View more</a> <br><br>
-                                            <a class="btn btn_contact">Contact</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row pt-4">
-                                <div class="col-md-1">
-                                    <img src="assets/images/Ellipse 1 (1).png" class="pro_imggs">
-                                </div>
-                                <div class="col-md-11 pl-5">
-                                    <div class=" bordrr">
-                                        <div>
-                                            <h6 class="name_profile ">Cameron Williamson</h6>
-                                            <p class="broker-p">Broker</p>
-                                            <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
-                                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                        <div>
-                                            <a class="view-more">View more</a> <br><br>
-                                            <a class="btn btn_contact">Contact</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row pt-4">
-                                <div class="col-md-1">
-                                    <img src="assets/images/Ellipse 1 (2).png" class="pro_imggs">
-                                </div>
-                                <div class="col-md-11 pl-5">
-                                    <div class=" bordrr">
-                                        <div>
-                                            <h6 class="name_profile ">Wade Warren</h6>
-                                            <p class="broker-p">Broker</p>
-                                            <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
-                                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                        <div>
-                                            <a class="view-more">View more</a> <br><br>
-                                            <a class="btn btn_contact">Contact</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-------------------------Tabs-2------------------------->
-                    <div id="menu1" class="tab-pane fade">
-                        <div class="content-table">
-                            <nav class="navbar1 pt-3">
-                                <h5 style="color:#000">People</h5>
-                                <p>368 Connection</p>
-                            </nav>
-                            <div class="row pt-4">
-                                <div class="col-md-1">
-                                    <img src="assets/images/Ellipse 1.png" class="pro_imggs">
-                                </div>
-                                <div class="col-md-11 pl-5">
-                                    <div class=" bordrr">
-                                        <div>
-                                            <h6 class="name_profile ">Guy Hawkins</h6>
-                                            <p class="broker-p">Broker</p>
-                                            <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
-                                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                        <div>
-                                            <a class="view-more">View more</a> <br><br>
-                                            <a class="btn btn_contact">Contact</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row pt-4">
-                                <div class="col-md-1">
-                                    <img src="assets/images/Ellipse 1 (1).png" class="pro_imggs">
-                                </div>
-                                <div class="col-md-11 pl-5">
-                                    <div class=" bordrr">
-                                        <div>
-                                            <h6 class="name_profile ">Cameron Williamson</h6>
-                                            <p class="broker-p">Broker</p>
-                                            <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
-                                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                        <div>
-                                            <a class="view-more">View more</a> <br><br>
-                                            <a class="btn btn_contact">Contact</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row pt-4">
-                                <div class="col-md-1">
-                                    <img src="assets/images/Ellipse 1 (2).png" class="pro_imggs">
-                                </div>
-                                <div class="col-md-11 pl-5">
-                                    <div class=" bordrr">
-                                        <div>
-                                            <h6 class="name_profile ">Wade Warren</h6>
-                                            <p class="broker-p">Broker</p>
-                                            <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
-                                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                        <div>
-                                            <a class="view-more">View more</a> <br><br>
-                                            <a class="btn btn_contact">Contact</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!---------------------------Tabs-3----------------->
-                    <div id="menu2" class="tab-pane fade">
-                        <div class="content-table py-4">
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img src="assets/images/round-square.png" class="pro_img-1">
-                                </div>
-                                <div class="col-md-6">
-                                    <h6 class="name_profile ">PIF Capital Pte Ltd</h6>
-                                    <p class="broker-p">pifCapital.com</p>
-                                    <p class="minmi_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit
-                                        aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                </div>
-                                <div class="col-md-3 text-center">
-                                    <div class="border-box">
-                                        <small class="contact-info">Contact Information</small>
-
-                                        <!-- ------------form start---------------- -->
-                                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-container form_position mt-1">
-                                            <div class="form-group">
-                                                <input type="text" formControlName="number" placeholder="67896652" class="form-control number_input" [ngClass]="{ 'is-invalid': submitted && f.number.errors }" />
-                                                <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
-                                                    <div *ngIf="f.number.errors.required">number is required</div>
-                                                    <div *ngIf="f.number.errors.number">number must be a valid email address</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-
-                                                <input type="text" formControlName="service" placeholder="Service Needed.." class="form-control number_input" [ngClass]="{ 'is-invalid': submitted && f.service.errors }" />
-                                                <div *ngIf="submitted && f.service.errors" class="invalid-feedback">
-                                                    <div *ngIf="f.service.errors.required">First Name is required</div>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-contact">Next</button>
-
-                                        </form>
-                                        <!-- ------------form end---------------- -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content-table">
-                            <div class="row pt-4">
-                                <div class="col-md-1">
-                                    <img src="assets/images/mono_profile.png" class="pro_imggs">
-                                </div>
-                                <div class="col-md-11 pl-5">
-                                    <div class=" bordrr">
-                                        <div>
-                                            <h6 class="name_profile ">Guy Hawkins</h6>
-                                            <p class="broker-p">Broker</p>
-                                            <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
-                                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                        <div>
-                                            <a class="view-more">View more</a> <br><br>
-                                            <a class="btn btn_contact">Contact</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row pt-4">
-                                <div class="col-md-1">
-                                    <img src="assets/images/mono_profile1.png" class="pro_imggs">
-                                </div>
-                                <div class="col-md-11 pl-5">
-                                    <div class=" bordrr">
-                                        <div>
-                                            <h6 class="name_profile ">Cameron Williamson</h6>
-                                            <p class="broker-p">Broker</p>
-                                            <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
-                                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                        </div>
-                                        <div>
-                                            <a class="view-more">View more</a> <br><br>
-                                            <a class="btn btn_contact">Contact</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!---------------------tabe-4------------->
-                    <div id="menu3" class="tab-pane fade">
-                        <div class="content-table">
-                            <!-- -------------------- -->
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="home-tabb" data-toggle="tab" href="#people" role="tab" aria-controls="home" aria-selected="true">People</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#companies" role="tab" aria-controls="profile" aria-selected="false">Companies</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#industry" role="tab" aria-controls="contact" aria-selected="false">Industry
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="people" role="tabpanel" aria-labelledby="home-tab">
-                                    <div class="content-table-2">
-                                        <div class="row pt-4">
-                                            <div class="col-md-2">
-                                                <img src="assets/images/Ellipse 1.png" class="pro_imggs">
-                                                <h6 class="name_guy mt-3">Guy Hawkins
-                                                </h6>
-                                            </div>
-                                            <div class="col-md-10 ">
-                                                <div class=" bordrr ">
-                                                    <div>
-                                                        <h6 class="name_profile">SP Floorings
-                                                        </h6>
-
-                                                        <p class="ament_p ">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt
-                                                            ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                                    </div>
-                                                    <div>
-                                                        <a class="view-more ">View more</a> <br><br>
-                                                        <a class="btn btn_contact ">Contact</a>
+                                            <!-- ------------form start---------------- -->
+                                            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-container form_position mt-1">
+                                                <div class="form-group">
+                                                    <input type="text" formControlName="number" placeholder="67896652" class="form-control number_input" [ngClass]="{ 'is-invalid': submitted && f.number.errors }" />
+                                                    <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.number.errors.required">number is required</div>
+                                                        <div *ngIf="f.number.errors.number">number must be a valid email address</div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row pt-4">
-                                            <div class="col-md-2">
-                                                <img src="assets/images/Ellipse 1 (1).png" class="pro_imggs">
-                                                <h6 class="name_guy mt-3">Guy Hawkins
-                                                </h6>
-                                            </div>
-                                            <div class="col-md-10 ">
-                                                <div class=" bordrr ">
-                                                    <div>
-                                                        <h6 class="name_profile">SP Floorings
-                                                        </h6>
 
-                                                        <p class="ament_p ">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt
-                                                            ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                                    </div>
-                                                    <div>
-                                                        <a class="view-more ">View more</a> <br><br>
-                                                        <a class="btn btn_contact ">Contact</a>
+                                                <div class="form-group">
+
+                                                    <input type="text" formControlName="service" placeholder="Service Needed.." class="form-control number_input" [ngClass]="{ 'is-invalid': submitted && f.service.errors }" />
+                                                    <div *ngIf="submitted && f.service.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.service.errors.required">First Name is required</div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row pt-4">
-                                            <div class="col-md-2">
-                                                <img src="assets/images/Ellipse 1 (2).png" class="pro_imggs">
-                                                <h6 class="name_guy mt-3">Guy Hawkins
-                                                </h6>
-                                            </div>
-                                            <div class="col-md-10 ">
-                                                <div class=" bordrr ">
-                                                    <div>
-                                                        <h6 class="name_profile">SP Floorings
-                                                        </h6>
+                                                <button type="submit" class="btn btn-contact">Next</button>
 
-                                                        <p class="ament_p ">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt
-                                                            ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                                    </div>
-                                                    <div>
-                                                        <a class="view-more ">View more</a> <br><br>
-                                                        <a class="btn btn_contact ">Contact</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </form>
+                                            <!-- ------------form end---------------- -->
                                         </div>
-
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="companies" role="tabpanel" aria-labelledby="profile-tab">Companies</div>
-                                <div class="tab-pane fade" id="industry" role="tabpanel" aria-labelledby="contact-tab">Industry</div>
                             </div>
-                            <!-- -------------------- -->
-                        </div>
-                    </div>
-                    <!----------------Tabe-5------------>
-                    <div id="menu4" class="tab-pane fade ">
-
-                        <div class="content-table">
-                            <div *ngIf="!hide">
+                            <div class="content-table">
                                 <div class="row pt-4">
                                     <div class="col-md-1">
                                         <img src="assets/images/mono_profile.png" class="pro_imggs">
@@ -421,7 +281,7 @@
                                             </div>
                                             <div>
                                                 <a class="view-more">View more</a> <br><br>
-                                                <a class="btn btn_contact" (click)="showHide()">Contact</a>
+                                                <a class="btn btn_contact">Contact</a>
                                             </div>
                                         </div>
                                     </div>
@@ -446,123 +306,442 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <!---------------------tabe-4------------->
+                        <div id="menu3" class="tab-pane fade">
+                            <div class="content-table">
+                                <!-- -------------------- -->
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link nav-link-1 active" id="home-tabb" data-toggle="tab" href="#people" role="tab" aria-controls="home" aria-selected="true">People</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link nav-link-1" id="profile-tab" data-toggle="tab" href="#companies" role="tab" aria-controls="profile" aria-selected="false">Companies</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link nav-link-1 " id="contact-tab" data-toggle="tab" href="#industry" role="tab" aria-controls="contact" aria-selected="false">Industry
+                    </a>
+                                    </li>
+                                </ul>
 
-                            <div *ngIf="hide">
-                                <div class="d-grid gap-2 d-flex justify-content-md-end pt-2">
-                                    <a class="btn contact-btn"> Contact</a>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="people" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="content-table-2">
+                                            <div class="row pt-4">
+                                                <div class="col-md-2">
+                                                    <img src="assets/images/Ellipse 1.png" class="pro_imggs">
+                                                    <h6 class="name_guy mt-3">Guy Hawkins
+                                                    </h6>
+                                                </div>
+                                                <div class="col-md-10 ">
+                                                    <div class=" bordrr ">
+                                                        <div>
+                                                            <h6 class="name_profile">SP Floorings
+                                                            </h6>
+
+                                                            <p class="ament_p ">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non
+                                                                deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                        </div>
+                                                        <div>
+                                                            <a class="view-more ">View more</a> <br><br>
+                                                            <a class="btn btn_contact ">Contact</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row pt-4">
+                                                <div class="col-md-2">
+                                                    <img src="assets/images/Ellipse 1 (1).png" class="pro_imggs">
+                                                    <h6 class="name_guy mt-3">Guy Hawkins
+                                                    </h6>
+                                                </div>
+                                                <div class="col-md-10 ">
+                                                    <div class=" bordrr ">
+                                                        <div>
+                                                            <h6 class="name_profile">SP Floorings
+                                                            </h6>
+
+                                                            <p class="ament_p ">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non
+                                                                deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                        </div>
+                                                        <div>
+                                                            <a class="view-more ">View more</a> <br><br>
+                                                            <a class="btn btn_contact ">Contact</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row pt-4">
+                                                <div class="col-md-2">
+                                                    <img src="assets/images/Ellipse 1 (2).png" class="pro_imggs">
+                                                    <h6 class="name_guy mt-3">Guy Hawkins
+                                                    </h6>
+                                                </div>
+                                                <div class="col-md-10 ">
+                                                    <div class=" bordrr ">
+                                                        <div>
+                                                            <h6 class="name_profile">SP Floorings
+                                                            </h6>
+
+                                                            <p class="ament_p ">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non
+                                                                deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                        </div>
+                                                        <div>
+                                                            <a class="view-more ">View more</a> <br><br>
+                                                            <a class="btn btn_contact ">Contact</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="companies" role="tabpanel" aria-labelledby="profile-tab">Companies
+                                    </div>
+                                    <div class="tab-pane fade" id="industry" role="tabpanel" aria-labelledby="contact-tab">Industry</div>
+                                </div>
+                                <!-- -------------------- -->
+                            </div>
+                        </div>
+                        <!----------------Tabe-5------------>
+                        <div id="menu4" class="tab-pane fade ">
+
+                            <div class="content-table">
+                                <div *ngIf="!hide">
+                                    <div class="row pt-4">
+                                        <div class="col-md-1">
+                                            <img src="assets/images/mono_profile.png" class="pro_imggs">
+                                        </div>
+                                        <div class="col-md-11 pl-5">
+                                            <div class=" bordrr">
+                                                <div>
+                                                    <h6 class="name_profile ">Guy Hawkins</h6>
+                                                    <p class="broker-p">Broker</p>
+                                                    <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt
+                                                        ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                </div>
+                                                <div>
+                                                    <a class="view-more">View more</a> <br><br>
+                                                    <a class="btn btn_contact" (click)="showHide()">Contact</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4">
+                                        <div class="col-md-1">
+                                            <img src="assets/images/mono_profile1.png" class="pro_imggs">
+                                        </div>
+                                        <div class="col-md-11 pl-5">
+                                            <div class=" bordrr">
+                                                <div>
+                                                    <h6 class="name_profile ">Cameron Williamson</h6>
+                                                    <p class="broker-p">Broker</p>
+                                                    <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt
+                                                        ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                </div>
+                                                <div>
+                                                    <a class="view-more">View more</a> <br><br>
+                                                    <a class="btn btn_contact">Contact</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="hide">
+                                    <div class="d-grid gap-2 d-flex justify-content-md-end pt-2">
+                                        <a class="btn contact-btn"> Contact</a>
+                                    </div>
+                                    <hr>
+                                    <div class="description">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Description </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
+                                                    est sit </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Year Established </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">10 Years</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Industries </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">Capital Markets </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Type </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">Privately Held </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Specialties </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">Capital Education, fundraising, IPO, Capital Wiisdom, Business model, and Corporate restructuring </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Website </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">http://www.pifcapital.com/ </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Tel </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">+65 8721 1919 </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Email </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">pifcapital@pifcapital.com</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Company Address </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">8 Marina View, <br> #43-056/057 Singapore, Singapore 018960, SG</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6>Year Established </h6>
+                                            </div>
+                                            <span>:</span>
+                                            <div class="col-md-8">
+                                                <p class="amet_para">10 Years</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="!show">
+            <div class="tab-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="side-card-1">
+                            <div class="srch_bar">
+                                <div class="stylish-input-group">
+                                    <span><img class="vec_serch_img" src="assets/images/Vector (15).png"> </span>
+                                    <input type="text" class="search-bar  " placeholder="Search">
+                                </div>
+                                <div class="box">
+                                    <a><img src="assets/images/Vector (16).png"> </a>
+                                </div>
+                            </div>
+                            <div class="inbox">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="chat-pro-img" src="assets/images/1chat.png">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="pt-2">
+                                            <h6 class="user_name">Darlene Robertson</h6>
+                                            <small class="user_name">Amet minim mollit non deserunt ullamco</small>
+                                        </div>
+                                    </div>
                                 </div>
                                 <hr>
-                                <div class="description">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Description </h6>
-                                        </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco
-                                                est sit </p>
-                                        </div>
-
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="chat-pro-img" src="assets/images/2chat.png">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Year Established </h6>
+                                    <div class="col-md-9">
+                                        <div class="pt-2">
+                                            <h6 class="user_name">Ronald Richards</h6>
+                                            <small class="user_name">Amet minim mollit non deserunt ullamco</small>
                                         </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">10 Years</p>
-                                        </div>
-
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Industries </h6>
-                                        </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">Capital Markets </p>
-                                        </div>
-
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="chat-pro-img" src="assets/images/3chat.png">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Type </h6>
+                                    <div class="col-md-9">
+                                        <div class="pt-2">
+                                            <h6 class="user_name">Ralph Edwards</h6>
+                                            <small class="user_name">Amet minim mollit non deserunt ullamco</small>
                                         </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">Privately Held </p>
-                                        </div>
-
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Specialties </h6>
-                                        </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">Capital Education, fundraising, IPO, Capital Wiisdom, Business model, and Corporate restructuring </p>
-                                        </div>
-
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="chat-pro-img" src="assets/images/4chat.png">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Website </h6>
+                                    <div class="col-md-9">
+                                        <div class="pt-2">
+                                            <h6 class="user_name">Theresa Webb</h6>
+                                            <small class="user_name">Amet minim mollit non deserunt ullamco</small>
                                         </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">http://www.pifcapital.com/ </p>
-                                        </div>
-
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Tel </h6>
-                                        </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">+65 8721 1919 </p>
-                                        </div>
-
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="chat-pro-img" src="assets/images/5chat.png">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Email </h6>
+                                    <div class="col-md-9">
+                                        <div class="pt-2">
+                                            <h6 class="user_name">Dianne Russell</h6>
+                                            <small class="user_name">Amet minim mollit non deserunt ullamco</small>
                                         </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">pifcapital@pifcapital.com</p>
-                                        </div>
-
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Company Address </h6>
-                                        </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">8 Marina View, <br> #43-056/057 Singapore, Singapore 018960, SG</p>
-                                        </div>
-
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="chat-pro-img" src="assets/images/6chat.png">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6>Year Established </h6>
+                                    <div class="col-md-9">
+                                        <div class="pt-2">
+                                            <h6 class="user_name">Guy Hawkins</h6>
+                                            <small class="user_name">Amet minim mollit non deserunt ullamco</small>
                                         </div>
-                                        <span>:</span>
-                                        <div class="col-md-8">
-                                            <p class="amet_para">10 Years</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="tab-content2">
+                            <div class="type_top">
+                                <div class="row">
+                                    <div class="col-md-9 text-center">
+                                        <p class="yesterday_p">Yesterday</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="msg-top" type="button">
+                                            <a><img class="call_img" src="assets/images/Vector (13).png"></a>
+                                            <a><img class="call_img" src="assets/images/Vector (14).png"></a>
                                         </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="mesgs">
+                                <div class="msg_history">
+                                    <div class="incoming_msg">
+                                        <div class="incoming_msg_img"> <img src="assets/images/6chat.png" alt=""> </div>
+                                        <div class="received_msg">
+                                            <div class="received_withd_msg">
+                                                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outgoing_msg">
+                                        <div class="sent_msg">
+                                            <p>
+                                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit </p>
+                                        </div>
+                                    </div>
+                                    <div class="incoming_msg">
+                                        <div class="incoming_msg_img"> <img src="assets/images/6chat.png" alt="sunil"> </div>
+                                        <div class="received_msg">
+                                            <div class="received_withd_msg">
+                                                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="type_msg">
+                                    <div class="input_msg_write">
+                                        <input type="text" class="write_msg" placeholder="Type a message" />
+                                        <a class="mr-5"><img src="assets/images/Vector (11).png"></a>
+                                        <a><img src="assets/images/Vector (10).png"></a>
 
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="side-card2">
+                            <img class="pro_imgs" src="assets/images/Ellipse 1.png">
+                            <h6 class="name_alma">Alma lawson</h6>
+                            <small class="name_active">Active yesterday</small>
+                            <div class="row p-3 ">
+                                <div class="col-md-6 p-3 " id="line">
+                                    <p class="nu_cont"><span> 358 </span><br> Connection</p>
+
+                                </div>
+                                <div class="col-md-6 p-3 " id="line2">
+                                    <p class="nu_cont"><span> 25 </span><br> Views</p>
+                                </div>
+                            </div>
+                            <div class="media-icon">
+                                <ul class="ul_profl">
+                                    <li class="li_prof"><img class="twit-img" src="assets/images/Group.png">bdtech.com/jackson.graham</li>
+                                    <li class="li_prof mt-3"><img class="twit-img" src="assets/images/Vector (12).png">jackson.graham</li>
+                                </ul>
+                            </div>
 
                         </div>
 
+
+
                     </div>
+
                 </div>
-
             </div>
+        </div>
 
-
-            <!-- <app-common-footer></app-common-footer> -->
+    </div>

@@ -1,46 +1,54 @@
 img.logo_img {
-  width: 51%;
-  margin: 0 auto;
-  justify-content: center;
-  display: flex;
+    width: 51%;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
 }
+
 .imyu {
-  padding: 8px 0 5px 0;
-  width: 417px;
+    padding: 8px 0 5px 0;
+    width: 417px;
 }
+
 li.nav_li {
-  padding: 0 17px 0 9px;
+    padding: 0 17px 0 9px;
 }
+
 a.nav_fnt {
-  font-size: 16px;
-  line-height: 18.75px;
-  font-weight: 400;
-  padding: 3px;
+    font-size: 16px;
+    line-height: 18.75px;
+    font-weight: 400;
+    padding: 3px;
 }
+
 a.btn_login {
-  background: #28a0a4;
-  color: #fff;
-  border-radius: 40px;
-  height: 40px;
-  width: 89px;
+    background: #28a0a4;
+    color: #fff;
+    border-radius: 40px;
+    height: 40px;
+    width: 89px;
 }
+
 nav.navbar_bg {
-  padding: 0 32px 0 39px;
+    padding: 0 32px 0 39px;
 }
+
 // ----------------------------
 nav.pad_ing {
-  padding: 8px 67px;
+    padding: 8px 67px;
 }
+
 input.input_filed {
-  width: 95%;
-  background: #f7f8f9;
-  border: none;
-  height: 32px;
-  padding: 0 0 2px 9px;
-  border-radius: 8px;
+    width: 95%;
+    background: #f7f8f9;
+    border: none;
+    height: 32px;
+    padding: 0 0 2px 9px;
+    border-radius: 8px;
 }
+
 .input_bg {
-  width: 43%;
-  background: #f7f8f9;
-  border-radius: 8px;
+    width: 43%;
+    background: #f7f8f9;
+    border-radius: 8px;
 }
