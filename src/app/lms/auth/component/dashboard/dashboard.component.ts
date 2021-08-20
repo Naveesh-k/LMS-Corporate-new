@@ -3,8 +3,9 @@ import { ColorModeService } from 'src/app/service/color-mode.service';
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import axios from 'axios';
+import { GobalService } from 'src/app/lms/global-services/gobal.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -27,10 +28,16 @@ export class DashboardComponent implements OnInit {
   };
   loggedIn: boolean = false;
   sub: any;
+  signUpData:any = {};
+  profilepic:any = ''
+  tokenId:any = ''
+  provider:any = ''
   constructor(
     private route: ActivatedRoute,
+    public router :Router,
     private authService: SocialAuthService,
-    public mode: ColorModeService // dark-light
+    public mode: ColorModeService, // dark-light
+    public _service:GobalService, // api
   ) {}
   // public subscribeToisInitialized(){
   //     this._linkedInService.isInitialized$.subscribe({
@@ -51,6 +58,7 @@ export class DashboardComponent implements OnInit {
     window.location.href = oauthUrl;
 };
   ngOnInit(): void {
+
     // dark-light
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
@@ -64,6 +72,12 @@ export class DashboardComponent implements OnInit {
       this.user = user;
       this.loggedIn = (user != null);
       console.log(this.user);
+      if(this.user){
+        this.signUp()
+        this.router.navigateByUrl('/lms/auth/sign-up')
+      }
+      localStorage.setItem("userDetail", JSON.stringify(this.user));
+
       setTimeout(() => {
         this.signOut();
 
@@ -80,9 +94,21 @@ export class DashboardComponent implements OnInit {
         }
       }
     );
+    // -----------------------------
+    let getLocalStorage:any =  localStorage.getItem('userDetail');
+    let signUpData:any = JSON.parse(getLocalStorage);
+    // this.signUpData1 = JSON.parse(getLocalStorage);
+    if (signUpData && signUpData.photoUrl) {
+      this.profilepic = signUpData.photoUrl;
+      this.tokenId = signUpData.idToken
+      this.provider = signUpData.provider
+      console.log(this.provider)
+    }
+    // -----------------------------
   }
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.signUp()
   }
 
   signInWithFB(): void {
@@ -126,4 +152,30 @@ export class DashboardComponent implements OnInit {
 
     });
   }
+
+
+  signUp() {
+    let extraVariable = {
+      group:'',
+      market:'',
+      location:'',
+      size_of_team:'',
+      contact_number:'',
+      category:'',
+      password:'',
+      topic:'',
+      on_boarding:'1'
+    }
+    // this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
+    this.signUpData['profile'] = this.profilepic
+    this.signUpData['social_id'] = this.tokenId
+    this.signUpData['provider'] = this.provider
+    console.log(this.signUpData.provider)
+    console.log(this.signUpData)
+    this._service.getSignUpData(this.signUpData).subscribe(res => {
+      let response = res;
+      console.log(response)
+    })
+  }
+
 }

@@ -1,17 +1,59 @@
+// customic ui
+.bg-silver {
+    text-align: center;
+    padding: 18px 0;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.bg-grenish {
+    background: #28a0a4;
+    text-align: center;
+    padding: 18px 0;
+    color: #fff;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+a.btn-done {
+    background: #28a0a4;
+    text-decoration: none;
+    width: 100%;
+    border-radius: 9px;
+    color: #fff;
+}
+
+img.dynamic_signup_img {
+    width: 22%;
+    border-radius: 10px;
+}
+
+.mt {
+    margin-top: 24px;
+}
+
+.mtt {
+    margin-top: 28px;
+}
+
+// end customic ui
 @media screen and (min-device-width: 300px) and (max-device-width: 499px) {
-  section#dashboard-bg {
-    padding: 0;
-  }
-  .bg_col-1 {
-    padding: 23px 10px 31px 10px;
-  }
+    section#dashboard-bg {
+        padding: 0;
+    }
+    .bg_col-1 {
+        padding: 23px 10px 31px 10px;
+    }
 }
+
 @media only screen and (max-width: 1499px) {
-  .bg_col-1 {
-    // height: 89vh;
-    height: 100vh;
-}
-.form-group {
-  margin-bottom: 6px;
-}
+    .bg_col-1 {
+        // height: 89vh;
+        height: 100vh;
+    }
+    .form-group {
+        margin-bottom: 6px;
+    }
 }

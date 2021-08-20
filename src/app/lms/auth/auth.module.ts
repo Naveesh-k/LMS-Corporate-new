@@ -13,6 +13,8 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { GobalService } from 'src/app/lms/global-services/gobal.service';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -21,7 +23,7 @@ import {
     SignUpComponent,
     DashboardComponent,
   ],
-  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule,  ],
+  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule,HttpClientModule  ],
   providers: [{
     provide: 'SocialAuthServiceConfig',
     useValue: {
@@ -40,7 +42,8 @@ import {
       ]
     } as SocialAuthServiceConfig
 
-  }
+  },
+  GobalService
 
 ],
 
