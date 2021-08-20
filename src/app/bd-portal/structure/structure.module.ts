@@ -6,12 +6,14 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { HeaderComponent } from './common/header/header.component';
 import { StructureComponent } from './structure.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     StructureComponent,
     ProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,

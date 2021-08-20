@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -57,7 +58,7 @@ export class SignUpComponent implements OnInit {
   tokenId:any = ''
   provider:any = ''
 
-  constructor(
+  constructor(public router: Router,
     private formBuilder: FormBuilder,
     public _service:GobalService, // api
     public mode: ColorModeService // dark-light
@@ -143,8 +144,12 @@ export class SignUpComponent implements OnInit {
     console.log(this.signUpData)
     this._service.getSignUpData(this.signUpData).subscribe(res => {
       let response = res;
+      if(response.success == false){
+        this.router.navigateByUrl('/lms/auth/login')
+      }
       console.log(response)
     })
+    // this.router.navigateByUrl('/lms/app/home')
   }
 
 

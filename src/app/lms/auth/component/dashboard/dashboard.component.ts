@@ -174,6 +174,11 @@ export class DashboardComponent implements OnInit {
     console.log(this.signUpData)
     this._service.getSignUpData(this.signUpData).subscribe(res => {
       let response = res;
+      if(response.success == true){
+        this.router.navigateByUrl('/lms/auth/sign-up')
+      }else{
+        this.router.navigateByUrl('/lms/auth/login')
+      }
       console.log(response)
     })
   }
