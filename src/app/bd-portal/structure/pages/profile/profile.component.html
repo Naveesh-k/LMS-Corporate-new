@@ -7,23 +7,18 @@
                     <div class="navbar justify-content-center w-100">
                         <ul class="nav nav-tabs" role="tablist ">
                             <li class="nav-item">
-                                <!-- <a class="nav-link active" data-toggle="tab" href="#home">BD Execs</a> -->
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">BD Execs</a>
                             </li>
                             <li class="nav-item">
-                                <!-- <a class="nav-link" data-toggle="tab" href="#menu1"> Brokers </a> -->
                                 <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu1" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
                             </li>
                             <li class="nav-item">
-                                <!-- <a class="nav-link" data-toggle="tab" href="#menu2">Vendors</a> -->
                                 <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu2" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
                             </li>
                             <li class="nav-item">
-                                <!-- <a class="nav-link" data-toggle="tab" href="#menu3"> Suppliers </a> -->
                                 <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu3" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
                             </li>
                             <li class="nav-item">
-                                <!-- <a class="nav-link" data-toggle="tab" href="#menu4"> Companies</a> -->
                                 <a class="nav-link " id="home-tab" data-toggle="tab" href="#menu4" role="tab" aria-controls="home" aria-selected="true">Brokers</a>
                             </li>
                         </ul>
@@ -864,109 +859,325 @@
             </div>
         </div>
 
-        <div class="row" *ngIf="!showChat">
-            <div class="col-md-10">
-                <div class="content-table">
-                    <nav class="navbar">
-                        <a class="navbar-brand">People</a>
-                        <div class="d-flex">
-                            <p>368 Connection</p>
+        <div class="container px-5">
+            <div *ngIf="showChat">
+                <div class="tab-content px-4 py-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav class="navbar nav_bord">
+                                <a class=" people_a">People</a>
+                                <div class="pt-3">
+                                    <p class="number_result_p">10 Result</p>
+                                </div>
+                            </nav>
+                            <div class="row mt-3">
+                                <div class="col-md-1">
+                                    <img src="assets/images/Ellipse 1 (7).png" class="" alt="...">
+                                </div>
+                                <div class="col-md-11">
+                                    <div class=" media_body">
+                                        <div class="">
+                                            <h5 class="dianne_russell_h5">Dianne Russell</h5>
+                                            <p class="lawyer_p">Lawyer</p>
+                                        </div>
+                                        <a class="btn btn-contact">Contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-1">
+                                    <img src="assets/images/Ellipse 1 (10).png" class="" alt="...">
+                                </div>
+                                <div class="col-md-11">
+                                    <div class=" media_body">
+                                        <div class="">
+                                            <h5 class="dianne_russell_h5">Savannah Nguyen</h5>
+                                            <p class="lawyer_p">Lawyer</p>
+                                        </div>
+                                        <a class="btn btn-contact">Contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-1">
+                                    <img src="assets/images/Ellipse 1 (8).png" class="" alt="...">
+                                </div>
+                                <div class="col-md-11">
+                                    <div class=" media_body">
+                                        <div class="">
+                                            <h5 class="dianne_russell_h5">Courtney Henry</h5>
+                                            <p class="lawyer_p">Lawyer</p>
+                                        </div>
+                                        <a class="btn btn-contact">Contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-1">
+                                    <img src="assets/images/Ellipse 1 (9).png" class="" alt="...">
+                                </div>
+                                <div class="col-md-11">
+                                    <div class=" media_body">
+                                        <div class="">
+                                            <h5 class="dianne_russell_h5">Cody Fishern</h5>
+                                            <p class="lawyer_p">Lawyer</p>
+                                        </div>
+                                        <a class="btn btn-contact">Contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12 text-center">
+                                    <a class="btn-view_5"> View (5) more</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content mt-4 px-4 py-3">
+                    <nav class="navbar nav_bord">
+                        <a class=" people_a">Companies</a>
+                        <div class="pt-3">
+                            <p class="number_result_p">20 Result</p>
                         </div>
                     </nav>
-                    <hr>
-                    <ul class="list-group list-group-flush list-unstyled">
-                        <li class="media">
-                            <img src="assets/images/Ellipse 1 (7).png" class="mr-3" alt="...">
-
-                            <div class="media-body">
-                                <h5>Dianne Russell</h5>
-                                <p>Lawyer</p>
+                    <div class="row pt-4">
+                        <div class="col-md-1">
+                            <img src="assets/images/mono_profile.png" class="pro_imggs">
+                        </div>
+                        <div class="col-md-11 pl-5">
+                            <div class=" bordrr">
+                                <div>
+                                    <h6 class="name_profile ">PIF Capital Pte Ltd
+                                    </h6>
+                                    <p class="broker-p">pifCapital.com</p>
+                                    <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit
+                                        aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                </div>
+                                <div>
+                                    <a class="view-more">View more</a> <br><br>
+                                    <a class="btn btn_contact">Contact</a>
+                                </div>
                             </div>
-                            <a class="btn btn-primary">Contact</a>
-                        </li>
-                        <li class="media my-4">
-                            <img src="assets/images/Ellipse 1 (10).png" class="mr-3" alt="...">
-                            <div class="media-body">
-                                <h5>Savannah Nguyen</h5>
-                                <p>Lawyer </p>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="col-md-1">
+                            <img src="assets/images/mono_profile1.png" class="pro_imggs">
+                        </div>
+                        <div class="col-md-11 pl-5">
+                            <div class=" bordrr">
+                                <div>
+                                    <h6 class="name_profile ">Alibaba Group</h6>
+                                    <p class="broker-p">Alibabagroup.com</p>
+                                    <p class="ament_p">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit
+                                        aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                </div>
+                                <div>
+                                    <a class="view-more">View more</a> <br><br>
+                                    <a class="btn btn_contact">Contact</a>
+                                </div>
                             </div>
-                            <a class="btn btn-primary">Contact</a>
-                        </li>
-                        <li class="media">
-                            <img src="assets/images/Ellipse 1 (8).png" class="mr-3" alt="...">
-
-                            <div class="media-body">
-                                <h5>Courtney Henry</h5>
-                                <p>Lawyer</p>
-                            </div>
-                            <a class="btn btn-primary">Contact</a>
-                        </li>
-                        <li class="media my-4">
-                            <img src="assets/images/Ellipse 1 (9).png" class="mr-3" alt="...">
-                            <div class="media-body">
-                                <h5>Savannah Nguyen</h5>
-                                <p>Lawyer </p>
-                            </div>
-                            <a class="btn btn-primary">Contact</a>
-                        </li>
-                    </ul>
-                    <div class="more">
-                        <p>View (5) more</p>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <a class="btn-view_5"> View (5) more</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-------------------------------------->
-        <div class="row mt-5">
-            <div class="col-md-10">
-                <div class="content-table2">
-                    <nav class="navbar pt-3">
-                        <div class="container-fluid">
-                            <a class="navbar-brand">Companies</a>
-                            <div class="d-flex">
-                                <p>02 Result</p>
+
+
+            <div *ngIf="!showChat">
+                <div class="tab-contenty px-4 py-3">
+
+                    <!-- ------------------ -->
+
+                    <div class="row">
+                        <div class="col-md-8 ">
+                            <div class="bg_wh tab-content">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img class="w-100 img-cur" src="../../../assets/images/Mask Group.png" alt="" />
+
+                                    </div>
+                                    <div class="col-md-7 mar_gin"></div>
+                                </div>
+
+                                <!-- ------------------------ -->
+                                <form class="mt-5">
+                                    <!-- [formGroup]="loginForm" (ngSubmit)="onSubmit()" -->
+                                    <div class="form-row"></div>
+                                    <div class="form-group">
+                                        <label class="fnt_wigt">Name</label>
+                                        <input type="text" class="form-control email_input" placeholder="Jason Tan" />
+                                        <!-- formControlName="email" -->
+                                        <!-- [ngClass]="{ 'is-invalid': submitted && f.email.errors }" -->
+                                        <!-- <div
+                                      *ngIf="submitted && f.email.errors"
+                                      class="invalid-feedback"
+                                    >
+                                      <div
+                                        class="email_validation"
+                                        *ngIf="f.email.errors.required"
+                                      >
+                                        Email is required
+                                      </div>
+                                      <div *ngIf="f.email.errors.email">
+                                        Email must be a valid email address
+                                      </div>
+                                    </div> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="fnt_wigt">Profile</label>
+                                        <input type="text" class="form-control email_input" placeholder="PIF Capital Pte Ltd" />
+                                        <!-- formControlName="email" -->
+                                        <!-- [ngClass]="{ 'is-invalid': submitted && f.email.errors }" -->
+                                        <!-- <div
+                                      *ngIf="submitted && f.email.errors"
+                                      class="invalid-feedback"
+                                    >
+                                      <div
+                                        class="email_validation"
+                                        *ngIf="f.email.errors.required"
+                                      >
+                                        Email is required
+                                      </div>
+                                      <div *ngIf="f.email.errors.email">
+                                        Email must be a valid email address
+                                      </div>
+                                    </div> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="fnt_wigt">Mobile No.</label>
+                                        <input type="text" class="form-control email_input" placeholder="8675 6788" />
+                                        <!-- formControlName="email" -->
+                                        <!-- [ngClass]="{ 'is-invalid': submitted && f.email.errors }" -->
+                                        <!-- <div
+                                      *ngIf="submitted && f.email.errors"
+                                      class="invalid-feedback"
+                                    >
+                                      <div
+                                        class="email_validation"
+                                        *ngIf="f.email.errors.required"
+                                      >
+                                        Email is required
+                                      </div>
+                                      <div *ngIf="f.email.errors.email">
+                                        Email must be a valid email address
+                                      </div>
+                                    </div> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="fnt_wigt">Email</label>
+                                        <input type="text" class="form-control email_input" placeholder="jasontan256@world.com" />
+                                        <!-- formControlName="email" -->
+                                        <!-- [ngClass]="{ 'is-invalid': submitted && f.email.errors }" -->
+                                        <!-- <div
+                                      *ngIf="submitted && f.email.errors"
+                                      class="invalid-feedback"
+                                    >
+                                      <div
+                                        class="email_validation"
+                                        *ngIf="f.email.errors.required"
+                                      >
+                                        Email is required
+                                      </div>
+                                      <div *ngIf="f.email.errors.email">
+                                        Email must be a valid email address
+                                      </div>
+                                    </div> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="fnt_wigt">Language</label>
+                                        <!-- <input type="text" class="form-control email_input" /> -->
+                                        <select formControlName="title" class="form-control input_bg">
+                                      <option value="">English</option>
+                                      <option value="Mr">Mr</option>
+                                      <option value="Mrs">Mrs</option>
+                                      <option value="Miss">Miss</option>
+                                      <option value="Ms">Ms</option>
+                                    </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="fnt_wigt">Country</label> <br />
+                                        <!-- <input type="text" class="form-control email_input" /> -->
+                                        <select formControlName="title" class="form-control input_bg">
+                                      <option value="">English</option>
+                                      <option value="Mr">Mr</option>
+                                      <option value="Mrs">Mrs</option>
+                                      <option value="Miss">Miss</option>
+                                      <option value="Ms">Ms</option>
+                                    </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="fnt_wigt">About me</label> <br />
+                                        <input type="text" class="form-control email_input1" />
+                                    </div>
+
+                                    <div class="button_flx">
+                                        <button class="btn btn-register mr-1">
+                                      Cancel
+                                    </button>
+                                        <button class="btn btn-update_pro mr-1">
+                                      Update Profile
+                                    </button>
+                                    </div>
+                                </form>
+                                <!-- ------------------------ -->
                             </div>
                         </div>
-                    </nav>
-                    <hr>
-                    <ul class="list-group list-group-flush list-unstyled">
+                        <div class="col-md-4 mar_gin">
+                            <div class="bg_wh tab-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Dark Mode</h6>
+                                        <br />
+                                        <h6>Select font</h6>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <label class="switch">
+                                      <input type="checkbox" />
+                                      <span class="slider round"></span>
+                                    </label>
 
-                        <li class="media">
-                            <img src="assets/images/img1.png" class="mr-3" alt="...">
-                            <div class="media-body">
-                                <h5>PIF Capital Pte Ltd</h5>
-                                <h6>pifCapital.com</h6>
-                                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua
-                                    dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                                        <!-- <label class="switch">
+                                      <input
+                                        type="checkbox"
+                                        [(ngModel)]="darkMode"
+                                        (ngModelChange)="dark($event)"
+                                      />
+                                      <span class="slider round"></span>
+                                    </label> -->
+
+                                        <br />
+                                        <div class="dropdown">
+                                            <button class="dropbtn">
+                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                      </button>
+                                            <div class="dropdown-content">
+                                                <a href="#">Link 1</a>
+                                                <a href="#">Link 2</a>
+                                                <a href="#">Link 3</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <ul>
-                                <li class="view"><a href="#">View more</a></li>
-                                <li class="btn btn-primary" id="btun">Contact</li>
-                            </ul>
-
-                        </li>
-                        <li class="media">
-                            <img src="assets/images/img1.png" class="mr-3" alt="...">
-                            <div class="media-body">
-                                <h5>Alibaba Group</h5>
-                                <h6>Alibabagroup.com</h6>
-                                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua
-                                    dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
-                            </div>
-                            <ul>
-                                <li class="view"><a href="#">View more</a></li>
-                                <li class="btn btn-primary" id="btun">Contact</li>
-                            </ul>
-
-                        </li>
-                    </ul>
-                    <div class="more">
-                        <p>View (5) more</p>
+                        </div>
                     </div>
+
+                    <!-- ------------------ -->
+
                 </div>
             </div>
 
+
         </div>
+
+
     </div>
 
 </div>

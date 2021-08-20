@@ -819,21 +819,6 @@ img.size_img {
     margin-right: 15px;
 }
 
-.btn {
-    padding: 10px 40px;
-    font-size: 20px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #058B96;
-    box-shadow: 2px 0 5px 0 rgb(153, 153, 153);
-    border-radius: 50px;
-    margin-top: 30px;
-    margin-right: 25px;
-}
-
 .btn:hover {
     background-color: #058B96;
     box-shadow: 2px 0 5px 0 rgb(66, 64, 64);
@@ -859,4 +844,185 @@ img.size_img {
     color: #058B96;
     padding: 7px;
     border-top: 1px solid #E5E5E5;
+}
+
+a.people_a {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+p.number_result_p {
+    font-size: 14px;
+}
+
+nav.nav_bord {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+h5.dianne_russell_h5 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+p.lawyer_p {
+    margin: 0;
+    color: #058B96;
+    font-size: 15px;
+}
+
+a.btn-contact {
+    color: #ffffff;
+    background: #058B96;
+    padding: 6px 31px;
+    height: 36px;
+    border-radius: 32px;
+    font-size: 14px;
+    box-shadow: 0px 5px 10px 0px #058b9647;
+}
+
+.media_body {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 12px 0 22px 0;
+}
+
+a.btn-view_5 {
+    color: #058b96;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+input.email_input {
+    background: #f6f6f6;
+    border: none;
+    border-radius: 7px;
+}
+
+input.email_input1 {
+    background: #f6f6f6;
+    border: none;
+    border-radius: 7px;
+    height: 63px;
+}
+
+.button_flx {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button.btn-update_pro {
+    background: #229B9F;
+    color: #ffffff;
+    padding: 0 15px;
+    border-radius: 10px;
+}
+
+button.btn-register {
+    background: #f6f6f6;
+    color: #000000;
+} //  toggle css
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #2196f3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+//  end toggle css
+// dropdown
+.dropbtn {
+    background-color: #fff;
+    color: #000;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
