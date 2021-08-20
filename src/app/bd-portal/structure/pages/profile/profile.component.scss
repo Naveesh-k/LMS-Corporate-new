@@ -774,3 +774,89 @@ img.size_img {
 }
 
 // ------------ end video call-------------
+// ---------------------------------------------
+.navbar p {
+    color: #058B96;
+}
+
+.content-table {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 #000;
+    border-radius: 15px;
+    left: 15vh;
+    top: 4vh;
+    width: 100%;
+}
+
+.content-table2 {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 #000;
+    border-radius: 15px;
+    left: 15vh;
+    top: 100vh;
+    width: 100%;
+}
+
+.media {
+    padding-left: 15px;
+}
+
+.media h6 {
+    color: #058B96;
+}
+
+.media-body {
+    margin-left: 5px;
+    text-align: justify;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.view {
+    text-align: right;
+    margin-right: 15px;
+}
+
+.btn {
+    padding: 10px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #058B96;
+    box-shadow: 2px 0 5px 0 rgb(153, 153, 153);
+    border-radius: 50px;
+    margin-top: 30px;
+    margin-right: 25px;
+}
+
+.btn:hover {
+    background-color: #058B96;
+    box-shadow: 2px 0 5px 0 rgb(66, 64, 64);
+}
+
+#btun {
+    padding: 10px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #058B96;
+    box-shadow: 2px 0 5px 0 rgb(153, 153, 153);
+    border-radius: 50px;
+    margin-top: 50px;
+    margin-right: 25px;
+}
+
+.more {
+    text-align: center;
+    color: #058B96;
+    padding: 7px;
+    border-top: 1px solid #E5E5E5;
+}

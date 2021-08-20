@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ColorModeService } from 'src/app/service/color-mode.service';
+import { GobalService } from 'src/app/lms/global-services/gobal.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,29 +11,81 @@ import { ColorModeService } from 'src/app/service/color-mode.service';
 export class SignUpComponent implements OnInit {
   registerForm: any = FormGroup;
   registerFormSec: any = FormGroup;
+  hideFilledForm:boolean = false;
+  hideFilledForm1:boolean = false;
   submitted = false;
   submittedSec = false;
   darkMode: boolean = false;
+  formData = new FormData();
+  showSelect: boolean = false;
+   signUpData:any = {};
+   customizeTopic : any = [];
+  topics: any = [{
+    'name': 'Road To IPO',
+    'active':false,
+  },
+  {
+    'name': 'Entrepreneurship',
+    'active':false,
+  },
+  {
+    'name': 'Capital Raising',
+    'active':false,
+  },
+  {
+    'name': 'Trade Finance',
+    'active':false,
+  },
+  {
+    'name': 'Investing',
+    'active':false,
+  },
+  {
+    'name': 'CrowdFunding',
+    'active':false,
+  },
+  {
+    'name': 'Business Law',
+    'active':false,
+  },
+  {
+    'name': 'Merger & Acquisitions',
+    'active':false,
+  }];
+
+  profilepic:any = ''
+  tokenId:any = ''
+  provider:any = ''
 
   constructor(
     private formBuilder: FormBuilder,
+    public _service:GobalService, // api
     public mode: ColorModeService // dark-light
   ) {}
 
   ngOnInit(): void {
+    let getLocalStorage:any =  localStorage.getItem('userDetail');
+    let signUpData:any = JSON.parse(getLocalStorage);
+    // this.signUpData1 = JSON.parse(getLocalStorage);
+    if (signUpData && signUpData.photoUrl) {
+      this.profilepic = signUpData.photoUrl;
+      this.tokenId = signUpData.idToken
+      this.provider = signUpData.provider
+      console.log(this.provider)
+    }
+
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      acceptTerms: [false, Validators.requiredTrue],
+      firstName: signUpData.firstName,
+      lastName: signUpData.lastName,
+      email: signUpData.email,
+      profile: '',
     });
+
     this.registerFormSec = this.formBuilder.group({
-      title: ['', Validators.required],
+      industry: ['', Validators.required],
       position: ['', Validators.required],
       jobTitle: ['', Validators.required],
-      experience: ['', [Validators.required, Validators.email]],
-      profile: ['', [Validators.required, Validators.email]],
-      acceptTerms: [false, Validators.requiredTrue],
+      experience: ['', [Validators.required]]
     });
 
     // dark-light
@@ -44,6 +97,9 @@ export class SignUpComponent implements OnInit {
       }
     });
     //end dark-light
+
+
+
   }
 
   // convenience getter for easy access to form fields
@@ -56,22 +112,58 @@ export class SignUpComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    }
-    alert(
-      'SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4)
-    );
+    this.hideFilledForm = true;
+    this.hideFilledForm1 = true;
+    this.signUpData = this.registerForm.value
   }
 
-  onNext() {
+  signUp() {
+    this.hideFilledForm1 = false;
+    this.showSelect= true;
     this.submittedSec = true;
     if (this.registerFormSec.invalid) {
       return;
     }
-    // display form values on success
-    alert(
-      'SUCCESS!! :-)\n\n' + JSON.stringify(this.registerFormSec.value, null, 4)
-    );
+    let extraVariable = {
+      group:'',
+      market:'',
+      location:'',
+      size_of_team:'',
+      contact_number:'',
+      category:'',
+      password:'',
+      topic:'',
+      on_boarding:'1'
+    }
+    this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
+    this.signUpData['profile'] = this.profilepic
+    this.signUpData['social_id'] = this.tokenId
+    this.signUpData['provider'] = this.provider
+    console.log(this.signUpData.provider)
+    console.log(this.signUpData)
+    this._service.getSignUpData(this.signUpData).subscribe(res => {
+      let response = res;
+      console.log(response)
+    })
   }
+
+
+  selectedTopics(item:any){
+    this.topics.forEach((element:any)=>{
+       if(item.name === element.name){
+        element.active = !item.active;
+        let index = this.customizeTopic.indexOf(element.name)
+        element.active ?
+          this.customizeTopic.push(element.name):
+          this.customizeTopic.splice(index, 1)
+       }
+    })
+    console.log(this.customizeTopic)
+  }
+
+  done(){
+    this.signUpData['customize_topic'] =  this.customizeTopic
+    this.signUp()
+  }
+
 }
