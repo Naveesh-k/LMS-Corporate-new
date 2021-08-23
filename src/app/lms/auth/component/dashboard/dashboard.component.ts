@@ -73,8 +73,8 @@ export class DashboardComponent implements OnInit {
       this.loggedIn = (user != null);
       console.log(this.user);
       if(this.user){
-        this.signUp()
-        this.router.navigateByUrl('/lms/auth/sign-up')
+        this.signUp(this.user)
+        // this.router.navigateByUrl('/lms/auth/sign-up')
       }
       localStorage.setItem("userDetail", JSON.stringify(this.user));
 
@@ -108,7 +108,7 @@ export class DashboardComponent implements OnInit {
   }
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.signUp()
+    // this.signUp()
   }
 
   signInWithFB(): void {
@@ -154,25 +154,45 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  signUp() {
-    let extraVariable = {
-      group:'',
-      market:'',
-      location:'',
-      size_of_team:'',
-      contact_number:'',
-      category:'',
-      password:'',
-      topic:'',
-      on_boarding:'1'
+  signUp(data: any) {
+    console.log(data);
+    // let extraVariable = {
+    //   group:'',
+    //   market:'',
+    //   location:'',
+    //   size_of_team:'',
+    //   contact_number:'',
+    //   category:'',
+    //   password:'',
+    //   topic:'',
+    //   on_boarding:'1'
+    // }
+    let request = {
+      profile: data.photoUrl,
+      provider: data.provider,
+      social_id: data.photoUrl,
+      first_name: '',
+      last_name : '',
+      email: '',
+      password: '',
+      group_val: '',
+      market: '',
+      location: '',
+      size_of_team: '0',
+      contact_number: '',
+      category: '',
+      topic: '',
+      on_boarding: '',
+      industry  : '',
+      position: '',
+      job_title: '',
+      experience: '',
+      customize_topic : [],
     }
     // this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
-    this.signUpData['profile'] = this.profilepic
-    this.signUpData['social_id'] = this.tokenId
-    this.signUpData['provider'] = this.provider
-    console.log(this.signUpData.provider)
-    console.log(this.signUpData)
-    this._service.getSignUpData(this.signUpData).subscribe(res => {
+
+    console.log(request)
+    this._service.getSignUpData(request).subscribe(res => {
       let response = res;
       if(response.success == true){
         this.router.navigateByUrl('/lms/auth/sign-up')
