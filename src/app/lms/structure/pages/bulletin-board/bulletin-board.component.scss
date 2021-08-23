@@ -41,6 +41,7 @@ a.date_btn {
     padding: 5px 20px;
     border-radius: 6px;
     height: 25px;
+    cursor: pointer;
 }
 
 a.start_btn {
@@ -55,4 +56,22 @@ p.para_p {
     margin: 0;
     color: #718797;
     font-size: 14px;
+}
+
+a.short_btn {
+    background: #92E3A9;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 29px;
+    font-size: 13px;
+}
+
+a.ignore_btn {
+    background: #FF6056;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 29px;
+    font-size: 13px;
 }
