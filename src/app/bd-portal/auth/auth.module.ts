@@ -8,7 +8,7 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { CommonFooterComponent } from '../common-footer/common-footer.component';
 
 @NgModule({
-  declarations: [LoginComponent, SignUpComponent, CommonFooterComponent],
+  declarations: [LoginComponent, SignUpComponent,CommonFooterComponent],
   imports: [CommonModule,
      AuthRoutingModule,
       ReactiveFormsModule,

@@ -15,6 +15,7 @@ import { CommonHeaderComponent } from './common/common-header/common-header.comp
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
+import { BulletinBoardComponent } from './pages/bulletin-board/bulletin-board.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
     SettingComponent,
     CommonHeaderComponent,
     SidebarComponent,
+    BulletinBoardComponent,
   ],
   imports: [
     CommonModule,
