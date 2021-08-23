@@ -10,10 +10,16 @@ const routes: Routes = [
       import('./bd-portal/bd-portal-routing.module').then((m) => m.BdPortalRoutingModule),
   },
   {
+    path: 'consultech',
+    loadChildren: () =>
+      import('./consultech/consultech-routing.module').then((m) => m.ConsultechRoutingModule),
+  },
+  {
     path: 'lms',
     loadChildren: () =>
       import('./lms/lms-routing.module').then((m) => m.LmsRoutingModule),
   },
+  { path: 'auth', loadChildren: () => import('./consultech/auth/auth.module').then(m => m.AuthModule) },
 ];
 
 @NgModule({
