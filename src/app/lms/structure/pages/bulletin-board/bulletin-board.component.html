@@ -89,7 +89,7 @@
                                 </p>
                                 <p class="plus-15">Dolor quia autaiores commodi</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class=" date_btn ">
+                                    <a class=" date_btn " data-toggle="modal" data-target="#exampleModal">
                                   24 Aug 2021
                                 </a>
                                     <p class="para_p "><img src="../../../../../assets/images/Frame.png " alt=" "> 10</p>
@@ -102,7 +102,7 @@
                                 </p>
                                 <p class="plus-15">Dolor quia autaiores commodi</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class=" date_btn ">
+                                    <a class=" date_btn " data-toggle="modal" data-target="#exampleModal">
                                   24 Aug 2021
                                 </a>
                                     <p class="para_p "><img src="../../../../../assets/images/Frame.png " alt=" "> 10</p>
@@ -115,7 +115,7 @@
                                 </p>
                                 <p class="plus-15">Dolor quia autaiores commodi</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class=" date_btn ">
+                                    <a class=" date_btn " data-toggle="modal" data-target="#exampleModal">
                                   24 Aug 2021
                                 </a>
                                     <p class="para_p "><img src="../../../../../assets/images/Frame.png " alt=" "> 10</p>
@@ -128,7 +128,7 @@
                                 </p>
                                 <p class="plus-15">Dolor quia autaiores commodi</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class=" date_btn ">
+                                    <a class=" date_btn " data-toggle="modal" data-target="#exampleModal">
                                   24 Aug 2021
                                 </a>
                                     <p class="para_p "><img src="../../../../../assets/images/Frame.png " alt=" "> 10</p>
@@ -141,7 +141,7 @@
                                 </p>
                                 <p class="plus-15">Dolor quia autaiores commodi</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class=" date_btn ">
+                                    <a class=" date_btn " data-toggle="modal" data-target="#exampleModal">
                                   24 Aug 2021
                                 </a>
                                     <p class="para_p "><img src="../../../../../assets/images/Frame.png " alt=" "> 10</p>
@@ -150,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 ">
+                    <div class="col-md-4">
                         <div class="bullet_bg " [ngClass]="darkMode ? 'dark-bg' : ' light-bulletin-section' ">
                             <h6 class="text-center ">To do</h6>
                             <div class="widget" [ngClass]="darkMode ? 'dark-bg' : ' light-card-bg'">
@@ -189,6 +189,55 @@
                                     <small class="plus-15">View More </small>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ----- model----- -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">10/02/2021</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-striped">
+
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
+                                        <td>Jane Cooper</td>
+                                        <td><a class="short_btn">Shortlist</a></td>
+                                        <td><a class="ignore_btn">IGNORE</a></td>
+                                        <td><i class="fa fa-pencil" aria-hidden="true"></i> </td>
+                                        <td><i class="fa fa-trash" aria-hidden="true"></i> </td>
+                                        <td><i class="fa fa-ellipsis-h" aria-hidden="true"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
+                                        <td>Jane Cooper</td>
+                                        <td><a class="short_btn">Shortlist</a></td>
+                                        <td><a class="ignore_btn">IGNORE</a></td>
+                                        <td><i class="fa fa-pencil" aria-hidden="true"></i> </td>
+                                        <td><i class="fa fa-trash" aria-hidden="true"></i> </td>
+                                        <td><i class="fa fa-ellipsis-h" aria-hidden="true"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
+                                        <td>Jane Cooper</td>
+                                        <td><a class="short_btn">Shortlist</a></td>
+                                        <td><a class="ignore_btn">IGNORE</a></td>
+                                        <td><i class="fa fa-pencil" aria-hidden="true"></i> </td>
+                                        <td><i class="fa fa-trash" aria-hidden="true"></i> </td>
+                                        <td><i class="fa fa-ellipsis-h" aria-hidden="true"></i></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
