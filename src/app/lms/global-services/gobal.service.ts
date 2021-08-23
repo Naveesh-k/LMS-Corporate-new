@@ -27,7 +27,7 @@ export class GobalService {
   getSignUpData(data:any){
      this.globalObject.signup_data = data;
      this.globalBehaviour.next(this.globalObject)
-     console.log("after" , this.globalObject)
+     console.log("after" , data)
     return this.https.post(environment.lmsApiBaseUrl + 'signup',data).pipe(map(res => <any>res));
   }
 

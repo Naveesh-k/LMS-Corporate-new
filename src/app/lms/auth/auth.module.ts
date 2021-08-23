@@ -15,6 +15,8 @@ import {
 } from 'angularx-social-login';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
+// import { AuthguardServiceService } from './auth-guard/authguard-service.service';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -25,6 +27,9 @@ import { GobalService } from 'src/app/lms/global-services/gobal.service';
   ],
   imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule,HttpClientModule  ],
   providers: [{
+    // Auth guard
+    // AuthguardServiceService ,
+    // end Auth guard
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: false,
