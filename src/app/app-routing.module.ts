@@ -19,7 +19,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./lms/lms-routing.module').then((m) => m.LmsRoutingModule),
   },
-  { path: 'auth', loadChildren: () => import('./consultech/auth/auth.module').then(m => m.AuthModule) },
+  { path: 'auth', loadChildren: () => import('./consultech/auth/auth-routing.module').then(m => m.AuthRoutingModule) },
 ];
 
 @NgModule({
