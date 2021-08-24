@@ -113,8 +113,9 @@ export class SignUpComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.hideFilledForm = true;
-    this.hideFilledForm1 = true;
+    this.hideFilledForm = false;
+    this.hideFilledForm1 = false;
+    this.showSelect = true;
     this.signUpData = this.registerForm.value
   }
 
