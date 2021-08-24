@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 import { Location } from '@angular/common'
+import { LmsAuthService } from '../../../../lms/auth/Service/lms-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
     public router: Router,
     private location : Location,
     private formBuilder: FormBuilder,
+    public _service:LmsAuthService,
     public mode: ColorModeService // dark-light
   ) {}
 
@@ -41,6 +43,8 @@ export class LoginComponent implements OnInit {
       }
     });
     //end dark-light
+
+    this.signIn()
   }
 
   // back location
@@ -53,15 +57,23 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  onSubmit() {
-    this.submitted = true;
 
-    // stop here if form is invalid
+
+  // --------------------
+  signIn() {
+    this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
 
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
+    // this._service.getLogin('data').subscribe(res => {
+    //   let response = res;
+    //   if(response.success == false){
+    //     this.router.navigateByUrl('/lms/auth/login')
+    //   }
+    //   console.log(response)
+    // })
   }
+  // --------------------
+
 }
