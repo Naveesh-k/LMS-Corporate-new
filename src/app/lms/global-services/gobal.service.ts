@@ -23,5 +23,12 @@ export class GobalService {
      console.log("after" , data)
     return this.https.post(environment.lmsApiBaseUrl + 'signup',data).pipe(map(res => <any>res));
   }
-
+  getSocialLogin(data:any){
+     console.log("after" , data)
+    return this.https.post(environment.lmsApiBaseUrl + 'socialLogin',data).pipe(map(res => <any>res));
+  }
+  getLinkedInLogin(data:any){
+    console.log("after" , data)
+   return this.https.post(environment.lmsApiBaseUrl + 'linkedLogin',data).pipe(map(res => <any>res));
+  }
 }

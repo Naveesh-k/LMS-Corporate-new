@@ -6,6 +6,7 @@ import { SocialUser } from "angularx-social-login";
 import { ActivatedRoute, Router } from '@angular/router';
 import axios from 'axios';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -33,6 +34,7 @@ export class DashboardComponent implements OnInit {
   tokenId:any = ''
   provider:any = ''
   constructor(
+    private spinner: NgxSpinnerService,
     private route: ActivatedRoute,
     public router :Router,
     private authService: SocialAuthService,
@@ -131,35 +133,22 @@ export class DashboardComponent implements OnInit {
       redirect_uri : "http://localhost:4200/lms/auth",
       code : code
     }
-    //?grant_type=authorization_code&client_id=${request.client_id}&client_secret=${request.client_secret}&code=${request.code}&redirect_uri=${request.redirect_uri}`
-    axios.post(`https://www.linkedin.com/oauth/v2/accessToken`, new URLSearchParams(request),{
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+    this._service.getLinkedInLogin(request).subscribe(res => {
+      let response = res;
+      if(response.success == true){
+
+      }else{
+
       }
     })
-    .then((response: any) => {
-      console.log(response.data);
-      if (response.data) {
-        if (response.data.access_token) {
-          // console.log()
-          // getUserLinkedInInfo(response.access_token);
-        }
-      }
 
-    })
-    .catch((error: any) => {
-      console.log(error);
-
-    });
   }
+
 
 
   signUp(data: any) {
     console.log(data);
-
-
     let request:any = {
-
       profile:        data.photoUrl,
       provider:       data.provider,
       email:          data.email,
@@ -180,7 +169,6 @@ export class DashboardComponent implements OnInit {
       job_title :     "",
       customize_topic: []
     }
-
      if(data.provider === 'GOOGLE'){
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){
@@ -188,17 +176,40 @@ export class DashboardComponent implements OnInit {
      } else {
       request['social_id'] =  data.idToken;
      }
-
-    // this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
-
     console.log(request)
     this._service.getSignUpData(request).subscribe(res => {
       let response = res;
+      // ------------------- Spinner
+      // this.spinner.show();
+      // setTimeout(() => {
+      //   this.spinner.hide();
+      // }, 1000);
+      // ------------------- Spinner end
       if(response.success == true){
         this.router.navigateByUrl('/lms/auth/sign-up')
       }else{
-        this.router.navigateByUrl('/lms/auth/login')
+        this.socailLogin(data)
+        // this.router.navigateByUrl('/lms/auth/login')
+        this.router.navigateByUrl('/lms/app/home')
       }
+      console.log(response)
+    })
+  }
+
+  socailLogin(data: any){
+    console.log(data)
+    let request:any = {
+      email:          data.email,
+      // social_id:      data.id_Token
+    }
+    if(data.provider === 'GOOGLE'){
+      request['social_id'] =  data.idToken;
+    } else if (data.provider === 'FACEBOOK'){
+       request['social_id'] =  data.authToken;
+    }
+    console.log(request)
+    this._service.getSocialLogin(request).subscribe(res => {
+      let response = res;
       console.log(response)
     })
   }
