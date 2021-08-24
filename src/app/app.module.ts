@@ -3,19 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
 // Import your library
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavigatePortalComponent } from './navigate-portal/navigate-portal.component';
-
 // Import library module
+import { CommonModule } from '@angular/common';
 import { NgxSpinnerModule } from "ngx-spinner";
 @NgModule({
   declarations: [AppComponent, HomePageComponent, NavigatePortalComponent],
-  imports: [BrowserModule, AppRoutingModule, SlickCarouselModule, FormsModule, NgxSpinnerModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, SlickCarouselModule, FormsModule,
+     NgxSpinnerModule,
+     HttpClientModule,
+     CommonModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
