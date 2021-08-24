@@ -17,13 +17,6 @@ export class GobalService {
 
   constructor(private https: HttpClient) { }
 
-  // getSignUpData(data:any){
-  //   console.log(data)
-  //    this.globalObject.signup_data = data;
-  //    this.globalBehaviour.next(this.globalObject)
-  //    console.log("after" , this.globalObject)
-  // }
-
   getSignUpData(data:any){
      this.globalObject.signup_data = data;
      this.globalBehaviour.next(this.globalObject)
