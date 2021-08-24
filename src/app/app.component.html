@@ -1,15 +1,4 @@
-<!-- <app-sidebar
-  *ngIf="
-    !(
-      router.url == '/' ||
-      router.url == '/login-module/login' ||
-      router.url == '/login-module/sign-up' ||
-      router.url == '/login-module/dashboard' ||
-      router.url == '/login-module/customise-topic' ||
-      router.url == '/auth-module/login' ||
-      router.url == '/containers'
-    )
-  "
-></app-sidebar> -->
-
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="default" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
 <router-outlet></router-outlet>

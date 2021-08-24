@@ -10,8 +10,8 @@ export class LmsAuthService {
 
   constructor(private https: HttpClient) { }
 
-//   getLogin(data:any){
-//     console.log("after" , data)
-//    return this.https.post(environment.lmsApiBaseUrl + 'login',data).pipe(map(res => <any>res));
-//  }
+  getLogin(data:any){
+    console.log("after" , data)
+   return this.https.post(environment.lmsApiBaseUrl + 'login',data).pipe(map(res => <any>res));
+ }
 }
