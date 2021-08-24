@@ -39,7 +39,7 @@
                             </div>
                         </form>
 
-                        <form class="mt-4" [formGroup]="registerFormSec" (ngSubmit)="signUp('data')" *ngIf="hideFilledForm1">
+                        <form class="mt-4" [formGroup]="registerFormSec" (ngSubmit)="signUp()" *ngIf="hideFilledForm1">
                             <div class="form-group">
                                 <label class="fnt_wigt">What Industry are you in?</label>
                                 <select formControlName="industry" class="form-control input_bg" [ngClass]="{ 'is-invalid': submittedSec && f1.industry.errors }">
