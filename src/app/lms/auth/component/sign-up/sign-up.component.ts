@@ -114,8 +114,8 @@ export class SignUpComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.hideFilledForm = true;
-    this.hideFilledForm1 = false;
-    this.showSelect = true;
+    this.hideFilledForm1 = true;
+    this.showSelect = false;
     this.signUpData = this.registerForm.value
   }
 
@@ -146,7 +146,7 @@ export class SignUpComponent implements OnInit {
     this._service.getSignUpData(this.signUpData).subscribe(res => {
       let response = res;
       if(response.success == false){
-        this.router.navigateByUrl('/lms/auth/login')
+        // this.router.navigateByUrl('/lms/auth/login')
       }
       console.log(response)
     })

@@ -5,7 +5,7 @@ import { ColorModeService } from 'src/app/service/color-mode.service';
 import { Location } from '@angular/common'
 import { LmsAuthService } from '../../../../lms/auth/Service/lms-auth.service';
 import { NgxSpinnerService } from "ngx-spinner";
-
+import { GobalService } from 'src/app/lms/global-services/gobal.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
     public router: Router,
     private location : Location,
     private formBuilder: FormBuilder,
-    public _service:LmsAuthService,
+    public _services:LmsAuthService,
+    public _service:GobalService,
     public mode: ColorModeService // dark-light
   ) {}
 
@@ -61,13 +62,12 @@ export class LoginComponent implements OnInit {
 
 
 
-  // --------------------
+  // Login API
   signIn() {
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
-    // let request: any =  this.loginForm.value()
     let request = {
           email: this.loginForm.value.email,
           password : this.loginForm.value.password,
@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
 
     console.log(request)
     // this.spinner.show();
-    this._service.getLogin(request).subscribe(res => {
+    this._services.getLogin(request).subscribe(res => {
       let response = res;
 
       if(response.success === true){
@@ -85,6 +85,56 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  // --------------------
+
+  signUp(data: any) {
+    console.log(data);
+    let request:any = {
+      profile:        data.photoUrl,
+      provider:       data.provider,
+      email:          data.email,
+      size_of_team:   0,
+      on_boarding:    0,
+      experience:     0,
+      first_name:     "",
+      last_name:      "",
+      password:       "",
+      group_val:      "",
+      market:         "",
+      location:       "",
+      contact_number: "",
+      category:       "",
+      topic:          "",
+      industry:       "",
+      position:       "",
+      job_title :     "",
+      customize_topic: []
+    }
+     if(data.provider === 'GOOGLE'){
+       request['social_id'] =  data.idToken;
+     } else if (data.provider === 'FACEBOOK'){
+        request['social_id'] =  data.authToken;
+     } else {
+      request['social_id'] =  data.idToken;
+     }
+    console.log(request)
+    this._service.getSignUpData(request).subscribe(res => {
+      let response = res;
+      // ------------------- Spinner
+      // this.spinner.show();
+      // setTimeout(() => {
+      //   this.spinner.hide();
+      // }, 1000);
+      // ------------------- Spinner end
+      if(response.success == true){
+        this.router.navigateByUrl('/lms/auth/sign-up')
+      }else{
+        // this.router.navigateByUrl('/lms/auth/login')
+        this.router.navigateByUrl('/lms/app/home')
+      }
+      console.log(response)
+    })
+  }
+
+
 
 }
