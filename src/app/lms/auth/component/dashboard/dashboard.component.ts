@@ -75,13 +75,13 @@ export class DashboardComponent implements OnInit {
       if(this.user){
         this.signUp(this.user)
         // this.router.navigateByUrl('/lms/auth/sign-up')
+        setTimeout(() => {
+          this.signOut();
+
+        }, 1000);
+        localStorage.setItem("userDetail", JSON.stringify(this.user));
       }
-      localStorage.setItem("userDetail", JSON.stringify(this.user));
 
-      setTimeout(() => {
-        this.signOut();
-
-      }, 2000);
     });
 
     this.route.queryParams
