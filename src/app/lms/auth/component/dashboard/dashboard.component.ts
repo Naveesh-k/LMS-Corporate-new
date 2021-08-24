@@ -156,39 +156,39 @@ export class DashboardComponent implements OnInit {
 
   signUp(data: any) {
     console.log(data);
-    // let extraVariable = {
-    //   group:'',
-    //   market:'',
-    //   location:'',
-    //   size_of_team:'',
-    //   contact_number:'',
-    //   category:'',
-    //   password:'',
-    //   topic:'',
-    //   on_boarding:'1'
-    // }
-    let request = {
-      profile: data.photoUrl,
-      provider: data.provider,
-      social_id: data.photoUrl,
-      first_name: '',
-      last_name : '',
-      email: '',
-      password: '',
-      group_val: '',
-      market: '',
-      location: '',
-      size_of_team: '0',
-      contact_number: '',
-      category: '',
-      topic: '',
-      on_boarding: '',
-      industry  : '',
-      position: '',
-      job_title: '',
-      experience: '',
-      customize_topic : [],
+
+
+    let request:any = {
+
+      profile:        data.photoUrl,
+      provider:       data.provider,
+      email:          data.email,
+      size_of_team:   0,
+      on_boarding:    0,
+      experience:     0,
+      first_name:     "",
+      last_name:      "",
+      password:       "",
+      group_val:      "",
+      market:         "",
+      location:       "",
+      contact_number: "",
+      category:       "",
+      topic:          "",
+      industry:       "",
+      position:       "",
+      job_title :     "",
+      customize_topic: []
     }
+
+     if(data.provider === 'GOOGLE'){
+       request['social_id'] =  data.idToken;
+     } else if (data.provider === 'FACEBOOK'){
+        request['social_id'] =  data.authToken;
+     } else {
+      request['social_id'] =  data.idToken;
+     }
+
     // this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
 
     console.log(request)

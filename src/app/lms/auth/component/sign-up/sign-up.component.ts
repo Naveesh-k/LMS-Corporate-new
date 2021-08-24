@@ -118,38 +118,74 @@ export class SignUpComponent implements OnInit {
     this.signUpData = this.registerForm.value
   }
 
-  signUp() {
-    this.hideFilledForm1 = false;
-    this.showSelect= true;
-    this.submittedSec = true;
-    if (this.registerFormSec.invalid) {
-      return;
+  // signUp() {
+  //   this.hideFilledForm1 = false;
+  //   this.showSelect= true;
+  //   this.submittedSec = true;
+  //   if (this.registerFormSec.invalid) {
+  //     return;
+  //   }
+  //   let extraVariable = {
+  //     group:'',
+  //     market:'',
+  //     location:'',
+  //     size_of_team:'',
+  //     contact_number:'',
+  //     category:'',
+  //     password:'',
+  //     topic:'',
+  //     on_boarding:'1'
+  //   }
+  //   this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
+  //   this.signUpData['profile'] = this.profilepic
+  //   this.signUpData['social_id'] = this.tokenId
+  //   this.signUpData['provider'] = this.provider
+  //   console.log(this.signUpData.provider)
+  //   console.log(this.signUpData)
+  //   this._service.getSignUpData(this.signUpData).subscribe(res => {
+  //     let response = res;
+  //     if(response.success == false){
+  //       this.router.navigateByUrl('/lms/auth/login')
+  //     }
+  //     console.log(response)
+  //   })
+  // }
+  signUp(data: any) {
+    console.log(data);
+    let request = {
+      profile: data.photoUrl,
+      provider: data.provider,
+      social_id: data.idToken,
+      first_name: '',
+      last_name : '',
+      email: '',
+      password: '',
+      group_val: '',
+      market: '',
+      location: '',
+      size_of_team: '0',
+      contact_number: '',
+      category: '',
+      topic: '',
+      on_boarding: '',
+      industry  : '',
+      position: '',
+      job_title: '',
+      experience: '',
+      customize_topic : [],
     }
-    let extraVariable = {
-      group:'',
-      market:'',
-      location:'',
-      size_of_team:'',
-      contact_number:'',
-      category:'',
-      password:'',
-      topic:'',
-      on_boarding:'1'
-    }
-    this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
-    this.signUpData['profile'] = this.profilepic
-    this.signUpData['social_id'] = this.tokenId
-    this.signUpData['provider'] = this.provider
-    console.log(this.signUpData.provider)
-    console.log(this.signUpData)
-    this._service.getSignUpData(this.signUpData).subscribe(res => {
+    // this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
+
+    console.log(request)
+    this._service.getSignUpData(request).subscribe(res => {
       let response = res;
-      if(response.success == false){
-        this.router.navigateByUrl('/lms/auth/login')
+      if(response.success == true){
+        this.router.navigateByUrl('/lms/auth/sign-up')
+      }else{
+        this.router.navigateByUrl('/lms/app/home')
       }
       console.log(response)
     })
-    // this.router.navigateByUrl('/lms/app/home')
   }
 
 
@@ -168,7 +204,7 @@ export class SignUpComponent implements OnInit {
 
   done(){
     this.signUpData['customize_topic'] =  this.customizeTopic
-    this.signUp()
+    this.signUp('data')
   }
 
 }
