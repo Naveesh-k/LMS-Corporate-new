@@ -152,44 +152,6 @@ export class SignUpComponent implements OnInit {
     })
   }
 
-  // signUp(data: any) {
-  //   console.log(data);
-  //   let request = {
-  //     profile: data.photoUrl,
-  //     provider: data.provider,
-  //     social_id: data.idToken,
-  //     first_name: '',
-  //     last_name : '',
-  //     email: '',
-  //     password: '',
-  //     group_val: '',
-  //     market: '',
-  //     location: '',
-  //     size_of_team: '0',
-  //     contact_number: '',
-  //     category: '',
-  //     topic: '',
-  //     on_boarding: '',
-  //     industry  : '',
-  //     position: '',
-  //     job_title: '',
-  //     experience: '',
-  //     customize_topic : [],
-  //   }
-  //   // this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
-
-  //   console.log(request)
-  //   this._service.getSignUpData(request).subscribe(res => {
-  //     let response = res;
-  //     if(response.success == true){
-  //       this.router.navigateByUrl('/lms/auth/sign-up')
-  //     }else{
-  //       this.router.navigateByUrl('/lms/app/home')
-  //     }
-  //     console.log(response)
-  //   })
-  // }
-
 
   selectedTopics(item:any){
     this.topics.forEach((element:any)=>{
