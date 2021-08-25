@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
   //   });
   // }
   subscribeToLogin(){
-    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'78z3ppjpmhm04a'}&scope=r_liteprofile%20r_emailaddress%20w_member_social&state=123456&redirect_uri=${'https://lms-new.netlify.app/lms/auth'}`
+    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'78z3ppjpmhm04a'}&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=${'https://lms-new.netlify.app/lms/auth'}`
     var width = 450,
         height = 730,
         left = window.screen.width / 2 - width / 2,
