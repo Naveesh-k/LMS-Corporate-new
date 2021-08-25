@@ -42,7 +42,7 @@ import { GobalService } from 'src/app/lms/global-services/gobal.service';
         },
         {
           id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider('158761293054603')
+          provider: new FacebookLoginProvider('363462991980235')
         }
       ]
     } as SocialAuthServiceConfig
