@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
   //   });
   // }
   subscribeToLogin(){
-    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'7826nk71a9dk21'}&scope=r_liteprofile&state=123456&redirect_uri=${'http://localhost:4200/lms/auth'}`
+    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'78z3ppjpmhm04a'}&scope=r_emailaddress &state=123456&redirect_uri=${'http://localhost:4200/lms/auth'}`
     var width = 450,
         height = 730,
         left = window.screen.width / 2 - width / 2,
@@ -127,18 +127,18 @@ export class DashboardComponent implements OnInit {
   }
   sendCodeOnLinkedIn = (code: any) => {
     let request = {
-      grant_type : "authorization_code",
-      client_id  : "7826nk71a9dk21",
-      client_secret : "xwhhn3iECaD6yu1u",
-      redirect_uri : "http://localhost:4200/lms/auth",
       code : code
     }
+    // grant_type : "authorization_code",
+    //   client_id  : "7826nk71a9dk21",
+    //   client_secret : "xwhhn3iECaD6yu1u",
+    //   redirect_uri : "http://localhost:4200/lms/auth",
     this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
       if(response.success == true){
-
+        this.router.navigateByUrl('/lms/app/home')
       }else{
-
+        this.router.navigateByUrl('/lms/auth/sign-up')
       }
     })
 
