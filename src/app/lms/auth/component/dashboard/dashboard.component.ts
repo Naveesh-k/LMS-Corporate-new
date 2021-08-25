@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
   //   });
   // }
   subscribeToLogin(){
-    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'78z3ppjpmhm04a'}&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=${'http://pifstage.swotfishdemo.com/lms/auth'}`
+    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'78fuo9t76f397o'}&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=${'http://localhost:4200/lms/auth'}`
     var width = 450,
         height = 730,
         left = window.screen.width / 2 - width / 2,
@@ -128,9 +128,9 @@ export class DashboardComponent implements OnInit {
   sendCodeOnLinkedIn = (code: any) => {
     let request = {
       // grant_type : "authorization_code",
-      // client_id  : "78z3ppjpmhm04a",
-      // client_secret : "zJibfAnzxsQlYw9d",
-      // redirect_uri : "https://lms-new.netlify.app/lms/auth",
+      // client_id  : "78fuo9t76f397o",
+      // client_secret : "3TpJtdjTxBrZ5GAp",
+      // redirect_uri : "http://pifstage.swotfishdemo.com/lms/auth",
       code : code
     }
     this._service.getLinkedInLogin(request).subscribe(res => {
