@@ -127,12 +127,12 @@ export class DashboardComponent implements OnInit {
   }
   sendCodeOnLinkedIn = (code: any) => {
     let request = {
+      grant_type : "authorization_code",
+      client_id  : "78z3ppjpmhm04a",
+      client_secret : "zJibfAnzxsQlYw9d",
+      redirect_uri : "https://lms-new.netlify.app/lms/auth",
       code : code
     }
-    // grant_type : "authorization_code",
-    //   client_id  : "7826nk71a9dk21",
-    //   client_secret : "xwhhn3iECaD6yu1u",
-    //   redirect_uri : "http://localhost:4200/lms/auth",
     this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
       if(response.success == true){
