@@ -151,7 +151,6 @@ export class SignUpComponent implements OnInit {
       console.log(response)
     })
   }
-
   selectedTopics(item:any){
     this.topics.forEach((element:any)=>{
        if(item.name === element.name){
