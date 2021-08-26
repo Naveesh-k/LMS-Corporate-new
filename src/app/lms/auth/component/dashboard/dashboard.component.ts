@@ -136,6 +136,7 @@ export class DashboardComponent implements OnInit {
     }
     this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
+      console.log(response)
       if(response.success == true){
         this.router.navigateByUrl('/lms/auth/sign-up')
       }else{
@@ -175,7 +176,7 @@ export class DashboardComponent implements OnInit {
      } else if (data.provider === 'FACEBOOK'){
         request['social_id'] =  data.authToken;
      } else {
-      request['social_id'] =  data.idToken;
+      request['social_id'] =  data.code;
      }
     console.log(request)
     this._service.getSignUpData(request).subscribe(res => {
@@ -210,6 +211,22 @@ export class DashboardComponent implements OnInit {
     }
     console.log(request)
     this._service.getSocialLogin(request).subscribe(res => {
+      let response = res;
+      console.log(response)
+    })
+  }
+
+  linkedLogin(data: any){
+    console.log(data)
+    let request:any = {
+      email:          data.email,
+      // social_id:      data.id_Token
+    }
+    if(data.provider === 'LINKEDIN'){
+      request['social_id'] =  data.code;
+    }
+    console.log(request)
+    this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
       console.log(response)
     })
