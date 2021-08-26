@@ -51,6 +51,7 @@ export class DashboardComponent implements OnInit {
   //     }
   //   });
   // }
+
   subscribeToLogin(){
     var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'78fuo9t76f397o'}&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=${'http://pifstage.swotfishdemo.com/lms/auth'}`
     var width = 450,
