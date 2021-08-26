@@ -9,10 +9,10 @@ import { environment } from '../../../environments/environment';
 })
 export class GobalService {
 
-  isSignup:any = false
+
   globalObject: any = {
     signup_data:'',
-    signupType: this.isSignup
+    signupType: false
   }
   globalBehaviour = new BehaviorSubject(this.globalObject);
   globalService = this.globalBehaviour.asObservable();
@@ -41,7 +41,8 @@ export class GobalService {
 
   checkSignupType(){
     this.globalObject.signupType = true;
-    this.globalBehaviour.next(this.globalObject)
+    this.globalBehaviour.next(this.globalObject);
+    localStorage.setItem('signupType' , 'true')
 
   }
 }

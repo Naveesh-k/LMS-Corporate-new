@@ -13,7 +13,7 @@
                         <form class="mt-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="!hideFilledForm">
                             <div class="form-group">
                                 <label class="fnt_wigt">Email or phone number</label>
-                                <input type="text" formControlName="email" class="form-control input_bg" />
+                                <input type="email" formControlName="email" class="form-control input_bg" />
 
                             </div>
 
@@ -29,8 +29,13 @@
 
                             </div>
                             <div class="form-group">
+                                <label class="fnt_wigt">Password</label>
+                                <input type="password" formControlName="password" class="form-control input_bg" />
+
+                            </div>
+                            <div class="form-group">
                                 <label class="fnt_wigt">Profile</label> <br>
-                                <img src="{{profilepic}}" class="dynamic_signup_img">
+                                <!-- <img src="{{profilepic}}" class="dynamic_signup_img"> -->
 
                             </div>
 

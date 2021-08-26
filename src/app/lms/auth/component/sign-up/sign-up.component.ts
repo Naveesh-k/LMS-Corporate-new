@@ -16,11 +16,11 @@ export class SignUpComponent implements OnInit {
   hideFilledForm1:boolean = false;
   submitted = false;
   submittedSec = false;
+  checkSignUptype: boolean = false;
   darkMode: boolean = false;
   formData = new FormData();
   showSelect: boolean = false;
    signUpData:any = {};
-   normalSignUpData:any = {};
    customizeTopic : any = [];
   topics: any = [{
     'name': 'Road To IPO',
@@ -66,22 +66,36 @@ export class SignUpComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._service.globalService.subscribe((item:any)=>{
+      let checkSignup:any = localStorage.getItem('signupType')
+      this.checkSignUptype = checkSignup === 'true'
+
+      console.log(this.checkSignUptype)
+
 
         let getLocalStorage:any =  localStorage.getItem('userDetail');
         let signUpData:any = JSON.parse(getLocalStorage);
         if (signUpData && signUpData.photoUrl) {
-          this.profilepic = item.signupType ? signUpData.photoUrl : '';
-          this.tokenId = item.signupType ? signUpData.idToken :'';
-          this.provider = item.signupType ? signUpData.provider: '';
+          this.profilepic = this.checkSignUptype ? signUpData.photoUrl : '';
+          this.tokenId = this.checkSignUptype ? signUpData.idToken :'';
+          this.provider = this.checkSignUptype ? signUpData.provider: '';
           console.log(this.provider)
         }
 
         this.registerForm = this.formBuilder.group({
-          firstName: item.signupType ? signUpData.firstName : '',
-          lastName: item.signupType ? signUpData.lastName: '',
-          email: item.signupType ? signUpData.email: '',
+          firstName: this.checkSignUptype ? signUpData.firstName : '',
+          lastName: this.checkSignUptype ? signUpData.lastName: '',
+          email: this.checkSignUptype ? signUpData.email: '',
           profile: '',
+          // ------------
+          password:'',
+          social_id:'',
+          provider:'',
+          group_val:'',
+          category:'',
+          topic:'',
+          industry:'',
+          position:'',
+          job_title:'',
         });
 
         this.registerFormSec = this.formBuilder.group({
@@ -90,7 +104,10 @@ export class SignUpComponent implements OnInit {
           jobTitle: ['', Validators.required],
           experience: ['', [Validators.required]]
         });
-    })
+
+        console.log(this._service.globalObject)
+
+
 
 
     // dark-light
@@ -137,8 +154,11 @@ nextForm(){
 
   signUp() {
 
+    console.log(this.checkSignUptype)
 
-    let extraVariable = {
+    if(this.checkSignUptype){
+
+      let extraVariable = {
       group:'',
       market:'',
       location:'',
@@ -158,23 +178,49 @@ nextForm(){
     this._service.getSignUpData(this.signUpData).subscribe(res => {
       let response = res
       if(response.success == false){
-        // this.router.navigateByUrl('/lms/auth/login')
         this.router.navigateByUrl('/lms/app/home')
       }
       console.log(response)
     })
+    }
+  else {
+    let request = {
+      size_of_team:0,
+      on_boarding: 0,
+      experience: 0,
+
+      first_name: this.registerForm.value.firstName,
+      last_name: this.registerForm.value.lastName,
+      email: this.registerForm.value.email,
+      customize_topic: this.registerForm.value.customize_topic,
+
+      password: this.registerForm.value.password   ? this.registerForm.value.password: "",
+      profile: this.registerForm.value.profile     ? this.registerForm.value.password: "",
+      social_id: this.registerForm.value.social_id ? this.registerForm.value.password: "",
+      provider: this.registerForm.value.provider   ? this.registerForm.value.password: "",
+      group_val: this.registerForm.value.group_val ? this.registerForm.value.password: "",
+      market: "",
+      location: "",
+
+      category:this.registerForm.value.category  ? this.registerForm.value.password: "",
+      topic:this.registerForm.value.topic        ? this.registerForm.value.password: "",
+      industry:this.registerForm.value.industry  ? this.registerForm.value.password: "",
+      position: this.registerForm.value.position ? this.registerForm.value.password: "",
+      job_title : this.registerForm.value.jobTitle? this.registerForm.value.password: "",
+      contact_number: "",
+
+    }
 
 
-  //  this.normalSignUpData
 
-  //   this._service.getSignUpEmail(data).subscribe(res => {
-  //     let response = res
-  //     if(response.success == false){
-  //       // this.router.navigateByUrl('/lms/auth/login')
-  //       this.router.navigateByUrl('/lms/app/home')
-  //     }
-  //     console.log(response)
-  //   })
+    this._service.getSignUpEmail(request).subscribe(res => {
+      let response = res
+      console.log(response)
+      if(response.success == true || response.success == false){
+        this.router.navigateByUrl('/lms/app/home')
+      }
+    })
+  }
 
   }
   selectedTopics(item:any){

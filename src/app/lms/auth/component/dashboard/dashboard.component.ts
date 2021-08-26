@@ -154,6 +154,11 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  nonSocialSignup(link:any){
+     this.router.navigateByUrl(link);
+     localStorage.setItem('signupType' , 'false')
+  }
+
 
 
   signUp(data: any) {
