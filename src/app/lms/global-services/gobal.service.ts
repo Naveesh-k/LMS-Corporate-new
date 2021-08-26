@@ -9,8 +9,10 @@ import { environment } from '../../../environments/environment';
 })
 export class GobalService {
 
+  isSignup:any = false
   globalObject: any = {
-    signup_data:''
+    signup_data:'',
+    signupType: this.isSignup
   }
   globalBehaviour = new BehaviorSubject(this.globalObject);
   globalService = this.globalBehaviour.asObservable();
@@ -30,5 +32,16 @@ export class GobalService {
   getLinkedInLogin(data:any){
     console.log("after" , data)
    return this.https.post(environment.lmsApiBaseUrl + 'linkedLogin',data).pipe(map(res => <any>res));
+  }
+
+  getSignUpEmail(data:any){
+    console.log("after" , data)
+    return this.https.post(environment.lmsApiBaseUrl + 'signup',data).pipe(map(res => <any>res));
+  }
+
+  checkSignupType(){
+    this.globalObject.signupType = true;
+    this.globalBehaviour.next(this.globalObject)
+
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
@@ -13,6 +13,10 @@ import { NgxSpinnerService } from "ngx-spinner";
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+
+  // Parent to child
+  @Input() item = ''; // decorate the property with @Input()
+
   darkMode: boolean = false;
   user: SocialUser = {
     id: '',
@@ -33,6 +37,7 @@ export class DashboardComponent implements OnInit {
   profilepic:any = ''
   tokenId:any = ''
   provider:any = ''
+
   constructor(
     private spinner: NgxSpinnerService,
     private route: ActivatedRoute,
@@ -53,6 +58,7 @@ export class DashboardComponent implements OnInit {
   // }
 
   subscribeToLogin(){
+    this._service.checkSignupType()
     var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'78fuo9t76f397o'}&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=${'http://pifstage.swotfishdemo.com/lms/auth'}`
     var width = 450,
         height = 730,
@@ -110,11 +116,13 @@ export class DashboardComponent implements OnInit {
     // -----------------------------
   }
   signInWithGoogle(): void {
+   this._service.checkSignupType()
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
     // this.signUp()
   }
 
   signInWithFB(): void {
+   this._service.checkSignupType()
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 

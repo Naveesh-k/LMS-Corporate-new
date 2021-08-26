@@ -20,6 +20,7 @@ export class SignUpComponent implements OnInit {
   formData = new FormData();
   showSelect: boolean = false;
    signUpData:any = {};
+   normalSignUpData:any = {};
    customizeTopic : any = [];
   topics: any = [{
     'name': 'Road To IPO',
@@ -65,29 +66,32 @@ export class SignUpComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    let getLocalStorage:any =  localStorage.getItem('userDetail');
-    let signUpData:any = JSON.parse(getLocalStorage);
-    // this.signUpData1 = JSON.parse(getLocalStorage);
-    if (signUpData && signUpData.photoUrl) {
-      this.profilepic = signUpData.photoUrl;
-      this.tokenId = signUpData.idToken
-      this.provider = signUpData.provider
-      console.log(this.provider)
-    }
+    this._service.globalService.subscribe((item:any)=>{
 
-    this.registerForm = this.formBuilder.group({
-      firstName: signUpData.firstName,
-      lastName: signUpData.lastName,
-      email: signUpData.email,
-      profile: '',
-    });
+        let getLocalStorage:any =  localStorage.getItem('userDetail');
+        let signUpData:any = JSON.parse(getLocalStorage);
+        if (signUpData && signUpData.photoUrl) {
+          this.profilepic = item.signupType ? signUpData.photoUrl : '';
+          this.tokenId = item.signupType ? signUpData.idToken :'';
+          this.provider = item.signupType ? signUpData.provider: '';
+          console.log(this.provider)
+        }
 
-    this.registerFormSec = this.formBuilder.group({
-      industry: ['', Validators.required],
-      position: ['', Validators.required],
-      jobTitle: ['', Validators.required],
-      experience: ['', [Validators.required]]
-    });
+        this.registerForm = this.formBuilder.group({
+          firstName: item.signupType ? signUpData.firstName : '',
+          lastName: item.signupType ? signUpData.lastName: '',
+          email: item.signupType ? signUpData.email: '',
+          profile: '',
+        });
+
+        this.registerFormSec = this.formBuilder.group({
+          industry: ['', Validators.required],
+          position: ['', Validators.required],
+          jobTitle: ['', Validators.required],
+          experience: ['', [Validators.required]]
+        });
+    })
+
 
     // dark-light
     this.mode.currentMode.subscribe((res) => {
@@ -99,6 +103,8 @@ export class SignUpComponent implements OnInit {
     });
     //end dark-light
 
+    // Check sign-up Type
+    // end Check sign-up Type
 
 
   }
@@ -124,16 +130,14 @@ nextForm(){
   this.hideFilledForm1 = false;
   this.showSelect= true;
   this.submittedSec = true;
-
+// if (this.registerFormSec.invalid) {
+    //   return;
+    // }
 }
 
   signUp() {
-    // this.hideFilledForm1 = false;
-    // this.showSelect= true;
-    // this.submittedSec = true;
-    // if (this.registerFormSec.invalid) {
-    //   return;
-    // }
+
+
     let extraVariable = {
       group:'',
       market:'',
@@ -150,15 +154,28 @@ nextForm(){
     this.signUpData['social_id'] = this.tokenId
     this.signUpData['provider'] = this.provider
     console.log(this.signUpData.provider)
-    console.log(this.signUpData)
+    console.log(this.signUpData);
     this._service.getSignUpData(this.signUpData).subscribe(res => {
-      let response = res;
+      let response = res
       if(response.success == false){
         // this.router.navigateByUrl('/lms/auth/login')
         this.router.navigateByUrl('/lms/app/home')
       }
       console.log(response)
     })
+
+
+  //  this.normalSignUpData
+
+  //   this._service.getSignUpEmail(data).subscribe(res => {
+  //     let response = res
+  //     if(response.success == false){
+  //       // this.router.navigateByUrl('/lms/auth/login')
+  //       this.router.navigateByUrl('/lms/app/home')
+  //     }
+  //     console.log(response)
+  //   })
+
   }
   selectedTopics(item:any){
     this.topics.forEach((element:any)=>{
