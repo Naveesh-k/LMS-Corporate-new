@@ -119,10 +119,18 @@ export class SignUpComponent implements OnInit {
     this.signUpData = this.registerForm.value
   }
 
+
+nextForm(){
+  this.hideFilledForm1 = false;
+  this.showSelect= true;
+  this.submittedSec = true;
+
+}
+
   signUp() {
-    this.hideFilledForm1 = false;
-    this.showSelect= true;
-    this.submittedSec = true;
+    // this.hideFilledForm1 = false;
+    // this.showSelect= true;
+    // this.submittedSec = true;
     // if (this.registerFormSec.invalid) {
     //   return;
     // }
@@ -147,6 +155,7 @@ export class SignUpComponent implements OnInit {
       let response = res;
       if(response.success == false){
         // this.router.navigateByUrl('/lms/auth/login')
+        this.router.navigateByUrl('/lms/app/home')
       }
       console.log(response)
     })

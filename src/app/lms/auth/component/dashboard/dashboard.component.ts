@@ -137,7 +137,7 @@ export class DashboardComponent implements OnInit {
     this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
       if(response.success == true){
-        this.router.navigateByUrl('/lms/app/home')
+        this.router.navigateByUrl('/lms/app/sign-up')
       }else{
         this.router.navigateByUrl('/lms/auth/sign-up')
       }
