@@ -1,96 +1,104 @@
 img.logo_img {
-  width: 51%;
-  margin: 0 auto;
-  justify-content: center;
-  display: flex;
-}
-.imyu {
-  padding: 8px 0 5px 0;
-  //width: 407px;
-  // width: 412px;
+    width: 47%;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
 }
 
+.imyu {
+    padding: 15px 0;
+}
 
 li.nav_li {
-  padding: 0 17px 0 9px;
-  cursor: pointer;
+    padding: 0 17px 0 9px;
+    cursor: pointer;
 }
+
 a.nav_fnt {
-  font-size: 16px;
-  line-height: 18.75px;
-  font-weight: 400;
-  padding: 3px;
+    font-size: 16px;
+    line-height: 18.75px;
+    font-weight: 400;
+    padding: 3px;
 }
+
 a.btn_login {
-  background: #28a0a4;
-  color: #fff;
-  border-radius: 40px;
-  height: 40px;
-  width: 89px;
+    background: #28a0a4;
+    color: #fff;
+    border-radius: 40px;
+    height: 40px;
+    width: 89px;
 }
+
 nav.navbar_bg {
-  padding: 0;
+    padding: 0;
 }
+
 form.respo {
     padding: 20px 0 0 0;
-  }
-  .pad_icr {
+}
+
+.pad_icr {
     padding: 0 5px 0 15px;
 }
-button.btn_back{
-  position: absolute;
-  top: 6px;
-  font-size: 33px;
+
+button.btn_back {
+    position: absolute;
+    top: 6px;
+    font-size: 33px;
     color: #fff;
 }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 499px) {
-  nav.navbar_bg {
-    padding: 3px 14px 2px 16px;
-  }
-  img.logo_img {
-    width: 225px;
-  }
-  // form.respo {
-  //   display: block;
-  // }
+    nav.navbar_bg {
+        padding: 3px 14px 2px 16px;
+    }
+    img.logo_img {
+        width: 225px;
+    }
+    // form.respo {
+    //   display: block;
+    // }
 }
 
 @media screen and (min-device-width: 700px) and (max-device-width: 768px) {
-  img.logo_img {
-    width: 280px;
-  }
-  nav.navbar_bg {
-    padding: 3px 32px 2px 39px;
-  }
-  // form.respo {
-  //   display: block;
-  // }
+    img.logo_img {
+        width: 280px;
+    }
+    nav.navbar_bg {
+        padding: 3px 32px 2px 39px;
+    }
+    // form.respo {
+    //   display: block;
+    // }
 }
 
 @media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
-  img.logo_img {
-    width: 303px;
-  }
-  nav.navbar_bg {
-    padding: 3px 32px 2px 39px;
-  }
+    img.logo_img {
+        width: 303px;
+    }
+    nav.navbar_bg {
+        padding: 3px 32px 2px 39px;
+    }
 }
 
 @media only screen and (max-width: 1499px) {
-  form.respo {
-    padding: 10px 0 0 0;
-  }
-  button.btn_back {
-    top: 0;
-  }
+    form.respo {
+        padding: 10px 0 0 0;
+    }
+    button.btn_back {
+        top: 0;
+    }
 }
+
 @media only screen and (max-width: 1499px) {
-  .bg_gre-blu {
-    color: #fff;
-    height: 100vh;
-  }
-  img.image_log {
-    height: 87vh;
-}
+    .bg_gre-blu {
+        color: #fff;
+        height: 100vh;
+    }
+    img.image_log {
+        height: 87vh;
+    }
+    .imyu {
+        padding: 12px 0;
+    }
 }

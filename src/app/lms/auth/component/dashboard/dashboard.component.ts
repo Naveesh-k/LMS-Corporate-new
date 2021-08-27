@@ -86,7 +86,6 @@ export class DashboardComponent implements OnInit {
         // this.router.navigateByUrl('/lms/auth/sign-up')
         setTimeout(() => {
           this.signOut();
-
         }, 1000);
         localStorage.setItem("userDetail", JSON.stringify(this.user));
       }
@@ -95,7 +94,6 @@ export class DashboardComponent implements OnInit {
 
     this.route.queryParams
       .subscribe(params => {
-        console.log(params); // { orderby: "price" }
         let code = params.code;
         console.log(code)
         if (code) {
@@ -106,7 +104,6 @@ export class DashboardComponent implements OnInit {
     // -----------------------------
     let getLocalStorage:any =  localStorage.getItem('userDetail');
     let signUpData:any = JSON.parse(getLocalStorage);
-    // this.signUpData1 = JSON.parse(getLocalStorage);
     if (signUpData && signUpData.photoUrl) {
       this.profilepic = signUpData.photoUrl;
       this.tokenId = signUpData.idToken
@@ -142,9 +139,10 @@ export class DashboardComponent implements OnInit {
       redirect_uri : "http://pifstage.swotfishdemo.com/lms/auth",
       code : code
     }
+    console.log(request,'check 142')
     this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
-      console.log(response)
+      console.log(response,'check 145')
       if(response.success == true){
         this.router.navigateByUrl('/lms/auth/sign-up')
       }else{
@@ -188,8 +186,8 @@ export class DashboardComponent implements OnInit {
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){
         request['social_id'] =  data.authToken;
-     } else {
-      request['social_id'] =  data.code;
+     } else if(data.provider === 'LINKEDIN') {
+        // this.linkedLogin('d')
      }
     console.log(request)
     this._service.getSignUpData(request).subscribe(res => {
@@ -204,7 +202,6 @@ export class DashboardComponent implements OnInit {
         this.router.navigateByUrl('/lms/auth/sign-up')
       }else{
         this.socailLogin(data)
-        // this.router.navigateByUrl('/lms/auth/login')
         this.router.navigateByUrl('/lms/app/home')
       }
       console.log(response)
@@ -229,20 +226,24 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  linkedLogin(data: any){
-    console.log(data)
-    let request:any = {
-      email:          data.email,
-      // social_id:      data.id_Token
-    }
-    if(data.provider === 'LINKEDIN'){
-      request['social_id'] =  data.code;
-    }
-    console.log(request)
-    this._service.getLinkedInLogin(request).subscribe(res => {
-      let response = res;
-      console.log(response)
-    })
-  }
+  // linkedLogin(data: any){
+  //   console.log(data)
+  //   let request:any = {
+  //     grant_type: data.grant_type,
+  //     code: data.code,
+  //     client_id: data.client_id,
+  //     client_secret: data.client_secret,
+  //     redirect_uri: data.redirect_uri
+  //   }
+  //   console.log(request)
+  //   if(data.provider === 'LINKEDIN'){
+  //     request['social_id'] =  data.code;
+  //   }
+  //   console.log(request)
+  //   this._service.getLinkedInLogin(request).subscribe(res => {
+  //     let response = res;
+  //     console.log(response)
+  //   })
+  // }
 
 }
