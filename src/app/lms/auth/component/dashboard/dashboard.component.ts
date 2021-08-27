@@ -67,39 +67,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
 
     // ---------------------------------------
-    let secData =  [
-      "{\"firstName\":{\"localized\":{\"en_US\":\"Shubham\"},\"preferredLocale\":{\"country\":\"US\",\"language\":\"en\"}},\"lastName\":{\"localized\":{\"en_US\":\"Verma\"},\"preferredLocale\":{\"country\":\"US\",\"language\":\"en\"}},\"profilePicture\":{\"displayImage\":\"urn:li:digitalmediaAsset:C5103AQErAVWCnRho3w\",\"displayImage~\":{\"paging\":{\"count\":10,\"start\":0,\"links\":[]},\"elements\":[{\"artifact\":\"urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5103AQErAVWCnRho3w,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_100_100)\",\"authorizationMethod\":\"PUBLIC\",\"data\":{\"com.linkedin.digitalmedia.mediaartifact.StillImage\":{\"mediaType\":\"image/jpeg\",\"rawCodecSpec\":{\"name\":\"jpeg\",\"type\":\"image\"},\"displaySize\":{\"width\":100.0,\"uom\":\"PX\",\"height\":100.0},\"storageSize\":{\"width\":100,\"height\":100},\"storageAspectRatio\":{\"widthAspect\":1.0,\"heightAspect\":1.0,\"formatted\":\"1.00:1.00\"},\"displayAspectRatio\":{\"widthAspect\":1.0,\"heightAspect\":1.0,\"formatted\":\"1.00:1.00\"}}},\"identifiers\":[{\"identifier\":\"https://media-exp1.licdn.com/dms/image/C5103AQErAVWCnRho3w/profile-displayphoto-shrink_100_100/0/1538285643620?e=1635379200&v=beta&t=NLTyfAApbPRXfi6F48Ps7NlDBEioV-tybwMZCDo82HE\",\"index\":0,\"mediaType\":\"image/jpeg\",\"file\":\"urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C5103AQErAVWCnRho3w,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_100_100,0)\",\"identifierType\":\"EXTERNAL_URL\",\"identifierExpiresInSeconds\":1635379200}]},{\"artifact\":\"urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5103AQErAVWCnRho3w,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_200_200)\",\"authorizationMethod\":\"PUBLIC\",\"data\":{\"com.linkedin.digitalmedia.mediaartifact.StillImage\":{\"mediaType\":\"image/jpeg\",\"rawCodecSpec\":{\"name\":\"jpeg\",\"type\":\"image\"},\"displaySize\":{\"width\":200.0,\"uom\":\"PX\",\"height\":200.0},\"storageSize\":{\"width\":200,\"height\":200},\"storageAspectRatio\":{\"widthAspect\":1.0,\"heightAspect\":1.0,\"formatted\":\"1.00:1.00\"},\"displayAspectRatio\":{\"widthAspect\":1.0,\"heightAspect\":1.0,\"formatted\":\"1.00:1.00\"}}},\"identifiers\":[{\"identifier\":\"https://media-exp1.licdn.com/dms/image/C5103AQErAVWCnRho3w/profile-displayphoto-shrink_200_200/0/1538285643620?e=1635379200&v=beta&t=tKuukkyOBGEil-sRPEdKdBsOpHuaGRWzVGuYjAl7fv4\",\"index\":0,\"mediaType\":\"image/jpeg\",\"file\":\"urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C5103AQErAVWCnRho3w,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_200_200,0)\",\"identifierType\":\"EXTERNAL_URL\",\"identifierExpiresInSeconds\":1635379200}]},{\"artifact\":\"urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5103AQErAVWCnRho3w,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_400_400)\",\"authorizationMethod\":\"PUBLIC\",\"data\":{\"com.linkedin.digitalmedia.mediaartifact.StillImage\":{\"mediaType\":\"image/jpeg\",\"rawCodecSpec\":{\"name\":\"jpeg\",\"type\":\"image\"},\"displaySize\":{\"width\":400.0,\"uom\":\"PX\",\"height\":400.0},\"storageSize\":{\"width\":400,\"height\":400},\"storageAspectRatio\":{\"widthAspect\":1.0,\"heightAspect\":1.0,\"formatted\":\"1.00:1.00\"},\"displayAspectRatio\":{\"widthAspect\":1.0,\"heightAspect\":1.0,\"formatted\":\"1.00:1.00\"}}},\"identifiers\":[{\"identifier\":\"https://media-exp1.licdn.com/dms/image/C5103AQErAVWCnRho3w/profile-displayphoto-shrink_400_400/0/1538285643620?e=1635379200&v=beta&t=vbYq-Fr_BBTHxQop6-kdQJ0MsvGL_mJoTG6GXXFmof0\",\"index\":0,\"mediaType\":\"image/jpeg\",\"file\":\"urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C5103AQErAVWCnRho3w,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_400_400,0)\",\"identifierType\":\"EXTERNAL_URL\",\"identifierExpiresInSeconds\":1635379200}]},{\"artifact\":\"urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5103AQErAVWCnRho3w,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_800_800)\",\"authorizationMethod\":\"PUBLIC\",\"data\":{\"com.linkedin.digitalmedia.mediaartifact.StillImage\":{\"mediaType\":\"image/jpeg\",\"rawCodecSpec\":{\"name\":\"jpeg\",\"type\":\"image\"},\"displaySize\":{\"width\":800.0,\"uom\":\"PX\",\"height\":800.0},\"storageSize\":{\"width\":800,\"height\":800},\"storageAspectRatio\":{\"widthAspect\":1.0,\"heightAspect\":1.0,\"formatted\":\"1.00:1.00\"},\"displayAspectRatio\":{\"widthAspect\":1.0,\"heightAspect\":1.0,\"formatted\":\"1.00:1.00\"}}},\"identifiers\":[{\"identifier\":\"https://media-exp1.licdn.com/dms/image/C5103AQErAVWCnRho3w/profile-displayphoto-shrink_800_800/0/1538285643620?e=1635379200&v=beta&t=0IRiPLVnw_jCeis3iNDY62CdN-vXENPnKtrOhJcMw6I\",\"index\":0,\"mediaType\":\"image/jpeg\",\"file\":\"urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C5103AQErAVWCnRho3w,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_800_800,0)\",\"identifierType\":\"EXTERNAL_URL\",\"identifierExpiresInSeconds\":1635379200}]}]}},\"id\":\"OMiGj_W7xP\"}",
-      "{\"elements\":[{\"handle~\":{\"emailaddress\":\"shubhamverma377@gmail.com\"},\"handle\":\"urn:li:emailAddress:3976598607\"}]}"
-  ]
-    // console.log(JSON.parse(data[]))
-    if (secData) {
-      let userFirstName = '';
-      let userLastName = '';
-      let linkedInEmail = '';
-      let userProfile = '';
-      let userId = '';
-
-      let data1   = JSON.parse(secData[0]);
-      if (data1) {
-        console.log(data1)
-        userFirstName = data1.firstName.localized.en_US;
-        userLastName = data1.lastName.localized.en_US;
-        userId = data1.id;
-        userProfile = data1.profilePicture['displayImage~'].elements[1].identifiers[0].identifier;
-      }
-      let data2 = JSON.parse(secData[1]);
-      if (data2 && data2.elements) {
-        linkedInEmail = data2.elements[0]['handle~'].emailaddress
-      }
-      console.log(linkedInEmail);
-      console.log(userFirstName);
-      console.log(userLastName);
-      console.log(userProfile);
-      console.log(userId);
-    }
-    // let userSecData = JSON.parse(data[0]);
-
-    // ---------------------------------------
     // dark-light
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
