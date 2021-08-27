@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { Router } from '@angular/router';
@@ -66,6 +66,10 @@ export class SignUpComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+      // if(!this.checkSignUptype){
+      //   localStorage.removeItem("userDetail");
+      // }
       let checkSignup:any = localStorage.getItem('signupType')
       this.checkSignUptype = checkSignup === 'true'
 
@@ -76,7 +80,15 @@ export class SignUpComponent implements OnInit {
         let signUpData:any = JSON.parse(getLocalStorage);
         if (signUpData && signUpData.photoUrl) {
           this.profilepic = this.checkSignUptype ? signUpData.photoUrl : '';
-          this.tokenId = this.checkSignUptype ? signUpData.idToken :'';
+          let idToken = ''
+          if (signUpData.provider === 'GOOGLE') {
+            idToken = signUpData.idToken
+          } else if (signUpData.provider === 'FACEBOOK') {
+            idToken = signUpData.authToken
+          } else if (signUpData.provider === 'LINKEDIN') {
+            idToken = signUpData.userId
+          }
+          this.tokenId = idToken ? idToken : '';
           this.provider = this.checkSignUptype ? signUpData.provider: '';
           console.log(this.provider)
         }
@@ -86,18 +98,36 @@ export class SignUpComponent implements OnInit {
           lastName: this.checkSignUptype ? signUpData.lastName: '',
           email: this.checkSignUptype ? signUpData.email: '',
           profile: '',
-          // ------------
-          password:'',
-          social_id:'',
-          provider:'',
-          group_val:'',
-          category:'',
-          topic:'',
-          industry:'',
-          position:'',
-          job_title:'',
+          password: '',
+          social_id: '',
+          provider: '',
+          group_val: '',
+          category: '',
+          topic: '',
+          industry: '',
+          position: '',
+          job_title: '',
         });
 
+// -----------------------------------------------------------------
+// let unamePattern = "^[a-z0-9_-]{8,15}$";
+// let emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
+// this.registerForm = new FormGroup({
+//     firstName : new FormControl('',[Validators.pattern(unamePattern)]),
+//     lastname  : new FormControl('',[Validators.pattern(unamePattern)]),
+//     email     : new FormControl('',[Validators.pattern(emailPattern)]),
+//     profile   : new FormControl('',[Validators.required]),
+//     password  : new FormControl('',[Validators.required]),
+//     social_id : new FormControl(''),
+//     provider  : new FormControl('',[Validators.required]),
+//     category  : new FormControl('',[Validators.required]),
+//     topic     : new FormControl('',[Validators.required]),
+//     industry  : new FormControl('',[Validators.required]),
+//     position  : new FormControl('',[Validators.required]),
+//     job_title : new FormControl('',[Validators.required])
+// })
+
+// -----------------------------------------------------------------
         this.registerFormSec = this.formBuilder.group({
           industry: ['', Validators.required],
           position: ['', Validators.required],
@@ -119,11 +149,6 @@ export class SignUpComponent implements OnInit {
       }
     });
     //end dark-light
-
-    // Check sign-up Type
-    // end Check sign-up Type
-
-
   }
 
   // convenience getter for easy access to form fields
@@ -135,7 +160,11 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.registerForm.value);
     this.submitted = true;
+    // if (this.registerForm.invalid) {
+    //   return;
+    // }
     this.hideFilledForm = true;
     this.hideFilledForm1 = true;
     this.showSelect = false;
@@ -184,6 +213,7 @@ nextForm(){
     })
     }
   else {
+
     let request = {
       size_of_team:0,
       on_boarding: 0,
