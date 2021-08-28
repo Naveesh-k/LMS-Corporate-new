@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import axios from 'axios';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { NgxSpinnerService } from "ngx-spinner";
+import { ToastrService } from 'ngx-toastr'; // Toaster
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -37,6 +38,7 @@ export class DashboardComponent implements OnInit {
   provider:any = ''
 
   constructor(
+    private toastr: ToastrService, // Toaster
     private spinner: NgxSpinnerService,
     private route: ActivatedRoute,
     public router :Router,
@@ -65,8 +67,6 @@ export class DashboardComponent implements OnInit {
     window.location.href = oauthUrl;
 };
   ngOnInit(): void {
-
-    // ---------------------------------------
     // dark-light
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
@@ -188,8 +188,6 @@ export class DashboardComponent implements OnInit {
      localStorage.setItem('signupType' , 'false')
   }
 
-
-
   signUp(data: any) {
     console.log(data);
     let request:any = {
@@ -257,24 +255,5 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  // linkedLogin(data: any){
-  //   console.log(data)
-  //   let request:any = {
-  //     grant_type: data.grant_type,
-  //     code: data.code,
-  //     client_id: data.client_id,
-  //     client_secret: data.client_secret,
-  //     redirect_uri: data.redirect_uri
-  //   }
-  //   console.log(request)
-  //   if(data.provider === 'LINKEDIN'){
-  //     request['social_id'] =  data.code;
-  //   }
-  //   console.log(request)
-  //   this._service.getLinkedInLogin(request).subscribe(res => {
-  //     let response = res;
-  //     console.log(response)
-  //   })
-  // }
 
 }

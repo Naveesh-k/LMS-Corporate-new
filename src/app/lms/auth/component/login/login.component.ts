@@ -6,6 +6,7 @@ import { Location } from '@angular/common'
 import { LmsAuthService } from '../../../../lms/auth/Service/lms-auth.service';
 import { NgxSpinnerService } from "ngx-spinner";
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   darkMode: boolean = false;
   constructor(
+    private toastr: ToastrService,
     private spinner: NgxSpinnerService,
     public router: Router,
     private location : Location,
@@ -80,7 +82,10 @@ export class LoginComponent implements OnInit {
 
       if(response.success === true){
         // this.spinner.hide();
+        this.toastr.success('message', response.message)
         this.router.navigateByUrl('/lms/app/home')
+      }else if (response.success === false){
+        this.toastr.error('message', response.message)
       }
     })
   }

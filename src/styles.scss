@@ -1,5 +1,6 @@
 @import "./assets/styles/dark.scss"; // dark-light
 @import "./assets/styles/light.scss"; // dark-light
+@import '~ngx-toastr/toastr'; // toaster
 html,
 body {
     height: 100%;
