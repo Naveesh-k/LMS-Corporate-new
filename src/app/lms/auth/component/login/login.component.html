@@ -24,11 +24,11 @@
                     </div>
 
                     <h4>LOG IN TO PIF</h4>
-                    <div class="px-5">
+                    <div class="px-4">
                         <form [formGroup]="loginForm" (ngSubmit)="signIn()">
                             <div class="form-row"></div>
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>Email address</label>
                                 <input type="text" formControlName="email" class="form-control email_input" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                                 <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                                     <div class="email_validation" *ngIf="f.email.errors.required">

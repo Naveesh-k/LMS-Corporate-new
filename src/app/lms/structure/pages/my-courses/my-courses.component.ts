@@ -23,4 +23,7 @@ export class MyCoursesComponent implements OnInit {
     });
     //end dark-light
   }
+
+  // slider
+  slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
 }

@@ -117,8 +117,12 @@ export class LoginComponent implements OnInit {
       request['social_id'] =  data.idToken;
      }
     console.log(request)
+    this.spinner.show(); // Spinner show
     this._service.getSignUpData(request).subscribe(res => {
       let response = res;
+      if(response.success == true){
+        this.spinner.hide(); // Spinner hide
+      }
       // ------------------- Spinner
       // this.spinner.show();
       // setTimeout(() => {

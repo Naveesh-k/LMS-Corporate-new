@@ -8,7 +8,7 @@
             darkMode ? 'dark-login-sidebar-bg' : 'light-login-sidebar-bg'
           ">
                     <div class="bg_form" [ngClass]="darkMode ? 'dark-bg' : 'light-card-bg'">
-                        <h5>Just a few details and we are good to go!</h5>
+                        <h5 class="h5_just">Just a few details and we are good to go!</h5>
 
                         <form class="mt-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="!hideFilledForm">
                             <div class="form-group">
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="fnt_wigt">How many years of experience?</label>
+                                <label class="fnt_wigt">How many years of experience do you have?</label>
                                 <input type="text" formControlName="experience" class="form-control input_bg" [ngClass]="{
                     'is-invalid': submittedSec && f1.experience.errors
                   }" />
@@ -100,7 +100,7 @@
 
                         <div class="row" *ngIf="showSelect">
                             <div class="col-md-12 ">
-                                <h5>Customise Your Topics</h5>
+                                <h5>Choose your area of interests</h5>
                                 <div class="row mt">
                                     <div class="col-md-6 col-lg-6 col-sm-6 col-12" *ngFor="let topic of topics; index as i">
 

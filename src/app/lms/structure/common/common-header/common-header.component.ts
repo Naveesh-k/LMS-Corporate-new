@@ -19,22 +19,28 @@ export class CommonHeaderComponent implements OnInit {
     let route = this.router.url;
     console.log(route);
     switch (route) {
-      case '/pages/home':
+      case '/lms/app/home':
         this.title = 'DASHBOARD';
         break;
-      case '/pages/my-course':
+      case '/lms/app/dash-var':
+        this.title = 'DASHBOARD';
+        break;
+      case '/lms/app/my-course':
         this.title = 'MY COURSE';
         break;
-      case '/pages/explore':
+      case '/lms/app/explore':
         this.title = 'EXPLORE';
         break;
-      case '/pages/board':
+      case '/lms/app/board':
         this.title = 'BOARD';
         break;
-      case '/pages/profile':
+      case '/lms/app/profile':
         this.title = 'PROFILE';
         break;
-      case '/pages/setting':
+      case '/lms/app/bulletin-board':
+        this.title = 'BULLETIN BOARD';
+        break;
+      case '/lms/app/setting':
         this.title = 'SETTING';
     }
 
