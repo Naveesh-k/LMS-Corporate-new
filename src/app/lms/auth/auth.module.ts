@@ -15,6 +15,7 @@ import {
 } from 'angularx-social-login';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
+import { UserGroupComponent } from './component/user-group/user-group.component';
 // import { AuthguardServiceService } from './auth-guard/authguard-service.service';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { GobalService } from 'src/app/lms/global-services/gobal.service';
     LoginComponent,
     SignUpComponent,
     DashboardComponent,
+    UserGroupComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule,HttpClientModule  ],
   providers: [{

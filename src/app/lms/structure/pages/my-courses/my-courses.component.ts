@@ -25,5 +25,5 @@ export class MyCoursesComponent implements OnInit {
   }
 
   // slider
-  slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
+  slideConfig = { slidesToShow: 3, slidesToScroll: 3};
 }

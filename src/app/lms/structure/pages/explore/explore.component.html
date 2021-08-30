@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <main class="col-md-12 float-left col px-5 px-md-3 py-3 main" [ngClass]="darkMode ? 'dark-bg' : 'light-bg'">
+        <main class="col-md-12 float-left col  main px-0" [ngClass]="darkMode ? 'dark-bg' : 'light-bg'">
             <app-common-header></app-common-header>
             <div class="row mt-3">
                 <div class="col-md-6 pl-4" *ngIf="hide">
@@ -25,55 +25,57 @@
                 </div>
             </div>
             <div *ngIf="hide">
-
-                <div class="row mt-3">
-                    <div class="col-md-12 pl-4">
-                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                            <!-- <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                <section class="px-5 px-md-3 py-3">
+                    <div class="row mt-3">
+                        <div class="col-md-12 pl-4">
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                                <!-- <div ngxSlickItem *ngFor="let slide of slides" class="slide">
                                   <img src="{{ slide.img }}" alt="" width="100%" />
                                 </div> -->
-                            <div ngxSlickItem class="slide-1">
-                                <img class="slick-img" src="../../../assets/images/Rectangle 71.png" alt="" />
-                                <a routerLink="/lms/app/course-preview">
-                                    <h6 class="pt-3 mast_h6 font-weight-bold">
-                                        Mastering Capital Wisdom
-                                    </h6>
-                                    <small class="pre_par_sm">Preparation</small>
-                                </a>
-                            </div>
-                            <div ngxSlickItem class="slide-1">
-                                <img class="slick-img" src="../../../assets/images/Rectangle 72.png" alt="" />
-                                <a routerLink="/lms/app/course-preview">
+                                <div ngxSlickItem class="slide-1">
+                                    <img class="slick-img" src="../../../assets/images/Rectangle 71.png" alt="" />
+                                    <a routerLink="/lms/app/course-preview">
+                                        <h6 class="pt-3 mast_h6 font-weight-bold">
+                                            Mastering Capital Wisdom
+                                        </h6>
+                                        <small class="pre_par_sm">Preparation</small>
+                                    </a>
+                                </div>
+                                <div ngxSlickItem class="slide-1">
+                                    <img class="slick-img" src="../../../assets/images/Rectangle 72.png" alt="" />
+                                    <a routerLink="/lms/app/course-preview">
+                                        <h6 class="pt-3 font-weight-bold mast_h6">Road To IPO</h6>
+                                        <small class="pre_par_sm">Preparation</small>
+                                    </a>
+                                </div>
+                                <div ngxSlickItem class="slide-1">
+                                    <img class="slick-img" src="../../../assets/images/Rectangle 73.png" alt="" />
+                                    <a routerLink="/lms/app/course-preview">
+                                        <h6 class="pt-3 font-weight-bold mast_h6">
+                                            Coinbase's Insane IPO
+                                        </h6>
+                                        <small class="pre_par_sm">Preparation</small>
+                                    </a>
+                                </div>
+                                <div ngxSlickItem class="slide-1">
+                                    <img class="slick-img" src="../../../assets/images/Rectangle 74.png" alt="" />
+                                    <a routerLink="/lms/app/course-preview">
+                                        <h6 class="pt-3 font-weight-bold mast_h6">
+                                            Alibaba IPO: Stock
+                                        </h6>
+                                        <small class="pre_par_sm">Preparation</small>
+                                    </a>
+                                </div>
+                                <div ngxSlickItem class="slide-1">
+                                    <img class="slick-img" src="../../../assets/images/Rectangle 71.png" alt="" />
                                     <h6 class="pt-3 font-weight-bold mast_h6">Road To IPO</h6>
                                     <small class="pre_par_sm">Preparation</small>
-                                </a>
-                            </div>
-                            <div ngxSlickItem class="slide-1">
-                                <img class="slick-img" src="../../../assets/images/Rectangle 73.png" alt="" />
-                                <a routerLink="/lms/app/course-preview">
-                                    <h6 class="pt-3 font-weight-bold mast_h6">
-                                        Coinbase's Insane IPO
-                                    </h6>
-                                    <small class="pre_par_sm">Preparation</small>
-                                </a>
-                            </div>
-                            <div ngxSlickItem class="slide-1">
-                                <img class="slick-img" src="../../../assets/images/Rectangle 74.png" alt="" />
-                                <a routerLink="/lms/app/course-preview">
-                                    <h6 class="pt-3 font-weight-bold mast_h6">
-                                        Alibaba IPO: Stock
-                                    </h6>
-                                    <small class="pre_par_sm">Preparation</small>
-                                </a>
-                            </div>
-                            <div ngxSlickItem class="slide-1">
-                                <img class="slick-img" src="../../../assets/images/Rectangle 71.png" alt="" />
-                                <h6 class="pt-3 font-weight-bold mast_h6">Road To IPO</h6>
-                                <small class="pre_par_sm">Preparation</small>
-                            </div>
-                        </ngx-slick-carousel>
+                                </div>
+                            </ngx-slick-carousel>
+                        </div>
                     </div>
-                </div>
+                </section>
+
                 <section style="background: #DAF1F2;">
                     <div class="container-fluid">
                         <div class="row mt-4">

@@ -41,7 +41,7 @@ export class CommonHeaderComponent implements OnInit {
         this.title = 'BULLETIN BOARD';
         break;
       case '/lms/app/setting':
-        this.title = 'SETTING';
+        this.title = 'SETTINGS';
     }
 
     // dark-light
@@ -67,4 +67,10 @@ export class CommonHeaderComponent implements OnInit {
     }
   }
   //end dark-light
+
+  // Logout
+  logOut(){
+    localStorage.clear();
+    this.router.navigateByUrl("/lms/auth/login")
+  }
 }

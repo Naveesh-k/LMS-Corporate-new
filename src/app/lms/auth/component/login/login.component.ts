@@ -15,6 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   loginForm: any = FormGroup;
   loginData: any;
+  login: any ;
   submitted = false;
   darkMode: boolean = false;
   constructor(
@@ -70,24 +71,34 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    let request = {
-          email: this.loginForm.value.email,
-          password : this.loginForm.value.password,
-    }
-
-    console.log(request)
-    // this.spinner.show();
-    this._services.getLogin(request).subscribe(res => {
-      let response = res;
-
-      if(response.success === true){
-        // this.spinner.hide();
-        this.toastr.success('message', response.message)
-        this.router.navigateByUrl('/lms/app/home')
-      }else if (response.success === false){
-        this.toastr.error('message', response.message)
+    try {
+      let request = {
+            email: this.loginForm.value.email,
+            password : this.loginForm.value.password,
       }
-    })
+      // this.spinner.show();
+      this._services.getLogin(request).subscribe(res => {
+        this.login = res;
+
+        if(this.login.success === true){
+          if(this.login.status === 401){
+            this.toastr.error('Session expire', 'Session expire please login again')
+          }
+          this.toastr.success('message', this.login.message)
+          this.router.navigateByUrl('/lms/app/home')
+        } else if (this.login.success === false){
+          this.toastr.error('message', this.login.message)
+          }
+      },(error) => {
+        if(this.login.status === 401){
+          this.toastr.error('message', this.login.message)
+        }
+      }
+      )
+    }
+    catch(err){
+      this.spinner.hide();
+    }
   }
 
 
