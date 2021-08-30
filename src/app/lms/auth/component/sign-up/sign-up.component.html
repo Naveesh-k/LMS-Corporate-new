@@ -8,7 +8,7 @@
             darkMode ? 'dark-login-sidebar-bg' : 'light-login-sidebar-bg'
           ">
                     <div class="bg_form" [ngClass]="darkMode ? 'dark-bg' : 'light-card-bg'">
-                        <h5 class="h5_just">Just a few details and we are good to go!</h5>
+                        <h5 class="h5_just" *ngIf="!hideFilledForm">Just a few details and we are good to go!</h5>
 
                         <form class="mt-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="!hideFilledForm">
                             <div class="form-group">
@@ -48,11 +48,8 @@
                             <div class="form-group">
                                 <label class="fnt_wigt">What Industry are you in?</label>
                                 <select formControlName="industry" class="form-control input_bg" [ngClass]="{ 'is-invalid': submittedSec && f1.industry.errors }">
-                                  <option value=""></option>
+                                  <option value="" selected>IPO</option>
                                   <option value="Mr">Mr</option>
-                                  <option value="Mrs">Mrs</option>
-                                  <option value="Miss">Miss</option>
-                                  <option value="Ms">Ms</option>
                                 </select>
                                 <div *ngIf="submittedSec && f1.industry.errors" class="invalid-feedback">
                                     <div *ngIf="f1.industry.errors.required">Industry is required</div>
