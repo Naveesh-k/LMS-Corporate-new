@@ -18,12 +18,17 @@ small.prep_small {
 }
 
 .slide-1 {
-    width: 288px;
+    // width: 288px;
+    width: 310px !important;
     margin: 0 6px;
 }
 
+.slick-prev {
+    left: 13px;
+}
+
 ngx-slick-carousel {
-    width: 100%;
+    width: 98%;
 }
 
 // ------------
