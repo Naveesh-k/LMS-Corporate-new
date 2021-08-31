@@ -4,7 +4,7 @@
 
             <app-common-header></app-common-header>
 
-            <div class="pl-2 pt-2 pb-2 pad">
+            <!-- <div class="pl-2 pt-2 pb-2 pad">
                 <div class="row mt-4 px-3">
                     <div class="col-md-12 border-bottom pb-3 px-0">
                         <div class="d-flex justify-content-between">
@@ -112,7 +112,7 @@
                                 <h5>Today’s Progress</h5>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-md-5">
                                 <div class="widget_small">
                                     <div class="row">
@@ -148,7 +148,134 @@
                     </div>
                 </section>
 
+            </div> -->
+            <!-- ------------------- -->
+            <!-- <div class="pl-2 pt-2 pb-2 pad">
+                <div class="row mt-4 px-3">
+                    <div class="col-md-12 border-bottom pb-1 px-0">
+                        <h4>What product do you want to create? </h4>
+                    </div>
+                </div>
+                <section class="mt-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="bg_color">
+                                    <div class="row">
+                                        <div class="col-md-6 text-center" *ngFor="let topic of topics; index as i">
+
+
+                                            <div class="select_box" [ngClass]="[topic.active === true ? 'bg-grenish-box' : 'select_box'
+                                            ]" (click)="selectedTopics(topic)">
+                                                <img [src]='topic.image'>
+                                                <h3 class="h3_course">{{topic.name}}</h3>
+                                                <p class="with_para">{{topic.para}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col-md-12 text-center">
+                                            <a class="btn btn_next">Next</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div> -->
+            <!-- ------------------- -->
+            <div class="pl-2 pt-2 pb-2 pad">
+                <div class="row mt-4 px-3">
+                    <div class="col-md-12 border-bottom pb-1 px-0">
+                        <h4>Course Information </h4>
+                    </div>
+                    <p class="lorem_p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                        specimen book.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg_colorr">
+                            <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label>Title</label>
+                                    <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                                        <option value=""></option>
+                                        <option value="Mr">Mr</option>
+                                        <option value="Mrs">Mrs</option>
+                                        <option value="Miss">Miss</option>
+                                        <option value="Ms">Ms</option>
+                                    </select>
+                                    <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                                        <div *ngIf="f.title.errors.required">Title is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-5">
+                                    <label>First Name</label>
+                                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-5">
+                                    <label>Last Name</label>
+                                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label>Date of Birth</label>
+                                    <input type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                                    <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                                        <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
+                                        <div *ngIf="f.dob.errors.pattern">Date of Birth must be a valid date in the format YYYY-MM-DD</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col">
+                                    <label>Email</label>
+                                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email.errors.required">Email is required</div>
+                                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label>Password</label>
+                                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Password is required</div>
+                                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col">
+                                    <label>Confirm Password</label>
+                                    <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                        <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                                        <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                                <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+                                <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary mr-1">Register</button>
+                            </div>
+                        </form> -->
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </main>
     </div>
 </div>

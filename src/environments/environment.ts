@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  // lmsApiBaseUrl: 'http://167.99.64.227:4000/api/v1/eduTech/',
-  lmsApiBaseUrl: ' https://pifstage.swotfishdemo.com:4000/api/v1/eduTech/',
+  // lmsApiBaseUrl: ' https://pifstage.swotfishdemo.com:4000/api/v1/eduTech/',
+  lmsApiBaseUrl: ' http://165.22.246.192/api/v1/eduTech/',
+  assetPath: '../..//assets'
 };
 
 /*
