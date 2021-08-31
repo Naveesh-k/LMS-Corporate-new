@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // lmsApiBaseUrl: ' https://pifstage.swotfishdemo.com:4000/api/v1/eduTech/',
-  lmsApiBaseUrl: ' http://165.22.246.192/api/v1/eduTech/',
+  lmsApiBaseUrl: ' https://lms.engineermaster.in/api/v1/eduTech/',
   assetPath: '../..//assets'
 };
 
