@@ -152,17 +152,17 @@ export class DashboardComponent implements OnInit {
           let userId = '';
 
           let data1   = JSON.parse(secData[0]);
-          console.log('check',data1)
+          console.log('check1',data1)
           if (data1) {
             userFirstName = data1.firstName.localized.en_US;
             userLastName = data1.lastName.localized.en_US;
             userId = data1.id;
-            userProfile = data1.profilePicture['displayImage~'].elements[1].identifiers[0].identifier;
+            userProfile = data1.profilePicture && data1.profilePicture['displayImage~'].elements[1].identifiers[0].identifier;
           }
           let data2 = JSON.parse(secData[1]);
-          console.log('check',data2)
+          console.log('check2',data2)
           if (data2 && data2.elements) {
-            linkedInEmail = data2.elements[0]['handle~'].emailaddress
+            linkedInEmail = data2.elements[0]['handle~'].emailAddress
           }
           let req = {
             photoUrl: userProfile,
@@ -172,6 +172,7 @@ export class DashboardComponent implements OnInit {
             firstName: userFirstName,
             lastName: userLastName,
           }
+          console.log('req', req);
           localStorage.setItem("userDetail", JSON.stringify(req));
           this.signUp(req);
           // this.router.navigateByUrl('/lms/auth/sign-up')
@@ -190,7 +191,7 @@ export class DashboardComponent implements OnInit {
   }
 
   signUp(data: any) {
-    console.log(data);
+    console.log('signUp', data);
     let request:any = {
       profile:        data.photoUrl,
       provider:       data.provider,
