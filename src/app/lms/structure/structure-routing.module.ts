@@ -10,6 +10,7 @@ import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { BulletinBoardComponent } from './pages/bulletin-board/bulletin-board.component';
+import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,8 @@ const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'setting', component: SettingComponent },
       { path: 'bulletin-board', component: BulletinBoardComponent },
+      // Course Provider
+      { path: 'cp-dash', component: CpDashboardComponent },
     ],
   },
 ];
