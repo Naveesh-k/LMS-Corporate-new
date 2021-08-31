@@ -1,1 +1,109 @@
-<p>cp-sign-up works!</p>
+<app-header></app-header>
+
+<section id="signup-bg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-sm-6 col-12">
+                <div class="bg_col-1" [ngClass]="darkMode ? 'dark-login-sidebar-bg' : 'light-login-sidebar-bg'">
+                    <div class="bg_form" [ngClass]="darkMode ? 'dark-bg' : 'light-card-bg'">
+                        <!-- (ngSubmit)="onSubmit()" -->
+                        <form [formGroup]="registerForm" *ngIf="!hide">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label class="fnt_wigt">Are you an independent provider?</label>
+                                    <select formControlName="title" class="form-control input_bg" [ngClass]="{ 'is-invalid': submitted && f.provider.errors }">
+                                      <option class="drop_option" selected>Yes</option>
+                                </select>
+                                    <div *ngIf="submitted && f.provider.errors" class="invalid-feedback">
+                                        <div *ngIf="f.provider.errors.required">provider is required</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <!-- formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"-->
+                                    <input type="text" class="form-control form-control input_bg" />
+                                    <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                      <div *ngIf="f.email.errors.required"> required</div>
+                                      <div *ngIf="f.email.errors.email"> must be a valid email address</div>
+                                  </div> -->
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group col">
+                                    <label class="fnt_wigt">What is your special niche market?</label>
+
+                                    <input type="text" formControlName="market" class="form-control form-control input_bg" [ngClass]="{ 'is-invalid': submitted && f.market.errors }" />
+                                    <div *ngIf="submitted && f.market.errors" class="invalid-feedback">
+                                        <div *ngIf="f.market.errors.required"> market required</div>
+                                        <div *ngIf="f.market.errors.market"> must be a valid market address</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="form-group col">
+                                    <label class="fnt_wigt">How many years of experience?</label>
+
+                                    <input type="text" formControlName="experience" class="form-control form-control input_bg" [ngClass]="{ 'is-invalid': submitted && f.experience.errors }" />
+                                    <div *ngIf="submitted && f.experience.errors" class="invalid-feedback">
+                                        <div *ngIf="f.experience.errors.required"> experience required</div>
+                                        <div *ngIf="f.experience.errors.experience"> must be a valid experience address</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button class="btn btn-next mr-1" (click)="nextPage()">Next</button>
+                            </div>
+                        </form>
+
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="hide">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label class="fnt_wigt">Select your location</label>
+                                    <select formControlName="title" class="form-control input_bg" [ngClass]="{ 'is-invalid': submitted && f.location.errors }">
+                                          <option class="drop_option" selected>Select</option>
+                                    </select>
+                                    <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+                                        <div *ngIf="f.location.errors.required">Location is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label class="fnt_wigt"> Size of your team</label>
+                                    <select formControlName="title" class="form-control input_bg" [ngClass]="{ 'is-invalid': submitted && f.team.errors }">
+                                      <option class="drop_option" selected>Select</option>
+                                </select>
+                                    <div *ngIf="submitted && f.team.errors" class="invalid-feedback">
+                                        <div *ngIf="f.team.errors.required">Team is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label class="fnt_wigt">Contact number</label>
+                                    <input type="text" formControlName="contactNumber" placeholder="0741- 6695823" class="form-control form-control input_bg" [ngClass]="{ 'is-invalid': submitted && f.contactNumber.errors }" />
+                                    <div *ngIf="submitted && f.contactNumber.errors" class="invalid-feedback">
+                                        <div *ngIf="f.contactNumber.errors.required">Contact Number required</div>
+                                        <div *ngIf="f.contactNumber.errors.contactNumber"> must be a valid email address
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-next mr-1">Done</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-8 col-sm-6 col-12"></div>
+        </div>
+    </div>
+</section>

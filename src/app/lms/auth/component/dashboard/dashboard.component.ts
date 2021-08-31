@@ -65,6 +65,9 @@ export class DashboardComponent implements OnInit {
         left = window.screen.width / 2 - width / 2,
         top = window.screen.height / 2 - height / 2;
     window.location.href = oauthUrl;
+    // const options = `directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no,
+    // copyhistory=no, width=${width},height=${height},left=${left},top=${top}`;
+    // window.open(oauthUrl, '_blank', options);
 };
   ngOnInit(): void {
     // dark-light
@@ -138,7 +141,7 @@ export class DashboardComponent implements OnInit {
         redirect_uri : "http://pifstage.swotfishdemo.com/lms/auth",
         code : code
     }
-    console.log(request,'check 142')
+    // window.open('https://javascript.info/')
     this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
       console.log(response,'check 145')
@@ -160,7 +163,6 @@ export class DashboardComponent implements OnInit {
             userProfile = data1.profilePicture && data1.profilePicture['displayImage~'].elements[1].identifiers[0].identifier;
           }
           let data2 = JSON.parse(secData[1]);
-          // console.log('check2',data2)
           if (data2 && data2.elements) {
             linkedInEmail = data2.elements[0]['handle~'].emailAddress
           }
@@ -172,7 +174,6 @@ export class DashboardComponent implements OnInit {
             firstName: userFirstName,
             lastName: userLastName,
           }
-          // console.log('req', req);
           localStorage.setItem("userDetail", JSON.stringify(req));
           this.signUp(req);
           // this.router.navigateByUrl('/lms/auth/sign-up')
