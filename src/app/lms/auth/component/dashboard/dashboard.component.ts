@@ -160,19 +160,19 @@ export class DashboardComponent implements OnInit {
             userProfile = data1.profilePicture && data1.profilePicture['displayImage~'].elements[1].identifiers[0].identifier;
           }
           let data2 = JSON.parse(secData[1]);
-          console.log('check2',data2)
+          // console.log('check2',data2)
           if (data2 && data2.elements) {
             linkedInEmail = data2.elements[0]['handle~'].emailAddress
           }
           let req = {
-            photoUrl: userProfile,
+            photoUrl: userProfile !== undefined ? '' : userProfile,
             provider: 'LINKEDIN',
             email: linkedInEmail,
             userId: userId,
             firstName: userFirstName,
             lastName: userLastName,
           }
-          console.log('req', req);
+          // console.log('req', req);
           localStorage.setItem("userDetail", JSON.stringify(req));
           this.signUp(req);
           // this.router.navigateByUrl('/lms/auth/sign-up')
