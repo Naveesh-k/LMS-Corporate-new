@@ -142,7 +142,7 @@ export class DashboardComponent implements OnInit {
     this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
       console.log(response,'check 145')
-      if(response.success == true){
+      if(response.success === true){
         let secData = response.data;
         if (secData) {
           let userFirstName = '';
@@ -152,14 +152,15 @@ export class DashboardComponent implements OnInit {
           let userId = '';
 
           let data1   = JSON.parse(secData[0]);
+          console.log('check',data1)
           if (data1) {
-            console.log(data1)
             userFirstName = data1.firstName.localized.en_US;
             userLastName = data1.lastName.localized.en_US;
             userId = data1.id;
             userProfile = data1.profilePicture['displayImage~'].elements[1].identifiers[0].identifier;
           }
           let data2 = JSON.parse(secData[1]);
+          console.log('check',data2)
           if (data2 && data2.elements) {
             linkedInEmail = data2.elements[0]['handle~'].emailaddress
           }
