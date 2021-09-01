@@ -114,7 +114,6 @@ export class DashboardComponent implements OnInit {
     // -----------------------------
   }
   signInWithGoogle(): void {
-    // this.router.navigateByUrl('/lms/auth/user-group');
    this._service.checkSignupType()
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
@@ -228,8 +227,8 @@ export class DashboardComponent implements OnInit {
       // ------------------- Spinner end
       console.log(response)
       if(response.success == true){
-        // this.router.navigateByUrl('/lms/auth/sign-up')  ye cmnt kara
-        this.router.navigateByUrl('/lms/auth/user-group') // ye add kara
+        this.router.navigateByUrl('/lms/auth/sign-up')  // ye cmnt kara
+        // this.router.navigateByUrl('/lms/auth/user-group') // ye add kara
       }else{
         this.socailLogin(data)
         this.router.navigateByUrl('/lms/app/home')
