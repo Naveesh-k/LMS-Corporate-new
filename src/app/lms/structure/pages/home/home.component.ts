@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ColorModeService } from 'src/app/service/color-mode.service'; // dark-light
 
 @Component({
@@ -9,10 +10,12 @@ import { ColorModeService } from 'src/app/service/color-mode.service'; // dark-l
 export class HomeComponent implements OnInit {
   darkMode: boolean = false; // dark-light
   constructor(
+    private spinner: NgxSpinnerService,
     public mode: ColorModeService // dark-light
   ) {}
 
   ngOnInit(): void {
+    this.spinner.hide();
     // dark-light
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
