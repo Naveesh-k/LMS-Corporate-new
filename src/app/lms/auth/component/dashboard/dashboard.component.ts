@@ -217,8 +217,10 @@ export class DashboardComponent implements OnInit {
         request['social_id'] =  data.userId;
      }
     console.log(request)
+
     this._service.getSignUpData(request).subscribe(res => {
       let response = res;
+      this.spinner.show();
       // ------------------- Spinner
       // this.spinner.show();
       // setTimeout(() => {
@@ -227,6 +229,7 @@ export class DashboardComponent implements OnInit {
       // ------------------- Spinner end
       console.log(response)
       if(response.success == true){
+        this.spinner.hide();
         this.router.navigateByUrl('/lms/auth/sign-up')  // ye cmnt kara
         // this.router.navigateByUrl('/lms/auth/user-group') // ye add kara
       }else{
