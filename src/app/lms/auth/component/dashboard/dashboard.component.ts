@@ -217,10 +217,9 @@ export class DashboardComponent implements OnInit {
         request['social_id'] =  data.userId;
      }
     console.log(request)
-
+    this.spinner.show();
     this._service.getSignUpData(request).subscribe(res => {
       let response = res;
-      this.spinner.show();
       // ------------------- Spinner
       // this.spinner.show();
       // setTimeout(() => {
