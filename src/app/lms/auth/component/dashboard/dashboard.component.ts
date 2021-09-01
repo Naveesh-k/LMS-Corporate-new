@@ -187,7 +187,7 @@ export class DashboardComponent implements OnInit {
   }
 
   signUp(data: any) {
-    console.log('signUp', data);
+    this.spinner.show();
     let request:any = {
       profile:        data.photoUrl,
       provider:       data.provider,
@@ -217,20 +217,14 @@ export class DashboardComponent implements OnInit {
         request['social_id'] =  data.userId;
      }
     console.log(request)
-    this.spinner.show();
+
     this._service.getSignUpData(request).subscribe(res => {
       let response = res;
-      // ------------------- Spinner
-      // this.spinner.show();
-      // setTimeout(() => {
-      //   this.spinner.hide();
-      // }, 1000);
-      // ------------------- Spinner end
       console.log(response)
       if(response.success == true){
         this.spinner.hide();
-        this.router.navigateByUrl('/lms/auth/sign-up')  // ye cmnt kara
-        // this.router.navigateByUrl('/lms/auth/user-group') // ye add kara
+        // this.router.navigateByUrl('/lms/auth/sign-up')  // ye cmnt kara
+        this.router.navigateByUrl('/lms/auth/user-group') // ye add kara
       }else{
         this.socailLogin(data)
         this.router.navigateByUrl('/lms/app/home')
