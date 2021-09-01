@@ -11,15 +11,21 @@
                         <h5 class="h5_just">Please Indicate Your User Group</h5>
 
                         <div class="mar_t">
+                            <!-- <a class="btn btn_free_user">Free user</a> -->
+                            <!-- -------------- -->
                             <a class="btn btn_free_user" (click)="getSignUp()">Free user</a>
+                            <!-- -------------- -->
                             <div class="form-group col select_dropdown">
                                 <select formControlName="title" class="form-control select_field">
                                   <option class="drop_option" selected>Subscriber</option>
-                                  <option class="drop_option">Normal</option>
-                                  <option class="drop_option">Enterprise</option>
+                                  <!-- <option class="drop_option">Normal</option>
+                                  <option class="drop_option">Enterprise</option> -->
+                                  <!-- ---------------- -->
+                                  <option class="drop_option" (click)="getSignUp()">Normal</option>
+                                  <option class="drop_option" (click)="getSignUp()">Enterprise</option>
+                                  <!-- -------------- -->
                                 </select>
                             </div>
-
                             <a class="btn btn_free_user">Courses Provider</a>
                         </div>
                         <div>

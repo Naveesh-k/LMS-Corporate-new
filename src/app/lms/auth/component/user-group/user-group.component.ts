@@ -28,11 +28,11 @@ export class UserGroupComponent implements OnInit {
 
   }
 
-  // get signup data
+  // ------------------------------------------------------------
   getSignUp(){
    let getSocialLogin = localStorage.getItem("socailSignUp");
    this.router.navigateByUrl('/lms/auth/sign-up')
    console.log(getSocialLogin)
   }
-
+// ------------------------------------------------------------
 }
