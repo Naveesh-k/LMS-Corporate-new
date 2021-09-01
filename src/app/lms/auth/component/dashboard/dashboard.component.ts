@@ -38,13 +38,13 @@ export class DashboardComponent implements OnInit {
   provider:any = ''
 
   constructor(
-    private toastr: ToastrService, // Toaster
+    private toastr: ToastrService,
     private spinner: NgxSpinnerService,
     private route: ActivatedRoute,
     public router :Router,
     private authService: SocialAuthService,
-    public mode: ColorModeService, // dark-light
-    public _service:GobalService, // api
+    public mode: ColorModeService,
+    public _service:GobalService,
   ) {}
   // public subscribeToisInitialized(){
   //     this._linkedInService.isInitialized$.subscribe({
@@ -85,7 +85,6 @@ export class DashboardComponent implements OnInit {
       console.log(this.user);
       if(this.user){
         this.signUp(this.user)
-        // this.router.navigateByUrl('/lms/auth/sign-up')
         setTimeout(() => {
           this.signOut();
         }, 1000);
@@ -115,9 +114,9 @@ export class DashboardComponent implements OnInit {
     // -----------------------------
   }
   signInWithGoogle(): void {
+    // this.router.navigateByUrl('/lms/auth/user-group');
    this._service.checkSignupType()
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    // this.signUp()
   }
 
   signInWithFB(): void {
@@ -125,9 +124,6 @@ export class DashboardComponent implements OnInit {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
-  // signInWithLinkedIn(): void {
-  //   this.authService.signIn(LinkedInLoginProvider.PROVIDER_ID);
-  // }
   signIn(provider: any){
   }
   signOut(): void {
@@ -230,8 +226,10 @@ export class DashboardComponent implements OnInit {
       //   this.spinner.hide();
       // }, 1000);
       // ------------------- Spinner end
+      console.log(response)
       if(response.success == true){
-        this.router.navigateByUrl('/lms/auth/sign-up')
+        // this.router.navigateByUrl('/lms/auth/sign-up')  ye cmnt kara
+        this.router.navigateByUrl('/lms/auth/user-group') // ye add kara
       }else{
         this.socailLogin(data)
         this.router.navigateByUrl('/lms/app/home')

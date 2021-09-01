@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ColorModeService } from 'src/app/service/color-mode.service';
 export class UserGroupComponent implements OnInit {
   darkMode: boolean = false;
   constructor(
+    public router :Router,
     public mode: ColorModeService // dark-light
   ) { }
 
@@ -26,6 +28,11 @@ export class UserGroupComponent implements OnInit {
 
   }
 
-
+  // get signup data
+  getSignUp(){
+   let getSocialLogin = localStorage.getItem("socailSignUp");
+   this.router.navigateByUrl('/lms/auth/sign-up')
+   console.log(getSocialLogin)
+  }
 
 }
