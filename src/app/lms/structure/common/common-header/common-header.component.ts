@@ -71,6 +71,6 @@ export class CommonHeaderComponent implements OnInit {
   // Logout
   logOut(){
     localStorage.clear();
-    this.router.navigateByUrl("/lms/auth/login")
+    this.router.navigateByUrl("/lms/auth")
   }
 }

@@ -10,6 +10,7 @@ import { Location } from '@angular/common'
 })
 export class HeaderComponent implements OnInit {
   darkMode: boolean = false;
+  showButton: boolean = false;
   constructor(
     private location: Location,
     public router: Router,
@@ -30,6 +31,12 @@ export class HeaderComponent implements OnInit {
 
   // back page location
   back(): void {
-    this.location.back()
+    if(this.router.navigateByUrl('/lms/auth')){
+      this.showButton = false;
+    }else if(this.router.navigateByUrl('/lms/auth/sign-up')){
+      this.showButton = true;
+      this.location.back()
+    }
   }
+
 }

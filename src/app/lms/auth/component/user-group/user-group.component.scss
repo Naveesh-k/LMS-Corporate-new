@@ -9,10 +9,23 @@ section#signup-bg {
 h5.h5_just {
     font-size: 18px;
     text-align: center;
+    margin-bottom: 63px; // add
 }
 
 a.btn_free_user {
     border: 2px solid #28a0a4;
+    width: 100%;
+    border-radius: 11px;
+}
+
+a.btn_free_user:hover {
+    background: #28a0a4;
+    color: #fff;
+}
+
+.bg-grenish-box {
+    background: #28a0a4;
+    color: #fff;
     width: 100%;
     border-radius: 11px;
 }
@@ -23,14 +36,25 @@ a.btn_free_user {
     padding: 0;
 }
 
-select.select_field {
-    border-radius: 11px;
+select.select_field:hover {
     background: #28a0a4;
     color: #fff;
+    cursor: pointer;
+}
+
+select.select_field {
+    border-radius: 11px;
+    border: 2px solid #28a0a4;
+}
+
+select.select_field_green {
+    color: #fff;
+    background: #28a0a4;
 }
 
 .mar_t {
-    margin: 63px 0;
+    // margin: 63px 0; // cmmt
+    margin: 29px 0; // add
 }
 
 a.btn_next {
@@ -38,7 +62,8 @@ a.btn_next {
     background: #28a0a4;
     color: #fff;
     border-radius: 11px;
-    margin-top: 23px;
+    // margin-top: 23px; // cmmt
+    margin-top: 88px; // add
 }
 
 option.drop_option {

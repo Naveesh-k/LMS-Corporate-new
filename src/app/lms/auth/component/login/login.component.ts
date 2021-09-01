@@ -54,8 +54,9 @@ export class LoginComponent implements OnInit {
   }
 
   // back location
-  back(): void {
-    this.location.back()
+  back() {
+    // this.location.back()
+    this.router.navigateByUrl('/lms/auth')
   }
 
   // convenience getter for easy access to form fields

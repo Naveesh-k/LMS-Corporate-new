@@ -9,23 +9,22 @@
           ">
                     <div class="bg_form" [ngClass]="darkMode ? 'dark-bg' : 'light-card-bg'">
                         <h5 class="h5_just">Please Indicate Your User Group</h5>
-
-                        <div class="mar_t">
-                            <!-- <a class="btn btn_free_user">Free user</a> -->
-                            <!-- -------------- -->
-                            <a class="btn btn_free_user" (click)="getSignUp()">Free user</a>
-                            <!-- -------------- -->
-                            <div class="form-group col select_dropdown">
-                                <select formControlName="title" class="form-control select_field">
+                        <div class="mar_t" *ngFor="let topic of topics; index as i">
+                            <a *ngIf="topic.name === 'Free user'" [ngClass]="[ 'btn ', topic.active === true ? 'bg-grenish-box' : 'btn_free_user'
+                          ]" (click)="selectOne(topic)">Free user</a>
+                            <div class="form-group col select_dropdown" *ngIf="topic.name === 'Subscriber'">
+                                <select formControlName="title" [ngClass]="[ 'form-control ', topic.active === true ? 'select_field_green' : 'select_field'
+                                ]" (click)="selectOne(topic)">
                                   <option class="drop_option" selected>Subscriber</option>
                                   <option class="drop_option">Normal</option>
                                   <option class="drop_option">Enterprise</option>
                                 </select>
                             </div>
-                            <a class="btn btn_free_user">Courses Provider</a>
+                            <a *ngIf="topic.name === 'Courses Provider'" [ngClass]="[ 'btn ', topic.active === true ? 'bg-grenish-box' : 'btn_free_user'
+                            ]" (click)="selectOne(topic)">Courses Provider</a>
                         </div>
                         <div>
-                            <a class="btn btn_next">Next</a>
+                            <a class="btn btn_next" (click)="getSignUp()">Next</a>
                         </div>
                     </div>
                 </div>

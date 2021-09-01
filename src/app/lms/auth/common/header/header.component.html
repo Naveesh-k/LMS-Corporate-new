@@ -5,7 +5,9 @@
                 <div class=" col-md-5 col-lg-4 col-sm-5 col-12 pad_icr">
 
                     <div class="imyu" [ngClass]="darkMode ? 'dark-card-bg' : 'light-login-sidebar-bg'">
-                        <button class="btn btn_back" (click)="back()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+
+                        <button class="btn btn_back" *ngIf="showButton"><i (click)="back()" class="fa fa-caret-left" aria-hidden="true"></i></button>
+
                         <a routerLink="/lms/auth">
                             <img class="logo_img" src="../../../assets/images/log.png" alt="" />
                         </a>
@@ -20,7 +22,7 @@
                         <form class="form-inline respo my-2 my-lg-0">
                             <ul class="navbar-nav mr-auto">
                                 <!-- <li class="nav-item active">
-                <a class="nav-link" 
+                <a class="nav-link"
                   >Home <span class="sr-only">(current)</span></a
                 >
               </li> -->
