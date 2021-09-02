@@ -214,7 +214,8 @@ nextForm(){
     })
     }
   else {
-this.showPasswordField = true;
+    this.showPasswordField = true;
+
     let request = {
       size_of_team:0,
       on_boarding: 0,
