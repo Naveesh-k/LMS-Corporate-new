@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.hide();
+
     // dark-light
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
@@ -25,9 +26,9 @@ export class HomeComponent implements OnInit {
         this.darkMode = true;
       }
     });
-    //end dark-light
 
-    // get local storage data
+    /*get localStorage data
+    for show profile name*/
     let getLocalStorage:any =  localStorage.getItem('userDetail');
     this.signUpData = JSON.parse(getLocalStorage);
   }
