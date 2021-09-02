@@ -9,6 +9,7 @@ import { ColorModeService } from 'src/app/service/color-mode.service'; // dark-l
 })
 export class HomeComponent implements OnInit {
   darkMode: boolean = false; // dark-light
+  signUpData:any;
   constructor(
     private spinner: NgxSpinnerService,
     public mode: ColorModeService // dark-light
@@ -25,5 +26,11 @@ export class HomeComponent implements OnInit {
       }
     });
     //end dark-light
+
+    // get local storage data
+    let getLocalStorage:any =  localStorage.getItem('userDetail');
+    this.signUpData = JSON.parse(getLocalStorage);
+    console.log(this.signUpData.name,'Name check')
   }
+
 }
