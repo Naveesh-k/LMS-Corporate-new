@@ -58,6 +58,7 @@ export class SignUpComponent implements OnInit {
   profilepic:any = ''
   tokenId:any = ''
   provider:any = ''
+  showPasswordField:boolean =false;
 
   constructor(public router: Router,
     private formBuilder: FormBuilder,
@@ -186,7 +187,7 @@ nextForm(){
     console.log(this.checkSignUptype)
 
     if(this.checkSignUptype){
-
+      this.showPasswordField = false;
       let extraVariable = {
       group:'',
       market:'',
@@ -213,7 +214,7 @@ nextForm(){
     })
     }
   else {
-
+this.showPasswordField = true;
     let request = {
       size_of_team:0,
       on_boarding: 0,
