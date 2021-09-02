@@ -30,7 +30,6 @@ export class HomeComponent implements OnInit {
     // get local storage data
     let getLocalStorage:any =  localStorage.getItem('userDetail');
     this.signUpData = JSON.parse(getLocalStorage);
-    console.log(this.signUpData.name,'Name check')
   }
 
 }
