@@ -12,6 +12,9 @@ export class CpDashboardComponent implements OnInit {
   darkMode: boolean = false; // dark-light
   registerForm: any = FormGroup;
   submitted: boolean = false;
+  showCourse: boolean = false;
+  showCurru: boolean = false;
+  show: boolean = true;
   topics: any = [{
     'name': 'Course',
     'para': 'With a course, you can build a curriculum for your students that can be self-paced or guided directly by you, the instructor.',
@@ -74,4 +77,15 @@ export class CpDashboardComponent implements OnInit {
     // display form values on success
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
 }
+
+  courseShow(){
+    // this.showCourse = true;
+    // this.show = false;
+    // this.showCurru = false;
+  }
+  circulumShow(){
+    // this.showCourse = false;
+    // this.show = false;
+    // this.showCurru= true;
+  }
 }
