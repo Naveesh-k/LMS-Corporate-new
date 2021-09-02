@@ -199,7 +199,7 @@ nextForm(){
       topic:'',
       on_boarding:'1'
     }
-    this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable}
+    this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value}
     this.signUpData['profile'] = this.profilepic
     this.signUpData['social_id'] = this.tokenId
     this.signUpData['provider'] = this.provider
