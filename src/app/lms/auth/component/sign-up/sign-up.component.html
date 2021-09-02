@@ -28,65 +28,61 @@
                                 <input type="text" formControlName="lastName" class="form-control input_bg" />
 
                             </div>
-                            <div class="form-group" *ngIf="showPasswordField">
+                            <div class="form-group" *ngIf="!checkSignUptype">
                                 <label class="fnt_wigt">Password</label>
                                 <input type="password" formControlName="password" class="form-control input_bg" />
                             </div>
                             <div class="form-group">
                                 <label class="fnt_wigt">Profile</label> <br>
                                 <img src="{{profilepic}}" class="dynamic_signup_img">
-
                             </div>
-
                             <div class="text-center">
                                 <button class="btn btn-next mr-1">Next</button>
                             </div>
                         </form>
 
-                        <form class="mt-4" [formGroup]="registerFormSec" (ngSubmit)="nextForm()" *ngIf="hideFilledForm1">
+                        <form class="mt-4" [formGroup]="registerForm" (ngSubmit)="nextForm()" *ngIf="hideFilledForm1">
                             <div class="form-group">
                                 <label class="fnt_wigt">What Industry are you in?</label>
-                                <select formControlName="industry" class="form-control input_bg" [ngClass]="{ 'is-invalid': submittedSec && f1.industry.errors }">
+                                <!-- [ngClass]="{ 'is-invalid': submitted && f.industry.errors }" -->
+                                <select formControlName="industry" class="form-control input_bg">
                                   <option value="" selected>IPO</option>
                                   <option value="Mr">Mr</option>
                                 </select>
-                                <div *ngIf="submittedSec && f1.industry.errors" class="invalid-feedback">
-                                    <div *ngIf="f1.industry.errors.required">Industry is required</div>
-                                </div>
+                                <!-- <div *ngIf="submitted && f.industry.errors" class="invalid-feedback">
+                                    <div *ngIf="f.industry.errors.required">Industry is required</div>
+                                </div> -->
                             </div>
                             <div class="form-group">
                                 <label class="fnt_wigt">What is your job title</label>
-                                <input type="text" formControlName="jobTitle" class="form-control input_bg" [ngClass]="{
-                    'is-invalid': submittedSec && f1.jobTitle.errors
-                  }" />
-                                <div *ngIf="submittedSec && f1.jobTitle.errors" class="invalid-feedback">
-                                    <div *ngIf="f1.jobTitle.errors.required">
+                                <input type="text" formControlName="jobTitle" class="form-control input_bg" />
+                                <!-- [ngClass]="{'is-invalid': submitted && f.jobTitle.errors}"  -->
+                                <!-- <div *ngIf="submitted && f.jobTitle.errors" class="invalid-feedback">
+                                    <div *ngIf="f.jobTitle.errors.required">
                                         Job Title is required
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="form-group">
                                 <label class="fnt_wigt">Position</label>
-                                <input type="text" formControlName="position" class="form-control input_bg" [ngClass]="{
-                    'is-invalid': submittedSec && f1.position.errors
-                  }" />
-                                <div *ngIf="submittedSec && f1.position.errors" class="invalid-feedback">
-                                    <div *ngIf="f1.position.errors.required">
+                                <input type="text" formControlName="position" class="form-control input_bg" />
+                                <!-- [ngClass]="{'is-invalid': submitted && f.position.errors}" -->
+                                <!-- <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
+                                    <div *ngIf="f.position.errors.required">
                                         Position is required
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="form-group">
                                 <label class="fnt_wigt">How many years of experience do you have?</label>
-                                <input type="text" formControlName="experience" class="form-control input_bg" [ngClass]="{
-                    'is-invalid': submittedSec && f1.experience.errors
-                  }" />
-                                <div *ngIf="submittedSec && f1.experience.errors" class="invalid-feedback">
-                                    <div *ngIf="f1.experience.errors.required">
+                                <input type="text" formControlName="experience" class="form-control input_bg" />
+                                <!-- [ngClass]="{'is-invalid': submitted && f.experience.errors}" -->
+                                <!-- <div *ngIf="submitted && f.experience.errors" class="invalid-feedback">
+                                    <div *ngIf="f.experience.errors.required">
                                         Experience is required
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="text-center">

@@ -107,7 +107,8 @@ export class SignUpComponent implements OnInit {
           topic: '',
           industry: '',
           position: '',
-          job_title: '',
+          jobTitle: '',
+          experience: ''
         });
 
 // -----------------------------------------------------------------
@@ -129,16 +130,6 @@ export class SignUpComponent implements OnInit {
 // })
 
 // -----------------------------------------------------------------
-        this.registerFormSec = this.formBuilder.group({
-          industry: ['', Validators.required],
-          position: ['', Validators.required],
-          jobTitle: ['', Validators.required],
-          experience: ['', [Validators.required]]
-        });
-
-        console.log(this._service.globalObject)
-
-
 
 
     // dark-light
@@ -219,28 +210,28 @@ nextForm(){
     let request = {
       size_of_team:0,
       on_boarding: 0,
-      experience: 0,
+      experience: this.registerForm.value.experience,
 
       first_name: this.registerForm.value.firstName,
       last_name: this.registerForm.value.lastName,
       email: this.registerForm.value.email,
       customize_topic: this.registerForm.value.customize_topic,
+      position: this.registerForm.value.position,
 
-      password: this.registerForm.value.password   ? this.registerForm.value.password: "",
-      profile: this.registerForm.value.profile     ? this.registerForm.value.password: "",
-      social_id: this.registerForm.value.social_id ? this.registerForm.value.password: "",
-      provider: this.registerForm.value.provider   ? this.registerForm.value.password: "",
-      group_val: this.registerForm.value.group_val ? this.registerForm.value.password: "",
+      profile:this.registerForm.value.profile,
+      industry:this.registerForm.value.industry,
+      job_title : this.registerForm.value.jobTitle,
+
+      password: this.registerForm.value.password,
+
+      social_id: "",
+      provider: "",
+      group_val: "",
       market: "",
       location: "",
-
-      category:this.registerForm.value.category  ? this.registerForm.value.password: "",
-      topic:this.registerForm.value.topic        ? this.registerForm.value.password: "",
-      industry:this.registerForm.value.industry  ? this.registerForm.value.password: "",
-      position: this.registerForm.value.position ? this.registerForm.value.password: "",
-      job_title : this.registerForm.value.jobTitle? this.registerForm.value.password: "",
-      contact_number: "",
-
+      category:"",
+      topic:"",
+      contact_number: ""
     }
 
 
