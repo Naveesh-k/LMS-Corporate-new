@@ -10,7 +10,7 @@ section#dashboard-bg {
     background: url(./assets/images/login-img.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 90vh;
+    height: 95vh;
     padding: 0 0 45px 39px;
     border-top: 1px solid #fff;
 }
@@ -302,7 +302,23 @@ p.short_corse_p {
     justify-content: flex-end;
 }
 
+section.header_pad {
+    padding: 0 0 0 39px;
+}
+
 @media screen and (min-device-width: 300px) and (max-device-width: 1024px) {
+    .btn-socail {
+        font-size: 14px;
+        padding-left: 27px;
+        padding-top: 8px;
+    }
+    img.facebook-img {
+        top: 6px;
+    }
+    section#dashboard-bg {
+        height: 95vh;
+    }
+    // ----------------
     .hide_show {
         display: block;
     }

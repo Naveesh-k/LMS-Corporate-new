@@ -53,7 +53,6 @@ select.select_field_green {
 }
 
 .mar_t {
-    // margin: 63px 0; // cmmt
     margin: 29px 0; // add
 }
 
@@ -69,4 +68,13 @@ a.btn_next {
 option.drop_option {
     background: #fff;
     color: #000;
+}
+
+@media screen and (min-device-width: 300px) and (max-device-width: 499px) {
+    section#signup-bg {
+        padding: 0 0 0 0;
+    }
+    .bg_col-1 {
+        padding: 16px 17px 77px 17px;
+    }
 }

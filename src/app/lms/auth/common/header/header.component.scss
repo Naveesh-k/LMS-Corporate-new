@@ -50,34 +50,47 @@ button.btn_back {
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 499px) {
     nav.navbar_bg {
-        padding: 3px 14px 2px 16px;
+        padding: 3px 0 2px 0;
     }
     img.logo_img {
-        width: 225px;
+        width: 146px;
     }
-    // form.respo {
-    //   display: block;
-    // }
+    .navbar-light .navbar-toggler {
+        float: right;
+        position: absolute;
+        right: 0;
+        top: 6px;
+    }
+    section.header_pad {
+        padding: 0;
+    }
 }
 
 @media screen and (min-device-width: 700px) and (max-device-width: 768px) {
     img.logo_img {
-        width: 280px;
+        width: 176px;
     }
     nav.navbar_bg {
-        padding: 3px 32px 2px 39px;
+        padding: 3px 0 2px 0;
     }
     // form.respo {
     //   display: block;
     // }
+    .navbar-light .navbar-toggler {
+        float: right;
+        margin: 7px 0 0 0;
+    }
+    .pad_icr {
+        padding: 0 2px 0 15px;
+    }
 }
 
 @media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
     img.logo_img {
-        width: 303px;
+        width: 196px;
     }
     nav.navbar_bg {
-        padding: 3px 32px 2px 39px;
+        padding: 3px 0 2px 0;
     }
 }
 

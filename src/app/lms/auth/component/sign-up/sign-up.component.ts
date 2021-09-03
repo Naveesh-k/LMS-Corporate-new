@@ -59,6 +59,8 @@ export class SignUpComponent implements OnInit {
   tokenId:any = ''
   provider:any = ''
   showPasswordField:boolean =false;
+  cpFormfir:boolean = false;
+  cpFormSec:boolean = false;
 
   constructor(public router: Router,
     private formBuilder: FormBuilder,
@@ -101,14 +103,19 @@ export class SignUpComponent implements OnInit {
           profile: '',
           password: '',
           social_id: '',
-          provider: '',
           group_val: '',
           category: '',
           topic: '',
           industry: '',
           position: '',
           jobTitle: '',
-          experience: ''
+
+          location: '',
+          teamSize:'',
+          experience: '',
+          market:'',
+          provider: '',
+          contactNumber: '',
         });
 
 // -----------------------------------------------------------------
@@ -151,15 +158,13 @@ export class SignUpComponent implements OnInit {
     return this.registerFormSec.controls;
   }
 
+  // for next page
   onSubmit() {
     let checkLink = localStorage.getItem("pageLink")
     if(checkLink === 'Courses Provider'){
         this.router.navigateByUrl('/lms/auth/cp-sign-up')
     } else {
     this.submitted = true;
-    // if (this.registerForm.invalid) {
-    //   return;
-    // }
     this.hideFilledForm = true;
     this.hideFilledForm1 = true;
     this.showSelect = false;
@@ -167,6 +172,30 @@ export class SignUpComponent implements OnInit {
     }
   }
 
+  //for same page
+  // onSubmit() {
+  //   let checkLink = localStorage.getItem("pageLink")
+  //   if(checkLink === 'Courses Provider'){
+  //       this.cpFormfir = true;
+  //       this.cpFormSec = false;
+  //       this.hideFilledForm = true;
+  //   } else {
+  //   this.submitted = true;
+  //   this.hideFilledForm = true;
+  //   this.hideFilledForm1 = true;
+  //   this.showSelect = false;
+  //   this.signUpData = this.registerForm.value
+  //   }
+  // }
+
+  courseProvider(){
+    this.cpFormfir = false;
+    this.cpFormSec = true;
+    this.hideFilledForm = true;
+    this.hideFilledForm1 = true;
+    this.showSelect = false;
+    this.signUp()
+  }
 
 nextForm(){
   this.hideFilledForm1 = false;
@@ -212,7 +241,7 @@ nextForm(){
     this.showPasswordField = true;
 
     let request = {
-      size_of_team:0,
+      // size_of_team:0,
       on_boarding: 0,
       experience: this.registerForm.value.experience,
 
@@ -227,18 +256,18 @@ nextForm(){
       job_title : this.registerForm.value.jobTitle,
 
       password: this.registerForm.value.password,
-
+      location      : this.registerForm.value.location,
+      size_of_team  : this.registerForm.value.teamSize,
+      market        : this.registerForm.value.market,
+      provider      : this.registerForm.value.provider,
+      contact_number : this.registerForm.value.contactNumber,
       social_id: "",
-      provider: "",
       group_val: "",
-      market: "",
-      location: "",
       category:"",
       topic:"",
-      contact_number: ""
     }
 
-
+    console.log(request.location, request.size_of_team, request.market, request.provider, request.contact_number)
 
     this._service.getSignUpEmail(request).subscribe(res => {
       let response = res

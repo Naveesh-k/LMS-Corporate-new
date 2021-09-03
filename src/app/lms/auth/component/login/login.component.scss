@@ -18,7 +18,7 @@ img.image_log {
 img.log-img {
     width: 50%;
     position: absolute;
-    left: 73px;
+    left: 56px;
     top: 9px;
 }
 
@@ -87,6 +87,10 @@ img.or-img {
     margin-top: 40px;
 }
 
+.pad_section {
+    padding: 0 24px;
+}
+
 // -------------
 @media screen and (min-device-width: 300px) and (max-device-width: 399px) {
     .pd {
@@ -97,7 +101,7 @@ img.or-img {
         font-size: 30px;
     }
     .bg_gre-blu {
-        padding: 85px 12px 0px 12px;
+        padding: 0 15px 31px 15px;
         height: 100vh !important;
     }
     button.btn-register {
@@ -113,6 +117,19 @@ img.or-img {
     #login-bg p {
         font-size: 14px;
     }
+    img.img_fb {
+        background: #f1f1f1;
+        margin: 0 11px;
+    }
+    img.log-img {
+        left: 27px !important;
+        width: 58%;
+        left: 56px;
+        top: 19px;
+    }
+    .pad_section {
+        padding: 0 6px;
+    }
 }
 
 @media screen and (min-device-width: 400px) and (max-device-width: 499px) {
@@ -122,14 +139,14 @@ img.or-img {
     }
     .bg_gre-blu {
         height: 100vh !important;
-        padding: 92px 15px 31px 15px !important;
+        padding: 23px 15px 31px 15px !important;
     }
 }
 
 @media screen and (min-device-width: 700px) and (max-device-width: 768px) {
     .bg_gre-blu {
         height: 58vh;
-        padding: 69px 15px 31px 15px;
+        padding: 0 15px 31px 15px;
     }
     #login-bg h4 {
         font-size: 24px;
@@ -147,6 +164,20 @@ img.or-img {
     #login-bg p {
         font-size: 12px;
     }
+    a.btn_back {
+        padding-left: 0;
+    }
+    img.log-img {
+        width: 67%;
+        left: 16px;
+        top: 18px;
+    }
+    .pad_section {
+        padding: 0 4px;
+    }
+    hr.col_hr {
+        margin: 0 0 4px 0;
+    }
 }
 
 @media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
@@ -155,6 +186,18 @@ img.or-img {
     }
     #login-bg h4 {
         font-size: 31px;
+    }
+    img.log-img {
+        width: 61%;
+        left: 31px;
+        top: 13px;
+    }
+    label.forget_pass_a,
+    a.forget_pass_a {
+        font-size: 14px;
+    }
+    .bg_gre-blu {
+        padding: 5px 0 42px 0;
     }
 }
 
