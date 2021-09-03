@@ -74,7 +74,7 @@ export class SignUpComponent implements OnInit {
       let checkSignup:any = localStorage.getItem('signupType')
       this.checkSignUptype = checkSignup === 'true'
 
-      console.log(this.checkSignUptype)
+      // console.log(this.checkSignUptype)
 
 
         let getLocalStorage:any =  localStorage.getItem('userDetail');
@@ -152,7 +152,10 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm.value);
+    let checkLink = localStorage.getItem("pageLink")
+    if(checkLink === 'Courses Provider'){
+        this.router.navigateByUrl('/lms/auth/cp-sign-up')
+    } else {
     this.submitted = true;
     // if (this.registerForm.invalid) {
     //   return;
@@ -161,6 +164,7 @@ export class SignUpComponent implements OnInit {
     this.hideFilledForm1 = true;
     this.showSelect = false;
     this.signUpData = this.registerForm.value
+    }
   }
 
 

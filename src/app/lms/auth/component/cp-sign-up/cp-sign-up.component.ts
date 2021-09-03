@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cp-sign-up',
   templateUrl: './cp-sign-up.component.html',
@@ -12,6 +13,7 @@ export class CpSignUpComponent implements OnInit {
   submitted = false;
   hide: boolean = false;
   constructor(
+    public router: Router,
     public mode: ColorModeService,
     private formBuilder: FormBuilder
   ) { }
@@ -41,9 +43,11 @@ export class CpSignUpComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-        if (this.registerForm.invalid) {
-            return;
-        }
+        // if (this.registerForm.invalid) {
+        //     return;
+        // }
+        console.log()
+        this.router.navigateByUrl('/lms/app/cp-dash')
     }
 
     nextPage(){
