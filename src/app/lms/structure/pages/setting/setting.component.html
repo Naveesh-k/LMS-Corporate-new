@@ -41,6 +41,16 @@
                         <p class="road_ipo">Road To IPO</p>
                     </div>
                 </div>
+                <!-- <div class="col-md-3 col-sm-6 col-12 mar_t" *ngFor="let item of topics">
+                    <div class="bg-silver" [ngClass]="[
+                                                darkMode
+                                                  ? 'dark-small-section-bg'
+                                                  : 'chart',
+                                                  item.active === true ? 'bg-grenish' : 'chart'
+                                              ]" (click)="selectedTopics(item)">
+                        <p class="m-0">{{item.name}}</p>
+                    </div>
+                </div> -->
                 <div class="col-md-3 col-sm-6 col-12 mar_t">
                     <div class="chart" [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'">
                         <p class="road_ipo">Entrepreneurship</p>
