@@ -13,7 +13,7 @@
                             <a *ngIf="topic.name === 'Free user'" [ngClass]="[ 'btn ', topic.active === true ? 'bg-grenish-box' : 'btn_free_user'
                           ]" (click)="selectOne(topic)">Free user</a>
                             <div class="form-group col select_dropdown" *ngIf="topic.name === 'Subscriber'">
-                                <select formControlName="title" [ngClass]="[ 'form-control ', topic.active === true ? 'select_field_green' : 'select_field'
+                                <select [ngClass]="[ 'form-control ', topic.active === true ? 'select_field_green' : 'select_field'
                                 ]" (click)="selectOne(topic)">
                                   <option class="drop_option" selected>Subscriber</option>
                                   <option class="drop_option">Normal</option>
