@@ -64,6 +64,9 @@ button.btn_back {
     section.header_pad {
         padding: 0;
     }
+    ul.navbar-nav {
+        margin-top: 24px;
+    }
 }
 
 @media screen and (min-device-width: 700px) and (max-device-width: 768px) {
@@ -82,6 +85,9 @@ button.btn_back {
     }
     .pad_icr {
         padding: 0 2px 0 15px;
+    }
+    ul.navbar-nav {
+        margin-top: 24px;
     }
 }
 
