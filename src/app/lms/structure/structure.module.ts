@@ -19,6 +19,7 @@ import { BulletinBoardComponent } from './pages/bulletin-board/bulletin-board.co
 import { CpCommonHeaderComponent } from './common/cp-common-header/cp-common-header.component';
 import { CpSidebarComponent } from './common/cp-sidebar/cp-sidebar.component';
 import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.component';
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.componen
     SlickCarouselModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxEditorModule
   ],
   bootstrap: [StructureComponent],
 })

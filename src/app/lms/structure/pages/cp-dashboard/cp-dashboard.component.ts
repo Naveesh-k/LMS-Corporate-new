@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Editor } from 'ngx-editor';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 import { environment } from '../../../../../environments/environment';
 
@@ -29,6 +30,8 @@ export class CpDashboardComponent implements OnInit {
     'active':false,
   }];
   customizeTopic : any = [];
+  editor:any = Editor;
+  html: any ='';
   constructor(public mode: ColorModeService, private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
@@ -47,6 +50,9 @@ export class CpDashboardComponent implements OnInit {
       courseSubtitle: ['', Validators.required],
       selectAuthor: ['', Validators.required],
   });
+
+  // text- editor
+  this.editor = new Editor();
   }
 
 // Single select
