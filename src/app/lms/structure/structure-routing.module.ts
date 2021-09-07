@@ -11,6 +11,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { BulletinBoardComponent } from './pages/bulletin-board/bulletin-board.component';
 import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.component';
+import { AuthenticationGuard } from '../auth/auth-guard/authentication.guard';
 
 const routes: Routes = [
   {
@@ -18,15 +19,15 @@ const routes: Routes = [
     component: StructureComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'board', component: BoardComponent },
-      { path: 'course-preview', component: CoursePreviewComponent },
-      { path: 'dash-var', component: DashVarComponent },
-      { path: 'explore', component: ExploreComponent },
-      { path: 'my-course', component: MyCoursesComponent },
-      { path: 'profile', component: ProfileComponent },
-      { path: 'setting', component: SettingComponent },
-      { path: 'bulletin-board', component: BulletinBoardComponent },
+      { path: 'home', component: HomeComponent, canActivate:[AuthenticationGuard]},
+      { path: 'board', component: BoardComponent, canActivate:[AuthenticationGuard]},
+      { path: 'course-preview', component: CoursePreviewComponent, canActivate:[AuthenticationGuard]},
+      { path: 'dash-var', component: DashVarComponent, canActivate:[AuthenticationGuard]},
+      { path: 'explore', component: ExploreComponent, canActivate:[AuthenticationGuard]},
+      { path: 'my-course', component: MyCoursesComponent, canActivate:[AuthenticationGuard] },
+      { path: 'profile', component: ProfileComponent, canActivate:[AuthenticationGuard]},
+      { path: 'setting', component: SettingComponent, canActivate:[AuthenticationGuard]},
+      { path: 'bulletin-board', component: BulletinBoardComponent, canActivate:[AuthenticationGuard] },
       // Course Provider
       { path: 'cp-dash', component: CpDashboardComponent },
     ],

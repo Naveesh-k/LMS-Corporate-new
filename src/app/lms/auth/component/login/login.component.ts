@@ -86,6 +86,7 @@ export class LoginComponent implements OnInit {
             this.toastr.error('Session expire', 'Session expire please login again')
           }
           this.toastr.success('message', this.login.message)
+          localStorage.setItem('lms_isLogedIn', 'true')
           this.router.navigateByUrl('/lms/app/home')
         } else if (this.login.success === false){
           this.toastr.error('message', this.login.message)

@@ -17,7 +17,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { UserGroupComponent } from './component/user-group/user-group.component';
 import { CpSignUpComponent } from './component/cp-sign-up/cp-sign-up.component';
-// import { AuthguardServiceService } from './auth-guard/authguard-service.service';
+import { AuthguardServiceService } from './auth-guard/authguard-service.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +31,6 @@ import { CpSignUpComponent } from './component/cp-sign-up/cp-sign-up.component';
   ],
   imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SocialLoginModule,HttpClientModule  ],
   providers: [{
-    // Auth guard
-    // AuthguardServiceService ,
-    // end Auth guard
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: false,
@@ -52,7 +49,8 @@ import { CpSignUpComponent } from './component/cp-sign-up/cp-sign-up.component';
     } as SocialAuthServiceConfig
 
   },
-  GobalService
+  GobalService,
+  AuthguardServiceService, // authguard
 
 ],
 
