@@ -56,6 +56,12 @@ h5.h5_just {
     .bg_col-1 {
         padding: 23px 10px 31px 10px;
     }
+    section#signup-bg {
+        padding: 0 0 45px 0;
+    }
+    .bg-silver {
+        font-size: 13px;
+    }
 }
 
 @media screen and (min-device-width: 700px) and (max-device-width: 768px) {

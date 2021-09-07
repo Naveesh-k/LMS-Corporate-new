@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: 'explore', component: ExploreComponent, canActivate:[AuthenticationGuard]},
       { path: 'my-course', component: MyCoursesComponent, canActivate:[AuthenticationGuard] },
       { path: 'profile', component: ProfileComponent, canActivate:[AuthenticationGuard]},
-      { path: 'setting', component: SettingComponent, canActivate:[AuthenticationGuard]},
+      { path: 'setting', component: SettingComponent},
       { path: 'bulletin-board', component: BulletinBoardComponent, canActivate:[AuthenticationGuard] },
       // Course Provider
       { path: 'cp-dash', component: CpDashboardComponent },

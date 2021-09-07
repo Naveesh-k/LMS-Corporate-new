@@ -41,11 +41,18 @@ export class SettingComponent implements OnInit {
     'active':false,
   }];
   customizeTopic : any = [];
+  addTopic:any = [
+    {name : 'a'},
+    {name : 'b'},
+    {name : 'c'},
+    {name : ''},
+]
   constructor(
     public mode: ColorModeService // dark-light
   ) {}
 
   ngOnInit(): void {
+    console.log(this.addTopic[0].name)
     // dark-light
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
@@ -68,4 +75,11 @@ export class SettingComponent implements OnInit {
     })
     console.log(this.customizeTopic)
   }
+
+  addNewTopic(){
+    let newTopic = []
+    newTopic.push(this.addTopic)
+    console.log(newTopic)
+  }
+
 }

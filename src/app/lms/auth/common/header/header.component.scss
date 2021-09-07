@@ -53,19 +53,24 @@ button.btn_back {
         padding: 3px 0 2px 0;
     }
     img.logo_img {
-        width: 146px;
+        width: 93px;
     }
     .navbar-light .navbar-toggler {
         float: right;
         position: absolute;
         right: 0;
-        top: 6px;
+        top: 1px;
     }
     section.header_pad {
         padding: 0;
     }
     ul.navbar-nav {
         margin-top: 24px;
+    }
+    i.fa-caret-left {
+        position: absolute;
+        top: 9px;
+        font-size: 21px;
     }
 }
 
