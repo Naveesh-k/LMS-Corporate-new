@@ -58,6 +58,12 @@ h5.h5_just {
     }
 }
 
+@media screen and (min-device-width: 700px) and (max-device-width: 768px) {
+    .bg-silver p {
+        font-size: 9px;
+    }
+}
+
 @media only screen and (max-width: 1499px) {
     .bg_col-1 {
         // height: 89vh;

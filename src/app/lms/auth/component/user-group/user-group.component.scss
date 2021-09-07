@@ -80,3 +80,9 @@ option.drop_option {
         padding: 16px 17px 77px 17px;
     }
 }
+
+@media screen and (min-device-width: 700px) and (max-device-width: 768px) {
+    select.select_field {
+        padding-left: 27% !important;
+    }
+}
