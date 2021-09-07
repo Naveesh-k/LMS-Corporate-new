@@ -116,6 +116,7 @@ export class SignUpComponent implements OnInit {
           market:'',
           provider: '',
           contactNumber: '',
+          customizeTopic: []
         });
 
 // -----------------------------------------------------------------
@@ -241,14 +242,14 @@ nextForm(){
     this.showPasswordField = true;
 
     let request = {
-      // size_of_team:0,
+      size_of_team:0,
       on_boarding: 0,
       experience: this.registerForm.value.experience,
 
       first_name: this.registerForm.value.firstName,
       last_name: this.registerForm.value.lastName,
       email: this.registerForm.value.email,
-      customize_topic: this.registerForm.value.customize_topic,
+      customize_topic: this.customizeTopic,
       position: this.registerForm.value.position,
 
       profile:this.registerForm.value.profile,
@@ -257,7 +258,7 @@ nextForm(){
 
       password: this.registerForm.value.password,
       location      : this.registerForm.value.location,
-      size_of_team  : this.registerForm.value.teamSize,
+      // size_of_team  : this.registerForm.value.teamSize,
       market        : this.registerForm.value.market,
       provider      : this.registerForm.value.provider,
       contact_number : this.registerForm.value.contactNumber,
@@ -267,7 +268,7 @@ nextForm(){
       topic:"",
     }
 
-    console.log(request.location, request.size_of_team, request.market, request.provider, request.contact_number)
+    console.log(request.industry)
 
     this._service.getSignUpEmail(request).subscribe(res => {
       let response = res
