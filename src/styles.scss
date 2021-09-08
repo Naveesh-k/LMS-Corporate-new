@@ -325,6 +325,66 @@ section.header_pad {
     padding: 0 0 0 39px;
 }
 
+@media screen and (min-device-width: 300px) and (max-device-width: 320px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 85px;
+        top: 58px;
+    }
+    .show_hide {
+        display: none;
+    }
+}
+
+@media screen and (min-device-width: 321px) and (max-device-width: 399px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 110px;
+        top: 58px;
+    }
+    .show_hide {
+        display: none;
+    }
+}
+
+@media screen and (min-device-width: 400px) and (max-device-width: 499px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 130px;
+        top: 58px;
+    }
+    .show_hide {
+        display: none;
+    }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 768px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 130px;
+        top: 58px;
+    }
+    .show_hide {
+        display: none;
+    }
+}
+
+@media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 180px;
+        top: 58px;
+    }
+    .show_hide {
+        display: none;
+    }
+}
+
 @media screen and (min-device-width: 300px) and (max-device-width: 1024px) {
     .btn-socail {
         font-size: 14px;
@@ -338,12 +398,15 @@ section.header_pad {
         height: 95vh;
     }
     // ----------------
-    .hide_show {
-        display: block;
-    }
-    .show_hide {
-        display: none;
-    }
+    // .hide_show {
+    //     display: block;
+    //     position: absolute;
+    // left: 130px;
+    // top: 58px;
+    // }
+    // .show_hide {
+    //     display: none;
+    // }
     span.header_flex {
         display: flex;
         justify-content: flex-end;

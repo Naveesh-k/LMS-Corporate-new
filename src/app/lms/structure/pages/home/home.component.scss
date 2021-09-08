@@ -258,7 +258,19 @@ i.fa_hrt {
     }
 }
 
+@media screen and (min-device-width: 300px) and (max-device-width: 375px) {
+    .wh_bg {
+        width: 92% !important;
+    }
+    .grn_bg {
+        width: 100% !important;
+    }
+}
+
 @media screen and (min-device-width: 400px) and (max-device-width: 499px) {
+    .grn_bg {
+        width: 98%;
+    }
     p.heading_p {
         margin: 19px 0 18px 10px;
         height: 8px;
@@ -279,6 +291,12 @@ i.fa_hrt {
 }
 
 @media screen and (min-device-width: 500px) and (max-device-width: 768px) {
+    .wh_bg {
+        width: 88% !important;
+    }
+    .grn_bg {
+        width: 100% !important;
+    }
     h5.h5_head {
         font-size: 15px;
     }

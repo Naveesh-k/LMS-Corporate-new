@@ -9,4 +9,11 @@ export class AuthguardServiceService {
   gettoken(){
     return !!localStorage.getItem("lms_isLogedIn");
     }
+
+    // -----------
+
+  // checkLogin(){
+  //   return localStorage.getItem("lms_isLogedIn") === 'true';
+  // }
+    // -----------
 }

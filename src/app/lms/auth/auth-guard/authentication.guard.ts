@@ -17,4 +17,14 @@ export class AuthenticationGuard implements CanActivate {
   }
   return this.AuthguardServiceService.gettoken();
   }
+
+  // --------
+//   isLoggedIn:any = localStorage.getItem("lms_isLogedIn") === 'true'
+//   canActivate(): boolean {
+//     this.router.navigateByUrl('/lms/app/home')
+//      return this.isLoggedIn
+//   }
+// }
+  // --------
+
 }
