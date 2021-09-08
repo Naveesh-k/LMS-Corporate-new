@@ -90,14 +90,14 @@ export class CpDashboardComponent implements OnInit {
 }
 
   courseShow(){
-    // this.showCourse = true;
-    // this.show = false;
-    // this.showCurru = false;
+    this.showCourse = true;
+    this.show = false;
+    this.showCurru = false;
   }
   circulumShow(){
-    // this.showCourse = false;
-    // this.show = false;
-    // this.showCurru= true;
+    this.showCourse = false;
+    this.show = false;
+    this.showCurru= true;
   }
   getPaginationdData(){
     this.paginateData = this.myreportData.slice((this.page - 1)  *this.pageSize, (this.page - 1)  *this.pageSize + this.pageSize);
