@@ -232,7 +232,7 @@ nextForm(){
     console.log(this.signUpData);
     this._service.getSignUpData(this.signUpData).subscribe(res => {
       let response = res
-      if(response.success == false){
+      if(response.success == false ){
         this.router.navigateByUrl('/lms/app/home')
       }
       console.log(response)
@@ -273,7 +273,8 @@ nextForm(){
     this._service.getSignUpEmail(request).subscribe(res => {
       let response = res
       console.log(response)
-      if(response.success == true || response.success == false){
+      if(response.success === true){
+        console.log(response.success)
         this.router.navigateByUrl('/lms/app/home')
       }
     })

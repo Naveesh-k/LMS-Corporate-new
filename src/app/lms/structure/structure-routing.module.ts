@@ -19,8 +19,8 @@ const routes: Routes = [
     component: StructureComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent, },
-      { path: 'board', component: BoardComponent, canActivate:[AuthenticationGuard]},
+      { path: 'home', component: HomeComponent,},
+      { path: 'board', component: BoardComponent, },
       { path: 'course-preview', component: CoursePreviewComponent, canActivate:[AuthenticationGuard]},
       { path: 'dash-var', component: DashVarComponent, canActivate:[AuthenticationGuard]},
       { path: 'explore', component: ExploreComponent, canActivate:[AuthenticationGuard]},

@@ -31,6 +31,12 @@ export class HomeComponent implements OnInit {
     for show profile name*/
     let getLocalStorage:any =  localStorage.getItem('userDetail');
     this.signUpData = JSON.parse(getLocalStorage);
+
+    let userFName = localStorage.getItem('loginUserFname')
+    let userLName = localStorage.getItem('loginUserLname')
+    console.log(userFName,userLName)
+    console.log( Object.assign(userFName, userLName))
+
   }
 
 }

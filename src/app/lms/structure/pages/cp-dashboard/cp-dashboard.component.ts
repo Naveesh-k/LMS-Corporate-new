@@ -10,6 +10,11 @@ import { environment } from '../../../../../environments/environment';
   styleUrls: ['./cp-dashboard.component.scss']
 })
 export class CpDashboardComponent implements OnInit {
+  paginateData: any[] = [];
+  myreportData: any =[];
+  page = 1;
+  pageSize = 10;
+  collectionSize = 0;
   darkMode: boolean = false; // dark-light
   registerForm: any = FormGroup;
   submitted: boolean = false;
@@ -93,5 +98,8 @@ export class CpDashboardComponent implements OnInit {
     // this.showCourse = false;
     // this.show = false;
     // this.showCurru= true;
+  }
+  getPaginationdData(){
+    this.paginateData = this.myreportData.slice((this.page - 1)  *this.pageSize, (this.page - 1)  *this.pageSize + this.pageSize);
   }
 }

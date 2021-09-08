@@ -20,6 +20,7 @@ import { CpCommonHeaderComponent } from './common/cp-common-header/cp-common-hea
 import { CpSidebarComponent } from './common/cp-sidebar/cp-sidebar.component';
 import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.component';
 import { NgxEditorModule } from 'ngx-editor';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NgxEditorModule } from 'ngx-editor';
     SlickCarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxEditorModule
+    NgxEditorModule,
+    // NgbModule
   ],
   bootstrap: [StructureComponent],
 })

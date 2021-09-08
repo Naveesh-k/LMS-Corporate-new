@@ -183,7 +183,7 @@
                 </section>
             </div> -->
             <!-- ----------Course Info tab wale--------- -->
-            <div class="pl-2 pt-2 pb-2 pad" *ngIf="showCourse">
+            <!-- <div class="pl-2 pt-2 pb-2 pad" *ngIf="showCourse">
                 <div class="row mt-4 px-3">
                     <div class="col-md-12 border-bottom pb-1 px-0">
                         <h4>Course Information </h4>
@@ -235,7 +235,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- ----------Cericulum tab wale--------- -->
             <div class="pl-2 pt-2 pb-2" *ngIf="showCurru">
                 <div class="row mt-4 px-3">
@@ -534,7 +534,7 @@
                         </div>
                     </div>
                     <!----------- Pricing Modal ------------>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -600,7 +600,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- ------------ Free plan ------------- -->
                     <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -902,8 +902,8 @@
                                     </div>
                                     <div class="col-md-2 text-right">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
                                     </div>
                                 </div>
                                 <div class="modal-body ">
@@ -930,9 +930,21 @@
                                                         </div>
                                                         <div class="form-row">
                                                             <div class="form-group col">
+                                                                <label>Frequency</label>
+                                                                <label>Title</label>
+                                                                <select formControlName="title" class="form-control select_colr">
+
+                                                                    <option value=""></option>
+                                                                    <option value="Mr" selected>Every month</option>
+                                                                    <option value="Mrs">Mrs</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col">
                                                                 <label>Name</label>
                                                                 <input type="text" class="form-control" />
-
                                                             </div>
                                                         </div>
 
@@ -991,37 +1003,193 @@
                         </div>
                     </div> -->
 
-                    <!-------------Free Plan------------->
-                    <!-- <div class="cp-free-plan-back">
-                        <div class="row">
-                          <div class="col">
-                             <div>
-                               <p>Pricing Plan
-                              </p>
-                               <h5>Free Plan</h5>
-                             </div>
-                          </div>
-
-                        </div>
-                        <div class="row">
-                          <div class="col-md-8">
-                            <div></div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="cp-free-side mr-4 p-4">
-                              <h6>FREE</h6>
-                              <p>Name of the plan</p>
-                              <small>subtitle</small>
-                               <p>More</p>
-                            </div>
-
-                          </div>
-
-                        </div>
-
-                      </div>    -->
                 </div>
+
+                <!-- -------------Curriculum------------ -->
+                <!---------------------------Curriculum--------------------------->
+
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <nav class="navbar navbar-light bg-light">
+                                    <form class="form-inline">
+                                        <input class="form-control  p-4  mt-3 mb-2 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                    </form>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="cp-free-plan-back p-3" style="height: 210px">
+                            <div class="row">
+                                <div class="col">
+                                    <table class="table">
+                                        <thead>
+                                            <tr class="tr_thead">
+                                                <th class="tr_th" scope="col">ID</th>
+                                                <th class="tr_th" scope="col">COURSE NAME</th>
+                                                <th class="tr_th" scope="col">PRICING</th>
+                                                <th class="tr_th" scope="col">PRICE</th>
+                                                <th class="tr_th" scope="col">RECURRING</th>
+                                                <th class="tr_th" scope="col">STATUS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="tr_td" scope="row">12345</td>
+                                                <td class="tr_td">Successful Habits</td>
+                                                <td class="tr_td">One Time Payment</td>
+                                                <td class="tr_td"> 790 SGD</td>
+                                                <td class="tr_td">NO</td>
+                                                <td class="tr_td free-colr-cp">TO PUBLISH</td>
+                                                <td class="tr_td"><button type="button" style="padding:0" class="btn " data-toggle="modal" data-target="#exampleModal">
+                                                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button></td>
+                                                <td class="tr_td"><i class="fa fa-trash" aria-hidden="true"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="cp-table-showing d-flex justify-content-md-end mr-4 mt-5">
+                                        <p>Showing 1 - 1 </p>
+                                        <p class="ml-2 mr-3">Of 1</p>
+                                        <!-- <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="getPaginationdData();">
+            <ng-template ngbPaginationPrevious>
+              &#8592;
+            </ng-template>
+            <ng-template ngbPaginationNext>
+              &#8594;
+            </ng-template>
+          </ngb-pagination> -->
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger modal -->
+
+
+                <!-- Modal -->
+                <!-- <div class='row'>
+              <div class="col-md-12">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content cp-modal-check">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="Preview-course  p-3">
+                          <h5 class="modal-title " id="exampleModalLabel">Preview of your course</h5>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="modal-body  cp-modal-para">
+                        <form >
+                          <div class="form-row">
+                            <div class="form-group col">
+                              <div class="row">
+                                <div class="col-md-3">
+                                  <label>COURSE NAME</label>
+                                </div>
+                                <div class="col-md-9">
+                                  <input type="text" formControlName="Name" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col">
+                                <div class="row">
+                                  <div class="col-md-3">
+                                    <label>PRICING</label>
+                                  </div>
+                                  <div class="col-md-9">
+                                    <input type="text" formControlName="Name" class="form-control"  />
+                                  </div>
+
+                                </div>
+                              </div>
+                              </div>
+                          <div class="form-row">
+                            <div class="form-group col">
+                              <div class="row">
+                                <div class="col-md-3">
+                                  <label>PRICE</label>
+                                </div>
+                                <div class="col-md-9">
+                                  <input type="text" formControlName="Subtitle" class="form-control"  />
+                                </div>
+                              </div>
+                          </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col">
+                              <div class="row">
+                                <div class="col-md-3">
+                                  <label>RECURRING</label>
+                                </div>
+                                <div class="col-md-9">
+                                  <input type="text" formControlName="Name" class="form-control"  />
+                              </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          <div class="form-row">
+                            <div class="form-group col">
+                              <div class="text-center">
+                                  <div class="modal-footer mt-4"></div>
+                                  <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-5">
+                                      <button class=" btn  me-md-2  cp-modal-button  p-2  ml-5 "  >Yes, publish course</button>
+                                    </div>
+                                   <div class="col-md-5">
+                                  <button type="button" class="btn  cp-modal-button-sec mr-5" data-toggle="modal" data-target="#staticBackdrop">
+                                    No, maybe later
+                                  </button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                          </div>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>   -->
+                <!-- Button trigger modal -->
+
+
+                <!-- Modal -->
+
+                <!-- <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div>
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content p-3">
+                  <div class="modal-body free-colr-cp  text-center">
+                    Unpublishing a course will hide it in your Course Directory. <br>
+                    Once unpublished, only students who are already enrolled, or those you<br>
+                    directly send the course URL to, will be able to access the course.
+                  </div>
+                  <div class="modal-footer mt-4"></div>
+                    <div class="row">
+                      <div class="col-md-2"></div>
+                      <div class="col-md-5"><button type="button" class="btn cp-modal-button ml-5 ">Yes, unpublish course</button></div>
+                      <div class="col-md-5"><button type="button" class="btn cp-modal-button-sec mr-5" data-dismiss="modal">No, maybe later</button></div>
+                    </div>
+                </div>
+              </div>
             </div>
+            </div>  -->
+            </div>
+            <!-- -------------end Curriculum------------ -->
+
+
+
             <!-- ======= -->
             <div class="row mt-4">
                 <div class="col">
