@@ -46,6 +46,9 @@ export class ProfileComponent implements OnInit {
   hideShow() {
     this.hide = false;
   }
+  arrowHide(){
+    this.hide = false;
+  }
 
   // convenience getter for easy access to form fields
   get f() {
