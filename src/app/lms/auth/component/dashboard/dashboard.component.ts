@@ -209,7 +209,6 @@ export class DashboardComponent implements OnInit {
       job_title :     "",
       customize_topic: []
     }
-
      if(data.provider === 'GOOGLE'){
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){
