@@ -9,13 +9,11 @@ import { AuthguardServiceService } from './authguard-service.service'
 export class AuthenticationGuard implements CanActivate {
   constructor(private AuthguardServiceService: AuthguardServiceService,private router: Router){}
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    console.log(localStorage.getItem('token')) // Undefine
-    console.log(localStorage.getItem('token') !== null ) // true
-    console.log(localStorage.getItem('token') !== 'null') // true
-    if (localStorage.getItem('token') && localStorage.getItem('token') !== null && localStorage.getItem('token') !== 'null') {
-        return true;
-    }
-    this.router.navigate(['/']);
+
+    // if (localStorage.getItem('token') && localStorage.getItem('token') !== null && localStorage.getItem('token') !== 'null') {
+    //     return true;
+    // }
+    // this.router.navigate(['/']);
     return false;
   }
   // --------

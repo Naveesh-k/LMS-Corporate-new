@@ -16,8 +16,8 @@
                         <img class="side-bar-logo text-center" src="../../../assets/images/logo-sidebar.png" alt="" />
                     </div>
                 </a>
-
-                <div [ngClass]="darkMode ? 'dark-bg' : 'light-bg'" id="side_bar" class="sidebar-bg text-center" [routerLink]="'/lms/app/profile'" routerLinkActive="router-link-active active">
+                <!-- [routerLink]="'/lms/app/profile'" -->
+                <div [ngClass]="darkMode ? 'dark-bg' : 'light-bg'" id="side_bar" class="sidebar-bg text-center" routerLinkActive="router-link-active active">
                     <img class="profile-img" src="../../../assets/images/profile.png" alt="" />
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -38,17 +38,19 @@
                         </div>
                     </div>
                 </div>
-
+                <!--  -->
                 <a [ngClass]="darkMode ? 'dark-side-bar-text' : 'light-side-bar-text'" [routerLink]="'/lms/app/home'" routerLinkActive="router-link-active active" class="list-group-item d-inline-block collapsed bg_color" data-parent="#sidebar"><i class="fa fa_fa fa-tachometer pr-3"></i>
           <span class="hidden-sm-down dash_col">DASHBOARD</span>
           <i class="fa fa_fa fa-caret-right text-white pl-3"></i>
         </a>
+                <!--  -->
                 <a [ngClass]="darkMode ? 'dark-side-bar-text' : 'light-side-bar-text'" [routerLink]="'/lms/app/my-course'" routerLinkActive="router-link-active active" class="list-group-item d-inline-block collapsed bg_color" data-parent="#sidebar">
                     <i class="fa fa_fa fa-sticky-note-o pr-3"></i>
                     <span class="hidden-sm-down dash_col"> MY COURSES</span>
                     <i class="fa fa_fa fa-caret-right text-white pl-3"></i>
                 </a>
-                <a [ngClass]="darkMode ? 'dark-side-bar-text' : 'light-side-bar-text'" [routerLink]="'/lms/app/explore'" routerLinkActive="router-link-active active" class="list-group-item d-inline-block collapsed bg_color" data-parent="#sidebar"><i class="fa fa_fa fa-archive pr-3"></i>
+                <!-- [routerLink]="'/lms/app/explore'" -->
+                <a [ngClass]="darkMode ? 'dark-side-bar-text' : 'light-side-bar-text'" routerLinkActive="router-link-active active" class="list-group-item d-inline-block collapsed bg_color" data-parent="#sidebar"><i class="fa fa_fa fa-archive pr-3"></i>
           <span class="hidden-sm-down dash_col"> EXPLORE </span>
           <i class="fa fa_fa fa-caret-right text-white pl-3"></i></a>
                 <!-- <a [ngClass]="darkMode ? 'dark-side-bar-text' : 'light-side-bar-text'" [routerLink]="'/lms/app/board'"
@@ -67,10 +69,12 @@
           <span class="hidden-sm-down dash_col"> DASHBOARD 1 </span>
           <i class="fa fa_fa fa-caret-right text-white pl-3"></i
         ></a> -->
-                <a [ngClass]="darkMode ? 'dark-side-bar-text' : 'light-side-bar-text'" [routerLink]="'/lms/app/bulletin-board'" routerLinkActive="router-link-active active" class="list-group-item d-inline-block collapsed bg_color" data-parent="#sidebar"><i class="fa fa_fa fa-gear pr-3"></i>
+                <!-- [routerLink]="'/lms/app/bulletin-board'" -->
+                <a [ngClass]="darkMode ? 'dark-side-bar-text' : 'light-side-bar-text'" routerLinkActive="router-link-active active" class="list-group-item d-inline-block collapsed bg_color" data-parent="#sidebar"><i class="fa fa_fa fa-gear pr-3"></i>
           <span class="hidden-sm-down dash_col"> BULLETIN BOARD </span>
           <i class="fa fa_fa fa-caret-right text-white pl-3"></i></a>
-                <a [ngClass]="darkMode ? 'dark-side-bar-text' : 'light-side-bar-text'" [routerLink]="'/lms/app/setting'" routerLinkActive="router-link-active active" class="list-group-item d-inline-block collapsed bg_color" data-parent="#sidebar"><i class="fa fa_fa fa-gear pr-3"></i>
+                <!-- [routerLink]="'/lms/app/setting'" -->
+                <a [ngClass]="darkMode ? 'dark-side-bar-text' : 'light-side-bar-text'" routerLinkActive="router-link-active active" class="list-group-item d-inline-block collapsed bg_color" data-parent="#sidebar"><i class="fa fa_fa fa-gear pr-3"></i>
             <span class="hidden-sm-down dash_col"> SETTINGS </span>
             <i class="fa fa_fa fa-caret-right text-white pl-3"></i></a>
             </div>
