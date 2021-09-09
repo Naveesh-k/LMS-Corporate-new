@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ColorModeService } from 'src/app/service/color-mode.service'; // dark-light
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-common-header',
   templateUrl: './common-header.component.html',
@@ -10,6 +10,7 @@ import { ColorModeService } from 'src/app/service/color-mode.service'; // dark-l
 export class CommonHeaderComponent implements OnInit {
   darkMode: boolean = false; // dark-light
   title: any;
+
   constructor(
     public router: Router,
     public mode: ColorModeService // dark-light
@@ -70,7 +71,24 @@ export class CommonHeaderComponent implements OnInit {
 
   // Logout
   logOut(){
-    localStorage.clear();
-    this.router.navigateByUrl("/lms/auth")
+    Swal.fire({
+      title: 'Are you sure want to logout?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes Logout!',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.value) {
+        localStorage.clear();
+        this.router.navigateByUrl("/lms/auth")
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        this.router.navigateByUrl("/lms/app/home"),
+        Swal.fire(
+          'Cancelled',
+
+        )
+      }
+    })
   }
+
 }
