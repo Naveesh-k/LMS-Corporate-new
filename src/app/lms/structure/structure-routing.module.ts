@@ -12,6 +12,8 @@ import { SettingComponent } from './pages/setting/setting.component';
 import { BulletinBoardComponent } from './pages/bulletin-board/bulletin-board.component';
 import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.component';
 import { AuthenticationGuard } from '../auth/auth-guard/authentication.guard';
+import { CompleteCourseComponent } from './pages/complete-course/complete-course.component';
+import { PageProgressComponent } from './pages/page-progress/page-progress.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,8 @@ const routes: Routes = [
       { path: 'profile', component: ProfileComponent,},
       { path: 'setting', component: SettingComponent},
       { path: 'bulletin-board', component: BulletinBoardComponent, },
+      { path: 'complete-course', component: CompleteCourseComponent},
+      { path: 'page-progress', component: PageProgressComponent},
       // Course Provider
       { path: 'cp-dash', component: CpDashboardComponent },
     ],

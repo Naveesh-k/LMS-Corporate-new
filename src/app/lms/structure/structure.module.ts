@@ -20,6 +20,8 @@ import { CpCommonHeaderComponent } from './common/cp-common-header/cp-common-hea
 import { CpSidebarComponent } from './common/cp-sidebar/cp-sidebar.component';
 import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.component';
 import { NgxEditorModule } from 'ngx-editor';
+import { CompleteCourseComponent } from './pages/complete-course/complete-course.component';
+import { PageProgressComponent } from './pages/page-progress/page-progress.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -39,6 +41,8 @@ import { NgxEditorModule } from 'ngx-editor';
     CpCommonHeaderComponent,
     CpSidebarComponent,
     CpDashboardComponent,
+    CompleteCourseComponent,
+    PageProgressComponent,
   ],
   imports: [
     CommonModule,
