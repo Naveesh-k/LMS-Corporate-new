@@ -15,6 +15,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+
 @NgModule({
   declarations: [AppComponent, HomePageComponent, NavigatePortalComponent],
   imports: [BrowserModule, AppRoutingModule, SlickCarouselModule, FormsModule,

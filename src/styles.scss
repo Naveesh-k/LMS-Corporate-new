@@ -371,6 +371,10 @@ section.header_pad {
     .show_hide {
         display: none;
     }
+    .slick-prev {
+        left: -12px !important;
+        z-index: 999 !important;
+    }
 }
 
 @media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
@@ -416,10 +420,11 @@ section.header_pad {
     }
     span.heading_dashboard {
         margin: 0;
-        font-size: 18px;
+        font-size: 15px;
     }
     .dropdown {
-        margin: 0 0 0 27px;
+        // margin: 0 0 0 27px;
+        margin: 0 0 0 12px;
     }
     a.pdr {
         padding: 17px 0 0 0;

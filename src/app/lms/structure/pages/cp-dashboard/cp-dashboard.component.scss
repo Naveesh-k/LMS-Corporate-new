@@ -534,3 +534,9 @@ tr.tr_thead {
 td.tr_td {
     font-size: 14px;
 }
+
+@media screen and (min-device-width: 300px) and (max-device-width: 399px) {
+    .nav-tabs {
+        display: inline-block;
+    }
+}

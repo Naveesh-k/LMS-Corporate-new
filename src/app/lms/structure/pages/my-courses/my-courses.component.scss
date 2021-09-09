@@ -19,7 +19,7 @@ small.prep_small {
 
 .slide-1 {
     // width: 288px;
-    width: 310px !important;
+    width: 313px !important;
     margin: 0 6px;
 }
 
@@ -29,6 +29,10 @@ small.prep_small {
 
 ngx-slick-carousel {
     width: 98%;
+}
+
+.mar_pad {
+    margin-left: 17px;
 }
 
 // ------------
@@ -112,6 +116,10 @@ video.video_tag {
     border-radius: 16px;
 }
 
+.dropdown {
+    padding-left: 13px;
+}
+
 @media screen and (min-device-width: 300px) and (max-device-width: 320px) {
     p.fitr_by {
         font-size: 11px;
@@ -130,6 +138,9 @@ video.video_tag {
         font-size: 15px;
         padding: 3px 0 0 0;
     }
+    .mar_pad {
+        margin-left: 0;
+    }
 }
 
 @media screen and (min-device-width: 321px) and (max-device-width: 399px) {
@@ -141,10 +152,20 @@ video.video_tag {
         font-size: 11px;
     }
     .card_similar {
-        margin: 0 0 10px 0;
+        margin: 0 0 10px 17px;
     }
     .dropdown {
         padding: 0 0 0 6px !important;
+    }
+    .slick-prev {
+        left: -13px;
+        top: 318px;
+    }
+    .mar_pad {
+        margin-left: 0;
+    }
+    .slick-prev {
+        left: -3px !important;
     }
 }
 
@@ -171,6 +192,17 @@ video.video_tag {
     .yo {
         margin-top: 12px;
     }
+    // ---
+    .mar_pad {
+        margin-left: 0;
+    }
+    .dropdown {
+        margin: 0 !important;
+    }
+    .slide-1 {
+        width: 358px !important;
+        margin: 0 12px;
+    }
 }
 
 @media screen and (min-device-width: 500px) and (max-device-width: 768px) {
@@ -189,5 +221,32 @@ video.video_tag {
         padding: 10px 12px;
         height: 45px;
         width: 22%;
+    }
+    h5.in_pro {
+        font-size: 14px;
+    }
+    .dropdown {
+        margin: 0 0 0 5px;
+    }
+    .pro-1 {
+        width: 66%;
+    }
+    .slide-1 {
+        width: 175px !important;
+    }
+    .pro_bg {
+        padding: 4px 8px;
+        height: 33px;
+        width: 21%;
+    }
+    p.mastering_p {
+        font-size: 12px;
+    }
+    i.fa_fnt {
+        font-size: 13px;
+    }
+    .slick-prev {
+        left: -12px !important;
+        z-index: 999 !important;
     }
 }
