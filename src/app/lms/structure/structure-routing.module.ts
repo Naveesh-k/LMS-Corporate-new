@@ -14,6 +14,7 @@ import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.componen
 import { AuthenticationGuard } from '../auth/auth-guard/authentication.guard';
 import { CompleteCourseComponent } from './pages/complete-course/complete-course.component';
 import { PageProgressComponent } from './pages/page-progress/page-progress.component';
+import { EnterEmailComponent } from './pages/enter-email/enter-email.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'bulletin-board', component: BulletinBoardComponent, },
       { path: 'complete-course', component: CompleteCourseComponent},
       { path: 'page-progress', component: PageProgressComponent},
+      { path: 'enter-email', component: EnterEmailComponent},
       // Course Provider
       { path: 'cp-dash', component: CpDashboardComponent },
     ],

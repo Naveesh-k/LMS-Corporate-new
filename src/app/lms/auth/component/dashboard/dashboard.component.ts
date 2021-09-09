@@ -220,7 +220,11 @@ export class DashboardComponent implements OnInit {
 
     this._service.getSignUpData(request).subscribe(res => {
       let response = res;
-      console.log(response)
+      console.log(response.email)
+      if(response.email == ''){
+        this.router.navigateByUrl('/lms/auth/sign-up')
+        console.log('checked')
+      }
       if(response.success == true){
         this.spinner.hide();
         // this.router.navigateByUrl('/lms/auth/sign-up')  // ye cmnt kara

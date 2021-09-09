@@ -40,7 +40,20 @@ export class SettingComponent implements OnInit {
     name: 'Merger & Acquisitions',
     'active':false,
   }];
+  requestTopic: any = [{
+    name: 'Road To IPO',
+    'active':false,
+  },
+  {
+    name: 'Entrepreneurship',
+    'active':false,
+  },
+  {
+    name: 'Investing',
+    'active':false,
+  }];
   customizeTopic : any = [];
+  reqTopic : any = [];
   addTopic:any = [
     {name : 'a'},
     {name : 'b'},
@@ -74,6 +87,18 @@ export class SettingComponent implements OnInit {
        }
     })
     console.log(this.customizeTopic)
+  }
+  requestedTopics(item:any){
+    this.requestTopic.forEach((element:any)=>{
+       if(item.name === element.name){
+        element.active = !item.active;
+        let index = this.reqTopic.indexOf(element.name)
+        element.active ?
+          this.reqTopic.push(element.name):
+          this.reqTopic.splice(index, 1)
+       }
+    })
+    console.log(this.reqTopic)
   }
 
   addNewTopic(){

@@ -28,14 +28,18 @@
             <div class="dropdown-menu drop_dn" aria-labelledby="dropdownMenuButton">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="your_dd">Your progress</p>
-                        <p class="complete_dd" routerLink="/lms/app/profile" style="cursor:pointer">39% to complete</p>
-                        <div class="progress pro_bar">
-                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div routerLink="/lms/app/profile">
+                            <p class="your_dd" style="cursor:pointer">Your progress</p>
+                            <p class="complete_dd" style="cursor:pointer">39% to complete</p>
+                            <div class="progress pro_bar" style="cursor:pointer">
+                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                         <hr />
-                        <p class="your_dd">Registered courses</p>
-                        <p class="complete_dd">10 Courses</p>
+                        <div routerLink="/lms/app/complete-course" style='cursor: pointer;'>
+                            <p class="your_dd">Registered courses</p>
+                            <p class="complete_dd">10 Courses</p>
+                        </div>
                         <hr />
                         <a style="cursor:pointer">
                             <!-- routerLink="/lms/auth/login" -->

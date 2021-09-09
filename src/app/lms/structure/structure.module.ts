@@ -22,6 +22,7 @@ import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.componen
 import { NgxEditorModule } from 'ngx-editor';
 import { CompleteCourseComponent } from './pages/complete-course/complete-course.component';
 import { PageProgressComponent } from './pages/page-progress/page-progress.component';
+import { EnterEmailComponent } from './pages/enter-email/enter-email.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -43,6 +44,7 @@ import { PageProgressComponent } from './pages/page-progress/page-progress.compo
     CpDashboardComponent,
     CompleteCourseComponent,
     PageProgressComponent,
+    EnterEmailComponent,
   ],
   imports: [
     CommonModule,
