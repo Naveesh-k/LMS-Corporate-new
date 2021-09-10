@@ -210,7 +210,8 @@ nextForm(){
   signUp() {
 
     console.log(this.checkSignUptype)
-
+    localStorage.setItem('signupMode', `${this.checkSignUptype}`)
+    console.log(localStorage.getItem('signupMode'),'SignUpMode')
     if(this.checkSignUptype){
       this.showPasswordField = false;
       let extraVariable = {

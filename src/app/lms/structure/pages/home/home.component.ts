@@ -30,22 +30,25 @@ export class HomeComponent implements OnInit {
       }
     });
 
+    console.log('jdasdhjaksdhkasjdhaksjdhaskjdhjks')
+
     /*get localStorage data
     for show profile name*/
     let getLocalStorage:any =  localStorage.getItem('userDetail');
     this.signUpData = JSON.parse(getLocalStorage);
-    console.log(this.signUpData)
-    console.log('Social signup data',this.signUpData.name)
+    console.log('Social signup data',this.signUpData)
+
+    let normalUserFName = localStorage.getItem('firstName')
+    let normalUserLName = localStorage.getItem('lastName')
+    this.normalFullName = normalUserFName+' '+normalUserLName
+    console.log('Normal data',this.normalFullName)
 
     let userFName = localStorage.getItem('loginUserFname')
     let userLName = localStorage.getItem('loginUserLname')
     this.fullName = userFName+' '+userLName
     console.log('Login data',this.fullName)
 
-    let normalUserFName = localStorage.getItem('firstName')
-    let normalUserLName = localStorage.getItem('lastName')
-    this.normalFullName = normalUserFName+' '+normalUserLName
-    console.log('Normal data',this.normalFullName)
+
 
     let userType = localStorage.getItem('userType')
     console.log(userType)
