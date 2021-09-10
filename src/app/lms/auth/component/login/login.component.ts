@@ -89,6 +89,7 @@ export class LoginComponent implements OnInit {
           if(this.login.status === 401){
             this.toastr.error('Session expire', 'Session expire please login again')
           }
+          localStorage.setItem('userType','true')
           this.toastr.success('message', this.login.message)
           localStorage.setItem('lms_isLogedIn', 'true')
           this.router.navigateByUrl('/lms/app/home')

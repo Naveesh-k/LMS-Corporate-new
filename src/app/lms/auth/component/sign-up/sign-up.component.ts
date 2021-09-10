@@ -232,7 +232,8 @@ nextForm(){
     console.log(this.signUpData);
     this._service.getSignUpData(this.signUpData).subscribe(res => {
       let response = res
-      if(response.success == false ){
+      localStorage.setItem("userType", 'true')
+      if(response.success == true){
         this.router.navigateByUrl('/lms/app/home')
       }
       console.log(response)
@@ -269,10 +270,12 @@ nextForm(){
     }
 
     console.log(request.industry)
-
+    localStorage.setItem('firstName',request.first_name)
+    localStorage.setItem('lastName',request.last_name)
     this._service.getSignUpEmail(request).subscribe(res => {
       let response = res
       console.log(response)
+
       if(response.success === true){
         console.log(response.success)
         this.router.navigateByUrl('/lms/app/home')
