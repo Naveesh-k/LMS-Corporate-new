@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
 
     /*get localStorage data
     for show profile name*/
+    console.log(localStorage.getItem('signupMode'))
     let getLocalStorage:any =  localStorage.getItem('userDetail');
     this.signUpData = JSON.parse(getLocalStorage);
     console.log('Social signup data',this.signUpData)
