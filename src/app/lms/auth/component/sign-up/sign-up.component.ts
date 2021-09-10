@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { ColorModeService } from 'src/app/service/color-mode.service';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-up',
@@ -63,6 +64,7 @@ export class SignUpComponent implements OnInit {
   cpFormSec:boolean = false;
 
   constructor(public router: Router,
+    private toastr: ToastrService,
     private formBuilder: FormBuilder,
     public _service:GobalService, // api
     public mode: ColorModeService // dark-light
@@ -236,7 +238,10 @@ nextForm(){
       localStorage.setItem("userType", 'true')
       if(response.success == true){
         this.router.navigateByUrl('/lms/app/home')
-      }
+      }else if(response.success == false && response.message == 'employee email already exist'){
+        this.router.navigateByUrl('/lms/app/home')
+        this.toastr.success('message', response.message)
+            }
       console.log(response)
     })
     }

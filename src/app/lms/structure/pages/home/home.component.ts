@@ -10,8 +10,8 @@ import { ColorModeService } from 'src/app/service/color-mode.service'; // dark-l
 export class HomeComponent implements OnInit {
   darkMode: boolean = false; // dark-light
   signUpData:any;
+  signupFullName: any;
   fullName: any;
-  normalFullName: any;
   checkUser: any;
   constructor(
     private spinner: NgxSpinnerService,
@@ -34,15 +34,18 @@ export class HomeComponent implements OnInit {
 
     /*get localStorage data
     for show profile name*/
-    console.log(localStorage.getItem('signupMode'))
-    let getLocalStorage:any =  localStorage.getItem('userDetail');
-    this.signUpData = JSON.parse(getLocalStorage);
-    console.log('Social signup data',this.signUpData)
-
+    let socail = localStorage.getItem('signupMode')
+    if(socail == 'true'){
+      let getLocalStorage:any =  localStorage.getItem('userDetail');
+      this.signUpData = JSON.parse(getLocalStorage);
+      this.signupFullName = this.signUpData.name
+      console.log('Social signup data',this.signUpData)
+     }else {
     let normalUserFName = localStorage.getItem('firstName')
     let normalUserLName = localStorage.getItem('lastName')
-    this.normalFullName = normalUserFName+' '+normalUserLName
-    console.log('Normal data',this.normalFullName)
+    this.signupFullName = normalUserFName+' '+normalUserLName
+    console.log('Normal data',this.signupFullName)
+     }
 
     let userFName = localStorage.getItem('loginUserFname')
     let userLName = localStorage.getItem('loginUserLname')
