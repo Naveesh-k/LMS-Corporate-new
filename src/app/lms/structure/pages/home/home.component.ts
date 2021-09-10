@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
       let getLocalStorage:any =  localStorage.getItem('userDetail');
       this.signUpData = JSON.parse(getLocalStorage);
       this.signupFullName = this.signUpData.name
-      console.log('Social signup data',this.signUpData.name)
+      console.log('Social signup data',this.signupFullName)
       console.log('Social signup data',this.signUpData.firstName)
       console.log('Social signup data',this.signUpData.lastName)
       console.log('Social signup data',this.signUpData)

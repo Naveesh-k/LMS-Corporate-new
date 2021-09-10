@@ -4,6 +4,10 @@ iframe.iframe-video {
     border-radius: 10px;
 }
 
+.cp {
+    cursor: pointer;
+}
+
 .card {
     border: none;
 }
@@ -243,4 +247,29 @@ p.employee_p {
     font-size: 14px;
     font-weight: 500;
     line-height: 16px;
+}
+
+.modal-content {
+    border-radius: 21px !important;
+    width: 47% !important;
+    height: 235px;
+}
+
+textarea.note_textarea {
+    width: 100%;
+    border: none;
+}
+
+.modal-footer {
+    background: #229B9F;
+    border-bottom-left-radius: 19px;
+    border-bottom-right-radius: 19px;
+    height: 43px;
+    padding: 0;
+}
+
+button.btn.btn-save {
+    width: 100%;
+    color: #ffffff;
+    padding: 0 0 0 0;
 }
