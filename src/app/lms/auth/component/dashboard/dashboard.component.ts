@@ -221,11 +221,8 @@ export class DashboardComponent implements OnInit {
      } else if(data.provider === 'LINKEDIN') {
         request['social_id'] =  data.userId;
      }
-  }
 
-  callSignUpApi(request:any) {
-
-    this._service.getSignUpData(request).subscribe(res => {
+     this._service.getSignUpData(request).subscribe(res => {
 
       let response = res;
       console.log(response, '227')
