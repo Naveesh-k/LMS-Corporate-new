@@ -220,7 +220,7 @@ nextForm(){
       group:'',
       market:'',
       location:'',
-      size_of_team:'',
+      size_of_team:'1',
       contact_number:'',
       category:'',
       password:'',
