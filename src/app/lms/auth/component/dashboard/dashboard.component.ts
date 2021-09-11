@@ -232,10 +232,11 @@ export class DashboardComponent implements OnInit {
         // this.spinner.hide();
         this.router.navigateByUrl('/lms/auth/user-group')
       }else{
-
+        console.log("Dashboard user exist 235")
+        console.log("Dashboard user exist 236" ,this.socialloginData)
+        this.router.navigateByUrl('/lms/app/home')
         console.log("Dashboard user exist 236" ,this.socialloginData)
         this.socailLogin(this.socialloginData)
-
       }
       console.log(response)
     })
