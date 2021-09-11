@@ -212,17 +212,21 @@ export class DashboardComponent implements OnInit {
      if(data.provider === 'GOOGLE'){
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){
-        console.log("Dashboard 215" , data)
+        console.log("Dashboard 215" , data.email)
+        if(data.email == undefined){
+          request['email'] =  ''
+        }
         request['social_id'] =  data.authToken;
      } else if(data.provider === 'LINKEDIN') {
         request['social_id'] =  data.userId;
      }
-    console.log(request)
+    console.log(request, '223')
 
     this._service.getSignUpData(request).subscribe(res => {
       let response = res;
+      console.log(response, '227')
       console.log('check email dashboard 223',response.email)
-      if(!response.email || response.email == ''){
+      if(!response.email || response.email == '' ){
         this.router.navigateByUrl('/lms/auth/sign-up')
         console.log('checked')
       }
