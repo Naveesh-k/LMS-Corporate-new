@@ -227,17 +227,15 @@ export class DashboardComponent implements OnInit {
       let response = res;
       console.log(response, '227')
       console.log('check email dashboard 223',response.email)
-      if(response.success == false && response.message == "email is required" ){
-        this.router.navigateByUrl('/lms/auth/sign-up')
-        console.log('checked')
-      }
+
       if(response.success == true){
         // this.spinner.hide();
         this.router.navigateByUrl('/lms/auth/user-group')
       }else{
-        console.log(this.socialloginData)
+
+        console.log("Dashboard user exist 236" ,this.socialloginData)
         this.socailLogin(this.socialloginData)
-        this.router.navigateByUrl('/lms/app/home')
+
       }
       console.log(response)
     })
@@ -259,6 +257,7 @@ export class DashboardComponent implements OnInit {
       let response = res;
       console.log(response)
     })
+    this.router.navigateByUrl('/lms/app/home')
   }
 
 

@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     /*get localStorage data
     for show profile name*/
     let socail = localStorage.getItem('signupMode')
-    console.log(socail , '38')
+    console.log(typeof(socail) , 'Dashboard social signup 38', socail)
     if(socail === 'true'){
       let getLocalStorage:any =  localStorage.getItem('userDetail');
       this.signupFullName = '';
