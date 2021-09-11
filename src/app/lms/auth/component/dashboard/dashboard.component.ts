@@ -216,6 +216,7 @@ export class DashboardComponent implements OnInit {
      } else if (data.provider === 'FACEBOOK'){
         console.log("Dashboard 215" , data.email)
         if(data.email == undefined){
+          console.log("Account is registered by mobile number")
           this.router.navigateByUrl('/lms/auth/signup')
         }
         request['social_id'] =  data.authToken;
