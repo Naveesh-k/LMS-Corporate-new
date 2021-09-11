@@ -187,7 +187,7 @@ export class DashboardComponent implements OnInit {
   }
 
   signUp(data: any) {
-    this.spinner.show();
+    // this.spinner.show();
     let request:any = {
       profile:        data.photoUrl,
       provider:       data.provider,
@@ -212,6 +212,7 @@ export class DashboardComponent implements OnInit {
      if(data.provider === 'GOOGLE'){
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){
+        console.log("Dashboard 215" , data)
         request['social_id'] =  data.authToken;
      } else if(data.provider === 'LINKEDIN') {
         request['social_id'] =  data.userId;
@@ -226,7 +227,7 @@ export class DashboardComponent implements OnInit {
         console.log('checked')
       }
       if(response.success == true){
-        this.spinner.hide();
+        // this.spinner.hide();
         // this.router.navigateByUrl('/lms/auth/sign-up')  // ye cmnt kara
         this.router.navigateByUrl('/lms/auth/user-group') // ye add kara
       }else{
