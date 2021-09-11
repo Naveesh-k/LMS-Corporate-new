@@ -244,6 +244,8 @@ export class SignUpComponent implements OnInit {
           this.router.navigateByUrl('/lms/app/home')
           this.toastr.success('message', response.message)
           localStorage.setItem("userType", 'true')
+          localStorage.setItem('firstName', this.registerForm.firstName)
+          localStorage.setItem('lastName', this.registerForm.lastName)
         }
       })
     }
