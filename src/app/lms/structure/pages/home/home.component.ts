@@ -30,16 +30,18 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    console.log('jdasdhjaksdhkasjdhaksjdhaskjdhjks')
 
     /*get localStorage data
     for show profile name*/
+    let userType:any = localStorage.getItem('userType')
+     this.checkUser= userType  === 'true'
+
+    if(this.checkUser){
     let social = localStorage.getItem('signupMode')
     console.log(typeof(social) , 'Dashboard social signup 38', social)
     console.log(social === 'true')
     if(social === 'true'){
       let getLocalStorage:any =  localStorage.getItem('userDetail');
-      this.signupFullName = '';
       let signUpData = JSON.parse(getLocalStorage);
       console.log('41 home ',signUpData)
       this.signupFullName = signUpData.firstName +" "+ signUpData.lastName
@@ -51,17 +53,16 @@ export class HomeComponent implements OnInit {
     console.log('Normal data',this.signupFullName)
      }
 
+    }
+    else{
+      this.loginUserData()
+    }
+  }
+
+  loginUserData(){
     let userFName = localStorage.getItem('loginUserFname')
     let userLName = localStorage.getItem('loginUserLname')
     this.fullName = userFName+' '+userLName
-    console.log('Login data',this.fullName)
-
-
-
-    let userType = localStorage.getItem('userType')
-    console.log(userType)
-
-    this.checkUser = userType  === 'true'
   }
 
 }

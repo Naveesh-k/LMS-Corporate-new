@@ -214,8 +214,10 @@ export class DashboardComponent implements OnInit {
      if(data.provider === 'GOOGLE'){
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){
-        console.log("Dashboard 215" , data.email)
-          this.router.navigateByUrl('/lms/auth/sign-up')
+        console.log("Dashboard 215" , data.email);
+        (data.email === undefined) ?
+          this.router.navigateByUrl('/lms/auth/sign-up'):
+          this.router.navigateByUrl('lms/app/home')
 
         request['social_id'] =  data.authToken;
      } else if(data.provider === 'LINKEDIN') {
