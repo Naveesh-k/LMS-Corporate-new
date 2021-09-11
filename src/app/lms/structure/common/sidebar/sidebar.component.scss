@@ -45,10 +45,12 @@
         text-align: left;
         padding: 0.75rem 1.5rem;
     }
+    // -------
     .active {
-        background: #229b9f;
-        margin: 12px 24px !important;
+        background: #229b9f !important;
+        color: #ffffff;
     }
+    // ----------
     #sidebar .list-group>.list-group-item[aria-expanded="true"]::after,
     #sidebar .list-group>.list-group-item[aria-expanded="false"]::after {
         display: none;
@@ -150,12 +152,14 @@ a.bg_color {
     color: silver;
 }
 
+// -------
 p.name_pro {
     font-size: 15px;
     line-height: 21px;
     margin-top: 19px;
 }
 
+// ---------
 @media screen and (min-device-width: 300px) and (max-device-width: 699px) {
     #sidebar,
     #sidebar .list-group {
@@ -177,12 +181,6 @@ p.name_pro {
 //     width: 66%;
 //     position: absolute;
 //     left: 17px;
-// }
-// * {
-//     margin: 0;
-//     padding: 0;
-//     box-sizing: border-box;
-//     font-family: "Poppins", sans-serif;
 // }
 // .sidebar {
 //     position: fixed;
@@ -629,6 +627,10 @@ p.name_pro {
 //     font-weight: 400;
 //     color: #fff;
 //     white-space: nowrap;
+// }
+// .sidebar-bg {
+//     padding: 19px;
+//     border-radius: 22px;
 // }
 // .sidebar li.profile .job {
 //     font-size: 12px;
