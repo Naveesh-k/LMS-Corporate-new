@@ -243,7 +243,7 @@ export class SignUpComponent implements OnInit {
           console.log("Exist User", response.success)
           this.router.navigateByUrl('/lms/app/home')
           this.toastr.success('message', response.message)
-          localStorage.setItem("userType", 'false')
+          localStorage.setItem("userType", 'trues')
         }
       })
     }
