@@ -233,7 +233,7 @@ nextForm(){
     console.log(this.signUpData);
     this._service.getSignUpData(this.signUpData).subscribe(res => {
       let response = res
-      localStorage.setItem("userType", 'true')
+      localStorage.setItem("userType", 'false')
       if(response.success == true){
         this.router.navigateByUrl('/lms/app/home')
       }else if(response.success == false && response.message == 'employee email already exist'){
