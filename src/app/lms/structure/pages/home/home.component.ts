@@ -38,7 +38,8 @@ export class HomeComponent implements OnInit {
     if(socail == 'true'){
       let getLocalStorage:any =  localStorage.getItem('userDetail');
       let signUpData = JSON.parse(getLocalStorage);
-      this.signupFullName = signUpData.name
+      console.log('41 home ',signUpData)
+      this.signupFullName = signUpData.firstName +" "+ signUpData.lastName
       console.log('Social signup data',this.signupFullName)
      }else {
     let normalUserFName = localStorage.getItem('firstName')
