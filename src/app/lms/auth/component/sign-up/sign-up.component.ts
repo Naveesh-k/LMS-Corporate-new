@@ -13,133 +13,133 @@ import { ToastrService } from 'ngx-toastr';
 export class SignUpComponent implements OnInit {
   registerForm: any = FormGroup;
   registerFormSec: any = FormGroup;
-  hideFilledForm:boolean = false;
-  hideFilledForm1:boolean = false;
+  hideFilledForm: boolean = false;
+  hideFilledForm1: boolean = false;
   submitted = false;
   submittedSec = false;
   checkSignUptype: boolean = false;
   darkMode: boolean = false;
   formData = new FormData();
   showSelect: boolean = false;
-   signUpData:any = {};
-   customizeTopic : any = [];
+  signUpData: any = {};
+  customizeTopic: any = [];
   topics: any = [{
     'name': 'Road To IPO',
-    'active':false,
+    'active': false,
   },
   {
     'name': 'Entrepreneurship',
-    'active':false,
+    'active': false,
   },
   {
     'name': 'Capital Raising',
-    'active':false,
+    'active': false,
   },
   {
     'name': 'Trade Finance',
-    'active':false,
+    'active': false,
   },
   {
     'name': 'Investing',
-    'active':false,
+    'active': false,
   },
   {
     'name': 'CrowdFunding',
-    'active':false,
+    'active': false,
   },
   {
     'name': 'Business Law',
-    'active':false,
+    'active': false,
   },
   {
     'name': 'Merger & Acquisitions',
-    'active':false,
+    'active': false,
   }];
 
-  profilepic:any = ''
-  tokenId:any = ''
-  provider:any = ''
-  showPasswordField:boolean =false;
-  cpFormfir:boolean = false;
-  cpFormSec:boolean = false;
+  profilepic: any = ''
+  tokenId: any = ''
+  provider: any = ''
+  showPasswordField: boolean = false;
+  cpFormfir: boolean = false;
+  cpFormSec: boolean = false;
 
   constructor(public router: Router,
     private toastr: ToastrService,
     private formBuilder: FormBuilder,
-    public _service:GobalService, // api
+    public _service: GobalService, // api
     public mode: ColorModeService // dark-light
-  ) {}
+  ) { }
 
   ngOnInit(): void {
 
-      // if(!this.checkSignUptype){
-      //   localStorage.removeItem("userDetail");
-      // }
-      let checkSignup:any = localStorage.getItem('signupType')
-      this.checkSignUptype = checkSignup === 'true'
+    // if(!this.checkSignUptype){
+    //   localStorage.removeItem("userDetail");
+    // }
+    let checkSignup: any = localStorage.getItem('signupType')
+    this.checkSignUptype = checkSignup === 'true'
 
-      // console.log(this.checkSignUptype)
+    // console.log(this.checkSignUptype)
 
 
-        let getLocalStorage:any =  localStorage.getItem('userDetail');
-        let signUpData:any = JSON.parse(getLocalStorage);
-        if (signUpData && signUpData.photoUrl) {
-          this.profilepic = this.checkSignUptype ? signUpData.photoUrl : '';
-          let idToken = ''
-          if (signUpData.provider === 'GOOGLE') {
-            idToken = signUpData.idToken
-          } else if (signUpData.provider === 'FACEBOOK') {
-            idToken = signUpData.authToken
-          } else if (signUpData.provider === 'LINKEDIN') {
-            idToken = signUpData.userId
-          }
-          this.tokenId = idToken ? idToken : '';
-          this.provider = this.checkSignUptype ? signUpData.provider: '';
-          console.log(this.provider)
-        }
+    let getLocalStorage: any = localStorage.getItem('userDetail');
+    let signUpData: any = JSON.parse(getLocalStorage);
+    if (signUpData && signUpData.photoUrl) {
+      this.profilepic = this.checkSignUptype ? signUpData.photoUrl : '';
+      let idToken = ''
+      if (signUpData.provider === 'GOOGLE') {
+        idToken = signUpData.idToken
+      } else if (signUpData.provider === 'FACEBOOK') {
+        idToken = signUpData.authToken
+      } else if (signUpData.provider === 'LINKEDIN') {
+        idToken = signUpData.userId
+      }
+      this.tokenId = idToken ? idToken : '';
+      this.provider = this.checkSignUptype ? signUpData.provider : '';
+      console.log(this.provider)
+    }
 
-        this.registerForm = this.formBuilder.group({
-          firstName: this.checkSignUptype ? signUpData.firstName : '',
-          lastName: this.checkSignUptype ? signUpData.lastName: '',
-          email: this.checkSignUptype ? signUpData.email: '',
-          profile: '',
-          password: '',
-          social_id: '',
-          group_val: '',
-          category: '',
-          topic: '',
-          industry: '',
-          position: '',
-          jobTitle: '',
+    this.registerForm = this.formBuilder.group({
+      firstName: this.checkSignUptype ? signUpData.firstName : '',
+      lastName: this.checkSignUptype ? signUpData.lastName : '',
+      email: this.checkSignUptype ? signUpData.email : '',
+      profile: '',
+      password: '',
+      social_id: '',
+      group_val: '',
+      category: '',
+      topic: '',
+      industry: '',
+      position: '',
+      jobTitle: '',
 
-          location: '',
-          teamSize:'',
-          experience: '',
-          market:'',
-          provider: '',
-          contactNumber: '',
-          customizeTopic: []
-        });
+      location: '',
+      teamSize: '',
+      experience: '',
+      market: '',
+      provider: '',
+      contactNumber: '',
+      customizeTopic: []
+    });
 
-// -----------------------------------------------------------------
-// let unamePattern = "^[a-z0-9_-]{8,15}$";
-// let emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
-// this.registerForm = new FormGroup({
-//     firstName : new FormControl('',[Validators.pattern(unamePattern)]),
-//     lastname  : new FormControl('',[Validators.pattern(unamePattern)]),
-//     email     : new FormControl('',[Validators.pattern(emailPattern)]),
-//     profile   : new FormControl('',[Validators.required]),
-//     password  : new FormControl('',[Validators.required]),
-//     social_id : new FormControl(''),
-//     provider  : new FormControl('',[Validators.required]),
-//     category  : new FormControl('',[Validators.required]),
-//     topic     : new FormControl('',[Validators.required]),
-//     industry  : new FormControl('',[Validators.required]),
-//     position  : new FormControl('',[Validators.required]),
-//     job_title : new FormControl('',[Validators.required])
-// })
+    // -----------------------------------------------------------------
+    // let unamePattern = "^[a-z0-9_-]{8,15}$";
+    // let emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
+    // this.registerForm = new FormGroup({
+    //     firstName : new FormControl('',[Validators.pattern(unamePattern)]),
+    //     lastname  : new FormControl('',[Validators.pattern(unamePattern)]),
+    //     email     : new FormControl('',[Validators.pattern(emailPattern)]),
+    //     profile   : new FormControl('',[Validators.required]),
+    //     password  : new FormControl('',[Validators.required]),
+    //     social_id : new FormControl(''),
+    //     provider  : new FormControl('',[Validators.required]),
+    //     category  : new FormControl('',[Validators.required]),
+    //     topic     : new FormControl('',[Validators.required]),
+    //     industry  : new FormControl('',[Validators.required]),
+    //     position  : new FormControl('',[Validators.required]),
+    //     job_title : new FormControl('',[Validators.required])
+    // })
 
-// -----------------------------------------------------------------
+    // -----------------------------------------------------------------
 
 
     // dark-light
@@ -164,14 +164,14 @@ export class SignUpComponent implements OnInit {
   // for next page
   onSubmit() {
     let checkLink = localStorage.getItem("pageLink")
-    if(checkLink === 'Courses Provider'){
-        this.router.navigateByUrl('/lms/auth/cp-sign-up')
+    if (checkLink === 'Courses Provider') {
+      this.router.navigateByUrl('/lms/auth/cp-sign-up')
     } else {
-    this.submitted = true;
-    this.hideFilledForm = true;
-    this.hideFilledForm1 = true;
-    this.showSelect = false;
-    this.signUpData = this.registerForm.value
+      this.submitted = true;
+      this.hideFilledForm = true;
+      this.hideFilledForm1 = true;
+      this.showSelect = false;
+      this.signUpData = this.registerForm.value
     }
   }
 
@@ -191,7 +191,7 @@ export class SignUpComponent implements OnInit {
   //   }
   // }
 
-  courseProvider(){
+  courseProvider() {
     this.cpFormfir = false;
     this.cpFormSec = true;
     this.hideFilledForm = true;
@@ -200,109 +200,111 @@ export class SignUpComponent implements OnInit {
     this.signUp()
   }
 
-nextForm(){
-  this.hideFilledForm1 = false;
-  this.showSelect= true;
-  this.submittedSec = true;
-// if (this.registerFormSec.invalid) {
+  nextForm() {
+    this.hideFilledForm1 = false;
+    this.showSelect = true;
+    this.submittedSec = true;
+    // if (this.registerFormSec.invalid) {
     //   return;
     // }
-}
+  }
 
   signUp() {
 
-    if(this.checkSignUptype){
+    if (this.checkSignUptype) {
       localStorage.setItem('signupMode', 'true')
       this.showPasswordField = false;
       let extraVariable = {
-      group:'',
-      market:'',
-      location:'',
-      size_of_team:'1',
-      contact_number:'',
-      category:'',
-      password:'',
-      topic:'',
-      on_boarding:'1'
-    }
-    this.signUpData = {...this.signUpData,...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value}
-    this.signUpData['profile'] = this.profilepic
-    this.signUpData['social_id'] = this.tokenId
-    this.signUpData['provider'] = this.provider
-    console.log(this.signUpData.provider)
-    console.log(this.signUpData);
-    this._service.getSignUpData(this.signUpData).subscribe(res => {
-      let response = res
-      localStorage.setItem("userType", 'false')
-      if(response.success == true){
-        this.router.navigateByUrl('/lms/app/home')
-      }else if(response.success == false && response.message == 'employee email already exist'){
-        this.router.navigateByUrl('/lms/app/home')
-        this.toastr.success('message', response.message)
-            }
-      console.log(response)
-    })
-    }
-  else {
-    this.showPasswordField = true;
-
-    let request = {
-      size_of_team:0,
-      on_boarding: 0,
-      experience: this.registerForm.value.experience,
-
-      first_name: this.registerForm.value.firstName,
-      last_name: this.registerForm.value.lastName,
-      email: this.registerForm.value.email,
-      customize_topic: this.customizeTopic,
-      position: this.registerForm.value.position,
-
-      profile:this.registerForm.value.profile,
-      industry:this.registerForm.value.industry,
-      job_title : this.registerForm.value.jobTitle,
-
-      password: this.registerForm.value.password,
-      location      : this.registerForm.value.location,
-      // size_of_team  : this.registerForm.value.teamSize,
-      market        : this.registerForm.value.market,
-      provider      : this.registerForm.value.provider,
-      contact_number : this.registerForm.value.contactNumber,
-      social_id: "",
-      group_val: "",
-      category:"",
-      topic:"",
-    }
-
-    console.log(request.industry)
-    localStorage.setItem('firstName',request.first_name)
-    localStorage.setItem('lastName',request.last_name)
-    this._service.getSignUpEmail(request).subscribe(res => {
-      let response = res
-      console.log(response)
-
-      if(response.success === true){
-        console.log(response.success)
-        this.router.navigateByUrl('/lms/app/home')
+        group: '',
+        market: '',
+        location: '',
+        size_of_team: '1',
+        contact_number: '',
+        category: '',
+        password: '',
+        topic: '',
+        on_boarding: '1'
       }
-    })
-  }
+      this.signUpData = { ...this.signUpData, ...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value }
+      this.signUpData['profile'] = this.profilepic
+      this.signUpData['social_id'] = this.tokenId
+      this.signUpData['provider'] = this.provider
+      console.log(this.signUpData.provider)
+      console.log(this.signUpData);
+      this._service.getSignUpData(this.signUpData).subscribe(res => {
+        let response = res
+        localStorage.setItem("userType", 'false')
+
+        if (response.success) {
+          console.log("New User" , response.success)
+          this.router.navigateByUrl('/lms/app/home')
+        } else {
+          console.log("Exist User", response.success)
+          this.router.navigateByUrl('/lms/app/home')
+          this.toastr.success('message', response.message)
+        }
+      })
+    }
+    else {
+      this.showPasswordField = true;
+
+      let request = {
+        size_of_team: 0,
+        on_boarding: 0,
+        experience: this.registerForm.value.experience,
+
+        first_name: this.registerForm.value.firstName,
+        last_name: this.registerForm.value.lastName,
+        email: this.registerForm.value.email,
+        customize_topic: this.customizeTopic,
+        position: this.registerForm.value.position,
+
+        profile: this.registerForm.value.profile,
+        industry: this.registerForm.value.industry,
+        job_title: this.registerForm.value.jobTitle,
+
+        password: this.registerForm.value.password,
+        location: this.registerForm.value.location,
+        // size_of_team  : this.registerForm.value.teamSize,
+        market: this.registerForm.value.market,
+        provider: this.registerForm.value.provider,
+        contact_number: this.registerForm.value.contactNumber,
+        social_id: "",
+        group_val: "",
+        category: "",
+        topic: "",
+      }
+
+      console.log(request.industry)
+      localStorage.setItem('firstName', request.first_name)
+      localStorage.setItem('lastName', request.last_name)
+      this._service.getSignUpEmail(request).subscribe(res => {
+        let response = res
+        console.log(response)
+
+        if (response.success === true) {
+          console.log(response.success)
+          this.router.navigateByUrl('/lms/app/home')
+        }
+      })
+    }
 
   }
-  selectedTopics(item:any){
-    this.topics.forEach((element:any)=>{
-       if(item.name === element.name){
+  selectedTopics(item: any) {
+    this.topics.forEach((element: any) => {
+      if (item.name === element.name) {
         element.active = !item.active;
         let index = this.customizeTopic.indexOf(element.name)
         element.active ?
-          this.customizeTopic.push(element.name):
+          this.customizeTopic.push(element.name) :
           this.customizeTopic.splice(index, 1)
-       }
+      }
     })
     console.log(this.customizeTopic)
   }
 
-  done(){
-    this.signUpData['customize_topic'] =  this.customizeTopic
+  done() {
+    this.signUpData['customize_topic'] = this.customizeTopic
     console.log("run")
     this.signUp()
   }
