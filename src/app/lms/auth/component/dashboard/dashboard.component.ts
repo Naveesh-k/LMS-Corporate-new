@@ -221,7 +221,7 @@ export class DashboardComponent implements OnInit {
     this._service.getSignUpData(request).subscribe(res => {
       let response = res;
       console.log('check email dashboard 223',response.email)
-      if(response.email == ''){
+      if(!response.email || response.email == ''){
         this.router.navigateByUrl('/lms/auth/sign-up')
         console.log('checked')
       }
