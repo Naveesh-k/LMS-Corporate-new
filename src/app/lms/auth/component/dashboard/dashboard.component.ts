@@ -36,6 +36,7 @@ export class DashboardComponent implements OnInit {
   profilepic:any = ''
   tokenId:any = ''
   provider:any = ''
+  socialloginData:any = ''
 
   constructor(
     private toastr: ToastrService,
@@ -188,6 +189,7 @@ export class DashboardComponent implements OnInit {
 
   signUp(data: any) {
     // this.spinner.show();
+    this.socialloginData = data
     let request:any = {
       profile:        data.photoUrl,
       provider:       data.provider,
@@ -214,15 +216,18 @@ export class DashboardComponent implements OnInit {
      } else if (data.provider === 'FACEBOOK'){
         console.log("Dashboard 215" , data.email)
         if(data.email == undefined){
-          request['email'] =  ''
+          this.router.navigateByUrl('/lms/auth/signup')
         }
         request['social_id'] =  data.authToken;
      } else if(data.provider === 'LINKEDIN') {
         request['social_id'] =  data.userId;
      }
-    console.log(request, '223')
+  }
+
+  callSignUpApi(request:any) {
 
     this._service.getSignUpData(request).subscribe(res => {
+
       let response = res;
       console.log(response, '227')
       console.log('check email dashboard 223',response.email)
@@ -232,10 +237,10 @@ export class DashboardComponent implements OnInit {
       }
       if(response.success == true){
         // this.spinner.hide();
-        // this.router.navigateByUrl('/lms/auth/sign-up')  // ye cmnt kara
-        this.router.navigateByUrl('/lms/auth/user-group') // ye add kara
+        this.router.navigateByUrl('/lms/auth/user-group')
       }else{
-        this.socailLogin(data)
+        console.log(this.socialloginData)
+        this.socailLogin(this.socialloginData)
         this.router.navigateByUrl('/lms/app/home')
       }
       console.log(response)
