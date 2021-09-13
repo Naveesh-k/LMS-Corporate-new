@@ -80,6 +80,7 @@ export class LoginComponent implements OnInit {
       // this.spinner.show();
       this._services.getLogin(request).subscribe(res => {
         this.login = res;
+        console.log(this.login)
         let token = this.login.data.tokens
         localStorage.setItem("token", token);
         localStorage.setItem("loginUserFname", this.login.data.first_name)

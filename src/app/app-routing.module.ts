@@ -19,6 +19,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./lms/lms-routing.module').then((m) => m.LmsRoutingModule),
   },
+  {
+    path: 'super',
+    loadChildren: () =>
+      import('./super-admin/super-admin-routing.module').then((m) => m.SuperAdminRoutingModule),
+  },
   { path: 'auth', loadChildren: () => import('./consultech/auth/auth-routing.module').then(m => m.AuthRoutingModule) },
 ];
 
