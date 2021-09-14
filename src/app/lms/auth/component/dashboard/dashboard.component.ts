@@ -199,6 +199,7 @@ export class DashboardComponent implements OnInit {
       on_boarding:    0,
       experience:     0,
       first_name:     "",
+      id:             data.id,
       last_name:      "",
       password:       "",
       group_val:      "",
@@ -212,6 +213,7 @@ export class DashboardComponent implements OnInit {
       job_title :     "",
       customize_topic: []
     }
+    console.log('Request Sign Up',request.id)
      if(data.provider === 'GOOGLE'){
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){
@@ -225,7 +227,7 @@ export class DashboardComponent implements OnInit {
         }else if(data.email != undefined){
           this.router.navigateByUrl('/lms/app/home')
         }
-        request['social_id'] =  data.id;
+        request['social_id'] =  data.authToken;
         console.log("fb auth",data.authToken)
      } else if(data.provider === 'LINKEDIN') {
         request['social_id'] =  data.userId;
