@@ -225,7 +225,7 @@ export class DashboardComponent implements OnInit {
         }else if(data.email != undefined){
           this.router.navigateByUrl('/lms/app/home')
         }
-        request['social_id'] =  data.authToken;
+        request['social_id'] =  data.id;
         console.log("fb auth",data.authToken)
      } else if(data.provider === 'LINKEDIN') {
         request['social_id'] =  data.userId;
@@ -253,10 +253,12 @@ export class DashboardComponent implements OnInit {
         social_id:  data.id,
       }
       console.log('fb login',request)
+      // this.spinner.show();
       this._service.postFacebookLogin(request).subscribe(res => {
         let response = res;
         console.log(response, response.email)
         if(response.email === ""){
+          // this.spinner.hide();
           console.log("===",'260 fbLogin')
           this.router.navigateByUrl('/lms/auth/sign-up')
         } else if(response.email != ""){
