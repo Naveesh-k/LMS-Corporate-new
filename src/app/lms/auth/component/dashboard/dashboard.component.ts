@@ -255,7 +255,7 @@ export class DashboardComponent implements OnInit {
       console.log('fb login',request)
       this._service.postFacebookLogin(request).subscribe(res => {
         let response = res;
-        console.log(response)
+        console.log(response, response.email)
         if(response.email === ""){
           this.router.navigateByUrl('/lms/auth/sign-up')
         } else if(response.email != ""){
