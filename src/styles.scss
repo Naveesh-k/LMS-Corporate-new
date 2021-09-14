@@ -378,12 +378,12 @@ section.header_pad {
     }
 }
 
-@media screen and (min-device-width: 500px) and (max-device-width: 768px) {
+@media screen and (min-device-width: 500px) and (max-device-width: 563px) {
     .hide_show {
         display: block;
         position: absolute;
-        left: 130px;
-        top: 58px;
+        left: 132px;
+        top: 22px;
     }
     .show_hide {
         display: none;
@@ -394,12 +394,58 @@ section.header_pad {
     }
 }
 
+@media screen and (min-device-width: 564px) and (max-device-width: 599px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 143px;
+        top: 22px;
+    }
+    .show_hide {
+        display: none;
+    }
+    .slick-prev {
+        left: -12px !important;
+        z-index: 999 !important;
+    }
+}
+
+@media screen and (min-device-width: 600px) and (max-device-width: 768px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 30px;
+        top: 24px;
+    }
+    .show_hide {
+        display: none;
+    }
+    .slick-prev {
+        left: -12px !important;
+        z-index: 999 !important;
+    }
+}
+
+@media screen and (min-device-width: 769px) and (max-device-width: 999px) {
+    .hide_show {
+        display: block;
+    }
+    .show_hide {
+        display: none;
+    }
+    a.pdr {
+        position: absolute;
+        top: 8px;
+        right: 110px;
+    }
+}
+
 @media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
     .hide_show {
         display: block;
         position: absolute;
-        left: 180px;
-        top: 58px;
+        left: 129px;
+        top: 18px;
     }
     .show_hide {
         display: none;

@@ -43,6 +43,5 @@ export class GobalService {
     this.globalObject.signupType = true;
     this.globalBehaviour.next(this.globalObject);
     localStorage.setItem('signupType' , 'true')
-
   }
 }
