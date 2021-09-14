@@ -175,21 +175,6 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-  //for same page
-  // onSubmit() {
-  //   let checkLink = localStorage.getItem("pageLink")
-  //   if(checkLink === 'Courses Provider'){
-  //       this.cpFormfir = true;
-  //       this.cpFormSec = false;
-  //       this.hideFilledForm = true;
-  //   } else {
-  //   this.submitted = true;
-  //   this.hideFilledForm = true;
-  //   this.hideFilledForm1 = true;
-  //   this.showSelect = false;
-  //   this.signUpData = this.registerForm.value
-  //   }
-  // }
 
   courseProvider() {
     this.cpFormfir = false;
