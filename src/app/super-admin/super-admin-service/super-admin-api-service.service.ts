@@ -18,4 +18,13 @@ export class SuperAdminApiServiceService {
   });
    return this.https.post(environment.lmsApiBaseUrl + 'createCourse',data,{headers}).pipe(map(res => <any>res));
  }
+
+ coursesList(){
+   console.log(this.token, '14')
+  let headers :any = new HttpHeaders({
+    'Content-Type': 'application/json',
+    Authorization: this.token,
+  });
+   return this.https.get(environment.lmsApiBaseUrl + 'getAllCourse',{headers}).pipe(map(res => <any>res));
+ }
 }

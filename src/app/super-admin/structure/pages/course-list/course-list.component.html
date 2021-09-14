@@ -7,37 +7,32 @@
         </div>
         <div class="row mt-5">
             <div class="col-md-12">
-                <p-table [value]="sales">
+                <p-table [value]="listOfData">
                     <ng-template pTemplate="header">
                         <tr>
-                            <th>Course Id</th>
-                            <th>Course Title</th>
-                            <th>Course Provider </th>
-                            <th>Course Generate Date</th>
-                            <th>Course Start Date</th>
-
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th pSortableColumn="courseId">Course Id
+                                <p-sortIcon field="courseId"></p-sortIcon>
+                            </th>
+                            <th pSortableColumn="courseTitle">Course Title </th>
+                            <th pSortableColumn="courseProvider">Course Provider </th>
+                            <th pSortableColumn="generateDate">Course Generate Date</th>
+                            <th pSortableColumn="startDate">Course Start Date</th>
+                            <th pSortableColumn="status">Status</th>
+                            <th pSortableColumn="action">Action</th>
                         </tr>
                     </ng-template>
-                    <ng-template pTemplate="body" let-sale>
+                    <ng-template pTemplate="body" let-list>
                         <tr>
-                            <td>{{sale.id}}</td>
-                            <td class="title" data-toggle="modal" data-target="#exampleModal">{{sale.title}}</td>
-                            <td>{{sale.provider}}</td>
-                            <td>{{sale.generateDate}}</td>
-                            <td>{{sale.startDate}}</td>
-                            <td><button class="btn btn-action"> {{sale.status}} </button></td>
+                            <td>{{list.id}}</td>
+                            <td class="title" data-toggle="modal" data-target="#exampleModal">{{list.course_title}}</td>
+                            <td>{{list.select_author}}</td>
+                            <td>{{list.created_By | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{list.start_date | date: 'dd/MM/yyyy'}}</td>
+                            <!-- <td><button class="btn btn-action"> {{list.status}} </button></td> -->
+                            <td><button class="btn btn-action"> {{list.status === 0 ? 'Active' : 'Disable'}} </button></td>
                             <td><i class="fa fa-pencil" style="cursor: pointer;" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp; <i class="fa fa-eye" style="cursor: pointer;" aria-hidden="true"></i></td>
                         </tr>
                     </ng-template>
-                    <!-- <ng-template pTemplate="footer">
-                        <tr>
-                            <td colspan="3">Totals</td>
-                            <td>$506,202</td>
-                            <td>$531,020</td>
-                        </tr>
-                    </ng-template> -->
                 </p-table>
 
 

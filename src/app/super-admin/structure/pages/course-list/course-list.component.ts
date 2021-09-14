@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { SuperAdminApiServiceService } from 'src/app/super-admin/super-admin-service/super-admin-api-service.service';
 
 @Component({
   selector: 'app-course-list',
@@ -8,17 +11,20 @@ import { Component, OnInit } from '@angular/core';
 
 export class CourseListComponent implements OnInit {
   sales: any =[];
-
-  constructor() { }
+  listOfData: any = []
+  constructor(public _services:SuperAdminApiServiceService, private toastr: ToastrService,public router: Router) { }
 
   ngOnInit(): void {
-
-    this.sales = [
-      { id: '1', title: 'Lorem Ipsum is simply dummy text of the printing and typesetting', provider: 'admin', generateDate: '1/1/2021', startDate: '1/1/2021',status: 'Active' },
-      { id: '2', title: 'Lorem Ipsum is simply dummy text of the printing and typesetting', provider: 'provider', generateDate: '1/1/2021', startDate: '1/1/2021' ,status: 'Disable'},
-      { id: '3', title: 'Lorem Ipsum is simply dummy text of the printing and typesetting', provider: 'admin', generateDate: '1/1/2021', startDate: '1/1/2021' ,status: 'Active'},
-      ];
-
+    this.courseList()
   }
+
+  courseList() {
+   this._services.coursesList().subscribe(res => {
+       this.listOfData = res.data
+       console.log( this.listOfData)
+     })
+  }
+
+
 
 }
