@@ -250,7 +250,7 @@ export class DashboardComponent implements OnInit {
     fbLogin(data: any){
       console.log(data)
       let request:any = {
-        social_id:  data.authToken,
+        social_id:  data.id,
       }
       console.log('fb login',request)
       this._service.postFacebookLogin(request).subscribe(res => {
