@@ -215,10 +215,14 @@ export class DashboardComponent implements OnInit {
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){
         console.log("Dashboard 215" , data.email);
-        (data.email === undefined) ?
-          this.router.navigateByUrl('/lms/auth/sign-up'):
+        // (data.email === undefined) ?
+        //   this.router.navigateByUrl('/lms/auth/sign-up'):
+        //   this.router.navigateByUrl('lms/app/home')
+        if(data.email === undefined){
+          this.router.navigateByUrl('/lms/auth/sign-up')
+        }else if(data.email != undefined){
           this.router.navigateByUrl('lms/app/home')
-
+        }
         request['social_id'] =  data.authToken;
      } else if(data.provider === 'LINKEDIN') {
         request['social_id'] =  data.userId;
@@ -227,17 +231,12 @@ export class DashboardComponent implements OnInit {
      this._service.getSignUpData(request).subscribe(res => {
 
       let response = res;
-      console.log(response, '227')
-      console.log('check email dashboard 223',response.email)
 
       if(response.success == true){
         // this.spinner.hide();
         this.router.navigateByUrl('/lms/auth/user-group')
       }else{
-        console.log("Dashboard user exist 235")
-        console.log("Dashboard user exist 236" ,this.socialloginData)
         this.router.navigateByUrl('/lms/app/home')
-        console.log("Dashboard user exist 236" ,this.socialloginData)
         this.socailLogin(this.socialloginData)
       }
       console.log(response)
