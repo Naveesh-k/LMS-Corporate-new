@@ -3,6 +3,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './component/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CheckboxModule} from 'primeng/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     LoginComponent
@@ -11,6 +12,7 @@ import { CheckboxModule} from 'primeng/checkbox';
     AuthRoutingModule,
     FormsModule,
     CheckboxModule, //primeng
+    ReactiveFormsModule,
   ]
 })
 export class AuthModule { }

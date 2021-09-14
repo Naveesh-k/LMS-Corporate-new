@@ -27,4 +27,9 @@ export class SuperAdminApiServiceService {
   });
    return this.https.get(environment.lmsApiBaseUrl + 'getAllCourse',{headers}).pipe(map(res => <any>res));
  }
+
+ getAdminLogin(data:any){
+  console.log("after" , data)
+ return this.https.post(environment.lmsApiBaseUrl + 'login',data).pipe(map(res => <any>res));
+}
 }
