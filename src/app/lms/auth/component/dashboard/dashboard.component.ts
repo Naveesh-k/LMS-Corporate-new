@@ -221,7 +221,7 @@ export class DashboardComponent implements OnInit {
         if(data.email === undefined){
           this.router.navigateByUrl('/lms/auth/sign-up')
         }else if(data.email != undefined){
-          this.router.navigateByUrl('lms/app/home')
+          this.router.navigateByUrl('/lms/app/home')
         }
         request['social_id'] =  data.authToken;
      } else if(data.provider === 'LINKEDIN') {
