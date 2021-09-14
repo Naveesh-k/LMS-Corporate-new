@@ -257,8 +257,10 @@ export class DashboardComponent implements OnInit {
         let response = res;
         console.log(response, response.email)
         if(response.email === ""){
+          console.log("===",'260 fbLogin')
           this.router.navigateByUrl('/lms/auth/sign-up')
         } else if(response.email != ""){
+          console.log("!=",'262 fbLogin')
           this.router.navigateByUrl('/lms/app/home')
         }
       })
