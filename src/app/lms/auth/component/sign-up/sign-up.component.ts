@@ -240,19 +240,19 @@ export class SignUpComponent implements OnInit {
           this.router.navigateByUrl('/lms/app/home')
           localStorage.setItem("userType", 'false')
         }
-        // else {
-        //   console.log("Exist User", response.success)
-        //   this.router.navigateByUrl('/lms/app/home')
-        //   this.toastr.success('message', response.message)
-        //   localStorage.setItem("userType", 'true')
-        // }
-        else if(response.success === false && response.message === 'invalid user'){
-          this.toastr.warning('message', response.message)
-        }else if(response.success === false && response.message === 'employee email already exist'){
-          this.router.navigateByUrl('/lms/app/home')
-          localStorage.setItem("userType", 'true')
+        else {
           console.log("Exist User", response.success)
+          this.router.navigateByUrl('/lms/app/home')
+          this.toastr.success('message', response.message)
+          localStorage.setItem("userType", 'true')
         }
+        // else if(response.success === false && response.message === 'invalid user'){
+        //   this.toastr.warning('message', response.message)
+        // }else if(response.success === false && response.message === 'employee email already exist'){
+        //   this.router.navigateByUrl('/lms/app/home')
+        //   localStorage.setItem("userType", 'true')
+        //   console.log("Exist User", response.success)
+        // }
       })
     }
     else {
