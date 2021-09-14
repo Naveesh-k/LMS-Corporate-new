@@ -220,7 +220,7 @@ export class DashboardComponent implements OnInit {
         //   this.router.navigateByUrl('/lms/auth/sign-up'):
         //   this.router.navigateByUrl('lms/app/home')
         if(data.email === undefined){
-          this.fbLogin('data')
+          this.fbLogin(data)
           // this.router.navigateByUrl('/lms/auth/sign-up')
         }else if(data.email != undefined){
           this.router.navigateByUrl('/lms/app/home')
