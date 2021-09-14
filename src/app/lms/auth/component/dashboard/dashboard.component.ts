@@ -226,6 +226,7 @@ export class DashboardComponent implements OnInit {
           this.router.navigateByUrl('/lms/app/home')
         }
         request['social_id'] =  data.authToken;
+        console.log("fb auth",data.authToken)
      } else if(data.provider === 'LINKEDIN') {
         request['social_id'] =  data.userId;
      }
