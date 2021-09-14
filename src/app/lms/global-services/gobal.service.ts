@@ -38,6 +38,10 @@ export class GobalService {
     console.log("after" , data)
     return this.https.post(environment.lmsApiBaseUrl + 'signup',data).pipe(map(res => <any>res));
   }
+  postFacebookLogin(data:any){
+    console.log("after" , data)
+    return this.https.post(environment.lmsApiBaseUrl + 'fbLogin',data).pipe(map(res => <any>res));
+  }
 
   checkSignupType(){
     this.globalObject.signupType = true;

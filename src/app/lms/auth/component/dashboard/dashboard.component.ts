@@ -113,6 +113,7 @@ export class DashboardComponent implements OnInit {
       console.log(this.provider)
     }
     // -----------------------------
+
   }
   signInWithGoogle(): void {
    this._service.checkSignupType()
@@ -219,7 +220,8 @@ export class DashboardComponent implements OnInit {
         //   this.router.navigateByUrl('/lms/auth/sign-up'):
         //   this.router.navigateByUrl('lms/app/home')
         if(data.email === undefined){
-          this.router.navigateByUrl('/lms/auth/sign-up')
+          this.fbLogin('data')
+          // this.router.navigateByUrl('/lms/auth/sign-up')
         }else if(data.email != undefined){
           this.router.navigateByUrl('/lms/app/home')
         }
@@ -242,6 +244,19 @@ export class DashboardComponent implements OnInit {
       console.log(response)
     })
   }
+
+
+    fbLogin(data: any){
+      console.log(data)
+      let request:any = {
+        social_id:  data.authToken,
+      }
+      console.log('fb login',request)
+      this._service.postFacebookLogin(request).subscribe(res => {
+        let response = res;
+        console.log(response)
+      })
+    }
 
   socailLogin(data: any){
     console.log(data)
