@@ -221,7 +221,7 @@ export class DashboardComponent implements OnInit {
         //   this.router.navigateByUrl('lms/app/home')
         if(data.email === undefined){
           this.fbLogin(data)
-          this.router.navigateByUrl('/lms/auth/sign-up')
+          // this.router.navigateByUrl('/lms/auth/sign-up')
         }else if(data.email != undefined){
           this.router.navigateByUrl('/lms/app/home')
         }
@@ -256,6 +256,11 @@ export class DashboardComponent implements OnInit {
       this._service.postFacebookLogin(request).subscribe(res => {
         let response = res;
         console.log(response)
+        if(response.email === ""){
+          this.router.navigateByUrl('/lms/auth/sign-up')
+        } else if(response.email != ""){
+          this.router.navigateByUrl('/lms/app/home')
+        }
       })
     }
 
