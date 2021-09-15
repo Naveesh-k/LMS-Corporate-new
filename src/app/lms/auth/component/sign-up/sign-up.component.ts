@@ -221,15 +221,18 @@ export class SignUpComponent implements OnInit {
 
 
         if (response.success) {
-          console.log("New User" , response.success)
-          this.router.navigateByUrl('/lms/app/home')
-          localStorage.setItem("userType", 'false')
+          console.log("New User" , response.success);
+          // this.router.navigateByUrl('/lms/app/home')
+
+          localStorage.setItem("userType", 'false');
+          window.location.href = "/lms/app/home";
         }
         else {
-          console.log("Exist User", response.success)
-          this.router.navigateByUrl('/lms/app/home')
-          this.toastr.success('message', response.message)
-          localStorage.setItem("userType", 'true')
+          console.log("Exist User", response.success);
+          // this.router.navigateByUrl('/lms/app/home')
+          this.toastr.success('message', response.message);
+          localStorage.setItem("userType", 'true');
+          window.location.href= "/lms/app/home";
         }
       })
     }
