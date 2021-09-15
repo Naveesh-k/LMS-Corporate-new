@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   signUpData: any;
   signupFullName: any;
   fullName: any;
-  checkUser: any;
+  checkUser: any = '';
   constructor(
     private spinner: NgxSpinnerService,
     public mode: ColorModeService // dark-light

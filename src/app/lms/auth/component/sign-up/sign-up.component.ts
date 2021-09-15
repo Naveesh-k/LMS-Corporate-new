@@ -197,6 +197,7 @@ export class SignUpComponent implements OnInit {
   signUp() {
 
     if (this.checkSignUptype) {
+      console.log("it goes from social 200",this.checkSignUptype)
       localStorage.setItem('signupMode', 'true')
       this.showPasswordField = false;
       let extraVariable = {
@@ -239,7 +240,7 @@ export class SignUpComponent implements OnInit {
     }
     else {
       this.showPasswordField = true;
-
+      console.log("Its goes from normal 243")
       let request = {
         size_of_team: 0,
         on_boarding: 0,
