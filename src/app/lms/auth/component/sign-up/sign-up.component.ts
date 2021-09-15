@@ -225,6 +225,7 @@ export class SignUpComponent implements OnInit {
           // this.router.navigateByUrl('/lms/app/home')
 
           localStorage.setItem("userType", 'false');
+          console.log("228 checkuser type",localStorage.getItem("userType"))
           window.location.href = "/lms/app/home";
         }
         else {
