@@ -34,7 +34,8 @@ export class HomeComponent implements OnInit {
     /*get localStorage data
     for show profile name*/
     let userType: any = localStorage.getItem('userType')
-    this.checkUser = userType !== 'true'
+    console.log()
+    this.checkUser = userType  === 'true'
 
     if (this.checkUser) {
       let social = localStorage.getItem('signupMode')
