@@ -224,8 +224,6 @@ export class DashboardComponent implements OnInit {
         if(data.email === undefined){
           this.fbLogin(data)
           // this.router.navigateByUrl('/lms/auth/sign-up')
-        }else if(data.email != undefined){
-          this.router.navigateByUrl('/lms/app/home')
         }
         request['social_id'] =  data.id;
         console.log("fb auth",data.authToken)
@@ -236,13 +234,12 @@ export class DashboardComponent implements OnInit {
      this._service.getSignUpData(request).subscribe(res => {
 
       let response = res;
-
+      localStorage.setItem('signupMode', 'true')
       if(response.success == true){
         // this.spinner.hide();
         this.router.navigateByUrl('/lms/auth/user-group')
       }else{
         this.router.navigateByUrl('/lms/app/home')
-        this.socailLogin(this.socialloginData)
       }
       console.log(response)
     })
@@ -270,23 +267,7 @@ export class DashboardComponent implements OnInit {
       })
     }
 
-  socailLogin(data: any){
-    console.log(data)
-    let request:any = {
-      email:          data.email,
-    }
-    if(data.provider === 'GOOGLE'){
-      request['social_id'] =  data.idToken;
-    } else if (data.provider === 'FACEBOOK'){
-       request['social_id'] =  data.authToken;
-    }
-    console.log(request)
-    this._service.getSocialLogin(request).subscribe(res => {
-      let response = res;
-      console.log(response)
-    })
-    this.router.navigateByUrl('/lms/app/home')
-  }
+
 
 
 }
