@@ -89,7 +89,7 @@ export class SignUpComponent implements OnInit {
       if (signUpData.provider === 'GOOGLE') {
         idToken = signUpData.idToken
       } else if (signUpData.provider === 'FACEBOOK') {
-        idToken = signUpData.authToken
+        idToken = signUpData.id
       } else if (signUpData.provider === 'LINKEDIN') {
         idToken = signUpData.userId
       }
