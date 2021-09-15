@@ -254,6 +254,13 @@ video.video_tag {
     }
 }
 
+@media screen and (min-device-width: 769px) and (max-device-width: 900px) {
+    .slide-1 {
+        width: 271px !important;
+        margin: 0 8px;
+    }
+}
+
 @media screen and (min-device-width: 1000px) and (max-device-width: 1489px) {
     .slide-1 {
         width: 302px !important;
@@ -267,9 +274,9 @@ video.video_tag {
     }
 }
 
-@media only screen and (max-width: 1499px) {
-    .slide-1 {
-        width: 310px !important;
-        margin: 0 8px;
-    }
-}
+// @media only screen and (max-width: 1499px) {
+//     .slide-1 {
+//         width: 310px !important;
+//         margin: 0 8px;
+//     }
+// }

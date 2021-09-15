@@ -25,22 +25,22 @@ export class MyCoursesComponent implements OnInit {
   }
 
   // slider
-  // slideConfig = { slidesToShow: 4, slidesToScroll: 4};
-  slideConfig = {
-    'slidesToShow': 3,
-    'slidesToScroll': 4,
-    'arrows': true,
-    'swipeToSlide': true,
-    'infinite': true,
-    'responsive': [
-      {
-        'breakpoint': 767,
+  slideConfig = { slidesToShow: 3, slidesToScroll: 4};
+  // slideConfig = {
+  //   'slidesToShow': 3,
+  //   'slidesToScroll': 4,
+  //   'arrows': true,
+  //   'swipeToSlide': true,
+  //   'infinite': true,
+  //   'responsive': [
+  //     {
+  //       'breakpoint': 767,
 
-         'settings': {
-          'infinite': false,
-          'slidesToShow': 3
-                }
-              }
-            ]
-  };
+  //        'settings': {
+  //         'infinite': false,
+  //         'slidesToShow': 3
+  //               }
+  //             }
+  //           ]
+  // };
 }
