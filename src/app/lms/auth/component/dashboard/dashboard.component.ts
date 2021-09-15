@@ -255,12 +255,12 @@ export class DashboardComponent implements OnInit {
         social_id:  data.id,
       }
       console.log('fb login',request)
-      // this.spinner.show();
+      this.spinner.show();
       this._service.postFacebookLogin(request).subscribe(res => {
         let response = res;
         console.log(response, response.email)
         if(response.email === ""){
-          // this.spinner.hide();
+          this.spinner.hide();
           console.log("===",'260 fbLogin')
           this.router.navigateByUrl('/lms/auth/sign-up')
         } else if(response.email != ""){
