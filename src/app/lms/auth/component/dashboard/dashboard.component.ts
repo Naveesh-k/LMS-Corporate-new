@@ -218,12 +218,8 @@ export class DashboardComponent implements OnInit {
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){
         console.log("Dashboard 215" , data.email);
-        // (data.email === undefined) ?
-        //   this.router.navigateByUrl('/lms/auth/sign-up'):
-        //   this.router.navigateByUrl('lms/app/home')
         if(data.email === undefined){
           this.fbLogin(data)
-          // this.router.navigateByUrl('/lms/auth/sign-up')
         }
         request['social_id'] =  data.id;
         console.log("fb auth",data.authToken)
@@ -236,10 +232,11 @@ export class DashboardComponent implements OnInit {
       let response = res;
       localStorage.setItem('signupMode', 'true')
       if(response.success == true){
-        // this.spinner.hide();
-        this.router.navigateByUrl('/lms/auth/user-group')
+        // this.router.navigateByUrl('/lms/auth/user-group')
+        window.location.href = "/lms/auth/user-group";
       }else{
-        this.router.navigateByUrl('/lms/app/home')
+        // this.router.navigateByUrl('/lms/app/home')
+        window.location.href = "/lms/app/home";
       }
       console.log(response)
     })
@@ -258,11 +255,11 @@ export class DashboardComponent implements OnInit {
         console.log(response, response.email)
         if(response.email === ""){
           this.spinner.hide();
-          console.log("===",'260 fbLogin')
-          this.router.navigateByUrl('/lms/auth/sign-up')
+          // this.router.navigateByUrl('/lms/auth/sign-up')
+          window.location.href = "/lms/auth/sign-up";
         } else if(response.email != ""){
-          console.log("!=",'262 fbLogin')
-          this.router.navigateByUrl('/lms/app/home')
+          // this.router.navigateByUrl('/lms/app/home')
+          window.location.href = "/lms/app/home";
         }
       })
     }
