@@ -7,10 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CourseListComponent } from './pages/course-list/course-list.component';
 
 import {TableModule} from 'primeng/table';
+import { LectureListComponent } from './pages/lecture-list/lecture-list.component';
+import { FirstLectureComponent } from './pages/first-lecture/first-lecture.component';
 @NgModule({
   declarations: [
     CourseFormComponent,
-    CourseListComponent
+    CourseListComponent,
+    LectureListComponent,
+    FirstLectureComponent
   ],
   imports: [
     CommonModule,

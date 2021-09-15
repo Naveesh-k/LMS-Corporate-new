@@ -40,7 +40,8 @@ export class LoginComponent implements OnInit {
     console.log(response)
     let token = response.data.tokens
     localStorage.setItem("token", token);
-
+    if(response.success === true && response.message === 'user login successfull')
+    this.router.navigateByUrl('/super/app/list')
   })
 
   }

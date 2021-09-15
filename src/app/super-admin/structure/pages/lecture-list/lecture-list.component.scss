@@ -1,0 +1,30 @@
+.table_bg {
+    background: #ffff;
+    padding: 5px 0;
+    border-radius: 18px;
+}
+
+section.bg {
+    background: #f9f9f9;
+    height: 100vh;
+}
+
+.table {
+    border: hidden;
+}
+
+a.btn.btn-active {
+    background: #229B9F;
+    color: #ffffff;
+    padding: 0 15px;
+    border-radius: 31px;
+    font-size: 12px;
+}
+
+a.btn.btn-draft {
+    background: #E5E5E5;
+    color: #ffffff;
+    padding: 0 15px;
+    border-radius: 31px;
+    font-size: 12px;
+}

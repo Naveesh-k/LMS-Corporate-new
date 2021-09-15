@@ -1,0 +1,63 @@
+section.bg {
+    background: #f6f6f6;
+    padding: 27px 69px;
+    height: 100vh;
+}
+
+.nav-pills .nav-link.active {
+    color: black;
+    font-weight: 600;
+    background-color: #229b9f33;
+    background-image: linear-gradient(to right, #229b9f59, #fff);
+    border: hidden;
+    padding: 13px 10px;
+    border-radius: 1px;
+    border-left: 3px solid #18969a;
+}
+
+.nav-pills {
+    border-radius: 16px;
+    background: #fff;
+    padding: 0 13px 0 0;
+}
+
+.double {
+    border-style: double;
+    border-radius: 10px;
+    border: 1px solid #E2E6EA;
+    padding: 25px;
+    text-align: center;
+    color: #8d8d8d;
+}
+
+button.btn.cp-desh-button2 {
+    background: #229B9F;
+    color: #fff;
+    padding: 8px 60px;
+    border-radius: 12px;
+}
+
+button.btn-secondary3 {
+    background: #e5e5e5;
+    width: 10%;
+    padding: 0 0 !important;
+}
+
+input.frm-wi {
+    border: none;
+    border-radius: 12px;
+    margin: 0 0 0 13px;
+}
+
+.back_radio {
+    margin: 0 0 0 19px;
+    background: #fff;
+    border-radius: 13px;
+    width: 97%;
+}
+
+input.radio_btn {
+    position: absolute;
+    top: 226px;
+    left: 47px;
+}

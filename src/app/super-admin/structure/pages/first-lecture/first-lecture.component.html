@@ -1,0 +1,79 @@
+<section class="bg">
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active top-rad" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Add Materials </a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Add Key points</a>
+                    <a class="nav-link bottom-rad" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"> Add Quiz</a>
+
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <div class="cp-file-uploader ">
+                            <h5 class="mb-2 font-weight-bold">File uploader</h5>
+                            <p class="mb-5">Use the file uploader to upload video, audio, PDFs, or any other files into your lecture.
+                            </p>
+                        </div>
+                        <div class="double">
+                            <h6>Click to browse or <br>drag and drop your files</h6>
+                        </div>
+                        <div class="d-flex justify-content-end mb-5 mt-3">
+                            <button class="btn  cp-desh-button2 mb-5" type="button">Next</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div class="cp-file-uploader ">
+                            <h5 class="mb-2 font-weight-bold">Add Key Points</h5>
+                            <p class="mb-4">Use the rich text editor to cleanly format text in your lecture.
+                            </p>
+                        </div>
+                        <div class="NgxEditor__Wrapper back-key">
+                            <!-- <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                  <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false" [placeholder]="'Type here...'">
+                  </ngx-editor> -->
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+                            <button class="btn btn-secondary3 mt-5 mr-4">Cancel</button>
+                            <button class="btn  cp-desh-button2  mt-5 " type="button">Add Text</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <div class="cp-Quiz ">
+                            <h5 class="mb-2 font-weight-bold">Quiz</h5>
+                            <p class="mb-2">Use the quiz creator to create a multiple choice quiz. You may only have 1 quiz per lecture.
+                            </p>
+                            <div class="cp-quiz-para">
+                                <input type="checkbox"><label class="ml-4 ">This quiz will be graded</label>
+                            </div>
+                        </div>
+                        <div class="add-key-baord">
+                            <p class="pt-3 mb-2"><b>Type question here</b></p>
+                            <div class="form-row ">
+                                <div class="form-group col">
+                                    <input type="text" class="form-control frm-wi p-4 " placeholder="IPO Road">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="back_radio">
+                                    <input class="radio_btn" type="checkbox" id="" name="" value="">
+                                    <div class="form-group col mb-0 ml-3">
+                                        <input type="text" class="form-control frm-wi p-4" placeholder="Answer choices">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 d-flex  justify-content-end">
+                            <button class="btn btn-secondary3 mt-5 mr-4">Cancel</button>
+                            <button class="btn  cp-desh-button2 me-md-2 mt-5 p-3 mr-4" type="button">Add question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

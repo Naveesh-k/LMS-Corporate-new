@@ -29,10 +29,10 @@ export class CourseFormComponent implements OnInit {
    get f() { return this.createCourse.controls; }
 
    onSubmit() {
-       this.submitted = true;
-       if (this.createCourse.invalid) {
-           return;
-       }
+      //  this.submitted = true;
+      //  if (this.createCourse.invalid) {
+      //      return;
+      //  }
       let request = {
         // courseTitle: this.createCourse.value.courseTitle,
         // courseProvider : this.createCourse.value.courseProvider,
@@ -42,7 +42,7 @@ export class CourseFormComponent implements OnInit {
         course_title: this.createCourse.value.courseTitle,
         select_author : this.createCourse.value.courseProvider,
         course_subtitle : this.createCourse.value.description,
-        start_date : this.createCourse.value.datePicker,
+        // start_date : this.createCourse.value.datePicker,
         status: '0'
   }
   // this.spinner.show();
@@ -50,9 +50,10 @@ export class CourseFormComponent implements OnInit {
           let response = res
           console.log(response)
           this.toastr.success('message', response.message)
-          if(response.success == true){
-            this.router.navigateByUrl('/super/app/list')
-          }
+          this.router.navigateByUrl('/super/app/leacture-list')
+          // if(response.success == true){
+          //   this.router.navigateByUrl('/super/app/list')
+          // }
         })
    }
 
