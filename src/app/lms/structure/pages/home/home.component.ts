@@ -81,7 +81,6 @@ export class HomeComponent implements OnInit {
         // if(this.profileRecord.success === true){
         //   this.spinner.hide();
         // }
-        console.log(profileObj.companyName,'sadaaaaaaaaa')
       })
    }
 }
