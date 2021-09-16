@@ -34,11 +34,6 @@ export class CourseFormComponent implements OnInit {
       //      return;
       //  }
       let request = {
-        // courseTitle: this.createCourse.value.courseTitle,
-        // courseProvider : this.createCourse.value.courseProvider,
-        // description : this.createCourse.value.description,
-        // start_date : this.createCourse.value.datePicker,
-        // status: '0'
         course_title: this.createCourse.value.courseTitle,
         select_author : this.createCourse.value.courseProvider,
         course_subtitle : this.createCourse.value.description,

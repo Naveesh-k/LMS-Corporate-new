@@ -32,4 +32,30 @@ export class SuperAdminApiServiceService {
   console.log("after" , data)
  return this.https.post(environment.lmsApiBaseUrl + 'login',data).pipe(map(res => <any>res));
 }
+
+
+uploadImage(){
+ let headers :any = new HttpHeaders({
+   'Content-Type': 'application/json',
+   Authorization: this.token,
+ });
+  return this.https.post(environment.lmsApiBaseUrl + 'addLecture/3',{headers}).pipe(map(res => <any>res));
+}
+
+leactureCreate(){
+  let headers :any = new HttpHeaders({
+    'Content-Type': 'application/json',
+    Authorization: this.token,
+  });
+   return this.https.post(environment.lmsApiBaseUrl + 'addLecture/3',{headers}).pipe(map(res => <any>res));
+ }
+
+quizCreate(){
+  let headers :any = new HttpHeaders({
+    'Content-Type': 'application/json',
+    Authorization: this.token,
+  });
+   return this.https.post(environment.lmsApiBaseUrl + 'create_quiz/2',{headers}).pipe(map(res => <any>res));
+ }
+
 }
