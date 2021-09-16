@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class GobalService {
-
+  token :any = localStorage.getItem('token')
 
   globalObject: any = {
     signup_data:'',
@@ -48,4 +48,22 @@ export class GobalService {
     this.globalBehaviour.next(this.globalObject);
     localStorage.setItem('signupType' , 'true')
   }
+
+  uploadImage(data:any){
+    let headers :any = new HttpHeaders({
+      Authorization: this.token,
+      mimeType: 'multipart/form-data'
+    });
+
+
+     return this.https.post(environment.lmsApiBaseUrl + 'upload',data ,{headers}).pipe(map(res => <any>res));
+   }
+
+   profileDataShow(){
+    let headers :any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: this.token,
+    });
+     return this.https.get(environment.lmsApiBaseUrl + 'showProfile',{headers}).pipe(map(res => <any>res));
+   }
 }

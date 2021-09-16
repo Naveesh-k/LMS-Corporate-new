@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 
 @Component({
@@ -11,10 +13,14 @@ export class SidebarComponent implements OnInit {
   sidebar:any;
   closeBtn:any;
   searchBtn:any;
-  constructor(public mode: ColorModeService) {}
+  profileName: any ;
+  profileRecord: any = []
+  constructor(public mode: ColorModeService,public _service: GobalService,
+    private spinner: NgxSpinnerService,) {}
 
   ngOnInit(): void {
     // dark mode
+    this.profileData()
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
         this.darkMode = false;
@@ -25,7 +31,6 @@ export class SidebarComponent implements OnInit {
     // end dark mode
 
     this.loadSidebar()
-
   }
 
   loadSidebar(){
@@ -54,5 +59,20 @@ export class SidebarComponent implements OnInit {
       }
   }
 
+
+  profileData() {
+    console.log('sadasdasdadas')
+    this._service.profileDataShow().subscribe(res => {
+        let profileObj:any = {}
+
+        this.profileRecord = res.data
+        this.profileRecord.forEach((el:any)=>{
+          profileObj = el
+        })
+
+        console.log(profileObj,'sadasydasidyasuy')
+        this.profileName = profileObj.first_name+' '+profileObj.last_name
+      })
+   }
 
 }

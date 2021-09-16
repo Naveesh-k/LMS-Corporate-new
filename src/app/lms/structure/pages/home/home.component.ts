@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { ColorModeService } from 'src/app/service/color-mode.service'; // dark-light
 
 @Component({
@@ -13,7 +14,11 @@ export class HomeComponent implements OnInit {
   signupFullName: any;
   fullName: any;
   checkUser: any = '';
+  profileName: any ;
+
+  profileRecord: any = []
   constructor(
+    public _service: GobalService, // api
     private spinner: NgxSpinnerService,
     public mode: ColorModeService // dark-light
   ) { }
@@ -57,7 +62,19 @@ export class HomeComponent implements OnInit {
       let userLName = localStorage.getItem('loginUserLname')
       this.fullName = userFName + ' ' + userLName
     }
+
+    this.profileData()
   }
 
+  profileData() {
+    this._service.profileDataShow().subscribe(res => {
+        let profileObj:any = {}
 
+        this.profileRecord = res.data
+        this.profileRecord.forEach((el:any)=>{
+          profileObj = el
+        })
+        this.profileName = profileObj.first_name+' '+profileObj.last_name
+      })
+   }
 }

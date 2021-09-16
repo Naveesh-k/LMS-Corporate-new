@@ -62,6 +62,9 @@ export class SignUpComponent implements OnInit {
   showPasswordField: boolean = false;
   cpFormfir: boolean = false;
   cpFormSec: boolean = false;
+  imagePath:any;
+  imageFile:any;
+  uploadedImage:any;
 
   constructor(public router: Router,
     private toastr: ToastrService,
@@ -252,7 +255,7 @@ export class SignUpComponent implements OnInit {
         customize_topic: this.customizeTopic,
         position: this.registerForm.value.position,
 
-        profile: this.registerForm.value.profile,
+        profile: this.uploadedImage.location,
         industry: this.registerForm.value.industry,
         job_title: this.registerForm.value.jobTitle,
 
@@ -274,7 +277,6 @@ export class SignUpComponent implements OnInit {
       this._service.getSignUpEmail(request).subscribe(res => {
         let response = res
         console.log(response)
-
         if (response.success === true) {
           console.log(response.success)
           // this.router.navigateByUrl('/lms/app/home')
@@ -304,6 +306,27 @@ export class SignUpComponent implements OnInit {
     this.signUpData['customize_topic'] = this.customizeTopic
     console.log("run")
     this.signUp()
+  }
+
+  imageUplaoad(event:any){
+    const allowedMimeTypes = ['image/png', 'image/jpeg', 'image/jpg'];
+
+    var formData = new FormData();
+    formData.append('image', event.target.files[0]);
+
+    if (
+      event.target.files[0] &&
+      allowedMimeTypes.includes(event.target.files[0].type)
+    ){
+      this.imagePath = event.target.files;
+      this.imageFile = this.imagePath[0];
+  }
+
+
+    this._service.uploadImage(formData).subscribe(res => {
+     this.uploadedImage = res.image
+      localStorage.setItem('profileImg',this.uploadedImage.location)
+    })
   }
 
 }
