@@ -9,6 +9,8 @@ import { CourseListComponent } from './pages/course-list/course-list.component';
 import {TableModule} from 'primeng/table';
 import { LectureListComponent } from './pages/lecture-list/lecture-list.component';
 import { FirstLectureComponent } from './pages/first-lecture/first-lecture.component';
+import { NgxEditorModule } from 'ngx-editor';
+
 @NgModule({
   declarations: [
     CourseFormComponent,
@@ -21,7 +23,8 @@ import { FirstLectureComponent } from './pages/first-lecture/first-lecture.compo
     StructureRoutingModule,
         ReactiveFormsModule,
         FormsModule,
-        TableModule
+        TableModule,
+        NgxEditorModule
   ]
 })
 export class StructureModule { }
