@@ -51,7 +51,7 @@ export class GobalService {
 
   uploadImage(data:any){
     let headers :any = new HttpHeaders({
-      Authorization: this.token,
+      // Authorization: this.token,
       mimeType: 'multipart/form-data'
     });
 

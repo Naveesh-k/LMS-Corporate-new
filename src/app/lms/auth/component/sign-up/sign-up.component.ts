@@ -254,7 +254,7 @@ export class SignUpComponent implements OnInit {
         email: this.registerForm.value.email,
         customize_topic: this.customizeTopic,
         position: this.registerForm.value.position,
-        companyName:"google",
+        // companyName:this.registerForm.value.companyName,
         profile: this.uploadedImage.location,
         industry: this.registerForm.value.industry,
         job_title: this.registerForm.value.jobTitle,
@@ -271,7 +271,7 @@ export class SignUpComponent implements OnInit {
         topic: "",
       }
 
-      console.log(request.industry)
+      console.log(request, '274')
       localStorage.setItem('firstName', request.first_name)
       localStorage.setItem('lastName', request.last_name)
       this._service.getSignUpEmail(request).subscribe(res => {
@@ -322,7 +322,7 @@ export class SignUpComponent implements OnInit {
       this.imageFile = this.imagePath[0];
   }
 
-
+   console.log(formData)
     this._service.uploadImage(formData).subscribe(res => {
      this.uploadedImage = res.image
       localStorage.setItem('profileImg',this.uploadedImage.location)
