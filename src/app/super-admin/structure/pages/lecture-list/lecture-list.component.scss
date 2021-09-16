@@ -28,3 +28,22 @@ a.btn.btn-draft {
     border-radius: 31px;
     font-size: 12px;
 }
+
+td.td_title-1 {
+    color: #229b9f;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+i.fa.fa-plus-circle {
+    color: #229b9f;
+}
+
+.input_parent {
+    background: #ffff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgb(34 155 159 / 18%);
+    border: hidden;
+}

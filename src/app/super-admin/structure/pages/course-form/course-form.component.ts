@@ -49,7 +49,7 @@ export class CourseFormComponent implements OnInit {
       this._services.createCourses(request).subscribe(res => {
           let response = res
           console.log(response)
-          this.toastr.success('message', response.message)
+          // this.toastr.success('message', response.message)
           this.router.navigateByUrl('/super/app/leacture-list')
           // if(response.success == true){
           //   this.router.navigateByUrl('/super/app/list')
