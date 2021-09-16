@@ -4,6 +4,7 @@ import { ColorModeService } from 'src/app/service/color-mode.service';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-sign-up',
@@ -65,8 +66,11 @@ export class SignUpComponent implements OnInit {
   imagePath:any;
   imageFile:any;
   uploadedImage:any;
+  profileName: any ;
+  profileRecord: any = [];
 
   constructor(public router: Router,
+    private spinner: NgxSpinnerService,
     private toastr: ToastrService,
     private formBuilder: FormBuilder,
     public _service: GobalService, // api
@@ -254,7 +258,7 @@ export class SignUpComponent implements OnInit {
         email: this.registerForm.value.email,
         customize_topic: this.customizeTopic,
         position: this.registerForm.value.position,
-        // companyName:this.registerForm.value.companyName,
+        companyName:this.registerForm.value.companyName,
         profile: this.uploadedImage.location,
         industry: this.registerForm.value.industry,
         job_title: this.registerForm.value.jobTitle,
@@ -277,6 +281,7 @@ export class SignUpComponent implements OnInit {
       this._service.getSignUpEmail(request).subscribe(res => {
         let response = res
         console.log(response)
+        this.profileData()
         if (response.success === true) {
           console.log(response.success)
           // this.router.navigateByUrl('/lms/app/home')
@@ -328,5 +333,19 @@ export class SignUpComponent implements OnInit {
       localStorage.setItem('profileImg',this.uploadedImage.location)
     })
   }
+
+  profileData() {
+    this._service.profileDataShow().subscribe(res => {
+        let profileObj:any = {}
+
+        this.profileRecord = res.data
+        this.profileRecord.forEach((el:any)=>{
+          profileObj = el
+        })
+        this.profileName = profileObj.first_name+' '+profileObj.last_name
+
+        console.log(profileObj.companyName,'sadaaaaaaaaa')
+      })
+   }
 
 }

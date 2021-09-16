@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   checkUser: any = '';
   profileName: any ;
 
+
   profileRecord: any = []
   constructor(
     public _service: GobalService, // api
@@ -67,7 +68,9 @@ export class HomeComponent implements OnInit {
   }
 
   profileData() {
+
     this._service.profileDataShow().subscribe(res => {
+      // this.spinner.show();
         let profileObj:any = {}
 
         this.profileRecord = res.data
@@ -75,6 +78,10 @@ export class HomeComponent implements OnInit {
           profileObj = el
         })
         this.profileName = profileObj.first_name+' '+profileObj.last_name
+        // if(this.profileRecord.success === true){
+        //   this.spinner.hide();
+        // }
+        console.log(profileObj.companyName,'sadaaaaaaaaa')
       })
    }
 }

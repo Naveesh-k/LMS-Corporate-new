@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
   closeBtn:any;
   searchBtn:any;
   profileName: any ;
+  profileCompany: any ;
   profileRecord: any = []
   constructor(public mode: ColorModeService,public _service: GobalService,
     private spinner: NgxSpinnerService,) {}
@@ -62,6 +63,7 @@ export class SidebarComponent implements OnInit {
 
   profileData() {
     console.log('sadasdasdadas')
+    this.spinner.show();
     this._service.profileDataShow().subscribe(res => {
         let profileObj:any = {}
 
@@ -69,9 +71,10 @@ export class SidebarComponent implements OnInit {
         this.profileRecord.forEach((el:any)=>{
           profileObj = el
         })
-
+        this.spinner.hide();
         console.log(profileObj,'sadasydasidyasuy')
         this.profileName = profileObj.first_name+' '+profileObj.last_name
+        this.profileCompany = profileObj.companyName
       })
    }
 
