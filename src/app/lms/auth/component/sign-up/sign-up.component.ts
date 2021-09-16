@@ -114,7 +114,7 @@ export class SignUpComponent implements OnInit {
       industry: '',
       position: '',
       jobTitle: '',
-
+      companyName:'',
       location: '',
       teamSize: '',
       experience: '',
@@ -254,7 +254,7 @@ export class SignUpComponent implements OnInit {
         email: this.registerForm.value.email,
         customize_topic: this.customizeTopic,
         position: this.registerForm.value.position,
-
+        companyName:"google",
         profile: this.uploadedImage.location,
         industry: this.registerForm.value.industry,
         job_title: this.registerForm.value.jobTitle,
