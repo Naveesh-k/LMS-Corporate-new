@@ -247,7 +247,7 @@ export class DashboardComponent implements OnInit {
   socailLogin(data: any){
     console.log("Social login 248 dashboard" , data)
     let request:any = {
-      email:          data.email,
+      email:data.email,
     }
     console.log("Social login 252 dashboard" , request.email)
     if(data.provider === 'GOOGLE'){
@@ -257,7 +257,7 @@ export class DashboardComponent implements OnInit {
     }
     this._service.getSocialLogin(request).subscribe(res => {
       let response = res;
-      console.log(response)
+      console.log('social login 260',response)
     })
   }
 
