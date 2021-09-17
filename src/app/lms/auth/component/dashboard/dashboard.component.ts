@@ -248,7 +248,6 @@ export class DashboardComponent implements OnInit {
     console.log(data)
     let request:any = {
       email:          data.email,
-      // social_id:      data.id_Token
     }
     if(data.provider === 'GOOGLE'){
       request['social_id'] =  data.idToken;

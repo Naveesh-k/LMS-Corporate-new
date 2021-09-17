@@ -232,11 +232,13 @@ export class SignUpComponent implements OnInit {
         if (response.success) {
           // this.router.navigateByUrl('/lms/app/home')
           localStorage.setItem("userType", 'false');
+          console.log('social sign me if condition run 235 signup page')
           console.log("228 checkuser type",localStorage.getItem("userType"))
           window.location.href = "/lms/app/home";
         }
         else {
           console.log("Exist User", response.success);
+           console.log('social sign me else condition run 241 signup page')
           // this.router.navigateByUrl('/lms/app/home')
           this.toastr.success('message', response.message);
           localStorage.setItem("userType", 'true');
