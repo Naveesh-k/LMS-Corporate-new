@@ -235,6 +235,7 @@ export class DashboardComponent implements OnInit {
         // this.router.navigateByUrl('/lms/auth/user-group')
         window.location.href = "/lms/auth/user-group";
       }else{
+         this.socailLogin(data)
         // this.router.navigateByUrl('/lms/app/home')
         window.location.href = "/lms/app/home";
       }
@@ -242,6 +243,24 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+// if user are already exist 
+  socailLogin(data: any){
+    console.log(data)
+    let request:any = {
+      email:          data.email,
+      // social_id:      data.id_Token
+    }
+    if(data.provider === 'GOOGLE'){
+      request['social_id'] =  data.idToken;
+    } else if (data.provider === 'FACEBOOK'){
+       request['social_id'] =  data.authToken;
+    }
+    console.log(request)
+    this._service.getSocialLogin(request).subscribe(res => {
+      let response = res;
+      console.log(response)
+    })
+  }
 
     fbLogin(data: any){
       console.log(data)
