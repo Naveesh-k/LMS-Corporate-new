@@ -73,6 +73,8 @@ export class HomeComponent implements OnInit {
       // this.spinner.show();
         let profileObj:any = {}
 
+        console.log(res,'home ts 76 profile data')
+
         this.profileRecord = res.data
         this.profileRecord.forEach((el:any)=>{
           profileObj = el

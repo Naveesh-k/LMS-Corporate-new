@@ -227,6 +227,7 @@ export class SignUpComponent implements OnInit {
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
           console.log("this is social sign up 230",response)
+          this.profileData()
 
         if (response.success) {
           // this.router.navigateByUrl('/lms/app/home')
@@ -338,6 +339,7 @@ export class SignUpComponent implements OnInit {
     this._service.profileDataShow().subscribe(res => {
         let profileObj:any = {}
 
+        console.log(res,'signup ts 341 profile data')
         this.profileRecord = res.data
         this.profileRecord.forEach((el:any)=>{
           profileObj = el
