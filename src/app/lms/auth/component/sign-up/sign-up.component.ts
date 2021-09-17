@@ -227,7 +227,7 @@ export class SignUpComponent implements OnInit {
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
           console.log("this is social sign up 230",response)
-          this.profileData()
+          
 
         if (response.success) {
           // this.router.navigateByUrl('/lms/app/home')
@@ -235,6 +235,7 @@ export class SignUpComponent implements OnInit {
           console.log('social sign me if condition run 235 signup page')
           console.log("228 checkuser type",localStorage.getItem("userType"))
           window.location.href = "/lms/app/home";
+          this.profileData()
         }
         else {
           console.log("Exist User", response.success);
@@ -243,6 +244,7 @@ export class SignUpComponent implements OnInit {
           this.toastr.success('message', response.message);
           localStorage.setItem("userType", 'true');
           window.location.href= "/lms/app/home";
+          this.profileData()
         }
       })
     }
@@ -340,14 +342,12 @@ export class SignUpComponent implements OnInit {
   profileData() {
     this._service.profileDataShow().subscribe(res => {
         let profileObj:any = {}
-
         console.log(res,'signup ts 341 profile data')
         this.profileRecord = res.data
         this.profileRecord.forEach((el:any)=>{
           profileObj = el
         })
         this.profileName = profileObj.first_name+' '+profileObj.last_name
-
         console.log(profileObj.companyName,'sadaaaaaaaaa')
       })
    }
