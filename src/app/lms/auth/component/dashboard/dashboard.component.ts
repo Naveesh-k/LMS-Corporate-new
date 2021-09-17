@@ -245,10 +245,11 @@ export class DashboardComponent implements OnInit {
 
 // if user are already exist 
   socailLogin(data: any){
-    console.log(data)
+    console.log("Social login 248 dashboard" , data)
     let request:any = {
       email:          data.email,
     }
+    console.log("Social login 252 dashboard" , request.email)
     if(data.provider === 'GOOGLE'){
       request['social_id'] =  data.idToken;
     } else if (data.provider === 'FACEBOOK'){
