@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GobalService } from 'src/app/lms/global-services/gobal.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-profile',
@@ -12,17 +14,30 @@ export class ProfileComponent implements OnInit {
   submitted = false;
   darkMode: boolean = false;
   hide: boolean = false;
+  profileRecord:any;
+  profileName:any;
+  email:any;
+  marketing:any;
+  profile:any;
+  company:any;
   constructor(
+    private spinner: NgxSpinnerService,
+    public _service: GobalService,
     private formBuilder: FormBuilder,
     public mode: ColorModeService // dark-light
   ) {}
 
   ngOnInit(): void {
+    this.profileData()
     this.loginForm = this.formBuilder.group(
       {
-        email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(6)]],
-        acceptTerms: [false, Validators.requiredTrue],
+        name: ['', [Validators.required]],
+        email: ['', [Validators.required]],
+        mobile: ['', [Validators.required]],
+        profile: ['', [Validators.required]],
+        language: ['', [Validators.required]],
+        country: ['', [Validators.required]],
+        aboutMe: ['', [Validators.required]]
       },
       {
         // validator: MustMatch('password', 'confirmPassword')
@@ -79,4 +94,33 @@ export class ProfileComponent implements OnInit {
     }
   }
   //end dark-light
+
+  profileData() {
+    this.spinner.show();
+    this._service.profileDataShow().subscribe(res => {
+      
+        let profileObj:any = {}
+        this.profileRecord = res.data
+        this.profileRecord.forEach((el:any)=>{
+          profileObj = el
+        })
+        this.spinner.hide();
+        console.log(profileObj)
+        
+        this.profileName = profileObj.first_name+' '+profileObj.last_name;
+        this.email = profileObj.email
+        this.marketing = profileObj.industry
+        this.profile = profileObj.profile
+        this.company = profileObj.companyName
+        this.loginForm.patchValue({
+          name: this.profileName,
+          email: profileObj.email,
+          mobile: '',
+          profile: profileObj.profile,
+          language: profileObj.company,
+          country: profileObj.marketing,
+          aboutMe: '',
+        })
+      })
+   }
 }
