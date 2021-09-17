@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-   // this.spinner.hide();
+    this.spinner.hide();
     
     // dark-light
     this.mode.currentMode.subscribe((res) => {
