@@ -172,7 +172,8 @@ export class SignUpComponent implements OnInit {
   onSubmit() {
     let checkLink = localStorage.getItem("pageLink")
     if (checkLink === 'Courses Provider') {
-      this.router.navigateByUrl('/lms/auth/cp-sign-up')
+      // this.router.navigateByUrl('/lms/auth/cp-sign-up')
+      window.location.href= "/lms/auth/cp-sign-up";
     } else {
       this.submitted = true;
       this.hideFilledForm = true;
@@ -222,16 +223,13 @@ export class SignUpComponent implements OnInit {
       this.signUpData['profile'] = this.profilepic
       this.signUpData['social_id'] = this.tokenId
       this.signUpData['provider'] = this.provider
-      console.log(this.signUpData.provider)
-      console.log(this.signUpData);
+      console.log('this is sign up data',this.signUpData);
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
-
+          console.log("this is social sign up 230",response)
 
         if (response.success) {
-          console.log("New User" , response.success);
           // this.router.navigateByUrl('/lms/app/home')
-
           localStorage.setItem("userType", 'false');
           console.log("228 checkuser type",localStorage.getItem("userType"))
           window.location.href = "/lms/app/home";

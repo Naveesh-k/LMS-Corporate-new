@@ -585,3 +585,30 @@ label.login_label {
 }
 
 // ----------------- Module   end  bdTech---------------------
+
+@media screen and (min-width: 577px) and (max-device-width: 738px) {
+    img.facebook-img {
+        left: 12px;
+    }
+    .btn.btn-socail img {
+        padding: 0px 12px 0 0 ;
+        width: 15% ;
+    }
+    .btn-socail {
+        padding-top: 12px ;
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 1029px) and (max-device-width: 1236px) {
+    img.facebook-img {
+        left: 12px;
+    }
+    .btn.btn-socail img {
+        padding: 0px 12px 0 0 ;
+        width: 15% ;
+    }
+    .btn-socail {
+        padding-top: 12px ;
+        font-size: 12px;
+    }
+}

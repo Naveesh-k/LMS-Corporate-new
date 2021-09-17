@@ -56,7 +56,8 @@ export class LoginComponent implements OnInit {
   // back location
   back() {
     // this.location.back()
-    this.router.navigateByUrl('/lms/auth')
+    // this.router.navigateByUrl('/lms/auth')
+     window.location.href = "/lms/auth";
   }
 
   // convenience getter for easy access to form fields
@@ -93,7 +94,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('userType','true')
           this.toastr.success('message', this.login.message)
           localStorage.setItem('lms_isLogedIn', 'true')
-          this.router.navigateByUrl('/lms/app/home')
+          // this.router.navigateByUrl('/lms/app/home')
+          window.location.href = "/lms/app/home";
         } else if (this.login.success === false){
           this.toastr.error('message', this.login.message)
           }
@@ -154,10 +156,11 @@ export class LoginComponent implements OnInit {
       // }, 1000);
       // ------------------- Spinner end
       if(response.success == true){
-        this.router.navigateByUrl('/lms/auth/sign-up')
+        // this.router.navigateByUrl('/lms/auth/sign-up')
+        window.location.href = "/lms/auth/sign-up";
       }else{
-        // this.router.navigateByUrl('/lms/auth/login')
-        this.router.navigateByUrl('/lms/app/home')
+        // this.router.navigateByUrl('/lms/app/home')
+         window.location.href = "/lms/app/home";
       }
       console.log(response)
     })

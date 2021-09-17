@@ -32,7 +32,7 @@ export class SidebarComponent implements OnInit {
     });
     // end dark mode
 
-    this.loadSidebar()
+    // this.loadSidebar()
   }
 
   loadSidebar(){
@@ -63,7 +63,6 @@ export class SidebarComponent implements OnInit {
 
 
   profileData() {
-    console.log('sadasdasdadas')
     this.spinner.show();
     this._service.profileDataShow().subscribe(res => {
         let profileObj:any = {}
@@ -73,7 +72,6 @@ export class SidebarComponent implements OnInit {
           profileObj = el
         })
         this.spinner.hide();
-        console.log(profileObj,'sadasydasidyasuy')
         this.profileName = profileObj.first_name+' '+profileObj.last_name
         this.profileCompany = profileObj.companyName
         this.profileImage =profileObj.profile
