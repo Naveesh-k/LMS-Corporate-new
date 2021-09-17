@@ -15,6 +15,7 @@ export class SidebarComponent implements OnInit {
   searchBtn:any;
   profileName: any ;
   profileCompany: any ;
+  profileImage: any ;
   profileRecord: any = []
   constructor(public mode: ColorModeService,public _service: GobalService,
     private spinner: NgxSpinnerService,) {}
@@ -75,6 +76,8 @@ export class SidebarComponent implements OnInit {
         console.log(profileObj,'sadasydasidyasuy')
         this.profileName = profileObj.first_name+' '+profileObj.last_name
         this.profileCompany = profileObj.companyName
+        this.profileImage =profileObj.profile
+        console.log(this.profileImage)
       })
    }
 
