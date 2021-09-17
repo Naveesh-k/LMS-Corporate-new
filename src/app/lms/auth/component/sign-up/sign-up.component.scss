@@ -72,7 +72,7 @@ h5.h5_just {
 
 
 
-@media only screen (min-width: 1490px) and (max-width: 1499px) {
+@media only screen and (min-device-width: 1490px) and (max-device-width: 1499px) {
     .bg_col-1 {
         // height: 89vh;
         height: 100vh;
