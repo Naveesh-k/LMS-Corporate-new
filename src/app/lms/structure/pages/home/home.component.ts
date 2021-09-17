@@ -41,28 +41,28 @@ export class HomeComponent implements OnInit {
 
     /*get localStorage data
     for show profile name*/
-    // let userType: any = localStorage.getItem('userType')
-    // this.checkUser = userType
-    // if (this.checkUser === "true") {
-    //   let social = localStorage.getItem('signupMode')
-    //   if (social === 'true') {
-    //     let getLocalStorage: any = localStorage.getItem('userDetail');
-    //     let signUpData = JSON.parse(getLocalStorage);
-    //     this.signupFullName = signUpData.firstName + " " + signUpData.lastName
-    //     console.log('Social signup data', this.signupFullName)
-    //   } else {
-    //     let normalUserFName = localStorage.getItem('firstName')
-    //     let normalUserLName = localStorage.getItem('lastName')
-    //     this.signupFullName = normalUserFName + ' ' + normalUserLName
-    //     console.log('Normal data', this.signupFullName)
-    //   }
+    let userType: any = localStorage.getItem('userType')
+    this.checkUser = userType
+    if (this.checkUser === "true") {
+      let social = localStorage.getItem('signupMode')
+      if (social === 'true') {
+        let getLocalStorage: any = localStorage.getItem('userDetail');
+        let signUpData = JSON.parse(getLocalStorage);
+        this.signupFullName = signUpData.firstName + " " + signUpData.lastName
+        console.log('Social signup data', this.signupFullName)
+      } else {
+        let normalUserFName = localStorage.getItem('firstName')
+        let normalUserLName = localStorage.getItem('lastName')
+        this.signupFullName = normalUserFName + ' ' + normalUserLName
+        console.log('Normal data', this.signupFullName)
+      }
 
-    // }
-    // else {
-    //   let userFName = localStorage.getItem('loginUserFname')
-    //   let userLName = localStorage.getItem('loginUserLname')
-    //   this.fullName = userFName + ' ' + userLName
-    // }
+    }
+    else {
+      let userFName = localStorage.getItem('loginUserFname')
+      let userLName = localStorage.getItem('loginUserLname')
+      this.fullName = userFName + ' ' + userLName
+    }
 
    
   }

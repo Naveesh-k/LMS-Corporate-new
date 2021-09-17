@@ -255,7 +255,6 @@ export class DashboardComponent implements OnInit {
     } else if (data.provider === 'FACEBOOK'){
        request['social_id'] =  data.authToken;
     }
-    console.log(request)
     this._service.getSocialLogin(request).subscribe(res => {
       let response = res;
       console.log(response)
