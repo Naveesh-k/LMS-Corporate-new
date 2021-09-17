@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.hide();
-
+    
     // dark-light
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
@@ -35,6 +35,8 @@ export class HomeComponent implements OnInit {
         this.darkMode = true;
       }
     });
+
+     this.profileData()
 
 
     /*get localStorage data
@@ -64,7 +66,7 @@ export class HomeComponent implements OnInit {
       this.fullName = userFName + ' ' + userLName
     }
 
-    this.profileData()
+   
   }
 
   profileData() {
@@ -73,7 +75,7 @@ export class HomeComponent implements OnInit {
       // this.spinner.show();
         let profileObj:any = {}
 
-        console.log(res,'home ts 76 profile data')
+        console.log(res,'home ts 76 profile data ')
 
         this.profileRecord = res.data
         this.profileRecord.forEach((el:any)=>{
