@@ -280,8 +280,10 @@ export class SignUpComponent implements OnInit {
       localStorage.setItem('lastName', request.last_name)
       this._service.getSignUpEmail(request).subscribe(res => {
         let response = res
-        console.log(response)
-        this.profileData()
+        
+        localStorage.setItem('token',response.data.tokens)
+        console.log(response.data,'283 sign up')
+        // this.profileData()
         if (response.success === true) {
           console.log(response.success)
           // this.router.navigateByUrl('/lms/app/home')
