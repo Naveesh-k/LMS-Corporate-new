@@ -227,7 +227,7 @@ export class SignUpComponent implements OnInit {
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
           console.log("this is social sign up 230",response)
-          
+
 
         if (response.success) {
           // this.router.navigateByUrl('/lms/app/home')
@@ -283,10 +283,10 @@ export class SignUpComponent implements OnInit {
       localStorage.setItem('lastName', request.last_name)
       this._service.getSignUpEmail(request).subscribe(res => {
         let response = res
-        
+
         localStorage.setItem('token',response.data.tokens)
         console.log(response.data,'283 sign up')
-        // this.profileData()
+        this.profileData()
         if (response.success === true) {
           console.log(response.success)
           // this.router.navigateByUrl('/lms/app/home')
