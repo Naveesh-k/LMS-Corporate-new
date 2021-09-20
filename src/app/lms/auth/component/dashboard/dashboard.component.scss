@@ -20,6 +20,55 @@ body {
     }
 }
 
+@media screen and (min-device-width: 500px) and (max-device-width: 575px) {
+    section#dashboard-bg {
+        padding: 1px 0 45px 0;
+    }
+}
+
+@media screen and (min-device-width: 577px) and (max-device-width: 683px) {
+    .btn-socail {
+        padding-top: 12px;
+        font-size: 9px;
+        padding-left: 28px;
+    }
+    img.facebook-img {
+        padding-top: 9px !important;
+    }
+    section#dashboard-bg h2 {
+        font-size: 13px !important;
+    }
+    section#dashboard-bg h6 {
+        font-size: 13px;
+        line-height: 0;
+    }
+    .mar_top {
+        margin-top: 32px;
+    }
+    .btn-socail {
+        margin-bottom: 13px;
+    }
+    section#dashboard-bg small {
+        font-size: 7px;
+    }
+}
+
+@media screen and (min-device-width: 684px) and (max-device-width: 767px) {
+    section#dashboard-bg h2 {
+        font-size: 15px !important;
+    }
+    .mar_top {
+        margin-top: 26px;
+    }
+    section#dashboard-bg h6 {
+        font-size: 14px;
+        line-height: 0;
+    }
+    .btn-socail {
+        margin-bottom: 16px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     img.facebook-img {
         padding: 0 10px 0 0;

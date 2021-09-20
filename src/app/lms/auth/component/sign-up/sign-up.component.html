@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="fnt_wigt">Profile</label> <br>
-                                <input type="file" formControlName="profile" (change)="imageUplaoad($event)" accept=" .png, .jpeg, .jpg">
+                                <input type="file" class="file_type" formControlName="profile" (change)="imageUplaoad($event)" accept=" .png, .jpeg, .jpg">
                                 <img src="{{profilepic}}" class="dynamic_signup_img">
                             </div>
                             <div class="text-center">
@@ -106,7 +106,7 @@
 
                         <div class="row" *ngIf="showSelect">
                             <div class="col-md-12 ">
-                                <h5> <b> Choose your area of interests </b></h5>
+                                <h5 class="chose-yur"> <b> Choose your area of interests </b></h5>
                                 <div class="row mt">
                                     <div class="col-md-6 col-lg-6 col-sm-6 col-6" *ngFor="let topic of topics; index as i">
 

@@ -18,10 +18,6 @@ small.prep_small {
 }
 
 .slide-1 {
-    // width: 313px !important;
-    // margin: 0 6px;
-    // width: 292px !important;
-    // margin: 0 8px;
     width: 291px!important;
     margin: 0 9px;
 }
@@ -235,7 +231,9 @@ video.video_tag {
         width: 66%;
     }
     .slide-1 {
-        width: 175px !important;
+        // width: 175px !important;
+        width: 225px !important;
+        margin: 0 8px;
     }
     .pro_bg {
         padding: 4px 8px;
@@ -263,7 +261,8 @@ video.video_tag {
 
 @media screen and (min-device-width: 1000px) and (max-device-width: 1489px) {
     .slide-1 {
-        width: 302px !important;
+        // width: 346px !important;
+        width: 307px !important;
         margin: 0 8px;
     }
     .slick-prev {
@@ -274,7 +273,7 @@ video.video_tag {
     }
 }
 
-@media only screen and (max-width: 1499px) {
+@media only screen and (min-width: 1490px) and (max-width: 1499px) {
     .slide-1 {
         width: 310px !important;
         margin: 0 8px;

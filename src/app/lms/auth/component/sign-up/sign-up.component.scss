@@ -62,15 +62,98 @@ h5.h5_just {
     .bg-silver {
         font-size: 13px;
     }
+    .bg_col-1 {
+        height: 99vh;
+    }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 575px) {
+    section#signup-bg {
+        padding: 0 0 45px 0;
+    }
+}
+
+@media screen and (min-device-width: 576px) and (max-device-width: 699px) {
+    section#signup-bg {
+        padding: 0 0 45px 0;
+    }
+    .bg_col-1 {
+        margin-left: 39px;
+        padding: 14px 13px 77px 13px;
+        width: 75%;
+    }
+    .bg_form {
+        padding: 14px;
+    }
+    h5.h5_just {
+        font-size: 11px;
+    }
+    .form-group {
+        margin-bottom: 3px;
+    }
+    label.fnt_wigt {
+        font-size: 10px;
+    }
+    input.input_bg {
+        height: 25px;
+    }
+    input.file_type {
+        font-size: 8px;
+    }
+    .bg_col-1 {
+        height: 104vh;
+    }
+    section#signup-bg {
+        height: 104vh;
+    }
+    h5.chose-yur {
+        font-size: 11px;
+    }
+    .bg-silver {
+        font-size: 8px;
+        word-break: break-all;
+    }
 }
 
 @media screen and (min-device-width: 700px) and (max-device-width: 768px) {
     .bg-silver p {
         font-size: 9px;
     }
+    section#signup-bg {
+        height: 70vh;
+    }
+    .bg_col-1 {
+        height: 64vh;
+    }
+    .bg_col-1 {
+        height: 70vh;
+        width: 100%;
+        padding: 19px 16px 77px 16px;
+    }
 }
 
-
+@media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
+    section#signup-bg {
+        height: 43vh;
+    }
+    h5.h5_just {
+        font-size: 14px;
+    }
+    label.fnt_wigt {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    .form-group {
+        margin-bottom: 9px;
+    }
+    .bg_col-1 {
+        height: 43vh;
+    }
+    .bg-silver {
+        word-break: break-all;
+        font-size: 13px;
+    }
+}
 
 @media only screen and (min-device-width: 1490px) and (max-device-width: 1499px) {
     .bg_col-1 {

@@ -33,6 +33,7 @@
     #sidebar .list-group {
         min-width: 37%;
         overflow: visible;
+        z-index: 999;
     }
     #sidebar .list-group .collapse.show,
     #sidebar .list-group .collapsing {

@@ -63,7 +63,7 @@ export class SidebarComponent implements OnInit {
 
 
   profileData() {
-    this.spinner.show();
+    // this.spinner.show();
     this._service.profileDataShow().subscribe(res => {
         let profileObj:any = {}
 
@@ -71,7 +71,7 @@ export class SidebarComponent implements OnInit {
         this.profileRecord.forEach((el:any)=>{
           profileObj = el
         })
-        this.spinner.hide();
+        // this.spinner.hide();
         this.profileName = profileObj.first_name+' '+profileObj.last_name
         this.profileCompany = profileObj.companyName
         this.profileImage =profileObj.profile
