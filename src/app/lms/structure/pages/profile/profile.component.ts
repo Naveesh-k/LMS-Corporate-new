@@ -66,23 +66,18 @@ export class ProfileComponent implements OnInit {
       if (this.social === 'true') {
         let getLocalStorage: any = localStorage.getItem('userDetail');
         let signUpData = JSON.parse(getLocalStorage);
-        console.log(signUpData,'45 sidebar')
         this.signupFullName = signUpData.firstName + " " + signUpData.lastName
-        console.log(signUpData.photoUrl, '47 sidebar')
         this.profileImage = signUpData.photoUrl;
         this.profileEmail =signUpData.email
         this.profileCompany =signUpData.provider
-
         this.companyName = signUpData.companyName
-        console.log('Social signup data', this.signupFullName)
+        console.log('name :'+this.signupFullName, this.profileImage, this.profileEmail, this.profileCompany, this.companyName, '74 profile')
       } else {
         let normalUserFName = localStorage.getItem('firstName')
         let normalUserLName = localStorage.getItem('lastName')
         this.profileImage = localStorage.getItem('profile');
-        console.log(this.profile, '55 sidebar')
         this.signupFullName = normalUserFName + ' ' + normalUserLName
         // profile
-        console.log('Normal data', this.signupFullName)
       }
 
   }
@@ -204,7 +199,6 @@ export class ProfileComponent implements OnInit {
         // }
 
 
-        console.log(this.loginForm.value, 'getData 197')
       })
    }
 }
