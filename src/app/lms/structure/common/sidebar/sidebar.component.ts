@@ -43,13 +43,16 @@ export class SidebarComponent implements OnInit {
         let getLocalStorage: any = localStorage.getItem('userDetail');
         let signUpData = JSON.parse(getLocalStorage);
         this.signupFullName = signUpData.firstName + " " + signUpData.lastName
+        console.log(signUpData.profile, '46 sidebar')
         this.profile = signUpData.profile;
+
         this.companyName = signUpData.companyName
         console.log('Social signup data', this.signupFullName)
       } else {
         let normalUserFName = localStorage.getItem('firstName')
         let normalUserLName = localStorage.getItem('lastName')
         this.profile = localStorage.getItem('profile');
+        console.log(this.profile, '55 sidebar')
         this.signupFullName = normalUserFName + ' ' + normalUserLName
         // profile
         console.log('Normal data', this.signupFullName)
