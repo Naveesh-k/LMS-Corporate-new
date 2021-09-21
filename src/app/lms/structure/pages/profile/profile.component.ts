@@ -158,7 +158,7 @@ export class ProfileComponent implements OnInit {
           this.email = profileObj.email
           this.marketing = profileObj.industry
           this.profile = profileObj.profile
-          this.company = profileObj.companyName
+          this.company = profileObj.company
         } else {
           this.profileName = this.signupFullName;
           this.email = this.profileEmail
