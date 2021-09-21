@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   fullName: any;
   checkUser: any = '';
   profileName: any ;
+  social: any ;
 
 
   profileRecord: any = []
@@ -44,8 +45,8 @@ export class HomeComponent implements OnInit {
     // let userType: any = localStorage.getItem('signupType')
     // this.checkUser = userType
     // if (this.checkUser === "true ") {
-      let social = localStorage.getItem('signupMode')
-      if (social === 'true') {
+       this.social = localStorage.getItem('signupMode')
+      if (this.social === 'true') {
         let getLocalStorage: any = localStorage.getItem('userDetail');
         let signUpData = JSON.parse(getLocalStorage);
         this.signupFullName = signUpData.firstName + " " + signUpData.lastName
