@@ -44,8 +44,8 @@ export class SidebarComponent implements OnInit {
         let signUpData = JSON.parse(getLocalStorage);
         console.log(signUpData,'45 sidebar')
         this.signupFullName = signUpData.firstName + " " + signUpData.lastName
-        console.log(signUpData.profile, '47 sidebar')
-        this.profile = signUpData.profile;
+        console.log(signUpData.photoUrl, '47 sidebar')
+        this.profile = signUpData.photoUrl;
 
         this.companyName = signUpData.companyName
         console.log('Social signup data', this.signupFullName)
