@@ -139,44 +139,54 @@ export class ProfileComponent implements OnInit {
         // this.spinner.hide();
         console.log(profileObj)
 
-        this.profileName = profileObj.first_name+' '+profileObj.last_name;
-        this.email = profileObj.email
-        this.marketing = profileObj.industry
-        this.profile = profileObj.profile
-        this.company = profileObj.companyName
-        this.loginForm.patchValue({
-          name: this.profileName,
-          email: profileObj.email,
-          mobile: '',
-          profile: profileObj.profile,
-          language: profileObj.company,
-          country: profileObj.marketing,
-          aboutMe: '',
-        })
+        // this.profileName = profileObj.first_name+' '+profileObj.last_name;
+        // this.email = profileObj.email
+        // this.marketing = profileObj.industry
+        // this.profile = profileObj.profile
+        // this.company = profileObj.companyName
+        // this.loginForm.patchValue({
+        //   name: this.profileName,
+        //   email: profileObj.email,
+        //   mobile: '',
+        //   profile: profileObj.profile,
+        //   language: 'English',
+        //   country: 'UK',
+        //   aboutMe: 'It is a long established fact that a reader.',
+        // })
 
 
-        // if(this.social != 'true'){
-        //   this.profileName = profileObj.first_name+' '+profileObj.last_name;
-        //   this.email = profileObj.email
-        //   this.marketing = profileObj.industry
-        //   this.profile = profileObj.profile
-        //   this.company = profileObj.company
-        // } else {
-        //   this.profileName = this.signupFullName;
-        //   this.email = this.profileEmail
-        //   this.marketing = this.profileCompany
-        //   this.profile = this.profileImage
-        //   this.company = this.profileCompany
-        // }
-        this.loginForm.patchValue({
-          name: this.profileName,
-          email: profileObj.email,
-          mobile: '',
-          profile: profileObj.profile,
-          language: profileObj.company,
-          country: profileObj.marketing,
-          aboutMe: '',
-        })
+        if(this.social != 'true'){
+          this.profileName = profileObj.first_name+' '+profileObj.last_name;
+          this.email = profileObj.email
+          this.marketing = profileObj.industry
+          this.profile = profileObj.profile
+          this.company = profileObj.company
+          this.loginForm.patchValue({
+            name: this.profileName,
+            email: profileObj.email,
+            mobile: '',
+            profile: profileObj.profile,
+            language: 'English',
+            country: 'UK',
+            aboutMe: 'It is a long established fact that a reader.',
+          })
+        } else {
+          this.profileName = this.signupFullName;
+          this.email = this.profileEmail
+          this.marketing = this.profileCompany
+          this.profile = this.profileImage
+          this.company = this.profileCompany
+          this.loginForm.patchValue({
+            name: this.profileName,
+            email: profileObj.email,
+            mobile: '',
+            profile: profileObj.profile,
+            language: 'English',
+            country: 'UK',
+            aboutMe: 'It is a long established fact that a reader.',
+          })
+        }
+
       })
    }
 }
