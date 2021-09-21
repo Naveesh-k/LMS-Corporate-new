@@ -59,7 +59,7 @@ export class DashboardComponent implements OnInit {
   // }
 
   subscribeToLogin(){
-    this._service.checkSignupType()
+
     var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'78fuo9t76f397o'}&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=${'https://pifstage.swotfishdemo.com/lms/auth'}`
     var width = 450,
         height = 730,
@@ -69,6 +69,7 @@ export class DashboardComponent implements OnInit {
     // const options = `directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no,
     // copyhistory=no, width=${width},height=${height},left=${left},top=${top}`;
     // window.open(oauthUrl, '_blank', options);
+    this._service.checkSignupType()
 };
   ngOnInit(): void {
     // dark-light
@@ -116,13 +117,13 @@ export class DashboardComponent implements OnInit {
 
   }
   signInWithGoogle(): void {
-   this._service.checkSignupType()
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+   this._service.checkSignupType()
   }
 
   signInWithFB(): void {
-   this._service.checkSignupType()
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+   this._service.checkSignupType()
   }
 
   signIn(provider: any){
@@ -243,7 +244,7 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-// if user are already exist 
+// if user are already exist
   socailLogin(data: any){
     console.log("Social login 248 dashboard" , data)
     let request:any = {
