@@ -183,6 +183,7 @@ export class ProfileComponent implements OnInit {
             aboutMe: 'It is a long established fact that a reader.',
           })
         } else if(this.social === 'true'){
+          console.log('run','186')
           this.profileName = this.signupFullName;
           this.email = this.profileEmail;
           this.marketing = this.profileCompany;
