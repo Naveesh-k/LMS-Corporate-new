@@ -281,6 +281,7 @@ export class SignUpComponent implements OnInit {
       console.log(request, '274')
       localStorage.setItem('firstName', request.first_name)
       localStorage.setItem('lastName', request.last_name)
+      localStorage.setItem('profile', request.profile)
       this._service.getSignUpEmail(request).subscribe(res => {
         let response = res
 

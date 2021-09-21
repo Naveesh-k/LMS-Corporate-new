@@ -49,7 +49,9 @@ export class SidebarComponent implements OnInit {
       } else {
         let normalUserFName = localStorage.getItem('firstName')
         let normalUserLName = localStorage.getItem('lastName')
+        this.profile = localStorage.getItem('profile');
         this.signupFullName = normalUserFName + ' ' + normalUserLName
+        // profile
         console.log('Normal data', this.signupFullName)
       }
   }
