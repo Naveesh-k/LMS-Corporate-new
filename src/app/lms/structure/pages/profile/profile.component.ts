@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.profileData()
+
     this.loginForm = this.formBuilder.group(
       {
         name: ['', [Validators.required]],
@@ -45,9 +45,7 @@ export class ProfileComponent implements OnInit {
         country: ['', [Validators.required]],
         aboutMe: ['', [Validators.required]]
       },
-      {
-        // validator: MustMatch('password', 'confirmPassword')
-      }
+
     );
 
     // dark-light
@@ -71,7 +69,8 @@ export class ProfileComponent implements OnInit {
         this.profileEmail =signUpData.email
         this.profileCompany =signUpData.provider
         this.companyName = signUpData.companyName
-        console.log('name :'+this.signupFullName, this.profileImage, this.profileEmail, this.profileCompany, this.companyName, '74 profile')
+        console.log('profile 74',signUpData)
+        console.log('name :'+this.signupFullName, this.profileImage, this.profileEmail, this.profileCompany, this.companyName, '75 profile')
       } else {
         let normalUserFName = localStorage.getItem('firstName')
         let normalUserLName = localStorage.getItem('lastName')
@@ -79,6 +78,9 @@ export class ProfileComponent implements OnInit {
         this.signupFullName = normalUserFName + ' ' + normalUserLName
         // profile
       }
+
+
+      this.profileData()
 
   }
 
@@ -132,22 +134,22 @@ export class ProfileComponent implements OnInit {
           profileObj = el
         })
         // this.spinner.hide();
-        console.log(profileObj)
+        console.log(profileObj, 'sasdasdasdasd')
 
-        this.profileName = profileObj.first_name+' '+profileObj.last_name;
-        this.email = profileObj.email
-        this.marketing = profileObj.industry
-        this.profile = profileObj.profile
-        this.company = profileObj.companyName
-        this.loginForm.patchValue({
-          name: this.profileName,
-          email: profileObj.email,
-          mobile: '',
-          profile: profileObj.profile,
-          language: 'English',
-          country: 'UK',
-          aboutMe: 'It is a long established fact that a reader.',
-        })
+        // this.profileName = profileObj.first_name+' '+profileObj.last_name;
+        // this.email = profileObj.email
+        // this.marketing = profileObj.industry
+        // this.profile = profileObj.profile
+        // this.company = profileObj.companyName
+        // this.loginForm.patchValue({
+        //   name: this.profileName,
+        //   email: profileObj.email,
+        //   mobile: '',
+        //   profile: profileObj.profile,
+        //   language: 'English',
+        //   country: 'UK',
+        //   aboutMe: 'It is a long established fact that a reader.',
+        // })
 
         // this.profileName = this.signupFullName;
         // this.email = this.profileEmail
@@ -164,39 +166,39 @@ export class ProfileComponent implements OnInit {
         //   aboutMe: 'It is a long established fact that a reader.',
         // })
 
-        // if(this.social != 'true'){
-        //   this.profileName = profileObj.first_name+' '+profileObj.last_name;
-        //   this.email = profileObj.email
-        //   this.marketing = profileObj.industry
-        //   this.profile = profileObj.profile
-        //   this.company = profileObj.company
-        //   console.log(this.profileName, 'normal 178')
-        //   this.loginForm.patchValue({
-        //     name: this.profileName,
-        //     email: profileObj.email,
-        //     mobile: '',
-        //     profile: profileObj.profile,
-        //     language: 'English',
-        //     country: 'UK',
-        //     aboutMe: 'It is a long established fact that a reader.',
-        //   })
-        // } else if(this.social === 'true'){
-        //   this.profileName = this.signupFullName;
-        //   this.email = this.profileEmail
-        //   this.marketing = this.profileCompany
-        //   this.profile = this.profileImage
-        //   this.company = this.profileCompany
-        //   console.log(this.profileName , 'socail 185')
-        //   this.loginForm.patchValue({
-        //     name: this.profileName,
-        //     email: this.email,
-        //     mobile: '',
-        //     profile: this.profile,
-        //     language: 'English',
-        //     country: 'UK',
-        //     aboutMe: 'It is a long established fact that a reader.',
-        //   })
-        // }
+        if(this.social != 'true'){
+          this.profileName = profileObj.first_name+' '+profileObj.last_name;
+          this.email = profileObj.email
+          this.marketing = profileObj.industry
+          this.profile = profileObj.profile
+          this.company = profileObj.company
+          console.log(this.profileName, 'normal 178')
+          this.loginForm.patchValue({
+            name: this.profileName,
+            email: profileObj.email,
+            mobile: '',
+            profile: profileObj.profile,
+            language: 'English',
+            country: 'UK',
+            aboutMe: 'It is a long established fact that a reader.',
+          })
+        } else if(this.social === 'true'){
+          this.profileName = this.signupFullName;
+          this.email = this.profileEmail
+          this.marketing = this.profileCompany
+          this.profile = this.profileImage
+          this.company = this.profileCompany
+          console.log(this.profileName , 'socail 185')
+          this.loginForm.patchValue({
+            name: this.profileName,
+            email: this.email,
+            mobile: '',
+            profile: this.profile,
+            language: 'English',
+            country: 'UK',
+            aboutMe: 'It is a long established fact that a reader.',
+          })
+        }
 
 
       })
