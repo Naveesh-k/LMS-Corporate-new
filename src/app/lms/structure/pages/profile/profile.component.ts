@@ -154,6 +154,20 @@ export class ProfileComponent implements OnInit {
         //   aboutMe: 'It is a long established fact that a reader.',
         // })
 
+        this.profileName = this.signupFullName;
+        this.email = this.profileEmail
+        this.marketing = this.profileCompany
+        this.profile = this.profileImage
+        this.company = this.profileCompany
+        this.loginForm.patchValue({
+          name: this.profileName,
+          email: this.email,
+          mobile: '',
+          profile: this.profile,
+          language: 'English',
+          country: 'UK',
+          aboutMe: 'It is a long established fact that a reader.',
+        })
 
         // if(this.social != 'true'){
         //   this.profileName = profileObj.first_name+' '+profileObj.last_name;
@@ -161,47 +175,33 @@ export class ProfileComponent implements OnInit {
         //   this.marketing = profileObj.industry
         //   this.profile = profileObj.profile
         //   this.company = profileObj.company
-
-        // } else {
+        //   console.log(this.profileName, 'normal 178')
+        //   this.loginForm.patchValue({
+        //     name: this.profileName,
+        //     email: profileObj.email,
+        //     mobile: '',
+        //     profile: profileObj.profile,
+        //     language: 'English',
+        //     country: 'UK',
+        //     aboutMe: 'It is a long established fact that a reader.',
+        //   })
+        // } else if(this.social === 'true'){
         //   this.profileName = this.signupFullName;
         //   this.email = this.profileEmail
         //   this.marketing = this.profileCompany
         //   this.profile = this.profileImage
         //   this.company = this.profileCompany
+        //   console.log(this.profileName , 'socail 185')
+        //   this.loginForm.patchValue({
+        //     name: this.profileName,
+        //     email: this.email,
+        //     mobile: '',
+        //     profile: this.profile,
+        //     language: 'English',
+        //     country: 'UK',
+        //     aboutMe: 'It is a long established fact that a reader.',
+        //   })
         // }
-        if(this.social != 'true'){
-          this.profileName = profileObj.first_name+' '+profileObj.last_name;
-          this.email = profileObj.email
-          this.marketing = profileObj.industry
-          this.profile = profileObj.profile
-          this.company = profileObj.company
-          console.log(this.profileName, 'normal 178')
-          this.loginForm.patchValue({
-            name: this.profileName,
-            email: profileObj.email,
-            mobile: '',
-            profile: profileObj.profile,
-            language: 'English',
-            country: 'UK',
-            aboutMe: 'It is a long established fact that a reader.',
-          })
-        } else if(this.social === 'true'){
-          this.profileName = this.signupFullName;
-          this.email = this.profileEmail
-          this.marketing = this.profileCompany
-          this.profile = this.profileImage
-          this.company = this.profileCompany
-          console.log(this.profileName , 'socail 185')
-          this.loginForm.patchValue({
-            name: this.profileName,
-            email: this.email,
-            mobile: '',
-            profile: this.profile,
-            language: 'English',
-            country: 'UK',
-            aboutMe: 'It is a long established fact that a reader.',
-          })
-        }
 
 
         console.log(this.loginForm.value, 'getData 197')
