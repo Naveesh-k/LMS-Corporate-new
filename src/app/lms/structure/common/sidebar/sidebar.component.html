@@ -86,11 +86,15 @@ show
                 </a>
                 <div [ngClass]="darkMode ? 'dark-bg' : 'light-bg'" id="side_bar" class="sidebar-bg text-center" routerLinkActive="router-link-active active" [routerLink]="'/lms/app/profile'">
                     <!-- <img class="profile-img" src="../../../assets/images/profile.png" alt="" /> -->
-                    <img class="profile-img" src="{{profileImage}}" alt="" />
+                    <img class="profile-img" *ngIf="social != 'true'" src="{{profileImage}}" alt="" />
+                    <img class="profile-img" *ngIf="social === 'true'" src="{{profile}}" alt="" />
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <p class="name_pro">
+                            <p class="name_pro" *ngIf="social != 'true'">
                                 {{profileName}} <br /> {{profileCompany}}
+                            </p>
+                            <p class="name_pro" *ngIf="social === 'true'">
+                                {{signupFullName}} <br /> {{companyName}}
                             </p>
                         </div>
                     </div>

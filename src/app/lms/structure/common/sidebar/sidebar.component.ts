@@ -17,6 +17,10 @@ export class SidebarComponent implements OnInit {
   profileCompany: any ;
   profileImage: any ;
   profileRecord: any = []
+  social:any;
+  signupFullName: any;
+  profile: any;
+  companyName: any;
   constructor(public mode: ColorModeService,public _service: GobalService,
     private spinner: NgxSpinnerService,) {}
 
@@ -32,7 +36,22 @@ export class SidebarComponent implements OnInit {
     });
     // end dark mode
 
-    // this.loadSidebar()
+
+    // get User name form local storage
+    this.social = localStorage.getItem('signupMode')
+      if (this.social === 'true') {
+        let getLocalStorage: any = localStorage.getItem('userDetail');
+        let signUpData = JSON.parse(getLocalStorage);
+        this.signupFullName = signUpData.firstName + " " + signUpData.lastName
+        this.profile = signUpData.profile;
+        this.companyName = signUpData.companyName
+        console.log('Social signup data', this.signupFullName)
+      } else {
+        let normalUserFName = localStorage.getItem('firstName')
+        let normalUserLName = localStorage.getItem('lastName')
+        this.signupFullName = normalUserFName + ' ' + normalUserLName
+        console.log('Normal data', this.signupFullName)
+      }
   }
 
   loadSidebar(){
