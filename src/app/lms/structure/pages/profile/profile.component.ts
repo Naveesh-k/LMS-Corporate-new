@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
+    this.profileData()
     this.loginForm = this.formBuilder.group(
       {
         name: ['', [Validators.required]],
@@ -80,7 +80,7 @@ export class ProfileComponent implements OnInit {
       }
 
 
-      this.profileData()
+      // this.profileData()
 
   }
 
