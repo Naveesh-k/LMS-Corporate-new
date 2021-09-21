@@ -168,10 +168,10 @@ export class ProfileComponent implements OnInit {
 
         if(this.social != 'true'){
           this.profileName = profileObj.first_name+' '+profileObj.last_name;
-          this.email = profileObj.email
-          this.marketing = profileObj.industry
-          this.profile = profileObj.profile
-          this.company = profileObj.company
+          this.email = profileObj.email;
+          this.marketing = profileObj.industry;
+          this.profile = profileObj.profile;
+          this.company = profileObj.company;
           console.log(this.profileName, 'normal 178')
           this.loginForm.patchValue({
             name: this.profileName,
@@ -184,10 +184,10 @@ export class ProfileComponent implements OnInit {
           })
         } else if(this.social === 'true'){
           this.profileName = this.signupFullName;
-          this.email = this.profileEmail
-          this.marketing = this.profileCompany
-          this.profile = this.profileImage
-          this.company = this.profileCompany
+          this.email = this.profileEmail;
+          this.marketing = this.profileCompany;
+          this.profile = this.profileImage;
+          this.company = this.profileCompany;
           console.log(this.profileName , 'socail 185')
           this.loginForm.patchValue({
             name: this.profileName,
@@ -198,6 +198,7 @@ export class ProfileComponent implements OnInit {
             country: 'UK',
             aboutMe: 'It is a long established fact that a reader.',
           })
+          console.log(this.loginForm.value, '201 login form')
         }
 
 
