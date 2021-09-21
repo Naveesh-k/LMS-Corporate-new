@@ -20,6 +20,12 @@ export class ProfileComponent implements OnInit {
   marketing:any;
   profile:any;
   company:any;
+  social:any;
+  signupFullName:any;
+  companyName:any;
+  profileImage:any;
+  profileEmail:any;
+  profileCompany:any;
   constructor(
     private spinner: NgxSpinnerService,
     public _service: GobalService,
@@ -53,6 +59,32 @@ export class ProfileComponent implements OnInit {
       }
     });
     //end dark-light
+
+
+    // get User name form local storage
+    this.social = localStorage.getItem('signupMode')
+      if (this.social === 'true') {
+        let getLocalStorage: any = localStorage.getItem('userDetail');
+        let signUpData = JSON.parse(getLocalStorage);
+        console.log(signUpData,'45 sidebar')
+        this.signupFullName = signUpData.firstName + " " + signUpData.lastName
+        console.log(signUpData.photoUrl, '47 sidebar')
+        this.profileImage = signUpData.photoUrl;
+        this.profileEmail =signUpData.email
+        this.profileCompany =signUpData.provider
+
+        this.companyName = signUpData.companyName
+        console.log('Social signup data', this.signupFullName)
+      } else {
+        let normalUserFName = localStorage.getItem('firstName')
+        let normalUserLName = localStorage.getItem('lastName')
+        this.profileImage = localStorage.getItem('profile');
+        console.log(this.profile, '55 sidebar')
+        this.signupFullName = normalUserFName + ' ' + normalUserLName
+        // profile
+        console.log('Normal data', this.signupFullName)
+      }
+
   }
 
   showHide() {
