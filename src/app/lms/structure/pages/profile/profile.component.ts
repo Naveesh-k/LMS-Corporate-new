@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
 
 
     // get User name form local storage
-    this.social = localStorage.getItem('signupMode')
+    this.social = localStorage.getItem('userType')
       if (this.social === 'true') {
         let getLocalStorage: any = localStorage.getItem('userDetail');
         let signUpData = JSON.parse(getLocalStorage);
@@ -204,7 +204,7 @@ export class ProfileComponent implements OnInit {
         }
 
 
-        console.log(this.loginForm, 'getData 197')
+        console.log(this.loginForm.value, 'getData 197')
       })
    }
 }
