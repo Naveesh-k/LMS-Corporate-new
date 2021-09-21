@@ -161,32 +161,23 @@ export class ProfileComponent implements OnInit {
           this.marketing = profileObj.industry
           this.profile = profileObj.profile
           this.company = profileObj.company
-          this.loginForm.patchValue({
-            name: this.profileName,
-            email: profileObj.email,
-            mobile: '',
-            profile: profileObj.profile,
-            language: 'English',
-            country: 'UK',
-            aboutMe: 'It is a long established fact that a reader.',
-          })
+
         } else {
           this.profileName = this.signupFullName;
           this.email = this.profileEmail
           this.marketing = this.profileCompany
           this.profile = this.profileImage
           this.company = this.profileCompany
-          this.loginForm.patchValue({
-            name: this.profileName,
-            email: profileObj.email,
-            mobile: '',
-            profile: profileObj.profile,
-            language: 'English',
-            country: 'UK',
-            aboutMe: 'It is a long established fact that a reader.',
-          })
         }
-
+        this.loginForm.patchValue({
+          name: this.profileName,
+          email: profileObj.email,
+          mobile: '',
+          profile: profileObj.profile,
+          language: 'English',
+          country: 'UK',
+          aboutMe: 'It is a long established fact that a reader.',
+        })
       })
    }
 }
