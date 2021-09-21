@@ -96,17 +96,17 @@ export class ProfileComponent implements OnInit {
   //end dark-light
 
   profileData() {
-    this.spinner.show();
+    // this.spinner.show();
     this._service.profileDataShow().subscribe(res => {
-      
+
         let profileObj:any = {}
         this.profileRecord = res.data
         this.profileRecord.forEach((el:any)=>{
           profileObj = el
         })
-        this.spinner.hide();
+        // this.spinner.hide();
         console.log(profileObj)
-        
+
         this.profileName = profileObj.first_name+' '+profileObj.last_name;
         this.email = profileObj.email
         this.marketing = profileObj.industry
