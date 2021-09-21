@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.hide();
-    
+
     // dark-light
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
     for show profile name*/
     let userType: any = localStorage.getItem('userType')
     this.checkUser = userType
-    if (this.checkUser === "true") {
+    if (this.checkUser === "false") {
       let social = localStorage.getItem('signupMode')
       if (social === 'true') {
         let getLocalStorage: any = localStorage.getItem('userDetail');
@@ -64,11 +64,11 @@ export class HomeComponent implements OnInit {
       this.fullName = userFName + ' ' + userLName
     }
 
-   
+
   }
 
   profileData() {
-    
+
     this._service.profileDataShow().subscribe(res => {
       // this.spinner.show();
         let profileObj:any = {}
