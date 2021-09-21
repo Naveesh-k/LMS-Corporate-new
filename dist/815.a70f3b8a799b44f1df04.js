@@ -1,1 +1,0 @@
-(self.webpackChunklms=self.webpackChunklms||[]).push([[815],{9815:(e,u,t)=>{"use strict";t.r(u),t.d(u,{AuthModule:()=>r});var s=t(1116),n=t(3860),l=t(8619);let r=(()=>{class e{}return e.\u0275fac=function(u){return new(u||e)},e.\u0275mod=l.oAB({type:e}),e.\u0275inj=l.cJS({imports:[[s.ez,n.AuthRoutingModule]]}),e})()}}]);

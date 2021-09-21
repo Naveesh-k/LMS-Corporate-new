@@ -41,9 +41,9 @@ export class HomeComponent implements OnInit {
 
     /*get localStorage data
     for show profile name*/
-    let userType: any = localStorage.getItem('userType')
-    this.checkUser = userType
-    if (this.checkUser === "false") {
+    // let userType: any = localStorage.getItem('signupType')
+    // this.checkUser = userType
+    // if (this.checkUser === "true ") {
       let social = localStorage.getItem('signupMode')
       if (social === 'true') {
         let getLocalStorage: any = localStorage.getItem('userDetail');
@@ -57,12 +57,12 @@ export class HomeComponent implements OnInit {
         console.log('Normal data', this.signupFullName)
       }
 
-    }
-    else {
-      let userFName = localStorage.getItem('loginUserFname')
-      let userLName = localStorage.getItem('loginUserLname')
-      this.fullName = userFName + ' ' + userLName
-    }
+    // }
+    // else {
+    //   let userFName = localStorage.getItem('loginUserFname')
+    //   let userLName = localStorage.getItem('loginUserLname')
+    //   this.fullName = userFName + ' ' + userLName
+    // }
 
 
   }
