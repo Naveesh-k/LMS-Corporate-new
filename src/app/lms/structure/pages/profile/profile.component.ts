@@ -165,7 +165,7 @@ export class ProfileComponent implements OnInit {
         //   country: 'UK',
         //   aboutMe: 'It is a long established fact that a reader.',
         // })
-
+        console.log(this.social, 'social sign up 168')
         if(this.social != 'true'){
           this.profileName = profileObj.first_name+' '+profileObj.last_name;
           this.email = profileObj.email;
