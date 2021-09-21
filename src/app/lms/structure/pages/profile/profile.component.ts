@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
 
 
     // get User name form local storage
-    this.social = localStorage.getItem('userType')
+    this.social = localStorage.getItem('signupMode')
       if (this.social === 'true') {
         let getLocalStorage: any = localStorage.getItem('userDetail');
         let signUpData = JSON.parse(getLocalStorage);
