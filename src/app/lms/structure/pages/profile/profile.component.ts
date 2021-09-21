@@ -153,6 +153,8 @@ export class ProfileComponent implements OnInit {
           country: profileObj.marketing,
           aboutMe: '',
         })
+
+
         // if(this.social != 'true'){
         //   this.profileName = profileObj.first_name+' '+profileObj.last_name;
         //   this.email = profileObj.email
