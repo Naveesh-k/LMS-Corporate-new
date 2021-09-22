@@ -60,10 +60,13 @@ export class GobalService {
    }
 
    profileDataShow(){
+    console.log('Profile show global services')
     let headers :any = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: this.token,
     });
+    console.log(headers, '68')
      return this.https.get(environment.lmsApiBaseUrl + 'showProfile',{headers}).pipe(map(res => <any>res));
+
    }
 }
