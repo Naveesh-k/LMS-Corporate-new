@@ -37,6 +37,7 @@ export class DashboardComponent implements OnInit {
   tokenId:any = ''
   provider:any = ''
   socialloginData:any = ''
+  linkedInData : any;
 
   constructor(
     private toastr: ToastrService,
@@ -150,7 +151,9 @@ export class DashboardComponent implements OnInit {
           let userId = '';
 
           let data1   = JSON.parse(secData[0]);
-          console.log('linked in 153',data1)
+          this.linkedInData = data1
+          localStorage.setItem('linkedInData', this.linkedInData)
+          console.log('linked in 153',this.linkedInData)
           if (data1) {
             userFirstName = data1.firstName.localized.en_US;
             userLastName = data1.lastName.localized.en_US;
