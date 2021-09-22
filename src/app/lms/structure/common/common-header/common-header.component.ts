@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { ColorModeService } from 'src/app/service/color-mode.service'; // dark-light
 import Swal from 'sweetalert2'
 @Component({
@@ -10,8 +11,15 @@ import Swal from 'sweetalert2'
 export class CommonHeaderComponent implements OnInit {
   darkMode: boolean = false; // dark-light
   title: any;
-
-  constructor(
+  profileRecord: any = []
+  social:any;
+  profileName: any ;
+  profileCompany: any ;
+  profileImage: any ;
+  signupFullName: any;
+  profile: any;
+  companyName: any;
+  constructor(public _service: GobalService,
     public router: Router,
     public mode: ColorModeService // dark-light
   ) {}
@@ -54,6 +62,28 @@ export class CommonHeaderComponent implements OnInit {
       }
     });
     //end dark-light
+
+     // get User name form local storage
+     this.social = localStorage.getItem('signupMode')
+     if (this.social === 'true') {
+       let getLocalStorage: any = localStorage.getItem('userDetail');
+       let signUpData = JSON.parse(getLocalStorage);
+       console.log(signUpData,'45 sidebar')
+       this.signupFullName = signUpData.firstName + " " + signUpData.lastName
+       console.log(signUpData.photoUrl, '47 sidebar')
+       this.profile = signUpData.photoUrl;
+
+       this.companyName = signUpData.companyName
+       console.log('Social signup data', this.signupFullName)
+     } else {
+       let normalUserFName = localStorage.getItem('firstName')
+       let normalUserLName = localStorage.getItem('lastName')
+       this.profile = localStorage.getItem('profile');
+       console.log(this.profile, '55 sidebar')
+       this.signupFullName = normalUserFName + ' ' + normalUserLName
+       // profile
+       console.log('Normal data', this.signupFullName)
+     }
   }
 
   // dark-light
@@ -90,5 +120,22 @@ export class CommonHeaderComponent implements OnInit {
       }
     })
   }
+
+  profileData() {
+    // this.spinner.show();
+    this._service.profileDataShow().subscribe(res => {
+        let profileObj:any = {}
+
+        this.profileRecord = res.data
+        this.profileRecord.forEach((el:any)=>{
+          profileObj = el
+        })
+        // this.spinner.hide();
+        this.profileName = profileObj.first_name+' '+profileObj.last_name
+        this.profileCompany = profileObj.companyName
+        this.profileImage =profileObj.profile
+        console.log(this.profileImage)
+      })
+   }
 
 }
