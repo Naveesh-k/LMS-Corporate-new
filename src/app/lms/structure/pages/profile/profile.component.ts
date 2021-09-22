@@ -128,6 +128,7 @@ export class ProfileComponent implements OnInit {
   //end dark-light
 
   profileData() {
+    console.log('profile data api 131')
     // this.spinner.show();
     this._service.profileDataShow().subscribe(res => {
 
