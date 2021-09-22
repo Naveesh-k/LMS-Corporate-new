@@ -227,7 +227,7 @@ export class SignUpComponent implements OnInit {
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
           localStorage.setItem('token',response.data.tokens)
-          console.log('230',localStorage.getItem('token'))
+          console.log('230 signUp',response)
         if (response.success) {
           // this.router.navigateByUrl('/lms/app/home')
           localStorage.setItem("userType", 'false');
