@@ -34,7 +34,9 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log("Test ngOninit 37")
     this.profileData()
+    console.log("Test ngOninit 39")
     this.loginForm = this.formBuilder.group(
       {
         name: ['', [Validators.required]],
@@ -68,16 +70,16 @@ export class ProfileComponent implements OnInit {
         this.profileImage = signUpData.photoUrl;
         this.profileEmail =signUpData.email
         this.profileCompany =signUpData.provider
-        this.companyName = signUpData.companyName
+        this.companyName = signUpData.provider
         console.log('profile 74',signUpData)
-        console.log('name :'+this.signupFullName, this.profileImage, this.profileEmail, this.profileCompany, this.companyName, '75 profile')
-      } else {
-        let normalUserFName = localStorage.getItem('firstName')
-        let normalUserLName = localStorage.getItem('lastName')
-        this.profileImage = localStorage.getItem('profile');
-        this.signupFullName = normalUserFName + ' ' + normalUserLName
-        // profile
+        console.log(this.signupFullName, this.profileImage, this.profileEmail, this.profileCompany, this.companyName, '75 profile')
       }
+      // else {
+      //   let normalUserFName = localStorage.getItem('firstName')
+      //   let normalUserLName = localStorage.getItem('lastName')
+      //   this.profileImage = localStorage.getItem('profile');
+      //   this.signupFullName = normalUserFName + ' ' + normalUserLName
+      // }
 
 
       // this.profileData()
