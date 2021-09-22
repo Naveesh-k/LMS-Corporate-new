@@ -152,7 +152,7 @@ export class DashboardComponent implements OnInit {
 
           let data1   = JSON.parse(secData[0]);
           this.linkedInData = data1
-          localStorage.setItem('linkedInData', this.linkedInData)
+          localStorage.setItem('linkedInData', JSON.stringify(this.linkedInData))
           console.log('linked in 153',this.linkedInData)
           if (data1) {
             userFirstName = data1.firstName.localized.en_US;
