@@ -25,6 +25,7 @@ export class CommonHeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.profileData()
     let route = this.router.url;
     console.log(route);
     switch (route) {
@@ -68,21 +69,21 @@ export class CommonHeaderComponent implements OnInit {
      if (this.social === 'true') {
        let getLocalStorage: any = localStorage.getItem('userDetail');
        let signUpData = JSON.parse(getLocalStorage);
-       console.log(signUpData,'45 sidebar')
+       console.log(signUpData,'71 header')
        this.signupFullName = signUpData.firstName + " " + signUpData.lastName
-       console.log(signUpData.photoUrl, '47 sidebar')
+       console.log(signUpData.photoUrl, '73 header')
        this.profile = signUpData.photoUrl;
 
        this.companyName = signUpData.companyName
-       console.log('Social signup data', this.signupFullName)
+       console.log('Social 77', this.signupFullName)
      } else {
        let normalUserFName = localStorage.getItem('firstName')
        let normalUserLName = localStorage.getItem('lastName')
        this.profile = localStorage.getItem('profile');
-       console.log(this.profile, '55 sidebar')
+       console.log(this.profile, '82 header')
        this.signupFullName = normalUserFName + ' ' + normalUserLName
        // profile
-       console.log('Normal data', this.signupFullName)
+       console.log('85 normal data', this.signupFullName)
      }
   }
 
