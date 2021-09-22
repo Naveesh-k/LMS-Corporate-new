@@ -73,6 +73,7 @@ export class ProfileComponent implements OnInit {
         this.companyName = signUpData.provider
         console.log('profile 74',signUpData)
         console.log(this.signupFullName, this.profileImage, this.profileEmail, this.profileCompany, this.companyName, '75 profile')
+        this.profileData()
       }
       // else {
       //   let normalUserFName = localStorage.getItem('firstName')
