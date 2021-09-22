@@ -176,7 +176,7 @@ export class ProfileComponent implements OnInit {
         this.profileRecord.forEach((el:any)=>{
           profileObj = el
         })
-
+          console.log(profileObj, '179')
           this.profileName = profileObj.first_name+' '+profileObj.last_name;
           this.email = profileObj.email;
           this.marketing = profileObj.industry;
