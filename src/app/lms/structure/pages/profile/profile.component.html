@@ -273,8 +273,8 @@
 
                                 <div class="form-group">
                                     <label class="fnt_wigt">Mobile No.</label>
-                                    <input type="text" class="form-control email_input" readonly formControlName="mobile" />
-
+                                    <!-- <input type="text" class="form-control email_input" readonly formControlName="mobile" /> -->
+                                    <p class="mobile_p" *ngIf="social != 'true'"> </p>
                                 </div>
                                 <div class="form-group">
                                     <label class="fnt_wigt">Email</label>
@@ -297,7 +297,7 @@
                                 <div class="form-group">
                                     <label class="fnt_wigt">About me</label> <br />
                                     <!-- <input type="text" class="form-control email_input1" readonly formControlName="aboutMe" /> -->
-                                    <p class="email_aboutMe">It is a long established fact that a reader.</p>
+                                    <p class="aboutMe_p">It is a long established fact that a reader.</p>
                                 </div>
 
                                 <div class="button_flx">
