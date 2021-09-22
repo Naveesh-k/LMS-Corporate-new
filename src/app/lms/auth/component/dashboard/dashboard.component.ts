@@ -66,9 +66,6 @@ export class DashboardComponent implements OnInit {
         left = window.screen.width / 2 - width / 2,
         top = window.screen.height / 2 - height / 2;
     window.location.href = oauthUrl;
-    // const options = `directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no,
-    // copyhistory=no, width=${width},height=${height},left=${left},top=${top}`;
-    // window.open(oauthUrl, '_blank', options);
     this._service.checkSignupType()
 };
   ngOnInit(): void {
@@ -142,7 +139,7 @@ export class DashboardComponent implements OnInit {
     // window.open('https://javascript.info/')
     this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
-      console.log(response,'check 145')
+      console.log(response,'check 145 dashboard')
       if(response.success === true){
         let secData = response.data;
         if (secData) {
@@ -153,7 +150,7 @@ export class DashboardComponent implements OnInit {
           let userId = '';
 
           let data1   = JSON.parse(secData[0]);
-          console.log('check1',data1)
+          console.log('linked in 153',data1)
           if (data1) {
             userFirstName = data1.firstName.localized.en_US;
             userLastName = data1.lastName.localized.en_US;
@@ -231,6 +228,7 @@ export class DashboardComponent implements OnInit {
      this._service.getSignUpData(request).subscribe(res => {
 
       let response = res;
+      console.log('Dashboard 231', response)
       localStorage.setItem('signupMode', 'true')
       if(response.success == true){
         // this.router.navigateByUrl('/lms/auth/user-group')
@@ -240,17 +238,15 @@ export class DashboardComponent implements OnInit {
         // this.router.navigateByUrl('/lms/app/home')
         window.location.href = "/lms/app/home";
       }
-      console.log(response, "dashboard check api data")
+
     })
   }
 
 // if user are already exist
   socailLogin(data: any){
-    console.log("Social login 248 dashboard" , data)
     let request:any = {
       email:data.email,
     }
-    console.log("Social login 252 dashboard" , request.email)
     if(data.provider === 'GOOGLE'){
       request['social_id'] =  data.idToken;
     } else if (data.provider === 'FACEBOOK'){
@@ -258,7 +254,7 @@ export class DashboardComponent implements OnInit {
     }
     this._service.getSocialLogin(request).subscribe(res => {
       let response = res;
-      console.log('social login 260',response)
+      console.log('social login 257',response)
     })
   }
 
