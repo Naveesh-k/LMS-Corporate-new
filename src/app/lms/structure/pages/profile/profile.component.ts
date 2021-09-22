@@ -167,9 +167,9 @@ export class ProfileComponent implements OnInit {
             email: profileObj.email,
             mobile: '',
             profile: profileObj.profile,
-            language: 'English',
-            country: 'UK',
-            aboutMe: 'It is a long established fact that a reader.',
+            language: '',
+            country: '',
+            aboutMe: '',
           })
         } else {
           console.log('run','186')
