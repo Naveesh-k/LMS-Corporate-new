@@ -240,7 +240,7 @@ export class DashboardComponent implements OnInit {
         // this.router.navigateByUrl('/lms/app/home')
         window.location.href = "/lms/app/home";
       }
-      console.log(response)
+      console.log(response, "dashboard check api data")
     })
   }
 

@@ -132,11 +132,11 @@ export class ProfileComponent implements OnInit {
     // this.spinner.show();
     this._service.profileDataShow().subscribe(res => {
 
-        // let profileObj:any = {}
-        // this.profileRecord = res.data
-        // this.profileRecord.forEach((el:any)=>{
-        //   profileObj = el
-        // })
+        let profileObj:any = {}
+        this.profileRecord = res.data
+        this.profileRecord.forEach((el:any)=>{
+          profileObj = el
+        })
         // this.spinner.hide()
 
         // this.profileName = profileObj.first_name+' '+profileObj.last_name;
@@ -154,29 +154,8 @@ export class ProfileComponent implements OnInit {
         //   aboutMe: 'It is a long established fact that a reader.',
         // })
 
-        // this.profileName = this.signupFullName;
-        // this.email = this.profileEmail
-        // this.marketing = this.profileCompany
-        // this.profile = this.profileImage
-        // this.company = this.profileCompany
-        // this.loginForm.patchValue({
-        //   name: this.profileName,
-        //   email: this.email,
-        //   mobile: '',
-        //   profile: this.profile,
-        //   language: 'English',
-        //   country: 'UK',
-        //   aboutMe: 'It is a long established fact that a reader.',
-        // })
         console.log(this.social, 'social sign up 168')
         if(this.social != 'true'){
-
-          let profileObj:any = {}
-        this.profileRecord = res.data
-        this.profileRecord.forEach((el:any)=>{
-          profileObj = el
-        })
-          console.log(profileObj, '179')
           this.profileName = profileObj.first_name+' '+profileObj.last_name;
           this.email = profileObj.email;
           this.marketing = profileObj.industry;
