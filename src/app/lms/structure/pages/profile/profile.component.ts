@@ -132,13 +132,12 @@ export class ProfileComponent implements OnInit {
     // this.spinner.show();
     this._service.profileDataShow().subscribe(res => {
 
-        let profileObj:any = {}
-        this.profileRecord = res.data
-        this.profileRecord.forEach((el:any)=>{
-          profileObj = el
-        })
-        // this.spinner.hide();
-        console.log(profileObj, 'sasdasdasdasd')
+        // let profileObj:any = {}
+        // this.profileRecord = res.data
+        // this.profileRecord.forEach((el:any)=>{
+        //   profileObj = el
+        // })
+        // this.spinner.hide()
 
         // this.profileName = profileObj.first_name+' '+profileObj.last_name;
         // this.email = profileObj.email
@@ -171,6 +170,13 @@ export class ProfileComponent implements OnInit {
         // })
         console.log(this.social, 'social sign up 168')
         if(this.social != 'true'){
+
+          let profileObj:any = {}
+        this.profileRecord = res.data
+        this.profileRecord.forEach((el:any)=>{
+          profileObj = el
+        })
+
           this.profileName = profileObj.first_name+' '+profileObj.last_name;
           this.email = profileObj.email;
           this.marketing = profileObj.industry;
