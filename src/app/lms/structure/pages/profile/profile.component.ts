@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.profileData()
+    
     this.updateProfileForm = this.formBuilder.group(
       {
         fname: ['', [Validators.required]],
@@ -70,6 +70,7 @@ export class ProfileComponent implements OnInit {
       }
     });
     //end dark-light
+    this.profileData()
 
     // get User name form local storage
     // else {
@@ -83,9 +84,13 @@ export class ProfileComponent implements OnInit {
 
   profileData() {
     // this.spinner.show();
+    //this.profileCompany = signUpData.provider
+    //this.companyName = signUpData.provider
     this.social = localStorage.getItem('signupMode')
 
     if (this.social === 'true') {
+
+      console.log("In social login")
       let getLocalStorage: any = localStorage.getItem('userDetail');
       let signUpData = JSON.parse(getLocalStorage);
       this.profileResponse.first_name = signUpData.firstName
@@ -95,11 +100,12 @@ export class ProfileComponent implements OnInit {
       this.profileResponse.contact_number = signUpData.contact_number ? signUpData.contact_number : '',
       this.profileResponse.language = signUpData.language ? signUpData.language : '',
       this.profileResponse.country = signUpData.country ? signUpData.country : '',
-      this.profileResponse.about_me = signUpData.about_me ? signUpData.about_me : '' 
-      //this.profileCompany = signUpData.provider
-      //this.companyName = signUpData.provider
+      this.profileResponse.about_me = signUpData.about_me ? signUpData.about_me : ''
+
     }
-    
+
+    console.log("From social account" , this.profileResponse)
+
 
     this._service.profileDataShow().subscribe(res => {
 
