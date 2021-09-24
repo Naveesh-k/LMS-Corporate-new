@@ -92,17 +92,17 @@ export class ProfileComponent implements OnInit {
       let getLocalStorage: any = localStorage.getItem('userDetail');
 
       let signUpData = JSON.parse(getLocalStorage);
-      this.uploadedImage = signUpData.photoUrl
-
+      
       this.profileResponse["first_name"] = signUpData.firstName
       this.profileResponse["last_name"] = signUpData.lastName
       this.profileResponse["email"] = signUpData.email
       this.profileResponse["profile"] = signUpData.photoUrl
       this.profileResponse["contact_number"] = signUpData.contact_number ? signUpData.contact_number : '',
-        this.profileResponse["language"] = signUpData.language ? signUpData.language : '',
-        this.profileResponse["country"] = signUpData.country ? signUpData.country : '',
-        this.profileResponse["about_me"] = signUpData.about_me ? signUpData.about_me : ''
-
+      this.profileResponse["language"] = signUpData.language ? signUpData.language : '',
+      this.profileResponse["country"] = signUpData.country ? signUpData.country : '',
+      this.profileResponse["about_me"] = signUpData.about_me ? signUpData.about_me : ''
+      
+      this.uploadedImage = this.profileResponse.profile
       this.patchUpdateValues();
     }
 
@@ -180,7 +180,6 @@ export class ProfileComponent implements OnInit {
       fname: this.profileResponse.first_name,
       lname: this.profileResponse.last_name,
       email: this.profileResponse.email,
-
       mobile: this.profileResponse.contact_number,
       language: this.profileResponse.language,
       country: this.profileResponse.country,
@@ -230,6 +229,9 @@ export class ProfileComponent implements OnInit {
 
 
   updateProfile() {
+
+    console.log(this.uploadedImage)
+
     let request = {
       contact_number: this.updateProfileForm.value.mobile,
       email: this.updateProfileForm.value.email,
