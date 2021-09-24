@@ -20,7 +20,7 @@
                   <div class="row">
                     <div class="col-md-7 col-sm-6 col-6">
                       <!-- <h5 *ngIf="social != 'true'">{{profileName}}</h5> -->
-                      <h5 *ngIf="social != 'true'">{{profileResponse.first_name+" "+profileResponse.last_name}}</h5>
+                      <h5>{{profileResponse.first_name+" "+profileResponse.last_name}}</h5>
                       <!-- <h5 *ngIf="social != 'true'">{{profileFName}} {{profileLName}}</h5> -->
                       <!-- <h5 *ngIf="social === 'true'">{{signupFullName}}</h5> -->
                     </div>
@@ -40,14 +40,14 @@
 
                       <p class="profile_sm">
                         Email :
-                        <span *ngIf="social != 'true'"> {{profileResponse.email}} </span>
+                        <span> {{profileResponse.email}} </span>
                         <!-- <span *ngIf="social != 'true'"> {{email}} </span>
                         <span *ngIf="social === 'true'"> {{profileEmail}} </span> -->
                       </p>
                       <p class="profile_sm">
                         <!-- Language :<span> English, Indonesian, Japanese </span> -->
                         Language :
-                        <span *ngIf="social != 'true'"> {{profileResponse.language}} </span>
+                        <span> {{profileResponse.language}} </span>
                         <!-- <span *ngIf="social != 'true'"> {{language}} </span>
                         <span *ngIf="social === 'true'"> {{profileCompany}} </span> -->
                       </p>

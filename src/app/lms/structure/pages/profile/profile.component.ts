@@ -90,7 +90,10 @@ export class ProfileComponent implements OnInit {
     this.profileResponse = {}
     if (this.social === 'true') {
       let getLocalStorage: any = localStorage.getItem('userDetail');
+
       let signUpData = JSON.parse(getLocalStorage);
+      this.uploadedImage = signUpData.photoUrl
+      
       this.profileResponse["first_name"] = signUpData.firstName
       this.profileResponse["last_name"] = signUpData.lastName
       this.profileResponse["email"] = signUpData.email
