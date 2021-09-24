@@ -9,8 +9,9 @@
               <div class="row">
                 <div class="col-md-5 text-center">
                   <!-- <img class=" img-cur" src="../../../assets/images/Mask Group.png" alt="" /> -->
-                  <img class=" img-cur" src="{{profile}}" alt="" *ngIf="social != 'true'" />
-                  <img class=" img-cur" src="{{profileImage}}" alt="" *ngIf="social === 'true'" />
+                  <!-- <img class=" img-cur" src="{{profile}}" alt="" *ngIf="social != 'true'" /> -->
+                  <img class=" img-cur" src="{{uploadedImage}}" alt=""/>
+                  <!-- <img class=" img-cur" src="{{profileImage}}" alt="" *ngIf="social === 'true'" /> -->
                   <button class="btn btn-nn mt-3" (click)="showHide()">
                     Edit Profile
                   </button>
@@ -29,34 +30,36 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12">
-                      <p class="profile_sm">
+                      <!-- <p class="profile_sm">
                         Profile :<span> PIF Capital Pte Ltd </span>
-                      </p>
+                      </p> -->
                       <p class="profile_sm">
-                        Mobile No. :<span>{{contactNumber}} </span>
+                        Mobile No. :<span>{{profileResponse.contact_number}} </span>
                       </p>
 
                       <p class="profile_sm">
                         Email :
-                        <span *ngIf="social != 'true'"> {{email}} </span>
-                        <span *ngIf="social === 'true'"> {{profileEmail}} </span>
+                        <span *ngIf="social != 'true'"> {{profileResponse.email}} </span>
+                        <!-- <span *ngIf="social != 'true'"> {{email}} </span>
+                        <span *ngIf="social === 'true'"> {{profileEmail}} </span> -->
                       </p>
                       <p class="profile_sm">
                         <!-- Language :<span> English, Indonesian, Japanese </span> -->
                         Language :
-                        <span *ngIf="social != 'true'"> {{language}} </span>
-                        <span *ngIf="social === 'true'"> {{profileCompany}} </span>
+                        <span *ngIf="social != 'true'"> {{profileResponse.language}} </span>
+                        <!-- <span *ngIf="social != 'true'"> {{language}} </span>
+                        <span *ngIf="social === 'true'"> {{profileCompany}} </span> -->
                       </p>
                       <!-- <p class="profile_sm">
                                               Country :<span> United States </span>
                                           </p> -->
                       <p class="profile_sm">
-                        Country :<span> {{country}} </span>
+                        Country :<span> {{profileResponse.country}} </span>
                       </p>
                       <p class="profile_sm mt-3">
                         About me <br />
                         <span class="amet_span">
-                          {{aboutMe}}
+                          {{profileResponse.about_me}}
                         </span>
                       </p>
                     </div>
@@ -258,8 +261,9 @@
               <div class="row">
                 <div class="col-md-5">
                   <!-- <img class="w-100 img-cur" src="{{profile}}" alt="" /> -->
-                  <img class="w-100 img-cur" src="{{profile}}" alt="" *ngIf="social != 'true'" />
-                  <img class="w-100 img-cur" src="{{profileImage}}" alt="" *ngIf="social === 'true'" />
+                  <img class="w-100 img-cur" src="{{uploadedImage}}" alt=""/>
+                  <!-- <img class="w-100 img-cur" src="{{profile}}" alt="" *ngIf="social != 'true'" /> -->
+                  <!-- <img class="w-100 img-cur" src="{{profileImage}}" alt="" *ngIf="social === 'true'" /> -->
 
                   <div class="d-flex justify-content-end cam_mar">
                     <!-- <span class="camera_img">
@@ -305,9 +309,9 @@
                 </div>
                 <div class="form-group">
                   <label class="fnt_wigt">Email</label>
-                  <input type="text" class="form-control email_input"  formControlName="email" />
+                  <input type="text" class="form-control email_input"  formControlName="email" readonly/>
                   <!-- <p class="email_p" *ngIf="social != 'true'"> {{email}} </p> -->
-                  <p class="email_p" *ngIf="social === 'true'"> {{profileEmail}} </p>
+                  <!-- <p class="email_p" *ngIf="social === 'true'"> {{profileEmail}} </p> -->
 
                 </div>
                 <div class="form-group">
