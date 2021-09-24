@@ -492,14 +492,28 @@ section.header_pad {
     a.pdr {
         padding: 17px 0 0 0;
     }
-    // --------
+    // ------------------------------------------
     .slide-1 {
-        width: 153px !important;
+        // width: 153px !important;
+        // width: 307px !important;
+        // width: 270px !important; //main
+        // width: 288px !important;
+        width: 309px !important;
     }
+    // ------------------------------------------
     img.slick-img {
         width: 143px;
+        margin: 0 5px;
     }
-    // --------
+    p.mastering_p {
+        font-size: 15px !important;
+    }
+}
+
+@media screen and (min-device-width: 1025px) and (max-device-width: 1148px) {
+    p.mastering_p {
+        font-size: 14px;
+    }
 }
 
 ul li {

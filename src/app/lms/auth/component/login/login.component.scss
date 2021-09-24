@@ -102,7 +102,8 @@ img.or-img {
     }
     .bg_gre-blu {
         padding: 0 15px 31px 15px;
-        height: 100vh !important;
+        // height: 100vh !important;
+        height: 149vh !important;
     }
     button.btn-register {
         margin-top: 0;
@@ -138,7 +139,7 @@ img.or-img {
         padding-top: 15px;
     }
     .bg_gre-blu {
-        height: 100vh !important;
+        height: 149vh !important;
         padding: 23px 15px 31px 15px !important;
     }
 }
@@ -147,6 +148,9 @@ img.or-img {
     .pd {
         padding-left: 15px;
         padding-top: 16px;
+    }
+    .bg_gre-blu {
+        height: 149vh;
     }
 }
 
@@ -169,6 +173,9 @@ img.or-img {
     }
     img.img_fb {
         margin: 0 12px 0 12px;
+    }
+    .bg_gre-blu {
+        height: 160vh;
     }
 }
 
@@ -207,6 +214,9 @@ img.or-img {
     hr.col_hr {
         margin: 0 0 4px 0;
     }
+    .bg_gre-blu {
+        height: 160vh;
+    }
 }
 
 @media screen and (min-device-width: 768px) and (max-device-width: 799px) {
@@ -221,6 +231,15 @@ img.or-img {
     img.img_fb {
         background: #f1f1f1;
         margin: 0 13px 0 13px;
+    }
+    .bg_gre-blu {
+        height: 144vh;
+    }
+}
+
+@media screen and (min-device-width: 800px) and (max-device-width: 999px) {
+    .bg_gre-blu {
+        height: 144vh;
     }
 }
 
@@ -242,6 +261,21 @@ img.or-img {
     }
     .bg_gre-blu {
         padding: 5px 0 42px 0;
+    }
+    .bg_gre-blu {
+        height: 144vh;
+    }
+}
+
+@media screen and (min-device-width: 1025px) and (max-device-width: 1049px) {
+    .bg_gre-blu {
+        height: 148vh;
+    }
+}
+
+@media screen and (min-device-width: 1040px) and (max-device-width: 1322px) {
+    .bg_gre-blu {
+        height: 148vh;
     }
 }
 
