@@ -71,23 +71,7 @@ export class ProfileComponent implements OnInit {
     });
     //end dark-light
 
-
     // get User name form local storage
-    this.social = localStorage.getItem('signupMode')
-
-    if (this.social === 'true') {
-      let getLocalStorage: any = localStorage.getItem('userDetail');
-      let signUpData = JSON.parse(getLocalStorage);
-      this.signupFullName = signUpData.firstName + " " + signUpData.lastName
-      this.profile = signUpData.photoUrl;
-      this.profileEmail = signUpData.email
-      this.profileCompany = signUpData.provider
-      this.companyName = signUpData.provider
-      console.log(this.signupFullName, this.profileImage, this.profileEmail, this.profileCompany, this.companyName, '75 profile')
-      this.profileData()
-    }
-
-    
     // else {
     //   let normalUserFName = localStorage.getItem('firstName')
     //   let normalUserLName = localStorage.getItem('lastName')
@@ -96,96 +80,24 @@ export class ProfileComponent implements OnInit {
     // }
   }
 
-  showHide() {
-    this.hide = true;
-  }
-  hideShow() {
-    this.hide = false;
-  }
-  arrowHide() {
-    this.hide = false;
-  }
-
-  // convenience getter for easy access to form fields
-  get f() {
-    return this.updateProfileForm.controls;
-  }
-
-  onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.updateProfileForm.invalid) {
-      return;
-    }
-
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.updateProfileForm.value, null, 4));
-  }
-
-  // dark-light
-  dark(e: any) {
-    console.log(e);
-    if (e) {
-      this.mode.changeMode('dark');
-      localStorage.setItem('mode', 'dark');
-    } else {
-      this.mode.changeMode('light');
-      localStorage.setItem('mode', 'light');
-    }
-  }
-  //end dark-light
-
-
-  updateProfile() {
-
-    console.log("Check profile" , this.uploadedImage)
-
-    let request = {
-      // name          : this.updateProfileForm.value.name,
-      contact_number: this.updateProfileForm.value.mobile,
-      email: this.updateProfileForm.value.email,
-      language: this.updateProfileForm.value.language,
-      country: this.updateProfileForm.value.country,
-      about_me: this.updateProfileForm.value.aboutMe,
-      first_name: this.updateProfileForm.value.fname,
-      last_name: this.updateProfileForm.value.lname,
-      profile: this.uploadedImage
-    }
-
-    console.log(request)
-    this._service.profileUpdate(request).subscribe(res => {
-      let response = res;
-      console.log('134 update profile', response)
-      this.profileData();
-      this.hide = false;
-    })
-  }
-
-  imageUplaoad(event: any) {
-    const allowedMimeTypes = ['image/png', 'image/jpeg', 'image/jpg'];
-
-    var formData = new FormData();
-    formData.append('image', event.target.files[0]);
-
-    if (
-      event.target.files[0] &&
-      allowedMimeTypes.includes(event.target.files[0].type)
-    ) {
-      this.imagePath = event.target.files;
-      this.imageFile = this.imagePath[0];
-    }
-
-    this._service.uploadImage(formData).subscribe(res => {
-      console.log("profile 184", res)
-      this.uploadedImage = res.image
-      //localStorage.setItem('profileImg', this.uploadedImage.location)
-      localStorage.setItem('profileImg', this.uploadedImage)
-    })
-  }
-
+  
   profileData() {
     // this.spinner.show();
+    this.social = localStorage.getItem('signupMode')
+   
+    if (this.social === 'true') {
+     // this.profileData()
+      //let getLocalStorage: any = localStorage.getItem('userDetail');
+      //let signUpData = JSON.parse(getLocalStorage);
+      // this.signupFullName = signUpData.firstName + " " + signUpData.lastName
+     // this.profile = signUpData.photoUrl;
+      //this.profileEmail = signUpData.email
+      //this.profileCompany = signUpData.provider
+      //this.companyName = signUpData.provider
+      
+    
+    }
+
     this._service.profileDataShow().subscribe(res => {
 
       this.profileRecord = res.data
@@ -250,6 +162,89 @@ export class ProfileComponent implements OnInit {
       //     aboutMe: 'It is a long established fact that a reader.',
       //   })
       // }
+    })
+  }
+
+  showHide() {
+    this.hide = true;
+  }
+  hideShow() {
+    this.hide = false;
+  }
+  arrowHide() {
+    this.hide = false;
+  }
+
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.updateProfileForm.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.updateProfileForm.invalid) {
+      return;
+    }
+
+    // display form values on success
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.updateProfileForm.value, null, 4));
+  }
+
+  // dark-light
+  dark(e: any) {
+    console.log(e);
+    if (e) {
+      this.mode.changeMode('dark');
+      localStorage.setItem('mode', 'dark');
+    } else {
+      this.mode.changeMode('light');
+      localStorage.setItem('mode', 'light');
+    }
+  }
+  //end dark-light
+
+
+  updateProfile() {
+    let request = {
+      contact_number: this.updateProfileForm.value.mobile,
+      email: this.updateProfileForm.value.email,
+      language: this.updateProfileForm.value.language,
+      country: this.updateProfileForm.value.country,
+      about_me: this.updateProfileForm.value.aboutMe,
+      first_name: this.updateProfileForm.value.fname,
+      last_name: this.updateProfileForm.value.lname,
+      profile: this.uploadedImage
+    }
+
+    this._service.profileUpdate(request).subscribe(res => {
+      let response = res;
+      console.log('134 update profile', response)
+      this.profileData();
+      this.hide = false;
+    })
+  }
+
+  imageUplaoad(event: any) {
+    const allowedMimeTypes = ['image/png', 'image/jpeg', 'image/jpg'];
+
+    var formData = new FormData();
+    formData.append('image', event.target.files[0]);
+
+    if (
+      event.target.files[0] &&
+      allowedMimeTypes.includes(event.target.files[0].type)
+    ) {
+      this.imagePath = event.target.files;
+      this.imageFile = this.imagePath[0];
+    }
+
+    this._service.uploadImage(formData).subscribe(res => {
+      console.log("profile 184", res)
+      this.uploadedImage = res.image
+      //localStorage.setItem('profileImg', this.uploadedImage.location)
+      localStorage.setItem('profileImg', this.uploadedImage)
     })
   }
 }
