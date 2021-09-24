@@ -1,96 +1,192 @@
 img.logo_img {
-  width: 51%;
-  margin: 0 auto;
-  justify-content: center;
-  display: flex;
-}
-.imyu {
-  padding: 8px 0 5px 0;
-  //width: 407px;
-  // width: 412px;
+    width: 47%;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
 }
 
+.imyu {
+    padding: 15px 0;
+}
 
 li.nav_li {
-  padding: 0 17px 0 9px;
-  cursor: pointer;
+    padding: 0 17px 0 9px;
+    cursor: pointer;
 }
+
 a.nav_fnt {
-  font-size: 16px;
-  line-height: 18.75px;
-  font-weight: 400;
-  padding: 3px;
+    font-size: 16px;
+    line-height: 18.75px;
+    font-weight: 400;
+    padding: 3px;
 }
+
 a.btn_login {
-  background: #28a0a4;
-  color: #fff;
-  border-radius: 40px;
-  height: 40px;
-  width: 89px;
+    background: #28a0a4;
+    color: #fff;
+    border-radius: 40px;
+    height: 40px;
+    width: 89px;
 }
+
 nav.navbar_bg {
-  padding: 0;
+    padding: 0;
 }
+
 form.respo {
     padding: 20px 0 0 0;
-  }
-  .pad_icr {
+}
+
+.pad_icr {
     padding: 0 5px 0 15px;
 }
-button.btn_back{
-  position: absolute;
-  top: 6px;
-  font-size: 33px;
+
+button.btn_back {
+    position: absolute;
+    top: 6px;
+    font-size: 33px;
     color: #fff;
 }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 499px) {
-  nav.navbar_bg {
-    padding: 3px 14px 2px 16px;
-  }
-  img.logo_img {
-    width: 225px;
-  }
-  // form.respo {
-  //   display: block;
-  // }
+    nav.navbar_bg {
+        padding: 3px 0 2px 0;
+    }
+    img.logo_img {
+        width: 93px;
+    }
+    .navbar-light .navbar-toggler {
+        float: right;
+        position: absolute;
+        right: 0;
+        top: 1px;
+    }
+    section.header_pad {
+        padding: 0;
+    }
+    ul.navbar-nav {
+        margin-top: 24px;
+    }
+    i.fa-caret-left {
+        position: absolute;
+        top: 9px;
+        font-size: 21px;
+    }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 575px) {
+    section.header_pad {
+        padding: 0;
+    }
+    .navbar-light .navbar-toggler {
+        float: right;
+        position: absolute;
+        top: 6px;
+        left: 118px;
+    }
+}
+
+@media screen and (min-device-width: 576px) and (max-device-width: 699px) {
+    .pad_icr {
+        padding: 0 2px 0 15px;
+    }
+    .navbar-light .navbar-toggler {
+        float: right;
+    }
+    button.btn_back {
+        top: 0;
+        font-size: 19px;
+    }
+    ul.navbar-nav {
+        margin-top: 24px;
+        float: right;
+    }
+    a.btn_login {
+        position: absolute;
+        top: 3px;
+    }
 }
 
 @media screen and (min-device-width: 700px) and (max-device-width: 768px) {
-  img.logo_img {
-    width: 280px;
-  }
-  nav.navbar_bg {
-    padding: 3px 32px 2px 39px;
-  }
-  // form.respo {
-  //   display: block;
-  // }
+    img.logo_img {
+        width: 176px;
+    }
+    nav.navbar_bg {
+        padding: 3px 0 2px 0;
+    }
+    .navbar-light .navbar-toggler {
+        float: right;
+        margin: 7px 0 0 0;
+    }
+    .pad_icr {
+        padding: 0 2px 0 15px;
+    }
+    ul.navbar-nav {
+        margin-top: 24px;
+        float: right;
+    }
+    form.respo {
+        padding: 20px 0 38px 0 !important;
+        float: right;
+    }
+    a.btn_login {
+        position: absolute;
+        top: 151px;
+    }
+    .btn-socail {
+        padding-left: 43px;
+    }
+}
+
+@media screen and (min-device-width: 774px) and (max-device-width: 990px) {
+    .navbar-light .navbar-toggler {
+        float: right;
+        margin-top: 7px;
+    }
+    a.btn_login {
+        position: absolute;
+        top: 42px;
+        left: 225px;
+    }
+    .navbar-nav {
+        padding-top: 33px;
+    }
+    li.nav_li {
+        padding: 0 17px 0 21px;
+    }
+    form.respo {
+        padding: 10px 0 0 0;
+        float: right;
+    }
 }
 
 @media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
-  img.logo_img {
-    width: 303px;
-  }
-  nav.navbar_bg {
-    padding: 3px 32px 2px 39px;
-  }
+    img.logo_img {
+        width: 196px;
+    }
+    nav.navbar_bg {
+        padding: 3px 0 2px 0;
+    }
 }
 
 @media only screen and (max-width: 1499px) {
-  form.respo {
-    padding: 10px 0 0 0;
-  }
-  button.btn_back {
-    top: 0;
-  }
+    form.respo {
+        padding: 10px 0 0 0;
+    }
+    button.btn_back {
+        top: 0;
+    }
 }
+
 @media only screen and (max-width: 1499px) {
-  .bg_gre-blu {
-    color: #fff;
-    height: 100vh;
-  }
-  img.image_log {
-    height: 87vh;
-}
+    .bg_gre-blu {
+        color: #fff;
+        height: 100vh;
+    }
+    img.image_log {
+        height: 87vh;
+    }
+    .imyu {
+        padding: 12px 0;
+    }
 }

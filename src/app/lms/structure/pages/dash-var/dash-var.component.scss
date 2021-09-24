@@ -1,179 +1,275 @@
 iframe.iframe-video {
-  width: 100%;
-  height: 277px;
-  border-radius: 10px;
+    width: 100%;
+    height: 277px;
+    border-radius: 10px;
 }
+
+.cp {
+    cursor: pointer;
+}
+
+.card {
+    border: none;
+}
+
+.num {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+h6.h6_question {
+    font-size: 15px;
+}
+
+i.check_fa {
+    padding-left: 16px;
+    color: #629b9f;
+}
+
+img.right_sign_img {
+    height: 16px;
+}
+
+img.group_img {
+    padding: 0 7px 0 0;
+}
+
+small.earned_small {
+    color: #BDBDBD;
+}
+
 // --------------------- tabs
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  color: #495057;
-  background-color: #f6f6f6;
-  border-color: #f6f6f6;
-  border-bottom: 3px solid #18969a;
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #f6f6f6;
+    border-color: #f6f6f6;
+    border-bottom: 3px solid #18969a;
 }
+
 .nav-tabs .nav-link:hover {
-  border-color: #f6f6f6 #f6f6f6 #18969a;
+    border-color: #f6f6f6 #f6f6f6 #18969a;
 }
 
 .nav-tabs {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
+
 // --------------------- end tabs
 ul.down-load {
-  padding: 12px 0 0 0;
+    padding: 12px 0 0 0;
 }
+
 ul.down-load li {
-  font-size: 14px;
-  color: #18969a;
-  font-weight: 500;
-  padding-bottom: 5px;
+    font-size: 14px;
+    color: #18969a;
+    font-weight: 500;
+    padding-bottom: 5px;
 }
+
 a.more {
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
 }
+
 p.amet_p {
-  font-size: 14px;
-  color: silver;
+    font-size: 14px;
+    color: silver;
 }
+
 li.li_fnt {
-  font-size: 13px;
-  margin-bottom: 22px;
-  font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 22px;
+    font-weight: 600;
 }
+
 p.card_text {
-  font-size: 14px;
-  margin: 0;
+    font-size: 14px;
+    margin: 0;
 }
+
 h5.card_title {
-  font-size: 19px;
-  margin: 0 0 2px 0;
+    font-size: 19px;
+    margin: 0 0 2px 0;
 }
+
 .card_body {
-  padding: 11px 13px 0 14px;
+    padding: 20px 22px 0 22px;
 }
+
 ul.video_list {
-  margin: 0;
+    margin: 0;
 }
+
 h4.card_title {
-  margin: 0;
-  font-size: 19px;
+    margin: 0;
+    font-size: 19px;
 }
+
 .card_pad {
-  width: 100%;
-  border-radius: 23px;
-  // padding: 5px 0 0 0; // without acordian
-  padding: 17px 9px 0 9px; // with acordian
-  border: none;
+    width: 100%;
+    border-radius: 23px;
+    // padding: 5px 0 0 0; // without acordian
+    padding: 17px 9px 0 9px; // with acordian
+    border: none;
 }
+
 img.CaretDownFill2-img {
-  width: 7% !important;
-  height: 21px;
-  margin-top: 2px;
+    width: 7% !important;
+    height: 21px;
+    margin-top: 2px;
 }
+
 .bg_acordian {
-  border: none;
+    border: none;
 }
-#headingOne,#headingTwo, #headingThree {
-  background: #fff;
-  padding: 0 3px 0 3px;
+
+#headingOne,
+#headingTwo,
+#headingThree {
+    background: #fff;
+    padding: 0 3px 0 3px;
 }
+
 .card_pad-1 {
-  width: 98%;
-  border-radius: 23px;
-  padding: 5px 0 0 0;
-  border: none;
+    width: 98%;
+    border-radius: 23px;
+    padding: 5px 0 0 0;
+    border: none;
 }
+
 h4.intor_heading {
-  padding: 20px 0 12px 3px;
+    padding: 20px 0 12px 3px;
 }
+
 .card_bg {
-  background: #fff;
-  border-radius: 30px;
-  padding: 10px 0 10px 0;
+    background: #fff;
+    border-radius: 30px;
+    padding: 10px 0 10px 0;
 }
+
 .fl_pad {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 20px 0 19px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px 0 19px;
 }
+
 hr.hr_wid {
-  border-top: 2px solid #e5e5e5;
-  margin: 6px 0 5px 0;
+    border-top: 2px solid #e5e5e5;
+    margin: 6px 0 5px 0;
 }
+
 .question-tab {
-  padding: 9px 20px;
+    padding: 9px 20px;
 }
+
 p.question-para {
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
 }
+
 .choose-answer {
-  background: #F4F4F4;
-  font-size: 12px;
-  padding: 7px 11px;
-  border-radius: 8px;
-  margin-left: 35px;
-  margin-bottom: 10px;
-  cursor: pointer;
+    background: #F4F4F4;
+    font-size: 12px;
+    padding: 7px 11px;
+    border-radius: 8px;
+    margin-left: 35px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
+
 a.btn-confirm {
-  background: #229b9f;
-  margin-left: 36px;
-  color: #fff;
-  padding: 5px 66px;
-  font-size: 13px;
-  border-radius: 6px;
-  margin-top: 11px;
+    background: #229b9f;
+    margin-left: 36px;
+    color: #fff;
+    padding: 5px 66px;
+    font-size: 13px;
+    border-radius: 6px;
+    margin-top: 11px;
+    box-shadow: 0px 8px 9px 0 #229b9f33;
 }
 
 .card_bg-1 {
-  background: #fff;
-  border-radius: 14px;
-  padding: 21px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 21px;
 }
+
 .card_bg-2 {
-  background: #fff;
-  border-radius: 14px;
-  padding: 35px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 30px 35px;
 }
+
 p.congratu-p {
-  margin: 0;
-  font-size: 15px;
-  text-decoration: underline;
-  color: #229B9F;
-  font-weight: 500;
+    margin: 0;
+    font-size: 19px;
+    text-decoration: underline;
+    color: #229B9F;
+    font-weight: 500;
 }
+
 .sm-card {
-  background: #F5F5F5;
-  padding: 8px 21px 10px 21px;
-  border-radius: 18px;
+    background: #F5F5F5;
+    padding: 8px 21px 10px 21px;
+    border-radius: 18px;
 }
+
 small.master_p {
-  font-weight: 500;
-  font-size: 14px;
+    font-weight: 500;
+    font-size: 14px;
 }
+
 a.btn-download {
-  background: #F6F6F6;
-  font-size: 12px;
-  padding: 6px 13px;
-  margin-top: 13px;
-  color: #18969A;
-  font-weight: 700;
-  border-radius: 8px;
+    background: #F6F6F6;
+    font-size: 12px;
+    padding: 6px 13px;
+    margin-top: 13px;
+    color: #18969A;
+    font-weight: 700;
+    border-radius: 8px;
 }
+
 p.earned_p {
-  font-size: 15px;
-  font-weight: 700;
-  margin: 15px 0 0 0;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 15px 0 0 0;
 }
+
 img.istock_img {
-  width: 100%;
+    width: 100%;
 }
+
 p.employee_p {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.modal-content {
+    border-radius: 21px !important;
+    width: 47% !important;
+    height: 235px;
+}
+
+textarea.note_textarea {
+    width: 100%;
+    border: none;
+}
+
+.modal-footer {
+    background: #229B9F;
+    border-bottom-left-radius: 19px;
+    border-bottom-right-radius: 19px;
+    height: 43px;
+    padding: 0;
+}
+
+button.btn.btn-save {
+    width: 100%;
+    color: #ffffff;
+    padding: 0 0 0 0;
 }

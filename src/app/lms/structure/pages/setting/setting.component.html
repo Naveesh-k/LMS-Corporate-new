@@ -1,212 +1,108 @@
+<!-- <section class="home-section"> -->
 <div class="container-fluid">
-  <div class="row">
-    <main
-      class="col-md-12 float-left col px-5 px-md-3 py-3 main"
-      [ngClass]="darkMode ? 'dark-bg' : 'light-bg'"
-    >
-      <app-common-header></app-common-header>
+    <div class="row">
+        <main class="col-md-12 float-left col px-5 px-md-3 py-3 main" [ngClass]="darkMode ? 'dark-bg' : 'light-bg'">
+            <app-common-header></app-common-header>
 
-      <div class="row mt-3">
-        <div class="col-md-9"></div>
-        <div class="col-md-3 text-right">
-          <div
-            class="input_parent"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <input
-              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-              type="text"
-              placeholder="Search"
-              class="input_search-filed"
-            />
-            <button class="btn btn_search">
+            <div class="row mt-3">
+                <div class="col-md-9"></div>
+                <div class="col-md-3 text-right">
+                    <div class="input_parent" [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'">
+                        <input [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'" type="text" placeholder="Search" class="input_search-filed" />
+                        <button class="btn btn_search">
               <i
                 class="fa fa-search"
                 [ngClass]="darkMode ? 'dark-text' : 'light-text'"
                 aria-hidden="true"
               ></i>
             </button>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4 pl-2">
-        <div class="col-md-6">
-          <h5>Customise Your Topics</h5>
-        </div>
-        <div class="col-md-6 text-right">
-          <div class="dropdown">
-            <button
-              [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-              class="btn btn-wht dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 pl-2">
+                <div class="col-md-6">
+                    <h5>Customise Your Topics</h5>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="dropdown">
+                        <button [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'" class="btn btn-wht dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               All
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">Action</a>
+                            <a class="dropdown-item">Another action</a>
+                            <a class="dropdown-item">Something else here</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4 pl-2">
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Road To IPO</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Entrepreneurship</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Investing</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">CrowdFunding</p>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4 pl-2">
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Capital Raising</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Trade Finance</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Business Law</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Merger & Acquisitions</p>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4 pl-2">
-        <div class="col-md-6">
-          <h5>Request New Topic</h5>
-        </div>
-        <div class="col-md-6 text-right">
-          <div class="dropdown">
-            <button
-              class="btn btn-wht dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+            <div class="row mt-4 pl-2">
+                <div class="col-md-3 col-sm-6 col-12 mar_t mb-3" *ngFor="let item of topics">
+                    <div class="bg-silver" [ngClass]="[
+                                            darkMode
+                                              ? 'dark-small-section-bg'
+                                              : 'chart',
+                                              item.active === true ? 'bg-grenish' : 'chart'
+                                          ]" (click)="selectedTopics(item)">
+                        <p class="m-0 road_ipo">{{item.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 pl-2">
+                <div class="col-md-6">
+                    <h5>Request New Topic</h5>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="dropdown">
+                        <button [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'" class="btn btn-wht dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               All
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">Action</a>
+                            <a class="dropdown-item">Another action</a>
+                            <a class="dropdown-item">Something else here</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4 pl-2">
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Road To IPO</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Entrepreneurship</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <p class="road_ipo">Investing</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-12 mar_t">
-          <div
-            class="char_imgt"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <img src="../../../assets/images/Vector_plus.png" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4 pl-2">
-        <div class="col-md-12">
-          <h5>Contact Us</h5>
-        </div>
-      </div>
-      <div class="row mt-4 pl-2">
-        <div class="col-md-12">
-          <div
-            class="chart"
-            [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-          >
-            <div class="row">
-              <div class="col-md-10">
-                <input
-                  [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
-                  class="input_contact"
-                  placeholder="Your Queries"
-                  type="text"
-                />
-              </div>
-              <div class="col-md-2">
-                <button class="btn btn-n">Send</button>
-              </div>
+            <div class="row mt-4 pl-2">
+                <div class="col-md-3 col-sm-6 col-12 mar_t" *ngFor="let item of requestTopic">
+                    <div class="bg-silver" [ngClass]="[
+                                            darkMode
+                                              ? 'dark-small-section-bg'
+                                              : 'chart',
+                                              item.active === true ? 'bg-grenish' : 'chart'
+                                          ]" (click)="requestedTopics(item)">
+                        <p class="m-0 road_ipo">{{item.name}}</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12 mar_t">
+                    <div class="char_imgt" [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'" routerLink="/lms/app/page-progress">
+                        <img src="../../../assets/images/Vector_plus.png" alt="" />
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
+
+            <div class="row mt-4 pl-2">
+                <div class="col-md-12">
+                    <h5>Contact Us</h5>
+                </div>
+            </div>
+            <div class="row mt-4 pl-2">
+                <div class="col-md-12">
+                    <div class="chart" [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'">
+                        <div class="row">
+                            <div class="col-md-10 col-sm-10 col-8">
+                                <input [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'" class="input_contact" placeholder="Your Queries" type="text" />
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-4">
+                                <button class="btn btn-n">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </div>
+<!-- </section> -->

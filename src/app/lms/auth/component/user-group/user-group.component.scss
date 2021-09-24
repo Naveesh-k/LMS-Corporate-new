@@ -1,0 +1,167 @@
+section#signup-bg {
+    height: 91vh;
+}
+
+.bg_col-1 {
+    height: 90vh;
+}
+
+h5.h5_just {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 63px; // add
+}
+
+a.btn_free_user {
+    border: 2px solid #28a0a4;
+    width: 100%;
+    border-radius: 11px;
+}
+
+a.btn_free_user:hover {
+    background: #28a0a4;
+    color: #fff;
+}
+
+.bg-grenish-box {
+    background: #28a0a4;
+    color: #fff;
+    width: 100%;
+    border-radius: 11px;
+}
+
+.select_dropdown {
+    width: 100%;
+    margin: 31px 0;
+    padding: 0;
+}
+
+select.select_field:hover {
+    background: #28a0a4;
+    color: #fff;
+    cursor: pointer;
+}
+
+select.select_field {
+    border-radius: 11px;
+    border: 2px solid #28a0a4;
+    padding-left: 38% !important;
+}
+
+select.select_field_green {
+    color: #fff;
+    background: #28a0a4;
+    padding-left: 38% !important;
+}
+
+.mar_t {
+    margin: 29px 0; // add
+}
+
+a.btn_next {
+    width: 100%;
+    background: #28a0a4;
+    color: #fff;
+    border-radius: 11px;
+    // margin-top: 23px; // cmmt
+    margin-top: 88px; // add
+}
+
+option.drop_option {
+    background: #fff;
+    color: #000;
+}
+
+@media screen and (min-device-width: 300px) and (max-device-width: 499px) {
+    section#signup-bg {
+        padding: 0 0 0 0;
+    }
+    .bg_col-1 {
+        padding: 16px 17px 77px 17px;
+    }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 575px) {
+    section#signup-bg {
+        padding: 0 0 0 0;
+    }
+    .bg_col-1 {
+        padding: 16px 17px 77px 17px;
+    }
+}
+
+@media screen and (min-device-width: 576px) and (max-device-width: 599px) {
+    section#signup-bg {
+        padding: 0 0 0 0;
+    }
+    .bg_col-1 {
+        padding: 16px 17px 77px 17px;
+        margin-left: 39px;
+        width: 75%;
+    }
+    h5.h5_just {
+        font-size: 12px;
+        margin-bottom: 27px;
+    }
+    a.btn_free_user {
+        font-size: 12px;
+    }
+    select.select_field {
+        padding-left: 20% !important;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-device-width: 600px) and (max-device-width: 699px) {
+    section#signup-bg {
+        padding: 0 0 0 0;
+    }
+    .bg_col-1 {
+        padding: 16px 17px 77px 17px;
+        margin-left: 39px;
+        width: 75%;
+    }
+    h5.h5_just {
+        font-size: 12px;
+        margin-bottom: 27px;
+    }
+    a.btn_free_user {
+        font-size: 12px;
+    }
+    select.select_field {
+        padding-left: 20% !important;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-device-width: 700px) and (max-device-width: 767px) {
+    section#signup-bg {
+        padding: 0 0 0 0;
+    }
+    .bg_col-1 {
+        padding: 16px 17px 77px 17px;
+        margin-left: 39px;
+        width: 78%;
+    }
+    h5.h5_just {
+        font-size: 12px;
+        margin-bottom: 27px;
+    }
+    a.btn_free_user {
+        font-size: 12px;
+    }
+    select.select_field {
+        padding-left: 34% !important;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 799x) {
+    select.select_field {
+        padding-left: 27% !important;
+    }
+    .navbar-light .navbar-toggler {
+        float: right;
+        margin-top: 4px;
+    }
+}

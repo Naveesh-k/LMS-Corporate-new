@@ -9,7 +9,7 @@ import { ColorModeService } from 'src/app/service/color-mode.service';
 export class DashVarComponent implements OnInit {
   darkMode: boolean = false;
   hide: boolean = false;
-  show: boolean = false;
+  show: boolean = true;
   constructor(
     public mode: ColorModeService // dark-light
   ) {}
@@ -26,10 +26,10 @@ export class DashVarComponent implements OnInit {
     //end dark-light
   }
 
-  hideShow() {
+  hideShow() {  // Quiz show
     this.hide = true
   }
   showHide(){
-    this.show = true;
+    this.hide = false 
   }
 }

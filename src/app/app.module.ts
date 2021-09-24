@@ -11,12 +11,19 @@ import { NavigatePortalComponent } from './navigate-portal/navigate-portal.compo
 // Import library module
 import { CommonModule } from '@angular/common';
 import { NgxSpinnerModule } from "ngx-spinner";
+// Import toaster
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+
 @NgModule({
   declarations: [AppComponent, HomePageComponent, NavigatePortalComponent],
   imports: [BrowserModule, AppRoutingModule, SlickCarouselModule, FormsModule,
      NgxSpinnerModule,
      HttpClientModule,
      CommonModule,
+     BrowserAnimationsModule,
+     ToastrModule.forRoot(), //
     ],
   providers: [],
   bootstrap: [AppComponent],

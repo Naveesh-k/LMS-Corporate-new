@@ -1,15 +1,52 @@
 @import "./assets/styles/dark.scss"; // dark-light
 @import "./assets/styles/light.scss"; // dark-light
+@import '~ngx-toastr/toastr'; // toaster
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); // sidebar
 html,
 body {
     height: 100%;
+}
+
+.sidebar.open~.home-section {
+    left: 285px;
+    width: calc(100% - 285px);
+}
+
+.home-section {
+    position: sticky;
+    background: #E4E9F7;
+    min-height: 100vh;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+// text-editor
+.NgxEditor__Wrapper {
+    border: 1px solid #cecbcbad !important;
+    width: 96%;
+}
+
+.NgxEditor__Wrapper .NgxEditor__MenuBar {
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.NgxEditor__MenuBar {
+    background-color: #f6f6f6;
+    padding: 5px 8px;
+}
+
+.NgxEditor__Content {
+    height: 113px;
 }
 
 section#dashboard-bg {
     background: url(./assets/images/login-img.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 90vh;
+    height: 95vh;
     padding: 0 0 45px 39px;
     border-top: 1px solid #fff;
 }
@@ -152,7 +189,7 @@ img.logo-head-dropdown {
 }
 
 .drop_dn {
-    padding: 19px;
+    padding: 14px;
     border-radius: 19px;
     transform: translate3d(-3px, 48px, 0) !important;
     width: 100% !important;
@@ -192,6 +229,7 @@ input.input_search-filed {
     border: none;
     height: 29px;
     width: 100%;
+    font-size: 13px;
 }
 
 button.btn_search {
@@ -300,13 +338,142 @@ p.short_corse_p {
     justify-content: flex-end;
 }
 
-@media screen and (min-device-width: 300px) and (max-device-width: 1024px) {
+section.header_pad {
+    padding: 0 0 0 39px;
+}
+
+@media screen and (min-device-width: 300px) and (max-device-width: 320px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 85px;
+        top: 58px;
+    }
+    .show_hide {
+        display: none;
+    }
+}
+
+@media screen and (min-device-width: 321px) and (max-device-width: 399px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 110px;
+        top: 58px;
+    }
+    .show_hide {
+        display: none;
+    }
+}
+
+@media screen and (min-device-width: 400px) and (max-device-width: 499px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 130px;
+        top: 58px;
+    }
+    .show_hide {
+        display: none;
+    }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 563px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 132px;
+        top: 22px;
+    }
+    .show_hide {
+        display: none;
+    }
+    .slick-prev {
+        left: -12px !important;
+        z-index: 999 !important;
+    }
+}
+
+@media screen and (min-device-width: 564px) and (max-device-width: 599px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 143px;
+        top: 22px;
+    }
+    .show_hide {
+        display: none;
+    }
+    .slick-prev {
+        left: -12px !important;
+        z-index: 999 !important;
+    }
+}
+
+@media screen and (min-device-width: 600px) and (max-device-width: 768px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 30px;
+        top: 24px;
+    }
+    .show_hide {
+        display: none;
+    }
+    .slick-prev {
+        left: -12px !important;
+        z-index: 999 !important;
+    }
+}
+
+@media screen and (min-device-width: 769px) and (max-device-width: 999px) {
     .hide_show {
         display: block;
     }
     .show_hide {
         display: none;
     }
+    a.pdr {
+        position: absolute;
+        top: 8px;
+        right: 110px;
+    }
+}
+
+@media screen and (min-device-width: 1000px) and (max-device-width: 1024px) {
+    .hide_show {
+        display: block;
+        position: absolute;
+        left: 129px;
+        top: 18px;
+    }
+    .show_hide {
+        display: none;
+    }
+}
+
+@media screen and (min-device-width: 300px) and (max-device-width: 1024px) {
+    .btn-socail {
+        font-size: 14px;
+        padding-left: 45px;
+        padding-top: 8px;
+    }
+    img.facebook-img {
+        top: 6px;
+    }
+    section#dashboard-bg {
+        height: 95vh;
+    }
+    // ----------------
+    // .hide_show {
+    //     display: block;
+    //     position: absolute;
+    // left: 130px;
+    // top: 58px;
+    // }
+    // .show_hide {
+    //     display: none;
+    // }
     span.header_flex {
         display: flex;
         justify-content: flex-end;
@@ -316,10 +483,11 @@ p.short_corse_p {
     }
     span.heading_dashboard {
         margin: 0;
-        font-size: 18px;
+        font-size: 15px;
     }
     .dropdown {
-        margin: 0 0 0 27px;
+        // margin: 0 0 0 27px;
+        margin: 0 0 0 12px;
     }
     a.pdr {
         padding: 17px 0 0 0;
@@ -417,3 +585,30 @@ label.login_label {
 }
 
 // ----------------- Module   end  bdTech---------------------
+@media screen and (min-width: 577px) and (max-device-width: 738px) {
+    img.facebook-img {
+        left: 12px;
+    }
+    .btn.btn-socail img {
+        padding: 0px 12px 0 0;
+        width: 15%;
+    }
+    .btn-socail {
+        padding-top: 12px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1029px) and (max-device-width: 1236px) {
+    img.facebook-img {
+        left: 12px;
+    }
+    .btn.btn-socail img {
+        padding: 0px 12px 0 0;
+        width: 15%;
+    }
+    .btn-socail {
+        padding-top: 12px;
+        font-size: 12px;
+    }
+}

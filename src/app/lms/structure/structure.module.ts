@@ -16,6 +16,14 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { BulletinBoardComponent } from './pages/bulletin-board/bulletin-board.component';
+import { CpCommonHeaderComponent } from './common/cp-common-header/cp-common-header.component';
+import { CpSidebarComponent } from './common/cp-sidebar/cp-sidebar.component';
+import { CpDashboardComponent } from './pages/cp-dashboard/cp-dashboard.component';
+import { NgxEditorModule } from 'ngx-editor';
+import { CompleteCourseComponent } from './pages/complete-course/complete-course.component';
+import { PageProgressComponent } from './pages/page-progress/page-progress.component';
+import { EnterEmailComponent } from './pages/enter-email/enter-email.component';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,6 +39,12 @@ import { BulletinBoardComponent } from './pages/bulletin-board/bulletin-board.co
     CommonHeaderComponent,
     SidebarComponent,
     BulletinBoardComponent,
+    CpCommonHeaderComponent,
+    CpSidebarComponent,
+    CpDashboardComponent,
+    CompleteCourseComponent,
+    PageProgressComponent,
+    EnterEmailComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +52,8 @@ import { BulletinBoardComponent } from './pages/bulletin-board/bulletin-board.co
     SlickCarouselModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxEditorModule,
+    // NgbModule
   ],
   bootstrap: [StructureComponent],
 })

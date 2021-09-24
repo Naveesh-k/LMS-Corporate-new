@@ -1,0 +1,68 @@
+<section style="background: #F6F6F6;" class="table-list">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Course List</h3>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <a class="btn btn_course" routerLink="/super/app/course">Create Course</a>
+                <p-table [value]="listOfData">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th pSortableColumn="courseId">Course Id
+                                <p-sortIcon field="courseId"></p-sortIcon>
+                            </th>
+                            <th pSortableColumn="courseTitle">Course Title </th>
+                            <th pSortableColumn="courseProvider">Course Provider </th>
+                            <th pSortableColumn="generateDate">Course Generate Date</th>
+                            <th pSortableColumn="startDate">Course Start Date</th>
+                            <th pSortableColumn="status">Status</th>
+                            <th pSortableColumn="action">Action</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-list>
+                        <tr>
+                            <td>{{list.id}}</td>
+                            <td class="title" data-toggle="modal" data-target="#exampleModal">{{list.course_title}}</td>
+                            <td>{{list.select_author}}</td>
+                            <td>{{list.created_By | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{list.start_date | date: 'dd/MM/yyyy'}}</td>
+                            <!-- <td><button class="btn btn-action"> {{list.status}} </button></td> -->
+                            <td><button class="btn btn-action"> {{list.status === 0 ? 'Active' : 'Disable'}} </button></td>
+                            <td><i class="fa fa-pencil" style="cursor: pointer;" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp; <i class="fa fa-eye" style="cursor: pointer;" aria-hidden="true"></i></td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Course Title <br> <span class="lorem_span"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. </span></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h5>Description</h5>
+                                        <p>Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati eum unde quos ullam omnis, dolores porro temporibus earum adipisci, ducimus qui, voluptatum repudiandae impedit doloribus corrupti perspiciatis
+                                            odit quae suscipit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Send message</button>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

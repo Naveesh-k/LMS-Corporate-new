@@ -1,0 +1,542 @@
+h4 span {
+    color: #229B9F;
+}
+
+a.btn_course {
+    background: #229b9f;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.widget {
+    background: #fff;
+    padding: 21px 21px 11px 21px;
+    border-radius: 12px;
+    border: 1px solid #DDDFE5;
+}
+
+p.wid_title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #929292;
+    margin: 0 0 8px 0;
+}
+
+.widget-wid {
+    background: #229b9f;
+    color: #fff;
+    padding: 40px 21px;
+    border-radius: 20px;
+    height: 278px;
+}
+
+p.new_here_p {
+    font-size: 15px;
+    color: #e7e2e2;
+}
+
+p.guid_p {
+    font-size: 32px;
+    line-height: 37px;
+    font-weight: 600;
+}
+
+img.pro_img {
+    width: 23%;
+}
+
+.widget_small {
+    background: #fff;
+    padding: 16px 16px;
+    border-radius: 12px;
+    position: relative;
+    padding: 9px 16px;
+}
+
+.widget_small:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+    box-shadow: 0px 13px 20px 0px #058b9645;
+}
+
+span.power_small {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+p.percent_span {
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+img.round_img {
+    width: 32%;
+    position: absolute;
+    bottom: 31px;
+    right: 3px;
+    box-shadow: 0px 15px 20px 0 #058b9640;
+    border-radius: 16px;
+}
+
+span.power_small-1 {
+    position: absolute;
+    right: 9px;
+    top: 26px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+img.rectangle_img {
+    width: 97%;
+}
+
+h6.master_p {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 15px 0 0 15px;
+}
+
+p.current_p {
+    margin: 6px 0 0 14px;
+    font-size: 13px;
+}
+
+// ------------
+.bg_color {
+    background: #ffffff;
+    border-radius: 11px;
+    padding: 24px 61px;
+}
+
+.bg_colorr {
+    background: #ffffff;
+    border-radius: 11px;
+    padding: 27px 47px;
+}
+
+.select_box {
+    background: #F7F8F9;
+    border-radius: 21px;
+    padding: 20px 42px;
+    height: 324px;
+    width: 89%;
+    margin: 0 0 0 23px;
+    cursor: pointer;
+}
+
+.bg-grenish-box {
+    background: #F7F8F9;
+    border-radius: 21px;
+    padding: 20px 42px;
+    height: 324px;
+    width: 89%;
+    margin: 0 0 0 23px;
+    cursor: pointer;
+    border: 1px solid #229B9F;
+}
+
+img.plant_img {
+    width: 66%;
+    margin-bottom: 21px;
+}
+
+h3.h3_course {
+    color: #229B9F;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 22px;
+}
+
+p.with_para {
+    font-size: 15px;
+    margin: 0;
+}
+
+a.btn_next {
+    background: #229ca7;
+    color: #fff;
+    width: 25%;
+    border-radius: 12px;
+    padding: 10px 0;
+}
+
+p.lorem_p {
+    font-size: 14px;
+    margin: 9px 0;
+}
+
+label.title-label {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+input.form-input {
+    border: none;
+    background: #F9F9F9;
+    border-radius: 11px;
+    height: 44px;
+}
+
+button.btn-register {
+    width: 30%;
+    background: #229B9F;
+    color: #fff;
+    border-radius: 11px;
+    padding: 8px 0;
+}
+
+// --
+table.table {
+    background: #ffffff;
+    border-radius: 19px;
+}
+
+td.td_title {
+    font-size: 14px;
+    width: 15%;
+}
+
+a.btn-active {
+    background: #53b3b6;
+    color: #ffffff;
+    padding: 0px 7px;
+    font-size: 14px;
+    border-radius: 17px;
+}
+
+a.btn-draft {
+    background: #E5E5E5;
+    padding: 0 10px;
+    font-size: 13px;
+    border-radius: 13px;
+}
+
+td.lorem_p {
+    font-size: 14px;
+    width: 21%;
+}
+
+i.fa-pencil,
+i.fa-trash,
+i.fa-ellipsis-h {
+    color: #7D90B2;
+    font-size: 22px;
+}
+
+td.td_field {
+    width: 16%;
+}
+
+td.td_field_btn {
+    width: 12%;
+}
+
+td.td_check {
+    width: 5%;
+}
+
+tr.tr_border {
+    border-top: hidden;
+    border-bottom: hidden;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F4F7FC;
+}
+
+i.fa.fa-plus-circle {
+    color: #229b9f;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+td.td_title-1 {
+    font-size: 14px;
+    width: 15%;
+    color: #229b9f;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+// --------------------Varsha Css---------------
+section {
+    background-color: #F6F6F6;
+}
+
+.content-box {
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 0 20px 0 #cecbcb1c;
+    border-radius: 10px;
+    margin: 0 0 0 10px;
+    width: 95%;
+    padding: 33px 20px;
+    // height: 55vh;
+}
+
+input.frm-wi {
+    width: 96%;
+}
+
+input.radio_btn {
+    position: absolute;
+    top: 226px;
+    left: 24px;
+    margin-right: 28px;
+}
+
+.back_radio {
+    display: flex;
+    background: #ffffff;
+    border-radius: 10px;
+    width: 95%;
+}
+
+.box1 img {
+    box-shadow: 6px 6px 20px 0 #0732332b;
+}
+
+//row2//
+.cp-img-box {
+    background-color: #F9F9F9;
+    height: 248px;
+    width: 98%;
+    border-radius: 20px;
+}
+
+.uper-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 37px 37px 18px 37px;
+    text-align: center;
+    width: 100%;
+}
+
+.cp-desh-button,
+.cp-desh-button2,
+.cp-desh--creat-button {
+    background-color: #219094;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    color: #fff;
+    box-shadow: 0 10px 10px 0 #229B9F26;
+    font-size: 16px;
+    padding: 14px 0;
+}
+
+p.image-p {
+    font-size: 14px;
+}
+
+p.font_sz {
+    font-size: 15px;
+    padding: 3px 0 0 0;
+}
+
+.cp-desh-button2 {
+    width: 30%;
+}
+
+.cp-learn {
+    background-color: #FFEBE2;
+    width: 60%;
+    text-align: center;
+    border: 1px solid #ff00006b;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+//nav-tabe//
+.nav-tabs {
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.nav-tabs .nav-link.active {
+    color: rgb(255, 255, 255);
+    background-color: #229B9F;
+    border: hidden;
+    border-radius: 8px;
+}
+
+.nav-pills .nav-link.active {
+    color: black;
+    font-weight: 600;
+    background-color: #229b9f33;
+    background-image: linear-gradient(to right, #229b9f59, #fff);
+    border: hidden;
+    padding: 13px 10px;
+    border-radius: 1px;
+    border-left: 3px solid #18969a;
+}
+
+a.top-rad {
+    border-top-left-radius: 9px !important;
+    border-top-right-radius: 9px !important;
+}
+
+a.bottom-rad {
+    border-bottom-left-radius: 9px !important;
+    border-bottom-right-radius: 9px !important;
+}
+
+hr {
+    margin-top: 42px;
+}
+
+.nav-pills .nav-link {
+    color: grey;
+    background-color: #fff;
+    border: hidden;
+    padding: 13px 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.double {
+    border-style: double;
+    border-radius: 10px;
+    border: 1px solid #E2E6EA;
+    padding: 25px;
+    text-align: center;
+    color: #8d8d8d;
+}
+
+.btn-secondary3 {
+    background-color: #E5E5E5;
+    border-radius: 10px;
+    width: 30%;
+    border: none;
+    color: #000;
+}
+
+.form-control {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.cp-quiz-para {
+    color: #2E3B52;
+}
+
+.nav-item {
+    background-color: #E5E5E5;
+    border-radius: 5px;
+}
+
+p.add_p {
+    font-size: 14px;
+}
+
+//tab---3//
+.back-box {
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgb(206, 203, 203);
+    border-radius: 10px;
+    width: 100%;
+    padding: 53px;
+    text-align: center;
+}
+
+.cp-desh--creat-button {
+    width: 30%;
+}
+
+.cp-box-pricing,
+.cp-free-plan-back {
+    background-color: #fff;
+    height: 80vh;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.back-row {
+    border-radius: 10px;
+    padding: 12px 21px;
+    cursor: pointer;
+}
+
+.cp-box-pricing,
+.cp-free-plan-back {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.name {
+    border-bottom: 1px solid #C4C4C4;
+    margin: 0 15px;
+}
+
+.cp-free-side {
+    background-color: #F6F6F6;
+    margin-top: 15px;
+}
+
+.brod_rad {
+    border-bottom: 1px solid #c4c4c478;
+    padding: 0 0 11px 0;
+}
+
+select.select_colr {
+    background: #f6f6f6 !important;
+    border-radius: 0 !important;
+    border-color: #f6f6f6;
+}
+
+.mo-co {
+    border-radius: 27px;
+}
+
+.form-row input {
+    background-color: #F6F6F6;
+    border: none;
+    border-radius: 0;
+}
+
+.cp-free-side small {
+    color: #989898;
+}
+
+.free-colr-cp {
+    color: #219094;
+}
+
+.back-row:hover {
+    background-color: #F6F6F6;
+}
+
+p.allow_p {
+    font-size: 15px;
+    margin: 0;
+}
+
+.cp-free-side {
+    background-color: #F6F6F6;
+}
+
+// -------------------------Curriculum css
+th.tr_th {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+tr.tr_thead {
+    border-top: hidden;
+    border-bottom: 2px solid #dee2e6;
+}
+
+td.tr_td {
+    font-size: 14px;
+}
+
+@media screen and (min-device-width: 300px) and (max-device-width: 399px) {
+    .nav-tabs {
+        display: inline-block;
+    }
+}

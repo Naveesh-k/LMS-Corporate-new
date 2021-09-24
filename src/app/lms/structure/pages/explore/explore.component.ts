@@ -27,6 +27,23 @@ export class ExploreComponent implements OnInit {
 
   // slider
   slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
+  // slideConfig = {
+  //   'slidesToShow': 3,
+  //   'slidesToScroll': 4,
+  //   'arrows': true,
+  //   'swipeToSlide': true,
+  //   'infinite': true,
+  //   'responsive': [
+  //     {
+  //       'breakpoint': 767,
+
+  //        'settings': {
+  //         'infinite': false,
+  //         'slidesToShow': 3
+  //               }
+  //             }
+  //           ]
+  // };
 
   // hide show section
   showHide() {

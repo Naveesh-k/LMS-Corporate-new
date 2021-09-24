@@ -1,193 +1,242 @@
+img.img-cur {
+    width: 100%;
+    height: 218px;
+}
+
 p.profile_sm {
-  font-size: 14px;
-  margin: 8px 0 8px 0;
-  font-weight: 500;
+    font-size: 14px;
+    margin: 8px 0 8px 0;
+    font-weight: 500;
+    width: 68%;
 }
+
 p.profile_sm span {
-  color: #9a9898;
+    color: #BDBDBD;
 }
+
 .bg_sl {
-  padding: 10px 15px 4px 15px;
-  border-radius: 21px;
+    padding: 10px 15px 4px 15px;
+    border-radius: 21px;
 }
+
 .img-cur {
-  cursor: pointer;
+    cursor: pointer;
+}
+
+button.btn-nn {
+    background: #229b9f;
+    color: #fff;
+    width: 49%;
+    border-radius: 9px;
 }
 
 // second page
 span.camera_img {
-  border: 2px solid #229b9f;
-  padding: 15px 5px 17px 14px;
-  border-radius: 36px;
-  background: #fff;
+    border: 2px solid #229b9f;
+    padding: 15px 5px 17px 14px;
+    border-radius: 36px;
+    background: #fff;
 }
+
 img.img_camera {
-  width: 73%;
+    width: 18%;
+    position: absolute;
+    left: 176px;
 }
+
 span.camera_img {
-  margin: -26px;
+    margin: -26px;
 }
+
 input.email_input {
-  background: #f6f6f6;
-  border: none;
-  border-radius: 7px;
+    background: #f6f6f6;
+    border: none;
+    border-radius: 7px;
 }
+
+p.email_p {
+    background: #f6f6f6;
+    padding: 7px 8px;
+    border-radius: 6px;
+}
+
+p.aboutMe_p {
+    background: #f6f6f6;
+    padding: 7px 8px;
+    border-radius: 6px;
+    height: 73px;
+}
+
 input.email_input1 {
-  background: #f6f6f6;
-  border: none;
-  border-radius: 7px;
-  height: 63px;
+    background: #f6f6f6;
+    border: none;
+    border-radius: 7px;
+    height: 63px;
 }
 
 .button_flx {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
-button.btn-register {
-  background: #f6f6f6;
-  font-weight: 600;
-}
-button.btn-update_pro {
-  background: #229b9f;
-  color: #fff;
-  margin: 0 0 0 9px;
-  border-radius: 9px;
-}
-// end second page
 
+button.btn-register {
+    background: #f6f6f6;
+    font-weight: 600;
+}
+
+button.btn-update_pro {
+    background: #229b9f;
+    color: #fff;
+    margin: 0 0 0 9px;
+    border-radius: 9px;
+}
+
+// end second page
 //  toggle css
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 56px;
-  height: 25px;
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 25px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 20px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
-input:checked + .slider {
-  background-color: #2196f3;
+input:checked+.slider {
+    background-color: #2196f3;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
+
 
 /* Rounded sliders */
+
 .slider.round {
-  border-radius: 34px;
+    border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }
-//  end toggle css
 
+//  end toggle css
 // dropdown
 .dropbtn {
-  background-color: #fff;
-  color: #000;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+    background-color: #fff;
+    color: #000;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  right: 0;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+    background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
+
 // --------------------------second dropdown
 button.dt {
-  background: #f6f6f6;
+    background: #f6f6f6;
 }
 
 // end dropdown
-
 @media screen and (min-device-width: 300px) and (max-device-width: 499px) {
-  img.img_ar {
-    width: 41% !important;
-    padding: 19px 0 0 0 !important;
-  }
-  .mar_gin {
-    margin: 14px 0 0 0;
-  }
+    img.img_ar {
+        width: 41% !important;
+        padding: 19px 0 0 0 !important;
+    }
+    .mar_gin {
+        margin: 14px 0 0 0;
+    }
+    .mr-top {
+        margin-top: 12px;
+    }
 }
 
 @media screen and (min-device-width: 500px) and (max-device-width: 768px) {
-  h5.quick_link_h5 {
-    font-size: 18px;
-  }
-  a.is-it_a {
-    font-size: 12px;
-  }
-  .bg_sl {
-    background: #f4f4f4;
-    padding: 10px 10px 4px 10px;
-    border-radius: 21px;
-  }
-  p.profile_sm {
-    font-size: 12px;
-  }
-  small.thr_lesson_sm {
-    font-size: 10px;
-  }
+    h5.quick_link_h5 {
+        font-size: 18px;
+    }
+    a.is-it_a {
+        font-size: 12px;
+    }
+    .bg_sl {
+        background: #f4f4f4;
+        padding: 10px 10px 4px 10px;
+        border-radius: 21px;
+    }
+    p.profile_sm {
+        font-size: 12px;
+    }
+    small.thr_lesson_sm {
+        font-size: 10px;
+    }
+    .mr-top {
+        margin-top: 12px;
+    }
+}
+
+input#imgupload {
+    visibility: hidden;
 }

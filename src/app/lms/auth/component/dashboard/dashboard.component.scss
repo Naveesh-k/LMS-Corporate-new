@@ -1,41 +1,97 @@
 body {
-  overflow-y:hidden !important;
+    overflow-y: hidden !important;
 }
+
 @media screen and (min-device-width: 300px) and (max-device-width: 399px) {
-  section#dashboard-bg {
-    padding: 0;
-  }
+    section#dashboard-bg {
+        padding: 0;
+    }
+    .bg_col {
+        height: 100vh !important;
+    }
 }
+
 @media screen and (min-device-width: 400px) and (max-device-width: 499px) {
-  section#dashboard-bg {
-    padding: 0;
-  }
-  nav.navbar_bg {
-    display: none !important;
-  }
+    section#dashboard-bg {
+        padding: 0;
+    }
+    nav.navbar_bg {
+        display: none !important;
+    }
 }
+
+@media screen and (min-device-width: 500px) and (max-device-width: 575px) {
+    section#dashboard-bg {
+        padding: 1px 0 45px 0;
+    }
+}
+
+@media screen and (min-device-width: 577px) and (max-device-width: 683px) {
+    .btn-socail {
+        padding-top: 12px;
+        font-size: 9px;
+        padding-left: 28px;
+    }
+    img.facebook-img {
+        padding-top: 9px !important;
+    }
+    section#dashboard-bg h2 {
+        font-size: 13px !important;
+    }
+    section#dashboard-bg h6 {
+        font-size: 13px;
+        line-height: 0;
+    }
+    .mar_top {
+        margin-top: 32px;
+    }
+    .btn-socail {
+        margin-bottom: 13px;
+    }
+    section#dashboard-bg small {
+        font-size: 7px;
+    }
+}
+
+@media screen and (min-device-width: 684px) and (max-device-width: 767px) {
+    section#dashboard-bg h2 {
+        font-size: 15px !important;
+    }
+    .mar_top {
+        margin-top: 26px;
+    }
+    section#dashboard-bg h6 {
+        font-size: 14px;
+        line-height: 0;
+    }
+    .btn-socail {
+        margin-bottom: 16px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
-  img.facebook-img {
-    padding: 0 10px 0 0;
-  }
-  button.btn-socail {
-    font-size: 14px;
-  }
+    img.facebook-img {
+        padding: 0 10px 0 0;
+    }
+    button.btn-socail {
+        font-size: 14px;
+    }
 }
+
 @media only screen and (max-width: 1024px) {
-  section#dashboard-bg h2 {
-    font-size: 19px;
-  }
-  .bg_col {
-    padding: 20px 10px 20px 10px;
-  }
-  img.facebook-img {
-    padding: 0 10px 0 0;
-  }
+    section#dashboard-bg h2 {
+        font-size: 19px;
+    }
+    .bg_col {
+        padding: 20px 10px 20px 10px;
+    }
+    img.facebook-img {
+        padding: 0 10px 0 0;
+    }
 }
 
 @media only screen and (max-width: 1499px) {
-  .bg_col {
-    height: 89vh;
-  }
+    .bg_col {
+        height: 95vh;
+    }
 }

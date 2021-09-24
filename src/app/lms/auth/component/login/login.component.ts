@@ -6,6 +6,7 @@ import { Location } from '@angular/common'
 import { LmsAuthService } from '../../../../lms/auth/Service/lms-auth.service';
 import { NgxSpinnerService } from "ngx-spinner";
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,9 +15,11 @@ import { GobalService } from 'src/app/lms/global-services/gobal.service';
 export class LoginComponent implements OnInit {
   loginForm: any = FormGroup;
   loginData: any;
+  login: any ;
   submitted = false;
   darkMode: boolean = false;
   constructor(
+    private toastr: ToastrService,
     private spinner: NgxSpinnerService,
     public router: Router,
     private location : Location,
@@ -51,8 +54,10 @@ export class LoginComponent implements OnInit {
   }
 
   // back location
-  back(): void {
-    this.location.back()
+  back() {
+    // this.location.back()
+    // this.router.navigateByUrl('/lms/auth')
+     window.location.href = "/lms/auth";
   }
 
   // convenience getter for easy access to form fields
@@ -68,21 +73,42 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    let request = {
-          email: this.loginForm.value.email,
-          password : this.loginForm.value.password,
-    }
-
-    console.log(request)
-    // this.spinner.show();
-    this._services.getLogin(request).subscribe(res => {
-      let response = res;
-
-      if(response.success === true){
-        // this.spinner.hide();
-        this.router.navigateByUrl('/lms/app/home')
+    try {
+      let request = {
+            email: this.loginForm.value.email,
+            password : this.loginForm.value.password,
       }
-    })
+      // this.spinner.show();
+      this._services.getLogin(request).subscribe(res => {
+        this.login = res;
+        console.log(this.login)
+        let token = this.login.data.tokens
+        localStorage.setItem("token", token);
+        localStorage.setItem("loginUserFname", this.login.data.first_name)
+        localStorage.setItem("loginUserLname", this.login.data.last_name)
+
+        if(this.login.success === true){
+          if(this.login.status === 401){
+            this.toastr.error('Session expire', 'Session expire please login again')
+          }
+          localStorage.setItem('userType','true')
+          this.toastr.success('message', this.login.message)
+          localStorage.setItem('lms_isLogedIn', 'true')
+          // this.router.navigateByUrl('/lms/app/home')
+          window.location.href = "/lms/app/home";
+        } else if (this.login.success === false){
+          this.toastr.error('message', this.login.message)
+          }
+      },(error) => {
+        if(this.login.status === 401){
+          this.toastr.error('message', this.login.message)
+        }
+      }
+      )
+    }
+    catch(err){
+      this.spinner.hide();
+    }
   }
 
 
@@ -117,8 +143,12 @@ export class LoginComponent implements OnInit {
       request['social_id'] =  data.idToken;
      }
     console.log(request)
+    this.spinner.show(); // Spinner show
     this._service.getSignUpData(request).subscribe(res => {
       let response = res;
+      if(response.success == true){
+        this.spinner.hide(); // Spinner hide
+      }
       // ------------------- Spinner
       // this.spinner.show();
       // setTimeout(() => {
@@ -126,10 +156,11 @@ export class LoginComponent implements OnInit {
       // }, 1000);
       // ------------------- Spinner end
       if(response.success == true){
-        this.router.navigateByUrl('/lms/auth/sign-up')
+        // this.router.navigateByUrl('/lms/auth/sign-up')
+        window.location.href = "/lms/auth/sign-up";
       }else{
-        // this.router.navigateByUrl('/lms/auth/login')
-        this.router.navigateByUrl('/lms/app/home')
+        // this.router.navigateByUrl('/lms/app/home')
+         window.location.href = "/lms/app/home";
       }
       console.log(response)
     })

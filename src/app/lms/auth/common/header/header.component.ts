@@ -9,7 +9,8 @@ import { Location } from '@angular/common'
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  darkMode: boolean = false;
+  darkMode: boolean = true;
+  showButton: boolean = false;
   constructor(
     private location: Location,
     public router: Router,
@@ -17,6 +18,9 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+
+
     // dark-light
     this.mode.currentMode.subscribe((res) => {
       if (res == 'light') {
@@ -26,10 +30,17 @@ export class HeaderComponent implements OnInit {
       }
     });
     //end dark-light
+
+    this.checkRoute()
+  }
+
+  checkRoute(){
+      this.showButton = this.router.url === '/lms/auth/sign-up';
   }
 
   // back page location
   back(): void {
-    this.location.back()
+      this.location.back()
   }
+
 }
