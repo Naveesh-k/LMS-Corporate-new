@@ -18,7 +18,8 @@
                                 <div class="col-md-7 mar_gin">
                                     <div class="row">
                                         <div class="col-md-7 col-sm-6 col-6">
-                                            <h5 *ngIf="social != 'true'">{{profileName}}</h5>
+                                            <!-- <h5 *ngIf="social != 'true'">{{profileName}}</h5> -->
+                                            <h5 *ngIf="social != 'true'">{{profileFName}} {{profileLName}}</h5>
                                             <h5 *ngIf="social === 'true'">{{signupFullName}}</h5>
                                         </div>
                                         <div class="col-md-5 col-sm-6 col-6 text-right">
@@ -28,10 +29,10 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <p class="profile_sm">
-                                                Profile :<span>  </span>
+                                                Profile :<span> PIF Capital Pte Ltd </span>
                                             </p>
                                             <p class="profile_sm">
-                                                Mobile No. :<span> </span>
+                                                Mobile No. :<span>{{contactNumber}} </span>
                                             </p>
 
                                             <p class="profile_sm">
@@ -42,20 +43,20 @@
                                             <p class="profile_sm">
                                                 <!-- Language :<span> English, Indonesian, Japanese </span> -->
                                                 Language :
-                                                <span *ngIf="social != 'true'"> {{company}} </span>
+                                                <span *ngIf="social != 'true'"> {{language}} </span>
                                                 <span *ngIf="social === 'true'"> {{profileCompany}} </span>
                                             </p>
                                             <!-- <p class="profile_sm">
                                                 Country :<span> United States </span>
                                             </p> -->
                                             <p class="profile_sm">
-                                                Country :<span> {{marketing}} </span>
+                                                Country :<span> {{country}} </span>
                                             </p>
                                             <p class="profile_sm mt-3">
                                                 About me <br />
                                                 <span class="amet_span">
-                                                  It is a long established fact that a reader.
-                                                </span>
+                          {{aboutMe}}
+                        </span>
                                             </p>
                                         </div>
                                     </div>
@@ -245,58 +246,74 @@
                                     <!-- <img class="w-100 img-cur" src="{{profile}}" alt="" /> -->
                                     <img class="w-100 img-cur" src="{{profile}}" alt="" *ngIf="social != 'true'" />
                                     <img class="w-100 img-cur" src="{{profileImage}}" alt="" *ngIf="social === 'true'" />
+
                                     <div class="d-flex justify-content-end cam_mar">
-                                        <span class="camera_img">
+                                        <!-- <span class="camera_img">
                       <img
                         class="img_camera"
                         src="../../../assets/images/camera.png"
                         alt=""
                       />
-                    </span>
+                    </span> -->
+                                        <label for="imgupload">
+                                          <img
+                                          class="img_camera"
+                                          src="../../../assets/images/camera.png"
+                                          alt=""
+                                        />
+
+                    </label>
+                                        <input id="imgupload" type="file" class="file_type" (change)="imageUplaoad($event)" accept=" .png, .jpeg, .jpg">
                                     </div>
                                 </div>
                                 <div class="col-md-7 mar_gin"></div>
                             </div>
 
                             <!-- ------------------------ -->
-                            <form class="mt-5" [formGroup]="loginForm">
+                            <form class="mt-5" [formGroup]="updateProfileForm">
                                 <!-- (ngSubmit)="onSubmit()" -->
-                                <div class="form-row"></div>
+
                                 <div class="form-group">
-                                    <label class="fnt_wigt">Name</label>
-                                    <!-- <input type="text" class="form-control email_input" readonly formControlName="name" /> -->
-                                    <p class="email_p" *ngIf="social != 'true'">{{profileName}}</p>
+                                    <label class="fnt_wigt">First Name</label>
+                                    <input type="text" class="form-control email_input" formControlName="fname" />
+                                    <!-- <p class="email_p" *ngIf="social != 'true'">{{profileName}}</p> -->
                                     <p class="email_p" *ngIf="social === 'true'">{{signupFullName}}</p>
-                                    <div> </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="fnt_wigt">Last Name</label>
+                                    <input type="text" class="form-control email_input" formControlName="lname" />
+                                    <!-- <p class="email_p" *ngIf="social != 'true'">{{profileName}}</p> -->
+                                    <p class="email_p" *ngIf="social === 'true'">{{signupFullName}}</p>
 
                                 </div>
 
                                 <div class="form-group">
                                     <label class="fnt_wigt">Mobile No.</label>
-                                    <input type="text" class="form-control email_input" readonly formControlName="mobile" />
+                                    <input type="text" class="form-control email_input" formControlName="mobile" />
                                     <!-- <p class="mobile_p" *ngIf="social != 'true'"> </p> -->
                                 </div>
                                 <div class="form-group">
                                     <label class="fnt_wigt">Email</label>
-                                    <!-- <input type="text" class="form-control email_input" readonly formControlName="email" /> -->
+                                    <!-- <input type="text" class="form-control email_input"  formControlName="email" /> -->
                                     <p class="email_p" *ngIf="social != 'true'"> {{email}} </p>
                                     <p class="email_p" *ngIf="social === 'true'"> {{profileEmail}} </p>
 
                                 </div>
                                 <div class="form-group">
                                     <label class="fnt_wigt">Language</label>
-                                    <input type="text" class="form-control email_input" readonly formControlName="language" />
+                                    <input type="text" class="form-control email_input" formControlName="language" />
                                     <!-- <p class="email_p">English</p> -->
 
                                 </div>
                                 <div class="form-group">
                                     <label class="fnt_wigt">Country</label> <br />
-                                    <input type="text" class="form-control email_input" readonly formControlName="country" />
+                                    <input type="text" class="form-control email_input" formControlName="country" />
                                     <!-- <p class="email_p">UK</p> -->
                                 </div>
                                 <div class="form-group">
                                     <label class="fnt_wigt">About me</label> <br />
-                                    <input type="text" class="form-control email_input1" readonly formControlName="aboutMe" />
+                                    <input type="text" class="form-control email_input1" formControlName="aboutMe" />
                                     <!-- <p class="aboutMe_p">It is a long established fact that a reader.</p> -->
                                 </div>
 
@@ -304,7 +321,7 @@
                                     <button class="btn btn-register mr-1" (click)="hideShow()">
                     Cancel
                   </button>
-                                    <button class="btn btn-update_pro mr-1">
+                                    <button class="btn btn-update_pro mr-1" (click)="updateProfile()">
                     Update Profile
                   </button>
                                 </div>
