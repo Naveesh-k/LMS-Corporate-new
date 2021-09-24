@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
+
     this.updateProfileForm = this.formBuilder.group(
       {
         fname: ['', [Validators.required]],
@@ -87,92 +87,87 @@ export class ProfileComponent implements OnInit {
     //this.profileCompany = signUpData.provider
     //this.companyName = signUpData.provider
     this.social = localStorage.getItem('signupMode')
-
+    this.profileResponse = {}
     if (this.social === 'true') {
-
-      console.log("In social login")
       let getLocalStorage: any = localStorage.getItem('userDetail');
       let signUpData = JSON.parse(getLocalStorage);
-      this.profileResponse.first_name = signUpData.firstName
-      this.profileResponse.last_name = signUpData.lastName
-      this.profileResponse.email = signUpData.email
-      this.profileResponse.profile = signUpData.photoUrl
-      this.profileResponse.contact_number = signUpData.contact_number ? signUpData.contact_number : '',
-      this.profileResponse.language = signUpData.language ? signUpData.language : '',
-      this.profileResponse.country = signUpData.country ? signUpData.country : '',
-      this.profileResponse.about_me = signUpData.about_me ? signUpData.about_me : ''
-
+      this.profileResponse["first_name"] = signUpData.firstName
+      this.profileResponse["last_name"] = signUpData.lastName
+      this.profileResponse["email"] = signUpData.email
+      this.profileResponse["profile"] = signUpData.photoUrl
+      this.profileResponse["contact_number"] = signUpData.contact_number ? signUpData.contact_number : '',
+        this.profileResponse["language"] = signUpData.language ? signUpData.language : '',
+        this.profileResponse["country"] = signUpData.country ? signUpData.country : '',
+        this.profileResponse["about_me"] = signUpData.about_me ? signUpData.about_me : ''
     }
 
-    console.log("From social account" , this.profileResponse)
+    else {
+      this._service.profileDataShow().subscribe(res => {
+        this.profileRecord = res.data
+        this.profileRecord.forEach((el: any) => {
+          this.profileResponse = el
+        })
 
+        console.log(this.profileResponse)
 
-    this._service.profileDataShow().subscribe(res => {
+        this.uploadedImage = this.profileResponse.profile
 
-      this.profileRecord = res.data
-      this.profileRecord.forEach((el: any) => {
-        this.profileResponse = el
+        //Patch values data into updateProfileForm
+        this.updateProfileForm.patchValue({
+          fname: this.profileResponse.first_name,
+          lname: this.profileResponse.last_name,
+          email: this.profileResponse.email,
+
+          mobile: this.profileResponse.contact_number,
+          language: this.profileResponse.language,
+          country: this.profileResponse.country,
+          aboutMe: this.profileResponse.about_me
+        })
+
+        // this.spinner.hide()
+        // if (this.social != 'true') {
+        //   this.profileFName = profileObj.first_name;
+        //   this.profileLName = profileObj.last_name;
+        //   this.email = profileObj.email;
+        //   this.marketing = profileObj.industry;
+        //   this.profile = profileObj.profile;
+        //   this.company = profileObj.companyName;
+        //   this.contactNumber = profileObj.contact_number;
+        //   this.aboutMe = profileObj.about_me;
+        //   this.country = profileObj.country;
+        //   this.language = profileObj.language;
+        //   this.updateProfileForm.patchValue({
+        //     // name: this.profileName,
+        //     email: profileObj.email,
+        //     mobile: this.contactNumber,
+        //     profile: profileObj.profile,
+        //     country: this.country,
+        //     aboutMe: this.aboutMe,
+        //     fname: this.profileFName,
+        //     lname: this.profileLName,
+        //     language: this.language,
+
+        //   })
+        // } else {
+        //   console.log('From Social ===>');
+
+        //   this.profileName = this.signupFullName;
+        //   this.email = this.profileEmail;
+        //   this.marketing = this.profileCompany;
+        //   this.profile = this.profile;
+        //   this.company = this.profileCompany;
+        //   this.updateProfileForm.patchValue({
+        //     name: this.profileName,
+        //     email: this.email,
+        //     mobile: '',
+        //     profile: this.profile,
+        //     language: 'English',
+        //     country: 'UK',
+        //     aboutMe: 'It is a long established fact that a reader.',
+        //   })
+        // }
       })
-
-      console.log(this.profileResponse)
-
-      this.uploadedImage = this.profileResponse.profile
-
-      //Patch values data into updateProfileForm
-      this.updateProfileForm.patchValue({
-        fname: this.profileResponse.first_name,
-        lname: this.profileResponse.last_name,
-        email: this.profileResponse.email,
-
-        mobile: this.profileResponse.contact_number,
-        language: this.profileResponse.language,
-        country: this.profileResponse.country,
-        aboutMe: this.profileResponse.about_me
-      })
-
-      // this.spinner.hide()
-      // if (this.social != 'true') {
-      //   this.profileFName = profileObj.first_name;
-      //   this.profileLName = profileObj.last_name;
-      //   this.email = profileObj.email;
-      //   this.marketing = profileObj.industry;
-      //   this.profile = profileObj.profile;
-      //   this.company = profileObj.companyName;
-      //   this.contactNumber = profileObj.contact_number;
-      //   this.aboutMe = profileObj.about_me;
-      //   this.country = profileObj.country;
-      //   this.language = profileObj.language;
-      //   this.updateProfileForm.patchValue({
-      //     // name: this.profileName,
-      //     email: profileObj.email,
-      //     mobile: this.contactNumber,
-      //     profile: profileObj.profile,
-      //     country: this.country,
-      //     aboutMe: this.aboutMe,
-      //     fname: this.profileFName,
-      //     lname: this.profileLName,
-      //     language: this.language,
-
-      //   })
-      // } else {
-      //   console.log('From Social ===>');
-
-      //   this.profileName = this.signupFullName;
-      //   this.email = this.profileEmail;
-      //   this.marketing = this.profileCompany;
-      //   this.profile = this.profile;
-      //   this.company = this.profileCompany;
-      //   this.updateProfileForm.patchValue({
-      //     name: this.profileName,
-      //     email: this.email,
-      //     mobile: '',
-      //     profile: this.profile,
-      //     language: 'English',
-      //     country: 'UK',
-      //     aboutMe: 'It is a long established fact that a reader.',
-      //   })
-      // }
-    })
+    }
   }
 
   showHide() {
