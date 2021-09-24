@@ -10,12 +10,14 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  loginForm: any = FormGroup;
+  updateProfileForm: any = FormGroup;
   submitted = false;
   darkMode: boolean = false;
   hide: boolean = false;
   profileRecord:any;
   profileName:any;
+  profileFName:any;
+  profileLName:any;
   email:any;
   marketing:any;
   profile:any;
@@ -25,7 +27,14 @@ export class ProfileComponent implements OnInit {
   companyName:any;
   profileImage:any;
   profileEmail:any;
+  contactNumber :any;
+  aboutMe :any;
+  country:any;
+  language:any;
   profileCompany:any;
+  imagePath:any;
+  imageFile:any;
+  uploadedImage:any;
   constructor(
     private spinner: NgxSpinnerService,
     public _service: GobalService,
@@ -37,12 +46,13 @@ export class ProfileComponent implements OnInit {
     console.log("Test ngOninit 37")
     this.profileData()
     console.log("Test ngOninit 39")
-    this.loginForm = this.formBuilder.group(
+    this.updateProfileForm = this.formBuilder.group(
       {
-        name: ['', [Validators.required]],
+        // name: ['', [Validators.required]],
+        fname: ['', [Validators.required]],
+        lname: ['', [Validators.required]],
         email: ['', [Validators.required]],
         mobile: ['', [Validators.required]],
-        profile: ['', [Validators.required]],
         language: ['', [Validators.required]],
         country: ['', [Validators.required]],
         aboutMe: ['', [Validators.required]]
@@ -99,19 +109,19 @@ export class ProfileComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   get f() {
-    return this.loginForm.controls;
+    return this.updateProfileForm.controls;
   }
 
   onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.loginForm.invalid) {
+    if (this.updateProfileForm.invalid) {
       return;
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.updateProfileForm.value, null, 4));
   }
 
   // dark-light
@@ -127,6 +137,54 @@ export class ProfileComponent implements OnInit {
   }
   //end dark-light
 
+
+  updateProfile(){
+
+    console.log(this.updateProfileForm.value)
+
+    let request = {
+      // name          : this.updateProfileForm.value.name,
+      contact_number  : this.updateProfileForm.value.mobile,
+      email         : this.updateProfileForm.value.email,
+      language      : this.updateProfileForm.value.language,
+      country       : this.updateProfileForm.value.country,
+      about_me       : this.updateProfileForm.value.aboutMe,
+      first_name       : this.updateProfileForm.value.fname,
+      last_name       : this.updateProfileForm.value.lname,
+      profile       : this.uploadedImage.location,
+    }
+
+    console.log("Request passed")
+
+    this._service.profileUpdate(request).subscribe(res => {
+        let response = res;
+        console.log('134 update profile',response)
+        this.profileData();
+        this.hide = false;
+    })
+  }
+
+  imageUplaoad(event:any){
+    const allowedMimeTypes = ['image/png', 'image/jpeg', 'image/jpg'];
+
+    var formData = new FormData();
+    formData.append('image', event.target.files[0]);
+
+    if (
+      event.target.files[0] &&
+      allowedMimeTypes.includes(event.target.files[0].type)
+    ){
+      this.imagePath = event.target.files;
+      this.imageFile = this.imagePath[0];
+  }
+
+   console.log(formData)
+    this._service.uploadImage(formData).subscribe(res => {
+     this.uploadedImage = res.image
+      localStorage.setItem('profileImg',this.uploadedImage.location)
+    })
+  }
+
   profileData() {
     console.log('profile data api 131')
     // this.spinner.show();
@@ -138,38 +196,30 @@ export class ProfileComponent implements OnInit {
           profileObj = el
         })
         // this.spinner.hide()
-
-        // this.profileName = profileObj.first_name+' '+profileObj.last_name;
-        // this.email = profileObj.email
-        // this.marketing = profileObj.industry
-        // this.profile = profileObj.profile
-        // this.company = profileObj.companyName
-        // this.loginForm.patchValue({
-        //   name: this.profileName,
-        //   email: profileObj.email,
-        //   mobile: '',
-        //   profile: profileObj.profile,
-        //   language: 'English',
-        //   country: 'UK',
-        //   aboutMe: 'It is a long established fact that a reader.',
-        // })
-
-        console.log(this.social, 'social sign up 168')
+        console.log(profileObj, 'social sign up 168')
         if(this.social != 'true'){
-          this.profileName = profileObj.first_name+' '+profileObj.last_name;
+          // this.profileName = profileObj.first_name+' '+profileObj.last_name;
+          this.profileFName = profileObj.first_name;
+          this.profileLName = profileObj.last_name;
           this.email = profileObj.email;
           this.marketing = profileObj.industry;
           this.profile = profileObj.profile;
           this.company = profileObj.company;
-          console.log(this.profileName, 'normal 178')
-          this.loginForm.patchValue({
+          this.contactNumber = profileObj.contact_number;
+          this.aboutMe = profileObj.about_me;
+          this.country = profileObj.country;
+          this.language = profileObj.language;
+          this.updateProfileForm.patchValue({
             name: this.profileName,
             email: profileObj.email,
-            mobile: '',
+            mobile: this.contactNumber,
             profile: profileObj.profile,
-            language: '',
-            country: '',
-            aboutMe: '',
+            country: this.country,
+            aboutMe: this.aboutMe,
+            fname: this.profileFName,
+            lname: this.profileLName,
+            language: this.language,
+
           })
         } else {
           console.log('run','186')
@@ -179,7 +229,7 @@ export class ProfileComponent implements OnInit {
           this.profile = this.profileImage;
           this.company = this.profileCompany;
           console.log(this.profileName , 'socail 185')
-          this.loginForm.patchValue({
+          this.updateProfileForm.patchValue({
             name: this.profileName,
             email: this.email,
             mobile: '',
@@ -188,7 +238,7 @@ export class ProfileComponent implements OnInit {
             country: 'UK',
             aboutMe: 'It is a long established fact that a reader.',
           })
-          console.log(this.loginForm.value, '201 login form')
+          console.log(this.updateProfileForm.value, '201 login form')
         }
 
 

@@ -39,7 +39,9 @@ span.camera_img {
 }
 
 img.img_camera {
-    width: 73%;
+    width: 18%;
+    position: absolute;
+    left: 176px;
 }
 
 span.camera_img {
@@ -233,4 +235,8 @@ button.dt {
     .mr-top {
         margin-top: 12px;
     }
+}
+
+input#imgupload {
+    visibility: hidden;
 }
