@@ -93,7 +93,7 @@ export class ProfileComponent implements OnInit {
 
       let signUpData = JSON.parse(getLocalStorage);
       this.uploadedImage = signUpData.photoUrl
-      
+
       this.profileResponse["first_name"] = signUpData.firstName
       this.profileResponse["last_name"] = signUpData.lastName
       this.profileResponse["email"] = signUpData.email
@@ -102,6 +102,8 @@ export class ProfileComponent implements OnInit {
         this.profileResponse["language"] = signUpData.language ? signUpData.language : '',
         this.profileResponse["country"] = signUpData.country ? signUpData.country : '',
         this.profileResponse["about_me"] = signUpData.about_me ? signUpData.about_me : ''
+
+      this.patchUpdateValues();
     }
 
     else {
@@ -111,21 +113,21 @@ export class ProfileComponent implements OnInit {
           this.profileResponse = el
         })
 
-        console.log(this.profileResponse)
 
         this.uploadedImage = this.profileResponse.profile
+        this.patchUpdateValues();
 
         //Patch values data into updateProfileForm
-        this.updateProfileForm.patchValue({
-          fname: this.profileResponse.first_name,
-          lname: this.profileResponse.last_name,
-          email: this.profileResponse.email,
+        // this.updateProfileForm.patchValue({
+        //   fname: this.profileResponse.first_name,
+        //   lname: this.profileResponse.last_name,
+        //   email: this.profileResponse.email,
 
-          mobile: this.profileResponse.contact_number,
-          language: this.profileResponse.language,
-          country: this.profileResponse.country,
-          aboutMe: this.profileResponse.about_me
-        })
+        //   mobile: this.profileResponse.contact_number,
+        //   language: this.profileResponse.language,
+        //   country: this.profileResponse.country,
+        //   aboutMe: this.profileResponse.about_me
+        // })
 
         // this.spinner.hide()
         // if (this.social != 'true') {
@@ -171,6 +173,19 @@ export class ProfileComponent implements OnInit {
         // }
       })
     }
+  }
+
+  patchUpdateValues() {
+    this.updateProfileForm.patchValue({
+      fname: this.profileResponse.first_name,
+      lname: this.profileResponse.last_name,
+      email: this.profileResponse.email,
+
+      mobile: this.profileResponse.contact_number,
+      language: this.profileResponse.language,
+      country: this.profileResponse.country,
+      aboutMe: this.profileResponse.about_me
+    })
   }
 
   showHide() {
