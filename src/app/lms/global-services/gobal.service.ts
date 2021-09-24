@@ -58,18 +58,16 @@ export class GobalService {
       // Authorization: this.token,
       mimeType: 'multipart/form-data'
     });
-
+    console.log(headers,"profile update 57")
 
      return this.https.post(environment.lmsApiBaseUrl + 'upload',data ,{headers}).pipe(map(res => <any>res));
    }
 
    profileDataShow(){
-    console.log('Profile show global services')
     let headers :any = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: this.token,
+      'Authorization': this.token,
     });
-    console.log(headers, '68')
      return this.https.get(environment.lmsApiBaseUrl + 'showProfile',{headers}).pipe(map(res => <any>res));
 
    }
