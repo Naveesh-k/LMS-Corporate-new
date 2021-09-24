@@ -99,6 +99,7 @@ export class ProfileComponent implements OnInit {
       //this.profileCompany = signUpData.provider
       //this.companyName = signUpData.provider
     }
+    
 
     this._service.profileDataShow().subscribe(res => {
 
