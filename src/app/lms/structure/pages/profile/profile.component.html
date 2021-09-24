@@ -12,13 +12,14 @@
                                     <img class=" img-cur" src="{{profile}}" alt="" *ngIf="social != 'true'" />
                                     <img class=" img-cur" src="{{profileImage}}" alt="" *ngIf="social === 'true'" />
                                     <button class="btn btn-nn mt-3" (click)="showHide()">
-                    Edit Profile
-                  </button>
+                  Edit Profile
+                </button>
                                 </div>
                                 <div class="col-md-7 mar_gin">
                                     <div class="row">
                                         <div class="col-md-7 col-sm-6 col-6">
-                                            <h5 *ngIf="social != 'true'">{{profileName}}</h5>
+                                            <!-- <h5 *ngIf="social != 'true'">{{profileName}}</h5> -->
+                                            <h5 *ngIf="social != 'true'">{{profileFName}} {{profileLName}}</h5>
                                             <h5 *ngIf="social === 'true'">{{signupFullName}}</h5>
                                         </div>
                                         <div class="col-md-5 col-sm-6 col-6 text-right">
@@ -28,10 +29,10 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <p class="profile_sm">
-                                                Profile :<span>  </span>
+                                                Profile :<span> PIF Capital Pte Ltd </span>
                                             </p>
                                             <p class="profile_sm">
-                                                Mobile No. :<span> </span>
+                                                Mobile No. :<span>{{contactNumber}} </span>
                                             </p>
 
                                             <p class="profile_sm">
@@ -42,20 +43,20 @@
                                             <p class="profile_sm">
                                                 <!-- Language :<span> English, Indonesian, Japanese </span> -->
                                                 Language :
-                                                <span *ngIf="social != 'true'"> {{company}} </span>
+                                                <span *ngIf="social != 'true'"> {{language}} </span>
                                                 <span *ngIf="social === 'true'"> {{profileCompany}} </span>
                                             </p>
                                             <!-- <p class="profile_sm">
-                                                Country :<span> United States </span>
-                                            </p> -->
+                                              Country :<span> United States </span>
+                                          </p> -->
                                             <p class="profile_sm">
-                                                Country :<span> {{marketing}} </span>
+                                                Country :<span> {{country}} </span>
                                             </p>
                                             <p class="profile_sm mt-3">
                                                 About me <br />
                                                 <span class="amet_span">
-                                                  It is a long established fact that a reader.
-                                                </span>
+                        {{aboutMe}}
+                      </span>
                                             </p>
                                         </div>
                                     </div>
@@ -64,86 +65,86 @@
                         </div>
                     </div>
                     <!-- <div class="col-md-4 col-sm-4 col-12 mar_gin">
+                    <div
+                      class="bg_wh"
+                      [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+                    >
+                      <h5 class="quick_link_h5">Quick Links To Forum</h5>
+                      <hr />
                       <div
-                        class="bg_wh"
-                        [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'"
+                        class="bg_sl mb-3"
+                        [ngClass]="darkMode ? 'dark-bg' : 'light-profile-bg '"
                       >
-                        <h5 class="quick_link_h5">Quick Links To Forum</h5>
-                        <hr />
-                        <div
-                          class="bg_sl mb-3"
-                          [ngClass]="darkMode ? 'dark-bg' : 'light-profile-bg '"
-                        >
-                          <div class="row">
-                            <div class="col-md-10 col-sm-10 col-9">
-                              <a
-                                href="#"
-                                class="is-it_a"
-                                [ngClass]="darkMode ? 'dark-text' : 'light-text'"
-                              >
-                                <u> Is It The End Of Crypto? </u></a
-                              >
-                              <p class="profile_sm mt-2">BItcoin Fundamentals</p>
-                            </div>
-                            <div class="col-md-2 col-sm-2 col-3">
-                              <img
-                                class="w-100 pt-4 img_ar"
-                                src="../../../assets/images/Vector-arrow.png"
-                                alt=""
-                              />
-                            </div>
+                        <div class="row">
+                          <div class="col-md-10 col-sm-10 col-9">
+                            <a
+                              href="#"
+                              class="is-it_a"
+                              [ngClass]="darkMode ? 'dark-text' : 'light-text'"
+                            >
+                              <u> Is It The End Of Crypto? </u></a
+                            >
+                            <p class="profile_sm mt-2">BItcoin Fundamentals</p>
                           </div>
-                        </div>
-                        <div
-                          class="bg_sl mb-3"
-                          [ngClass]="darkMode ? 'dark-bg' : 'light-profile-bg '"
-                        >
-                          <div class="row">
-                            <div class="col-md-10 col-sm-10 col-9">
-                              <a
-                                href="#"
-                                class="is-it_a"
-                                [ngClass]="darkMode ? 'dark-text' : 'light-text'"
-                              >
-                                <u> Should I IPO My Business? </u></a
-                              >
-                              <p class="profile_sm mt-2">IPO Fundamentals</p>
-                            </div>
-                            <div class="col-md-2 col-sm-2 col-3">
-                              <img
-                                class="w-100 pt-4 img_ar"
-                                src="../../../assets/images/Vector-arrow.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="bg_sl mb-3"
-                          [ngClass]="darkMode ? 'dark-bg' : 'light-profile-bg '"
-                        >
-                          <div class="row">
-                            <div class="col-md-10 col-sm-10 col-9">
-                              <a
-                                href="#"
-                                class="is-it_a"
-                                [ngClass]="darkMode ? 'dark-text' : 'light-text'"
-                              >
-                                <u> FoolProofing My Business </u></a
-                              >
-                              <p class="profile_sm mt-2">Proofing Fundamentals</p>
-                            </div>
-                            <div class="col-md-2 col-sm-2 col-3">
-                              <img
-                                class="w-100 pt-4 img_ar"
-                                src="../../../assets/images/Vector-arrow.png"
-                                alt=""
-                              />
-                            </div>
+                          <div class="col-md-2 col-sm-2 col-3">
+                            <img
+                              class="w-100 pt-4 img_ar"
+                              src="../../../assets/images/Vector-arrow.png"
+                              alt=""
+                            />
                           </div>
                         </div>
                       </div>
-                  </div> -->
+                      <div
+                        class="bg_sl mb-3"
+                        [ngClass]="darkMode ? 'dark-bg' : 'light-profile-bg '"
+                      >
+                        <div class="row">
+                          <div class="col-md-10 col-sm-10 col-9">
+                            <a
+                              href="#"
+                              class="is-it_a"
+                              [ngClass]="darkMode ? 'dark-text' : 'light-text'"
+                            >
+                              <u> Should I IPO My Business? </u></a
+                            >
+                            <p class="profile_sm mt-2">IPO Fundamentals</p>
+                          </div>
+                          <div class="col-md-2 col-sm-2 col-3">
+                            <img
+                              class="w-100 pt-4 img_ar"
+                              src="../../../assets/images/Vector-arrow.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="bg_sl mb-3"
+                        [ngClass]="darkMode ? 'dark-bg' : 'light-profile-bg '"
+                      >
+                        <div class="row">
+                          <div class="col-md-10 col-sm-10 col-9">
+                            <a
+                              href="#"
+                              class="is-it_a"
+                              [ngClass]="darkMode ? 'dark-text' : 'light-text'"
+                            >
+                              <u> FoolProofing My Business </u></a
+                            >
+                            <p class="profile_sm mt-2">Proofing Fundamentals</p>
+                          </div>
+                          <div class="col-md-2 col-sm-2 col-3">
+                            <img
+                              class="w-100 pt-4 img_ar"
+                              src="../../../assets/images/Vector-arrow.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div> -->
                 </div>
                 <div class="row mt-5">
                     <div class="col-md-12">
@@ -245,68 +246,84 @@
                                     <!-- <img class="w-100 img-cur" src="{{profile}}" alt="" /> -->
                                     <img class="w-100 img-cur" src="{{profile}}" alt="" *ngIf="social != 'true'" />
                                     <img class="w-100 img-cur" src="{{profileImage}}" alt="" *ngIf="social === 'true'" />
+
                                     <div class="d-flex justify-content-end cam_mar">
-                                        <span class="camera_img">
-                      <img
-                        class="img_camera"
-                        src="../../../assets/images/camera.png"
-                        alt=""
-                      />
-                    </span>
+                                        <!-- <span class="camera_img">
+                    <img
+                      class="img_camera"
+                      src="../../../assets/images/camera.png"
+                      alt=""
+                    />
+                  </span> -->
+                                        <label for="imgupload">
+                                        <img
+                                        class="img_camera"
+                                        src="../../../assets/images/camera.png"
+                                        alt=""
+                                      />
+
+                  </label>
+                                        <input id="imgupload" type="file" class="file_type" (change)="imageUplaoad($event)" accept=" .png, .jpeg, .jpg">
                                     </div>
                                 </div>
                                 <div class="col-md-7 mar_gin"></div>
                             </div>
 
                             <!-- ------------------------ -->
-                            <form class="mt-5" [formGroup]="loginForm">
+                            <form class="mt-5" [formGroup]="updateProfileForm">
                                 <!-- (ngSubmit)="onSubmit()" -->
-                                <div class="form-row"></div>
+
                                 <div class="form-group">
-                                    <label class="fnt_wigt">Name</label>
-                                    <!-- <input type="text" class="form-control email_input" readonly formControlName="name" /> -->
-                                    <p class="email_p" *ngIf="social != 'true'">{{profileName}}</p>
+                                    <label class="fnt_wigt">First Name</label>
+                                    <input type="text" class="form-control email_input" formControlName="fname" />
+                                    <!-- <p class="email_p" *ngIf="social != 'true'">{{profileName}}</p> -->
                                     <p class="email_p" *ngIf="social === 'true'">{{signupFullName}}</p>
-                                    <div> </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="fnt_wigt">Last Name</label>
+                                    <input type="text" class="form-control email_input" formControlName="lname" />
+                                    <!-- <p class="email_p" *ngIf="social != 'true'">{{profileName}}</p> -->
+                                    <p class="email_p" *ngIf="social === 'true'">{{signupFullName}}</p>
 
                                 </div>
 
                                 <div class="form-group">
                                     <label class="fnt_wigt">Mobile No.</label>
-                                    <input type="text" class="form-control email_input" readonly formControlName="mobile" />
+                                    <input type="text" class="form-control email_input" formControlName="mobile" />
                                     <!-- <p class="mobile_p" *ngIf="social != 'true'"> </p> -->
                                 </div>
                                 <div class="form-group">
                                     <label class="fnt_wigt">Email</label>
-                                    <!-- <input type="text" class="form-control email_input" readonly formControlName="email" /> -->
+                                    <!-- <input type="text" class="form-control email_input"  formControlName="email" /> -->
                                     <p class="email_p" *ngIf="social != 'true'"> {{email}} </p>
                                     <p class="email_p" *ngIf="social === 'true'"> {{profileEmail}} </p>
 
                                 </div>
                                 <div class="form-group">
                                     <label class="fnt_wigt">Language</label>
-                                    <input type="text" class="form-control email_input" readonly formControlName="language" />
+                                    <input type="text" class="form-control email_input" formControlName="language" />
                                     <!-- <p class="email_p">English</p> -->
 
                                 </div>
                                 <div class="form-group">
                                     <label class="fnt_wigt">Country</label> <br />
-                                    <input type="text" class="form-control email_input" readonly formControlName="country" />
+                                    <input type="text" class="form-control email_input" formControlName="country" />
                                     <!-- <p class="email_p">UK</p> -->
                                 </div>
                                 <div class="form-group">
                                     <label class="fnt_wigt">About me</label> <br />
-                                    <input type="text" class="form-control email_input1" readonly formControlName="aboutMe" />
+                                    <input type="text" class="form-control email_input1" formControlName="aboutMe" />
                                     <!-- <p class="aboutMe_p">It is a long established fact that a reader.</p> -->
                                 </div>
 
                                 <div class="button_flx">
                                     <button class="btn btn-register mr-1" (click)="hideShow()">
-                    Cancel
-                  </button>
-                                    <button class="btn btn-update_pro mr-1">
-                    Update Profile
-                  </button>
+                  Cancel
+                </button>
+                                    <button class="btn btn-update_pro mr-1" (click)="updateProfile()">
+                  Update Profile
+                </button>
                                 </div>
                             </form>
                             <!-- ------------------------ -->
@@ -322,24 +339,24 @@
                                 </div>
                                 <div class="col-md-6 text-right">
                                     <label class="switch">
-                    <input type="checkbox" />
-                    <span class="slider round"></span>
-                  </label>
+                  <input type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
 
                                     <!-- <label class="switch">
-                    <input
-                      type="checkbox"
-                      [(ngModel)]="darkMode"
-                      (ngModelChange)="dark($event)"
-                    />
-                    <span class="slider round"></span>
-                  </label> -->
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="darkMode"
+                    (ngModelChange)="dark($event)"
+                  />
+                  <span class="slider round"></span>
+                </label> -->
 
                                     <br />
                                     <div class="dropdown">
                                         <button class="dropbtn">
-                      <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </button>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                  </button>
                                         <div class="dropdown-content">
                                             <a href="#">Link 1</a>
                                             <a href="#">Link 2</a>

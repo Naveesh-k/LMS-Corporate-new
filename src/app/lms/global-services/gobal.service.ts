@@ -73,4 +73,13 @@ export class GobalService {
      return this.https.get(environment.lmsApiBaseUrl + 'showProfile',{headers}).pipe(map(res => <any>res));
 
    }
+
+   profileUpdate(data:any){
+    console.log("profile update 76")
+   let headers :any = new HttpHeaders({
+     'Content-Type': 'application/json',
+     'Authorization': this.token,
+   });
+   return this.https.put(environment.lmsApiBaseUrl + 'updateUserProfile',data,{headers}).pipe(map(res => <any>res));
+  }
 }
