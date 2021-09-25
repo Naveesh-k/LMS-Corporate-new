@@ -73,22 +73,14 @@ export class GobalService {
 
   }
 
-  // profileUpdate(data: any) {
-  //   console.log("profile update 76")
-  //   let headers: any = new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //     'Authorization': this.token,
-  //   });
-  //   return this.https.put(environment.lmsApiBaseUrl + 'updateUserProfile', data, { headers }).pipe(map(res => <any>res));
-  // }
-
   profileUpdate(data: any) {
-    console.log("profile update 76")
+    console.log("Token", this.token)
+
     let headers: any = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.token,
     });
-    console.log("Header passed 91 global service", )
-    return this.https.put(environment.lmsApiBaseUrl + 'updateUserProfile', data, { headers });
+    return this.https.put(environment.lmsApiBaseUrl + 'updateUserProfile', data, { headers }).pipe(map(res => <any>res));
   }
+
 }
