@@ -95,6 +95,17 @@ export class SignUpComponent implements OnInit {
       this.tokenId = idToken ? idToken : '';
       this.provider = this.checkSignUptype ? signUpData.provider : '';
 
+      this._service.getSocialLogin({
+        email: signUpData.email,
+        social_id: idToken
+      }).subscribe((res => {
+        localStorage.setItem('socialtoken', JSON.stringify({
+          isSocial: true,
+          token: idToken
+        }))
+      }))
+
+
       console.log(this.provider)
     }
 
