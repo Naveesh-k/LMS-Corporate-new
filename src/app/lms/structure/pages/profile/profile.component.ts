@@ -177,7 +177,7 @@ export class ProfileComponent implements OnInit {
       profile: this.uploadedImage
     }
 
-    console.log(request)
+    console.log("Profile 180" , request)
 
     this._service.profileUpdate(request).subscribe(res => {
       let response = res;
@@ -202,8 +202,7 @@ export class ProfileComponent implements OnInit {
     }
 
     this._service.uploadImage(formData).subscribe(res => {
-      console.log("profile 184", res)
-      this.uploadedImage = res.image
+      this.uploadedImage = res.image.location
       localStorage.setItem('profileImg', this.uploadedImage)
     })
   }
