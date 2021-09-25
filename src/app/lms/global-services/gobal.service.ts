@@ -73,11 +73,82 @@ export class GobalService {
    }
 
    profileUpdate(data:any){
-    console.log("profile update 76")
    let headers :any = new HttpHeaders({
      'Content-Type': 'application/json',
      'Authorization': this.token,
    });
    return this.https.put(environment.lmsApiBaseUrl + 'updateUserProfile',data,{headers}).pipe(map(res => <any>res));
   }
+
+  // Course provider / developer API start
+   createCourse(data:any){
+   let headers :any = new HttpHeaders({
+     'Content-Type': 'application/json',
+     'Authorization': this.token,
+   });
+   return this.https.post(environment.lmsApiBaseUrl + 'createCourse',data,{headers}).pipe(map(res => <any>res));
+  }
+   getCourse(){
+   let headers :any = new HttpHeaders({
+     'Content-Type': 'application/json',
+     'Authorization': this.token,
+   });
+   return this.https.get(environment.lmsApiBaseUrl + 'getAllCourse',{headers}).pipe(map(res => <any>res));
+  }
+   updateCourse(data:any,id:any){
+   let headers :any = new HttpHeaders({
+     'Content-Type': 'application/json',
+     'Authorization': this.token,
+   });
+   const url = `${environment.lmsApiBaseUrl}updateCourse/${id}`;
+   return this.https.put(url, data,{headers}).pipe(map(res => <any>res));
+  }
+   deleteCourse(id:any){
+   let headers :any = new HttpHeaders({
+     'Content-Type': 'application/json',
+     'Authorization': this.token,
+   });
+   const url = `${environment.lmsApiBaseUrl}deleteCourse/${id}`;
+   return this.https.get(url,{headers}).pipe(map(res => <any>res));
+  }
+
+  // Add leacture
+  addLecture(data:any,id:any){
+    let headers :any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token,
+    });
+    const url = `${environment.lmsApiBaseUrl}addLecture/${id}`;
+    return this.https.post(url, data,{headers}).pipe(map(res => <any>res));
+   }
+   // Add quiz
+   addQuiz(data:any,id:any){
+    let headers :any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token,
+    });
+    const url = `${environment.lmsApiBaseUrl}create_quiz/${id}`;
+    return this.https.post(url, data,{headers}).pipe(map(res => <any>res));
+   }
+   // Quiz list
+   quizList(id:any){
+    let headers :any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token,
+    });
+    console.log("check header add lecture =>",headers)
+    const url = `${environment.lmsApiBaseUrl}showall_quiz/${id}`;
+    return this.https.get(url,{headers}).pipe(map(res => <any>res));
+   }
+   // lecture list
+   lectureList(id:any){
+    let headers :any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token,
+    });
+    console.log("check header add lecture =>",headers)
+    const url = `${environment.lmsApiBaseUrl}readLecture/${id}`;
+    return this.https.get(url,{headers}).pipe(map(res => <any>res));
+   }
+
 }

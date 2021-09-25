@@ -125,6 +125,12 @@ p.current_p {
     cursor: pointer;
 }
 
+input.input_img {
+    position: absolute;
+    top: 136px;
+    left: 284px;
+}
+
 .bg-grenish-box {
     background: #F7F8F9;
     border-radius: 21px;
@@ -133,7 +139,7 @@ p.current_p {
     width: 89%;
     margin: 0 0 0 23px;
     cursor: pointer;
-    border: 1px solid #229B9F;
+    border: 2px solid #229B9F;
 }
 
 img.plant_img {
@@ -494,9 +500,27 @@ select.select_colr {
 }
 
 .form-row input {
-    background-color: #F6F6F6;
+    // background-color: #F6F6F6;
     border: none;
     border-radius: 0;
+}
+
+.radio_input {
+    background: #ffff;
+    padding: 6px 11px;
+    margin: 7px 0;
+    width: 52%;
+    border-radius: 12px;
+}
+
+input.inp_option {
+    margin: 0 14px;
+    width: 87%;
+    border: none;
+}
+
+input.frm-wi {
+    border-radius: 8px !important;
 }
 
 .cp-free-side small {

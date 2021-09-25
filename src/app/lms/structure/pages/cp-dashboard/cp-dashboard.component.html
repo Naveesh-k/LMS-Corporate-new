@@ -4,322 +4,309 @@
 
             <app-common-header></app-common-header>
 
-            <!-- <div class="pl-2 pt-2 pb-2 pad">
-                <div class="row mt-4 px-3">
-                    <div class="col-md-12 border-bottom pb-3 px-0">
-                        <div class="d-flex justify-content-between">
-                            <h4>Welcome Back <span> Doug!!! </span></h4>
-                            <a class="btn btn_course">&#43; Create course</a>
-                        </div>
-                    </div>
-                </div>
-                <section class="widget-section mt-4">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="widget">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <img src="../../../../../assets/images/Icons.png" alt="">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p class="wid_title">Total Creations</p>
-                                            <h5>10</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="widget">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <img src="../../../../../assets/images/Icons (1).png" alt="">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p class="wid_title">Total Creations</p>
-                                            <h5>10</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="widget">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <img src="../../../../../assets/images/Icons (2).png" alt="">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p class="wid_title">Total Creations</p>
-                                            <h5>10</h5>
-                                        </div>
-                                    </div>
+
+
+
+            <!-- ------------------- -->
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" *ngIf="changeTab === 'home'" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <div class="pl-2 pt-2 pb-2 pad" *ngIf="!showMain">
+                        <div class="row mt-4 px-3">
+                            <div class="col-md-12 border-bottom pb-3 px-0">
+                                <div class="d-flex justify-content-between">
+                                    <h4>Welcome Back <span> Doug!!! </span></h4>
+                                    <a class="btn btn_course" (click)="show_select()">&#43; Create course</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <section class="widget-slide mt-5">
-                    <div class="container-fluid">
-                        <div class="row mt-4">
-                            <div class="col-md-8">
-                                <h5>Guide</h5>
+                        <section class="widget-section mt-4">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="widget">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="../../../../../assets/images/Icons.png" alt="">
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p class="wid_title">Total Creations</p>
+                                                    <h5>10</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="widget">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="../../../../../assets/images/Icons (1).png" alt="">
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p class="wid_title">Total Creations</p>
+                                                    <h5>10</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="widget">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="../../../../../assets/images/Icons (2).png" alt="">
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p class="wid_title">Total Creations</p>
+                                                    <h5>10</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="widget-slide mt-5">
+                            <div class="container-fluid">
+                                <div class="row mt-4">
+                                    <div class="col-md-8">
+                                        <h5>Guide</h5>
+                                        <div class="row mt-3">
+                                            <div class="col-md-5 pr-4">
+                                                <div class="widget-wid">
+                                                    <div class="row">
+                                                        <div class="col-md-12 text-right">
+                                                            <img class="pro_img" src="../../../../../assets/images/Ellipse 6.png" alt="">
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <p class="new_here_p">New Here?</p>
+                                                            <p class="guid_p">Guide to <br> new course <br> Creation!
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 pl-4">
+                                                <div class="widget-wid">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p class="new_here_p mt-5">Existing Creator?</p>
+                                                            <p class="guid_p">View Your Courses
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-right">
+                                        <div class="text-right">
+                                            <i class="fa fa-chevron-left mr-3" aria-hidden="true"></i>
+                                            <i class="fa fa-chevron-right ml-3" aria-hidden="true"></i>
+                                        </div>
+                                        <img class="rectangle_img mt-3" src="../../../../../assets/images/Rectangle 71.png" alt="">
+                                        <div class="text-left">
+                                            <h6 class="master_p">Mastering Capital Wisdom</h6>
+                                            <p class="current_p">Currently at pricing stage</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="todays-progress mt-5">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h5>Today’s Progress</h5>
+                                    </div>
+                                </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-5 pr-4">
-                                        <div class="widget-wid">
+                                    <div class="col-md-5">
+                                        <div class="widget_small">
                                             <div class="row">
-                                                <div class="col-md-12 text-right">
-                                                    <img class="pro_img" src="../../../../../assets/images/Ellipse 6.png" alt="">
+                                                <div class="col-md-1"></div>
+                                                <div class="col-md-5">
+                                                    <span class="power_small">Powerful Habits</span>
+                                                    <p class="percent_span">75%</p>
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <p class="new_here_p">New Here?</p>
-                                                    <p class="guid_p">Guide to <br> new course <br> Creation!
-                                                    </p>
+                                                <div class="col-md-6 text-right">
+                                                    <img class="round_img" src="../../../../../assets/images/round-square.png" alt="">
+                                                    <span class="power_small-1">In Progress</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-5 pl-4">
-                                        <div class="widget-wid">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <div class="widget_small">
                                             <div class="row">
-                                                <div class="col-md-12">
-                                                    <p class="new_here_p mt-5">Existing Creator?</p>
-                                                    <p class="guid_p">View Your Courses
-                                                    </p>
+                                                <div class="col-md-1"></div>
+                                                <div class="col-md-5">
+                                                    <span class="power_small">Time Management</span>
+                                                    <p class="percent_span">11%</p>
+                                                </div>
+                                                <div class="col-md-6 text-right">
+                                                    <img class="round_img" src="../../../../../assets/images/round-square.png" alt="">
+                                                    <span class="power_small-1">In Progress</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 text-right">
-                                <div class="text-right">
-                                    <i class="fa fa-chevron-left mr-3" aria-hidden="true"></i>
-                                    <i class="fa fa-chevron-right ml-3" aria-hidden="true"></i>
-                                </div>
-                                <img class="rectangle_img mt-3" src="../../../../../assets/images/Rectangle 71.png" alt="">
-                                <div class="text-left">
-                                    <h6 class="master_p">Mastering Capital Wisdom</h6>
-                                    <p class="current_p">Currently at pricing stage</p>
-                                </div>
+                        </section>
+
+                    </div>
+                    <div class="pl-2 pt-2 pb-2 pad" *ngIf="showSelect">
+                        <div class="row mt-4 px-3">
+                            <div class="col-md-12 border-bottom pb-1 px-0">
+                                <h4>What product do you want to create? </h4>
                             </div>
                         </div>
+                        <section class="mt-3">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="bg_color">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center" *ngFor="let topic of topics; index as i">
+                                                    <div class="select_box" [ngClass]="[topic.active === true ? 'bg-grenish-box' : 'select_box'
+                                                ]" (click)="selectedTopics(topic)">
+                                                        <img [src]='topic.image'>
+                                                        <h3 class="h3_course">{{topic.name}}</h3>
+                                                        <p class="with_para">{{topic.para}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-5">
+                                                <div class="col-md-12 text-center">
+                                                    <a class="btn btn_next" (click)="show_createForm()">Next</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
-                </section>
-                <section class="todays-progress mt-5">
-                    <div class="container-fluid">
-                        <div class="row">
+                    <div class="pl-2 pt-2 pb-2 pad" *ngIf="showCourse">
+                        <div class="row mt-4 px-3">
+                            <div class="col-md-12 border-bottom pb-1 px-0">
+                                <h4>Course Information </h4>
+                            </div>
+                            <p class="lorem_p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                                a type specimen book.</p>
+                        </div>
+                        <div class="row mt-4">
                             <div class="col-md-12">
-                                <h5>Today’s Progress</h5>
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-5">
-                                <div class="widget_small">
+                                <div class="bg_colorr">
                                     <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-5">
-                                            <span class="power_small">Powerful Habits</span>
-                                            <p class="percent_span">75%</p>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <img class="round_img" src="../../../../../assets/images/round-square.png" alt="">
-                                            <span class="power_small-1">In Progress</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-5">
-                                <div class="widget_small">
-                                    <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-5">
-                                            <span class="power_small">Time Management</span>
-                                            <p class="percent_span">11%</p>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <img class="round_img" src="../../../../../assets/images/round-square.png" alt="">
-                                            <span class="power_small-1">In Progress</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                                        <div class="col-md-9">
+                                            <form [formGroup]="createCourseForm" (ngSubmit)="courseCreate()">
+                                                <div class="form-row">
+                                                    <div class="form-group col-12">
+                                                        <label class="title-label">Course title</label>
+                                                        <input type="text" formControlName="title" class="form-control form-input" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+                                                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.title.errors.required">Title is required</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-12">
+                                                        <label class="title-label">Course subtitle (optional)</label>
+                                                        <input type="text" formControlName="courseSubtitle" class="form-control form-input" [ngClass]="{ 'is-invalid': submitted && f.courseSubtitle.errors }" />
+                                                        <div *ngIf="submitted && f.courseSubtitle.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.courseSubtitle.errors.required">Course Subtitle is required</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-12">
+                                                        <label class="title-label">Select author</label>
+                                                        <input type="text" formControlName="selectAuthor" class="form-control form-input" [ngClass]="{ 'is-invalid': submitted && f.selectAuthor.errors }" />
+                                                        <div *ngIf="submitted && f.selectAuthor.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.selectAuthor.errors.required">Select Author is required</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-            </div> -->
-            <!-- ------------------- -->
-            <!-- <div class="pl-2 pt-2 pb-2 pad">
-                <div class="row mt-4 px-3">
-                    <div class="col-md-12 border-bottom pb-1 px-0">
-                        <h4>What product do you want to create? </h4>
+                                                <div class="text-right mt-3">
+
+                                                    <button class="btn btn-register mr-1">Next</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <section class="mt-3">
-                    <div class="container">
-                        <div class="row">
+                    <div class="pl-2 pt-2 pb-2" *ngIf="showCurru">
+                        <div class="row mt-4 px-3">
+                            <div class="col-md-4">
+                                <div class="input_parent" [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'">
+                                    <input [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'" type="text" placeholder="Search" class="input_search-filed" />
+                                    <button class="btn btn_search">
+                    <i class="fa fa-search" [ngClass]="darkMode ? 'dark-text' : 'light-text'" aria-hidden="true"></i>
+                  </button>
+                                </div>
+                            </div>
+                            <div class="col-md-8"></div>
+                        </div>
+                    </div>
+                    <div class="pl-2 pt-2 pb-2" *ngIf="showCurru">
+                        <div class="row mt-4 px-3">
                             <div class="col-md-12">
-                                <div class="bg_color">
-                                    <div class="row">
-                                        <div class="col-md-6 text-center" *ngFor="let topic of topics; index as i">
-                                            <div class="select_box" [ngClass]="[topic.active === true ? 'bg-grenish-box' : 'select_box'
-                                            ]" (click)="selectedTopics(topic)">
-                                                <img [src]='topic.image'>
-                                                <h3 class="h3_course">{{topic.name}}</h3>
-                                                <p class="with_para">{{topic.para}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-5">
-                                        <div class="col-md-12 text-center">
-                                            <a class="btn btn_next">Next</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <table class="table table-striped">
+                                    <thead class="table">
+                                        <tr class="tr_border">
+                                            <td scope="col" class="td_check">
+                                                <input type="checkbox" class="check">
+                                            </td>
+                                            <td scope="col" class="td_title">Course Title</td>
+                                            <td scope="col" class="lorem_p">Course Subtitle</td>
+                                            <td scope="col"></td>
+                                            <td scope="col"></td>
+                                            <td scope="col"></td>
+                                            <td scope="col" class="td_field_btn">
+                                                <a class="btn btn-draft"> Draft</a>
+                                            </td>
+                                            <td scope="col" class="td_field">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                <i class="fa fa-trash px-4" aria-hidden="true"></i>
+                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of listOfCourse">
+                                            <th scope="row" class="td_check">
+                                                <input type="checkbox" class="check">
+                                            </th>
+                                            <td class="td_title">{{item.course_title}}</td>
+                                            <td scope="col" class="lorem_p">{{item.course_subtitle}}</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td scope="col" class="td_field_btn">
+                                                <a class="btn btn-active"> Active</a>
+                                            </td>
+                                            <td scope="col" class="td_field">
+                                                <i class="fa fa-pencil" aria-hidden="true" data-toggle="modal" data-target="#exampleModal" (click)="editDetail(item)"></i>
+                                                <i class="fa fa-trash px-4" data-toggle="modal" data-target="#deleteModal" (click)="deleteDetail(item)" aria-hidden="true"></i>
+                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div> -->
-            <!-- ----------Course Info tab wale--------- -->
-            <div class="pl-2 pt-2 pb-2 pad" *ngIf="showCourse">
-                <div class="row mt-4 px-3">
-                    <div class="col-md-12 border-bottom pb-1 px-0">
-                        <h4>Course Information </h4>
-                    </div>
-                    <p class="lorem_p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book.</p>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <div class="bg_colorr">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                                        <div class="form-row">
-                                            <div class="form-group col-12">
-                                                <label class="title-label">Course title</label>
-                                                <input type="text" formControlName="title" class="form-control form-input" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
-                                                <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                                                    <div *ngIf="f.title.errors.required">Title is required</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-12">
-                                                <label class="title-label">Course subtitle (optional)</label>
-                                                <input type="text" formControlName="courseSubtitle" class="form-control form-input" [ngClass]="{ 'is-invalid': submitted && f.courseSubtitle.errors }" />
-                                                <div *ngIf="submitted && f.courseSubtitle.errors" class="invalid-feedback">
-                                                    <div *ngIf="f.courseSubtitle.errors.required">Course Subtitle is required</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-12">
-                                                <label class="title-label">Select author</label>
-                                                <input type="text" formControlName="selectAuthor" class="form-control form-input" [ngClass]="{ 'is-invalid': submitted && f.selectAuthor.errors }" />
-                                                <div *ngIf="submitted && f.selectAuthor.errors" class="invalid-feedback">
-                                                    <div *ngIf="f.selectAuthor.errors.required">Select Author is required</div>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="text-right mt-3">
-                                            <button class="btn btn-register mr-1" (click)="circulumShow()">Next</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-md-3"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ----------Cericulum tab wale--------- -->
-            <div class="pl-2 pt-2 pb-2" *ngIf="showCurru">
-                <div class="row mt-4 px-3">
-                    <div class="col-md-4">
-                        <div class="input_parent" [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'">
-                            <input [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'" type="text" placeholder="Search" class="input_search-filed" />
-                            <button class="btn btn_search">
-                <i class="fa fa-search" [ngClass]="darkMode ? 'dark-text' : 'light-text'" aria-hidden="true"></i>
-              </button>
-                        </div>
-                    </div>
-                    <div class="col-md-8"></div>
-                </div>
-            </div>
-            <div class="pl-2 pt-2 pb-2" *ngIf="showCurru">
-                <div class="row mt-4 px-3">
-                    <div class="col-md-12">
-                        <table class="table table-striped">
-                            <thead class="table">
-                                <tr class="tr_border">
-                                    <td scope="col" class="td_check">
-                                        <input type="checkbox" class="check">
-                                    </td>
-                                    <td scope="col" class="td_title">First Lecture</td>
-                                    <td scope="col" class="lorem_p">Lorem ipsum dolor sit amet, consectetur...</td>
-                                    <td scope="col"></td>
-                                    <td scope="col"></td>
-                                    <td scope="col"></td>
-                                    <td scope="col" class="td_field_btn">
-                                        <a class="btn btn-draft"> Draft</a>
-                                    </td>
-                                    <td scope="col" class="td_field">
-                                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                                        <i class="fa fa-trash px-4" aria-hidden="true"></i>
-                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row" class="td_check">
-                                        <input type="checkbox" class="check">
-                                    </th>
-                                    <td class="td_title">New Lecture</td>
-                                    <td scope="col" class="lorem_p">Lorem ipsum dolor sit amet, consectetur...</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td scope="col" class="td_field_btn">
-                                        <a class="btn btn-active"> Active</a>
-                                    </td>
-                                    <td scope="col" class="td_field">
-                                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                                        <i class="fa fa-trash px-4" aria-hidden="true"></i>
-                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="td_check">
-                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                    </th>
-                                    <td class="td_title-1">Add New Lecture</td>
-                                    <td scope="col" class="lorem_p"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td scope="col" class="td_field_btn">
-                                    </td>
-                                    <td scope="col" class="td_field">
-
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- ------------------- -->
-            <div class="tab-content" id="myTabContent" *ngIf="show">
-                <div class="tab-pane fade show active " id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <section>
+                    <!-- <section *ngIf="!show">
                         <div class="row pt-3">
                             <div class="col-md-4">
                                 <div>
@@ -417,24 +404,20 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> -->
                 </div>
 
                 <!-------------------------- -->
-                <div class="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div id="profile" *ngIf="changeTab === 'profile'" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="row mb-4">
                         <div class="col-md-3">
                             <div class="input_parent" [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'">
                                 <input [ngClass]="darkMode ? 'dark-card-bg' : 'light-card-bg'" type="text" placeholder="Search" class="input_search-filed" />
                                 <button class="btn btn_search">
-                  <i class="fa fa-search" [ngClass]="darkMode ? 'dark-text' : 'light-text'" aria-hidden="true"></i>
-                </button>
+            <i class="fa fa-search" [ngClass]="darkMode ? 'dark-text' : 'light-text'" aria-hidden="true"></i>
+          </button>
                             </div>
-                            <!-- <nav class="navbar navbar-light bg-light">
-                                <form class="form-inline">
-                                    <input class="form-control  p-4  mt-5 mb-2 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                </form>
-                            </nav> -->
+
                         </div>
                         <div class="col-md-9"></div>
                     </div>
@@ -455,9 +438,14 @@
                                         <p class="mb-5">Use the file uploader to upload video, audio, PDFs, or any other files into your lecture.
                                         </p>
                                     </div>
-                                    <div class="double">
+                                    <label for="fileHide">
+                                       <div class="double">
                                         <h6>Click to browse or <br>drag and drop your files</h6>
                                     </div>
+                                    <input id="imgupload" type="file" class="input_img" (change)="imageUplaoad($event)"
+                                    accept=" .png, .jpeg, .jpg">
+                                  </label>
+
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-5 mt-3">
                                         <button class="btn  cp-desh-button2 me-md-2 mb-5 p-3" type="button">Next</button>
                                     </div>
@@ -470,12 +458,13 @@
                                     </div>
                                     <div class="NgxEditor__Wrapper back-key">
                                         <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-                                        <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false" [placeholder]="'Type here...'">
+                                        <ngx-editor [editor]="editor" [(ngModel)]="lecture.addTextEditor" [disabled]="false" [placeholder]="'Type here...'">
                                         </ngx-editor>
                                     </div>
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
                                         <button class="btn btn-secondary3 me-md-2 mt-5 p-3 mr-4">Cancel</button>
                                         <button class="btn  cp-desh-button2 me-md-2 mt-5 p-3" type="button">Add Text</button>
+                                        <!-- (click)="addLecture()" -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
@@ -487,34 +476,122 @@
                                             <input type="checkbox"><label class="ml-4 ">This quiz will be graded</label>
                                         </div>
                                     </div>
-                                    <div class="add-key-baord">
-                                        <p class="pt-3 mb-2"><b>Type question here</b></p>
-                                        <div class="form-row ">
-                                            <div class="form-group col">
-                                                <input type="text" class="form-control frm-wi input_bg p-4 " placeholder="IPO Road">
+                                    <form [formGroup]="quizForm">
+                                        <div class="add-key-baord">
+                                            <p class="pt-3 mb-2"><b>Type question here</b></p>
+                                            <div class="form-row ">
+                                                <div class="form-group col">
+                                                    <input type="text" formControlName="question" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.question.errors }" class="form-control frm-wi input_bg p-4 " placeholder="IPO Road">
+                                                    <div *ngIf="quizFormsubmitted && quizF.question.errors" class="invalid-feedback">
+                                                        <div *ngIf="quizF.question.errors.required">Question is required</div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="back_radio">
-                                                <input class="radio_btn" type="checkbox" id="" name="" value="">
-                                                <div class="form-group col mb-0 ml-3">
-                                                    <input type="text" class="form-control frm-wi input_bg p-4" placeholder="Answer choices">
+                                            <div class="form-row">
+                                                <div class="back_radio">
+                                                    <input class="radio_btn " type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                                    <div class="form-group col mb-0 ml-3">
+                                                        <input type="text" class="form-control frm-wi input_bg p-4" placeholder="Answer choices">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="radio_input ">
+                                                <!-- <span> <input type="radio" id="first" name="fav_language" value="first"> </span> -->
+                                                <input class="ml-2" formControlName="optionFirst" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.optionFirst.errors }" class="inp_option" placeholder="Option 1" type="text">
+                                                <div *ngIf="quizFormsubmitted && quizF.optionFirst.errors" class="invalid-feedback">
+                                                    <div *ngIf="quizF.optionFirst.errors.required">Option first is required</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="radio_input ">
+                                                <!-- <span> <input type="radio" id="second" name="fav_language" value="second"> </span> -->
+                                                <input class="ml-2" formControlName="optionSec" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.optionSec.errors }" class="inp_option" placeholder="Option 2" type="text">
+                                                <div *ngIf="quizFormsubmitted && quizF.optionSec.errors" class="invalid-feedback">
+                                                    <div *ngIf="quizF.optionSec.errors.required">Option second is required</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="radio_input ">
+                                                <!-- <span> <input type="radio" id="third" name="fav_language" value="third"> </span> -->
+                                                <input class="ml-2" formControlName="optionThird" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.optionThird.errors }" class="inp_option" placeholder="Option 3" type="text">
+                                                <div *ngIf="quizFormsubmitted && quizF.optionThird.errors" class="invalid-feedback">
+                                                    <div *ngIf="quizF.optionThird.errors.required">Option third is required</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="radio_input ">
+                                                <!-- <span> <input type="radio" id="fourth" name="fav_language" value="fourth"> </span> -->
+                                                <input class="ml-2" formControlName="optionForth" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.optionForth.errors }" class="inp_option" placeholder="Option 4" type="text">
+                                                <div *ngIf="quizFormsubmitted && quizF.optionForth.errors" class="invalid-feedback">
+                                                    <div *ngIf="quizF.optionForth.errors.required">First Option fourth is required</div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="d-grid gap-2 d-flex  justify-content-end">
-                                        <button class="btn btn-secondary3 me-md-2 mt-5 p-3 mr-4">Cancel</button>
-                                        <button class="btn  cp-desh-button2 me-md-2 mt-5 p-3 mr-4" type="button">Add question</button>
-                                    </div>
+                                        <div class="d-grid gap-2 d-flex  justify-content-end">
+                                            <button class="btn btn-secondary3 me-md-2 mt-5 p-3 mr-4">Cancel</button>
+                                            <button class="btn  cp-desh-button2 me-md-2 mt-5 p-3 mr-4" type="button" (click)="quizAdd()">Add question</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="pl-2 pt-2 pb-2">
+                        <div class="row mt-4 px-3">
+                            <div class="col-md-12">
+                                <table class="table table-striped">
+                                    <thead class="table">
+                                        <tr class="tr_border">
+                                            <td scope="col" class="td_check">
+                                                <input type="checkbox" class="check">
+                                            </td>
+                                            <td scope="col" class="td_title">Course Id</td>
+                                            <td scope="col" class="lorem_p">Key point</td>
+                                            <td scope="col"></td>
+                                            <td scope="col">Image</td>
+                                            <td scope="col"></td>
+                                            <td scope="col" class="td_field_btn">
+                                                <a class="btn btn-draft"> Draft</a>
+                                            </td>
+                                            <td scope="col" class="td_field">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                <i class="fa fa-trash px-4" aria-hidden="true"></i>
+                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of lectureList">
+                                            <th scope="row" class="td_check">
+                                                <input type="checkbox" class="check">
+                                            </th>
+                                            <td class="td_title">{{item.course_id}}</td>
+                                            <td scope="col" class="lorem_p">{{item.key_point}}</td>
+                                            <td></td>
+                                            <td> <img src="{{item.url}}" alt=""> </td>
+                                            <td></td>
+                                            <td scope="col" class="td_field_btn">
+                                                <a class="btn btn-active"> Active</a>
+                                            </td>
+                                            <td scope="col" class="td_field">
+                                                <i class="fa fa-pencil" aria-hidden="true" data-toggle="modal" data-target="#exampleModal"></i>
+                                                <!-- (click)="editDetail(item)" -->
+                                                <i class="fa fa-trash px-4" data-toggle="modal" data-target="#deleteModal" aria-hidden="true"></i>
+                                                <!-- (click)="deleteDetail(item)" -->
+                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div id="contact" *ngIf="changeTab === 'contact'" role="tabpanel" aria-labelledby="contact-tab">
                     <div class="row">
                         <div class="col">
                             <nav class="navbar navbar-light bg-light">
@@ -1189,19 +1266,82 @@
                     <div>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Add information</a>
+                                <a class="nav-link active" id="home-tab" (click)="tabChange('home')" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Add information</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Add curriculum</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" (click)="tabChange('profile')" role="tab" aria-controls="profile" aria-selected="false">Add curriculum</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Add a price</a>
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" (click)="tabChange('contact')" role="tab" aria-controls="contact" aria-selected="false">Add a price</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- ------------------- -->
+
+            <!-- update course modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Course Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                        </div>
+                        <div class="modal-body">
+                            <form [formGroup]="editCourseForm">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" formControlName="title" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" formControlName="courseSubtitle" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Author</label>
+                                    <input type="text" formControlName="selectAuthor" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Date</label>
+                                    <input type="text" formControlName="startDate" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <input type="text" formControlName="status" class="form-control" />
+                                </div>
+                            </form>
+                            <div class="text-center">
+                                <button class="btn btn-primary mr-1" data-dismiss="modal" (click)="courseUpdate()">Update</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- delete course modal -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">Delete Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                        </div>
+                        <div class="modal-body">
+                            <h3>Are you sure want to delete ?</h3>
+                            <div class="text-right">
+                                <button class="btn btn-primary mr-1" data-dismiss="modal" (click)="courseDelete()">Delete</button>
+                                <button class="btn btn-primary mr-1" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
         </main>
     </div>
