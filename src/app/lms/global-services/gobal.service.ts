@@ -10,6 +10,7 @@ import { environment } from '../../../environments/environment';
 export class GobalService {
   token: any = localStorage.getItem('token')
 
+
   globalObject: any = {
     signup_data: '',
     signupType: false
@@ -17,7 +18,10 @@ export class GobalService {
   globalBehaviour = new BehaviorSubject(this.globalObject);
   globalService = this.globalBehaviour.asObservable();
 
-  constructor(private https: HttpClient) { }
+  constructor(private https: HttpClient) { 
+    //Check Token type
+    console.log("Api service global 23" , this.globalObject.signupType)
+  }
 
   getSignUpData(data: any) {
     this.globalObject.signup_data = data;
