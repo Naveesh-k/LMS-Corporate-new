@@ -78,6 +78,8 @@ export class SignUpComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    console.log("Signup data 82" )
     let checkSignup: any = localStorage.getItem('signupType')
     this.checkSignUptype = checkSignup === 'true'
     let getLocalStorage: any = localStorage.getItem('userDetail');
@@ -95,15 +97,6 @@ export class SignUpComponent implements OnInit {
       this.tokenId = idToken ? idToken : '';
       this.provider = this.checkSignUptype ? signUpData.provider : '';
 
-      this._service.getSocialLogin({
-        email: signUpData.email,
-        social_id: idToken
-      }).subscribe((res => {
-        localStorage.setItem('socialtoken', JSON.stringify({
-          isSocial: true,
-          token: idToken
-        }))
-      }))
 
 
       console.log(this.provider)
