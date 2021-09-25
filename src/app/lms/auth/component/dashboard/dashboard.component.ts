@@ -254,7 +254,7 @@ export class DashboardComponent implements OnInit {
     }
     this._service.getSocialLogin(request).subscribe(res => {
       let response = res;
-     
+      localStorage.setItem('socialtoken' , JSON.stringify({social:true, token:res.data.tokens}))
       console.log('social login 257',response)
     })
   }
