@@ -32,21 +32,21 @@ export class DashboardComponent implements OnInit {
   };
   loggedIn: boolean = false;
   sub: any;
-  signUpData:any = {};
-  profilepic:any = ''
-  tokenId:any = ''
-  provider:any = ''
-  socialloginData:any = ''
+  signUpData: any = {};
+  profilepic: any = ''
+  tokenId: any = ''
+  provider: any = ''
+  socialloginData: any = ''
 
   constructor(
     private toastr: ToastrService,
     private spinner: NgxSpinnerService,
     private route: ActivatedRoute,
-    public router :Router,
+    public router: Router,
     private authService: SocialAuthService,
     public mode: ColorModeService,
-    public _service:GobalService,
-  ) {}
+    public _service: GobalService,
+  ) { }
   // public subscribeToisInitialized(){
   //     this._linkedInService.isInitialized$.subscribe({
   //     next: (state) => {
@@ -58,16 +58,16 @@ export class DashboardComponent implements OnInit {
   //   });
   // }
 
-  subscribeToLogin(){
+  subscribeToLogin() {
 
     var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${'78fuo9t76f397o'}&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=${'https://pifstage.swotfishdemo.com/lms/auth'}`
     var width = 450,
-        height = 730,
-        left = window.screen.width / 2 - width / 2,
-        top = window.screen.height / 2 - height / 2;
+      height = 730,
+      left = window.screen.width / 2 - width / 2,
+      top = window.screen.height / 2 - height / 2;
     window.location.href = oauthUrl;
     this._service.checkSignupType()
-};
+  };
   ngOnInit(): void {
     // dark-light
     this.mode.currentMode.subscribe((res) => {
@@ -82,7 +82,7 @@ export class DashboardComponent implements OnInit {
       this.user = user;
       this.loggedIn = (user != null);
       console.log(this.user);
-      if(this.user){
+      if (this.user) {
         this.signUp(this.user)
         setTimeout(() => {
           this.signOut();
@@ -100,10 +100,10 @@ export class DashboardComponent implements OnInit {
           this.sendCodeOnLinkedIn(code);
         }
       }
-    );
+      );
     // -----------------------------
-    let getLocalStorage:any =  localStorage.getItem('userDetail');
-    let signUpData:any = JSON.parse(getLocalStorage);
+    let getLocalStorage: any = localStorage.getItem('userDetail');
+    let signUpData: any = JSON.parse(getLocalStorage);
     if (signUpData && signUpData.photoUrl) {
       this.profilepic = signUpData.photoUrl;
       this.tokenId = signUpData.idToken
@@ -115,32 +115,32 @@ export class DashboardComponent implements OnInit {
   }
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-   this._service.checkSignupType()
+    this._service.checkSignupType()
   }
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-   this._service.checkSignupType()
+    this._service.checkSignupType()
   }
 
-  signIn(provider: any){
+  signIn(provider: any) {
   }
   signOut(): void {
     this.authService.signOut();
   }
   sendCodeOnLinkedIn = (code: any) => {
     let request = {
-        grant_type : "authorization_code",
-        client_id  : "78fuo9t76f397o",
-        client_secret : "3TpJtdjTxBrZ5GAp",
-        redirect_uri : "http://pifstage.swotfishdemo.com/lms/auth",
-        code : code
+      grant_type: "authorization_code",
+      client_id: "78fuo9t76f397o",
+      client_secret: "3TpJtdjTxBrZ5GAp",
+      redirect_uri: "http://pifstage.swotfishdemo.com/lms/auth",
+      code: code
     }
     // window.open('https://javascript.info/')
     this._service.getLinkedInLogin(request).subscribe(res => {
       let response = res;
-      console.log(response,'check 145 dashboard')
-      if(response.success === true){
+      console.log(response, 'check 145 dashboard')
+      if (response.success === true) {
         let secData = response.data;
         if (secData) {
           let userFirstName = '';
@@ -149,20 +149,20 @@ export class DashboardComponent implements OnInit {
           let userProfile = '';
           let userId = '';
 
-          let data1   = JSON.parse(secData[0]);
+          let data1 = JSON.parse(secData[0]);
           if (data1) {
             userFirstName = data1.firstName.localized.en_US;
             userLastName = data1.lastName.localized.en_US;
             userId = data1.id;
             userProfile = data1.profilePicture && data1.profilePicture['displayImage~'].elements[1].identifiers[0].identifier;
           }
-          console.log(userProfile,"159 linked in")
+          console.log(userProfile, "159 linked in")
           let data2 = JSON.parse(secData[1]);
           if (data2 && data2.elements) {
             linkedInEmail = data2.elements[0]['handle~'].emailAddress
           }
           let req = {
-            photoUrl: userProfile ,
+            photoUrl: userProfile,
             provider: 'LINKEDIN',
             email: linkedInEmail,
             userId: userId,
@@ -181,102 +181,103 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  nonSocialSignup(link:any){
-     this.router.navigateByUrl(link);
-     localStorage.setItem('signupType' , 'false')
+  nonSocialSignup(link: any) {
+    this.router.navigateByUrl(link);
+    localStorage.setItem('signupType', 'false')
   }
 
   signUp(data: any) {
+
+    console.log("Signup hit at 191 sign-up")
     // this.spinner.show();
     this.socialloginData = data
-    let request:any = {
-      profile:        data.photoUrl,
-      provider:       data.provider,
-      email:          data.email,
-      size_of_team:   0,
-      on_boarding:    0,
-      experience:     0,
-      first_name:     "",
-      id:             data.id,
-      last_name:      "",
-      password:       "",
-      group_val:      "",
-      market:         "",
-      location:       "",
+    let request: any = {
+      profile: data.photoUrl,
+      provider: data.provider,
+      email: data.email,
+      size_of_team: 0,
+      on_boarding: 0,
+      experience: 0,
+      first_name: "",
+      id: data.id,
+      last_name: "",
+      password: "",
+      group_val: "",
+      market: "",
+      location: "",
       contact_number: "",
-      category:       "",
-      topic:          "",
-      industry:       "",
-      position:       "",
-      job_title :     "",
+      category: "",
+      topic: "",
+      industry: "",
+      position: "",
+      job_title: "",
       customize_topic: []
     }
-    console.log('Request Sign Up',request.id)
-     if(data.provider === 'GOOGLE'){
-       request['social_id'] =  data.idToken;
-     } else if (data.provider === 'FACEBOOK'){
-        console.log("Dashboard 215" , data.email);
-        if(data.email === undefined){
-          this.fbLogin(data)
-        }
-        request['social_id'] =  data.id;
-        console.log("fb auth",data.authToken)
-     } else if(data.provider === 'LINKEDIN') {
-        request['social_id'] =  data.userId;
-     }
+    if (data.provider === 'GOOGLE') {
+      request['social_id'] = data.idToken;
+    } else if (data.provider === 'FACEBOOK') {
+      console.log("Dashboard 215", data.email);
+      if (data.email === undefined) {
+        this.fbLogin(data)
+      }
+      request['social_id'] = data.id;
+      console.log("fb auth", data.authToken)
+    } else if (data.provider === 'LINKEDIN') {
+      request['social_id'] = data.userId;
+    }
 
-     this._service.getSignUpData(request).subscribe(res => {
+    this._service.getSignUpData(request).subscribe(res => {
 
       let response = res;
       console.log('Dashboard 231', response)
       localStorage.setItem('signupMode', 'true')
-      if(response.success == true){
+      if (response.success == true) {
         // this.router.navigateByUrl('/lms/auth/user-group')
         window.location.href = "/lms/auth/user-group";
-      }else{
-         this.socailLogin(data)
+      } else {
+        let request: any = {
+          email: data.email,
+        }
+        if (data.provider === 'GOOGLE') {
+          request['social_id'] = data.idToken;
+        } else if (data.provider === 'FACEBOOK') {
+          request['social_id'] = data.authToken;
+        }
+
+        localStorage.setItem('Testdashboard', JSON.stringify(request))
+
+        this._service.getSocialLogin(request).subscribe(res => {
+          let response = res;
+
+          localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res.data.tokens }))
+          console.log('social login 257', response)
+          window.location.href = "/lms/app/home";
+        })
+      }
+    })
+  }
+
+  // if user are already exist
+
+  fbLogin(data: any) {
+    console.log(data)
+    let request: any = {
+      social_id: data.id,
+    }
+    console.log('fb login', request)
+    this.spinner.show();
+    this._service.postFacebookLogin(request).subscribe(res => {
+      let response = res;
+      console.log(response, response.email)
+      if (response.email === "") {
+        this.spinner.hide();
+        // this.router.navigateByUrl('/lms/auth/sign-up')
+        window.location.href = "/lms/auth/sign-up";
+      } else if (response.email != "") {
         // this.router.navigateByUrl('/lms/app/home')
         window.location.href = "/lms/app/home";
       }
-
     })
   }
-
-// if user are already exist
-  socailLogin(data: any){
-    let request:any = {
-      email:data.email,
-    }
-    if(data.provider === 'GOOGLE'){
-      request['social_id'] =  data.idToken;
-    } else if (data.provider === 'FACEBOOK'){
-       request['social_id'] =  data.authToken;
-    }
-    this._service.getSocialLogin(request).subscribe(res => {
-      let response = res;
-      console.log('social login 257',response)
-    })
-  }
-
-    fbLogin(data: any){
-      console.log(data)
-      let request:any = {
-        social_id:  data.id,
-      }
-      console.log('fb login',request)
-      this.spinner.show();
-      this._service.postFacebookLogin(request).subscribe(res => {
-        let response = res;
-        console.log(response, response.email)
-        if(response.email === ""){
-          this.spinner.hide();
-          // this.router.navigateByUrl('/lms/auth/sign-up')
-          window.location.href = "/lms/auth/sign-up";
-        } else if(response.email != ""){
-          // this.router.navigateByUrl('/lms/app/home')
-          window.location.href = "/lms/app/home";
-        }
-      })
-    }
 
 }

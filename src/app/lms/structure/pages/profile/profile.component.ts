@@ -47,8 +47,6 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
-    this.profileData()
     this.updateProfileForm = this.formBuilder.group(
       {
         fname: ['', [Validators.required]],
@@ -71,37 +69,79 @@ export class ProfileComponent implements OnInit {
     });
     //end dark-light
 
+    this.profileData();
+  }
 
-    // get User name form local storage
-    this.social = localStorage.getItem('signupMode')
 
-    if (this.social === 'true') {
-      let getLocalStorage: any = localStorage.getItem('userDetail');
-      let signUpData = JSON.parse(getLocalStorage);
-      this.signupFullName = signUpData.firstName + " " + signUpData.lastName
-      this.profile = signUpData.photoUrl;
-      this.profileEmail = signUpData.email
-      this.profileCompany = signUpData.provider
-      this.companyName = signUpData.provider
-      console.log(this.signupFullName, this.profileImage, this.profileEmail, this.profileCompany, this.companyName, '75 profile')
-      this.profileData()
-    }
+  profileData() {
 
-    
-    // else {
-    //   let normalUserFName = localStorage.getItem('firstName')
-    //   let normalUserLName = localStorage.getItem('lastName')
-    //   this.profileImage = localStorage.getItem('profile');
-    //   this.signupFullName = normalUserFName + ' ' + normalUserLName
+    this._service.profileDataShow().subscribe(res => {
+      this.profileRecord = res.data
+      this.profileRecord.forEach((el: any) => {
+        this.profileResponse = el
+      })
+
+      this.uploadedImage = this.profileResponse.profile
+      this.patchUpdateValues();
+    })
+
+    // this.social = localStorage.getItem('signupMode')
+    // this.profileResponse = {}
+    // if (this.social === 'true') {
+    //   this._service.profileDataShow().subscribe(res => {
+    //     console.log("Social", res)
+    //   })
+
+    //   let getLocalStorage: any = localStorage.getItem('userDetail');
+
+    //   let signUpData = JSON.parse(getLocalStorage);
+
+    //   this.profileResponse["first_name"] = signUpData.firstName
+    //   this.profileResponse["last_name"] = signUpData.lastName
+    //   this.profileResponse["email"] = signUpData.email
+    //   this.profileResponse["profile"] = signUpData.photoUrl
+    //   this.profileResponse["contact_number"] = signUpData.contact_number ? signUpData.contact_number : '',
+    //     this.profileResponse["language"] = signUpData.language ? signUpData.language : '',
+    //     this.profileResponse["country"] = signUpData.country ? signUpData.country : '',
+    //     this.profileResponse["about_me"] = signUpData.about_me ? signUpData.about_me : ''
+
+    //   this.uploadedImage = this.profileResponse.profile
+    //   this.patchUpdateValues();
     // }
+
+    // else {
+    //   this._service.profileDataShow().subscribe(res => {
+    //     this.profileRecord = res.data
+    //     this.profileRecord.forEach((el: any) => {
+    //       this.profileResponse = el
+    //     })
+
+    //     this.uploadedImage = this.profileResponse.profile
+    //     this.patchUpdateValues();
+    //   })
+    // }
+  }
+
+  patchUpdateValues() {
+    this.updateProfileForm.patchValue({
+      fname: this.profileResponse.first_name,
+      lname: this.profileResponse.last_name,
+      email: this.profileResponse.email,
+      mobile: this.profileResponse.contact_number,
+      language: this.profileResponse.language,
+      country: this.profileResponse.country,
+      aboutMe: this.profileResponse.about_me
+    })
   }
 
   showHide() {
     this.hide = true;
   }
+
   hideShow() {
     this.hide = false;
   }
+
   arrowHide() {
     this.hide = false;
   }
@@ -125,7 +165,6 @@ export class ProfileComponent implements OnInit {
 
   // dark-light
   dark(e: any) {
-    console.log(e);
     if (e) {
       this.mode.changeMode('dark');
       localStorage.setItem('mode', 'dark');
@@ -138,11 +177,7 @@ export class ProfileComponent implements OnInit {
 
 
   updateProfile() {
-
-    console.log("Check profile" , this.uploadedImage)
-
     let request = {
-      // name          : this.updateProfileForm.value.name,
       contact_number: this.updateProfileForm.value.mobile,
       email: this.updateProfileForm.value.email,
       language: this.updateProfileForm.value.language,
@@ -153,7 +188,6 @@ export class ProfileComponent implements OnInit {
       profile: this.uploadedImage
     }
 
-    console.log(request)
     this._service.profileUpdate(request).subscribe(res => {
       let response = res;
       console.log('134 update profile', response)
@@ -177,79 +211,8 @@ export class ProfileComponent implements OnInit {
     }
 
     this._service.uploadImage(formData).subscribe(res => {
-      console.log("profile 184", res)
-      this.uploadedImage = res.image
-      //localStorage.setItem('profileImg', this.uploadedImage.location)
+      this.uploadedImage = res.image.location
       localStorage.setItem('profileImg', this.uploadedImage)
-    })
-  }
-
-  profileData() {
-    // this.spinner.show();
-    this._service.profileDataShow().subscribe(res => {
-
-      this.profileRecord = res.data
-      this.profileRecord.forEach((el: any) => {
-        this.profileResponse = el
-      })
-     
-      console.log(this.profileResponse)
-
-      this.uploadedImage = this.profileResponse.profile
-
-      //Patch values data into updateProfileForm
-      this.updateProfileForm.patchValue({
-        fname: this.profileResponse.first_name,
-        lname: this.profileResponse.last_name,
-        email: this.profileResponse.email,
-        mobile: this.profileResponse.contact_number,
-        language: this.profileResponse.language,
-        country: this.profileResponse.country,
-        aboutMe: this.profileResponse.about_me
-      })
-
-      // this.spinner.hide()
-      // if (this.social != 'true') {
-      //   this.profileFName = profileObj.first_name;
-      //   this.profileLName = profileObj.last_name;
-      //   this.email = profileObj.email;
-      //   this.marketing = profileObj.industry;
-      //   this.profile = profileObj.profile;
-      //   this.company = profileObj.companyName;
-      //   this.contactNumber = profileObj.contact_number;
-      //   this.aboutMe = profileObj.about_me;
-      //   this.country = profileObj.country;
-      //   this.language = profileObj.language;
-      //   this.updateProfileForm.patchValue({
-      //     // name: this.profileName,
-      //     email: profileObj.email,
-      //     mobile: this.contactNumber,
-      //     profile: profileObj.profile,
-      //     country: this.country,
-      //     aboutMe: this.aboutMe,
-      //     fname: this.profileFName,
-      //     lname: this.profileLName,
-      //     language: this.language,
-
-      //   })
-      // } else {
-      //   console.log('From Social ===>');
-
-      //   this.profileName = this.signupFullName;
-      //   this.email = this.profileEmail;
-      //   this.marketing = this.profileCompany;
-      //   this.profile = this.profile;
-      //   this.company = this.profileCompany;
-      //   this.updateProfileForm.patchValue({
-      //     name: this.profileName,
-      //     email: this.email,
-      //     mobile: '',
-      //     profile: this.profile,
-      //     language: 'English',
-      //     country: 'UK',
-      //     aboutMe: 'It is a long established fact that a reader.',
-      //   })
-      // }
     })
   }
 }
