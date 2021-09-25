@@ -79,7 +79,6 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("Signup data 82" )
     let checkSignup: any = localStorage.getItem('signupType')
     this.checkSignUptype = checkSignup === 'true'
     let getLocalStorage: any = localStorage.getItem('userDetail');
