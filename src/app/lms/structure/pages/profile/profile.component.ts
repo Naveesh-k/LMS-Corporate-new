@@ -177,6 +177,7 @@ export class ProfileComponent implements OnInit {
       profile: this.uploadedImage
     }
 
+    
     console.log("Profile 180" , request)
 
     this._service.profileUpdate(request).subscribe(res => {
