@@ -47,7 +47,7 @@ export class GobalService {
   //   return this.https.post(environment.lmsApiBaseUrl + 'socialLogin',data).pipe(map(res => <any>res));
   // }
   getSocialLogin(data: any) {
-    console.log("after", data)
+    console.log("Working Global record" , data)
     return this.https.post(environment.lmsApiBaseUrl + 'social_login', data).pipe(map(res => <any>res));
   }
   getLinkedInLogin(data: any) {

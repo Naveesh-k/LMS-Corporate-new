@@ -254,6 +254,7 @@ export class DashboardComponent implements OnInit {
     }
     this._service.getSocialLogin(request).subscribe(res => {
       let response = res;
+     
       console.log('social login 257',response)
     })
   }
