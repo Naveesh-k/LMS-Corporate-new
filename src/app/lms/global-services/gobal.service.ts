@@ -25,7 +25,8 @@ export class GobalService {
       this.token = localStorage.getItem('token')
     }
     else {
-      this.token = parseDetail.idToken
+      //this.token = parseDetail.idToken
+      this.token = parseDetail.authToken
     }
   }
 
