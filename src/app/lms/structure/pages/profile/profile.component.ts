@@ -166,6 +166,9 @@ export class ProfileComponent implements OnInit {
 
 
   updateProfile() {
+
+    console.log("Profile update 170", this.updateProfileForm.value)
+
     let request = {
       contact_number: this.updateProfileForm.value.mobile,
       email: this.updateProfileForm.value.email,
