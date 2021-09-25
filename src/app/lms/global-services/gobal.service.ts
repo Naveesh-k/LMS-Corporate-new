@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class GobalService {
-  token: any = localStorage.getItem('token')
+  token: any = ''
 
 
   globalObject: any = {
@@ -19,8 +19,14 @@ export class GobalService {
   globalService = this.globalBehaviour.asObservable();
 
   constructor(private https: HttpClient) {
-    let parseJson: any = localStorage.getItem('userDetail')
-    console.log(JSON.parse(parseJson))
+    let getUserdetail: any = localStorage.getItem('userDetail');
+    let parseDetail: any = JSON.parse(getUserdetail)
+    if(parseDetail === null){
+      this.token = localStorage.getItem('token')
+    }
+    else {
+      this.token = parseDetail.idToken
+    }
   }
 
   checkSignupType() {
