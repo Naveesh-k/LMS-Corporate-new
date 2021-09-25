@@ -63,10 +63,10 @@ export class SignUpComponent implements OnInit {
   showPasswordField: boolean = false;
   cpFormfir: boolean = false;
   cpFormSec: boolean = false;
-  imagePath:any;
-  imageFile:any;
-  uploadedImage:any;
-  profileName: any ;
+  imagePath: any;
+  imageFile: any;
+  uploadedImage: any;
+  profileName: any;
   profileRecord: any = [];
 
   constructor(public router: Router,
@@ -78,16 +78,8 @@ export class SignUpComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    // if(!this.checkSignUptype){
-    //   localStorage.removeItem("userDetail");
-    // }
     let checkSignup: any = localStorage.getItem('signupType')
     this.checkSignUptype = checkSignup === 'true'
-
-    // console.log(this.checkSignUptype)
-
-
     let getLocalStorage: any = localStorage.getItem('userDetail');
     let signUpData: any = JSON.parse(getLocalStorage);
     if (signUpData && signUpData.photoUrl) {
@@ -118,7 +110,7 @@ export class SignUpComponent implements OnInit {
       industry: '',
       position: '',
       jobTitle: '',
-      companyName:'',
+      companyName: '',
       location: '',
       teamSize: '',
       experience: '',
@@ -173,7 +165,7 @@ export class SignUpComponent implements OnInit {
     let checkLink = localStorage.getItem("pageLink")
     if (checkLink === 'Courses Provider') {
       // this.router.navigateByUrl('/lms/auth/cp-sign-up')
-      window.location.href= "/lms/auth/cp-sign-up";
+      window.location.href = "/lms/auth/cp-sign-up";
     } else {
       this.submitted = true;
       this.hideFilledForm = true;
@@ -205,7 +197,7 @@ export class SignUpComponent implements OnInit {
   signUp() {
 
     if (this.checkSignUptype) {
-      console.log("it goes from social 200",this.checkSignUptype)
+      console.log("it goes from social 200", this.checkSignUptype)
       localStorage.setItem('signupMode', 'true')
       this.showPasswordField = false;
       let extraVariable = {
@@ -223,26 +215,26 @@ export class SignUpComponent implements OnInit {
       this.signUpData['profile'] = this.profilepic
       this.signUpData['social_id'] = this.tokenId
       this.signUpData['provider'] = this.provider
-      console.log('this is sign up data',this.signUpData);
+      console.log('this is sign up data', this.signUpData);
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
-          localStorage.setItem('token',response.data.tokens)
-          console.log('230 signUp',response)
+        localStorage.setItem('token', response.data.tokens)
+        console.log('230 signUp', response)
         if (response.success) {
           // this.router.navigateByUrl('/lms/app/home')
           localStorage.setItem("userType", 'false');
           console.log('social sign me if condition run 235 signup page')
-          console.log("228 checkuser type",localStorage.getItem("userType"))
+          console.log("228 checkuser type", localStorage.getItem("userType"))
           window.location.href = "/lms/app/home";
           this.profileData()
         }
         else {
           console.log("Exist User", response.success);
-           console.log('social sign me else condition run 241 signup page')
+          console.log('social sign me else condition run 241 signup page')
           // this.router.navigateByUrl('/lms/app/home')
           this.toastr.success('message', response.message);
           localStorage.setItem("userType", 'true');
-          window.location.href= "/lms/app/home";
+          window.location.href = "/lms/app/home";
           this.profileData()
         }
       })
@@ -260,7 +252,7 @@ export class SignUpComponent implements OnInit {
         email: this.registerForm.value.email,
         customize_topic: this.customizeTopic,
         position: this.registerForm.value.position,
-        companyName:this.registerForm.value.companyName,
+        companyName: this.registerForm.value.companyName,
         profile: this.uploadedImage.location,
         industry: this.registerForm.value.industry,
         job_title: this.registerForm.value.jobTitle,
@@ -285,14 +277,15 @@ export class SignUpComponent implements OnInit {
       this._service.getSignUpEmail(request).subscribe(res => {
         let response = res
 
-        localStorage.setItem('token',response.data.tokens)
-        console.log(response.data,'283 sign up')
+        console.log('280 signUp', response)
+
+        localStorage.setItem('token', response.data.tokens)
         this.profileData()
         if (response.success === true) {
           console.log(response.success)
           // this.router.navigateByUrl('/lms/app/home')
           window.location.href = "/lms/app/home";
-        }else if(response.success === false && response.message === 'employee email already exist'){
+        } else if (response.success === false && response.message === 'employee email already exist') {
           // this.router.navigateByUrl('/lms/app/home')
           window.location.href = "/lms/app/home";
         }
@@ -319,7 +312,7 @@ export class SignUpComponent implements OnInit {
     this.signUp()
   }
 
-  imageUplaoad(event:any){
+  imageUplaoad(event: any) {
     const allowedMimeTypes = ['image/png', 'image/jpeg', 'image/jpg'];
 
     var formData = new FormData();
@@ -328,29 +321,29 @@ export class SignUpComponent implements OnInit {
     if (
       event.target.files[0] &&
       allowedMimeTypes.includes(event.target.files[0].type)
-    ){
+    ) {
       this.imagePath = event.target.files;
       this.imageFile = this.imagePath[0];
-  }
+    }
 
-   console.log(formData)
+    console.log(formData)
     this._service.uploadImage(formData).subscribe(res => {
-     this.uploadedImage = res.image
-      localStorage.setItem('profileImg',this.uploadedImage.location)
+      this.uploadedImage = res.image
+      localStorage.setItem('profileImg', this.uploadedImage.location)
     })
   }
 
   profileData() {
     this._service.profileDataShow().subscribe(res => {
-        let profileObj:any = {}
-        console.log(res,'signup ts 341 profile data')
-        this.profileRecord = res.data
-        this.profileRecord.forEach((el:any)=>{
-          profileObj = el
-        })
-        this.profileName = profileObj.first_name+' '+profileObj.last_name
-        console.log(profileObj.companyName,'sadaaaaaaaaa')
+      let profileObj: any = {}
+      console.log(res, 'signup ts 341 profile data')
+      this.profileRecord = res.data
+      this.profileRecord.forEach((el: any) => {
+        profileObj = el
       })
-   }
+      this.profileName = profileObj.first_name + ' ' + profileObj.last_name
+      console.log(profileObj.companyName, 'sadaaaaaaaaa')
+    })
+  }
 
 }

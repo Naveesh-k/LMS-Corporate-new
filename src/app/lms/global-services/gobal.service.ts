@@ -64,7 +64,6 @@ export class GobalService {
   }
 
   profileDataShow() {
-    console.log("Api hit successfully global.service.ts 67")
     let headers: any = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.token,
@@ -74,8 +73,6 @@ export class GobalService {
   }
 
   profileUpdate(data: any) {
-    console.log("Token", this.token)
-
     let headers: any = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.token,
