@@ -18,9 +18,15 @@ export class GobalService {
   globalBehaviour = new BehaviorSubject(this.globalObject);
   globalService = this.globalBehaviour.asObservable();
 
-  constructor(private https: HttpClient) { 
-    //Check Token type
-    console.log("Api service global 23" , this.globalObject.signupType)
+  constructor(private https: HttpClient) {
+    let parseJson: any = localStorage.getItem('userDetail')
+    console.log(JSON.parse(parseJson))
+  }
+
+  checkSignupType() {
+    this.globalObject.signupType = true;
+    this.globalBehaviour.next(this.globalObject);
+    localStorage.setItem('signupType', 'true')
   }
 
   getSignUpData(data: any) {
@@ -51,11 +57,7 @@ export class GobalService {
     return this.https.post(environment.lmsApiBaseUrl + 'fbLogin', data).pipe(map(res => <any>res));
   }
 
-  checkSignupType() {
-    this.globalObject.signupType = true;
-    this.globalBehaviour.next(this.globalObject);
-    localStorage.setItem('signupType', 'true')
-  }
+
 
   uploadImage(data: any) {
     let headers: any = new HttpHeaders({
