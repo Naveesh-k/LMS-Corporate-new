@@ -74,41 +74,52 @@ export class ProfileComponent implements OnInit {
 
 
   profileData() {
-    this.social = localStorage.getItem('signupMode')
-    this.profileResponse = {}
-    if (this.social === 'true') {
-      this._service.profileDataShow().subscribe(res => {
-        console.log("Social", res)
+
+    this._service.profileDataShow().subscribe(res => {
+      this.profileRecord = res.data
+      this.profileRecord.forEach((el: any) => {
+        this.profileResponse = el
       })
-
-      let getLocalStorage: any = localStorage.getItem('userDetail');
-
-      let signUpData = JSON.parse(getLocalStorage);
-
-      this.profileResponse["first_name"] = signUpData.firstName
-      this.profileResponse["last_name"] = signUpData.lastName
-      this.profileResponse["email"] = signUpData.email
-      this.profileResponse["profile"] = signUpData.photoUrl
-      this.profileResponse["contact_number"] = signUpData.contact_number ? signUpData.contact_number : '',
-        this.profileResponse["language"] = signUpData.language ? signUpData.language : '',
-        this.profileResponse["country"] = signUpData.country ? signUpData.country : '',
-        this.profileResponse["about_me"] = signUpData.about_me ? signUpData.about_me : ''
 
       this.uploadedImage = this.profileResponse.profile
       this.patchUpdateValues();
-    }
+    })
 
-    else {
-      this._service.profileDataShow().subscribe(res => {
-        this.profileRecord = res.data
-        this.profileRecord.forEach((el: any) => {
-          this.profileResponse = el
-        })
+    // this.social = localStorage.getItem('signupMode')
+    // this.profileResponse = {}
+    // if (this.social === 'true') {
+    //   this._service.profileDataShow().subscribe(res => {
+    //     console.log("Social", res)
+    //   })
 
-        this.uploadedImage = this.profileResponse.profile
-        this.patchUpdateValues();
-      })
-    }
+    //   let getLocalStorage: any = localStorage.getItem('userDetail');
+
+    //   let signUpData = JSON.parse(getLocalStorage);
+
+    //   this.profileResponse["first_name"] = signUpData.firstName
+    //   this.profileResponse["last_name"] = signUpData.lastName
+    //   this.profileResponse["email"] = signUpData.email
+    //   this.profileResponse["profile"] = signUpData.photoUrl
+    //   this.profileResponse["contact_number"] = signUpData.contact_number ? signUpData.contact_number : '',
+    //     this.profileResponse["language"] = signUpData.language ? signUpData.language : '',
+    //     this.profileResponse["country"] = signUpData.country ? signUpData.country : '',
+    //     this.profileResponse["about_me"] = signUpData.about_me ? signUpData.about_me : ''
+
+    //   this.uploadedImage = this.profileResponse.profile
+    //   this.patchUpdateValues();
+    // }
+
+    // else {
+    //   this._service.profileDataShow().subscribe(res => {
+    //     this.profileRecord = res.data
+    //     this.profileRecord.forEach((el: any) => {
+    //       this.profileResponse = el
+    //     })
+
+    //     this.uploadedImage = this.profileResponse.profile
+    //     this.patchUpdateValues();
+    //   })
+    // }
   }
 
   patchUpdateValues() {
