@@ -187,6 +187,8 @@ export class DashboardComponent implements OnInit {
   }
 
   signUp(data: any) {
+
+    console.log("Signup hit at 191 sign-up")
     // this.spinner.show();
     this.socialloginData = data
     let request:any = {
@@ -211,7 +213,6 @@ export class DashboardComponent implements OnInit {
       job_title :     "",
       customize_topic: []
     }
-    console.log('Request Sign Up',request.id)
      if(data.provider === 'GOOGLE'){
        request['social_id'] =  data.idToken;
      } else if (data.provider === 'FACEBOOK'){

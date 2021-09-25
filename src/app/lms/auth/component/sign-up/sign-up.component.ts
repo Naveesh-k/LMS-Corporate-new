@@ -94,6 +94,7 @@ export class SignUpComponent implements OnInit {
       }
       this.tokenId = idToken ? idToken : '';
       this.provider = this.checkSignUptype ? signUpData.provider : '';
+
       console.log(this.provider)
     }
 
