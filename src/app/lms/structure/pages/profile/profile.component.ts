@@ -166,7 +166,6 @@ export class ProfileComponent implements OnInit {
 
 
   updateProfile() {
-    this.updateProfileForm.value["profile"] = this.uploadedImage
     let request = {
       contact_number: this.updateProfileForm.value.mobile,
       email: this.updateProfileForm.value.email,
@@ -175,8 +174,10 @@ export class ProfileComponent implements OnInit {
       about_me: this.updateProfileForm.value.aboutMe,
       first_name: this.updateProfileForm.value.fname,
       last_name: this.updateProfileForm.value.lname,
-      profile: this.updateProfileForm.updateProfileForm.value.profile
+      profile: this.uploadedImage
     }
+
+    console.log(request)
 
     this._service.profileUpdate(request).subscribe(res => {
       let response = res;
