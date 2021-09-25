@@ -22,7 +22,11 @@ export class GobalService {
     let getUserdetail: any = localStorage.getItem('userDetail');
     let parseDetail: any = JSON.parse(getUserdetail)
     if(parseDetail === null){
-      this.token = localStorage.getItem('token')
+      let socialToken = localStorage.getItem('socialtoken');
+      let parsesocialToken:any = JSON.stringify(socialToken)
+      if(parsesocialToken.social){
+        this.token = parsesocialToken.token
+      }
     }
     else {
       this.token = parseDetail.idToken

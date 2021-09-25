@@ -249,9 +249,7 @@ export class DashboardComponent implements OnInit {
         this._service.getSocialLogin(request).subscribe(res => {
           let response = res;
 
-          console.log(res.data.tokens)
-
-          localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res }))
+          localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res.data.tokens }))
           console.log('social login 257', response)
           window.location.href = "/lms/app/home";
         })
