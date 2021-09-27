@@ -15,7 +15,7 @@ import { environment } from '../../../../../environments/environment';
 export class CpDashboardComponent implements OnInit {
   quizForm:any = FormGroup;
     quizFormsubmitted = false;
- 
+
   paginateData: any[] = [];
   myreportData: any =[];
   page = 1;
@@ -32,6 +32,7 @@ export class CpDashboardComponent implements OnInit {
   showSelect:boolean = false;
   show: boolean = true;
   showId:any;
+  profileName:any;
   lectureList:any;
   listOfCourse:any = [];
   uploadedImage: any;
@@ -75,10 +76,13 @@ export class CpDashboardComponent implements OnInit {
     });
     //end dark-light
 
+    this.profileName = localStorage.getItem('loginUserFname')+' '+localStorage.getItem('loginUserLname')
+
     this.createCourseForm = this.formBuilder.group({
       title: ['', Validators.required],
       courseSubtitle: ['', Validators.required],
       selectAuthor: ['', Validators.required],
+      selectUrl: ['', Validators.required],
   });
 
     this.editCourseForm = this.formBuilder.group({
@@ -107,7 +111,7 @@ export class CpDashboardComponent implements OnInit {
     this.changeTab = tabname
   }
 
-  editDetail(data:any){
+  editSelectDetail(data:any){
     this.editCourseForm.patchValue({
       title: data.course_title,
       courseSubtitle: data.course_subtitle,
@@ -116,8 +120,10 @@ export class CpDashboardComponent implements OnInit {
       status: data.status,
     })
     this.showId = data.id
+    localStorage.setItem('courseId', this.showId)
     console.log(data)
   }
+
 
   deleteDetail(data:any){
    this.showId = data.id
@@ -152,7 +158,7 @@ export class CpDashboardComponent implements OnInit {
     }
 }
 
-  
+
 
 // Creating course API
   courseCreate() {
@@ -167,12 +173,13 @@ export class CpDashboardComponent implements OnInit {
         select_author   : this.createCourseForm.value.selectAuthor,
         start_date      : '14/12/12',
         status          : '1',
+        videoUrl        : this.createCourseForm.value.selectUrl,
       }
       this._service.createCourse(request).subscribe(res => {
         let response = res;
 
         if(response.success === true){
-          this.toastr.success('Message', response.message)
+          // this.toastr.success('Message', response.message)
         }else if(response.status === 400){
           this.toastr.error('Session expire', response.message)
         }
@@ -300,6 +307,10 @@ listOfLecture() {
       this.uploadedImage = res.image
       localStorage.setItem('profileImg', this.uploadedImage)
     })
+  }
+
+  check(event:any){
+    console.log(event.target.value)
   }
 
 // -------------------------------

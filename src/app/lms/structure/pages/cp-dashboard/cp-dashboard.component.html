@@ -15,7 +15,7 @@
                         <div class="row mt-4 px-3">
                             <div class="col-md-12 border-bottom pb-3 px-0">
                                 <div class="d-flex justify-content-between">
-                                    <h4>Welcome Back <span> Doug!!! </span></h4>
+                                    <h4>Welcome Back <span> {{profileName}} </span></h4>
                                     <a class="btn btn_course" (click)="show_select()">&#43; Create course</a>
                                 </div>
                             </div>
@@ -229,6 +229,15 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-12">
+                                                        <label class="title-label">Select Url</label>
+                                                        <input type="text" formControlName="selectUrl" class="form-control form-input" [ngClass]="{ 'is-invalid': submitted && f.selectUrl.errors }" />
+                                                        <div *ngIf="submitted && f.selectUrl.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.selectUrl.errors.required">Select Author is required</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                 <div class="text-right mt-3">
 
@@ -282,7 +291,7 @@
                                     <tbody>
                                         <tr *ngFor="let item of listOfCourse">
                                             <th scope="row" class="td_check">
-                                                <input type="checkbox" class="check">
+                                                <input type="radio" class="check" name="lecture" (click)="editSelectDetail(item)">
                                             </th>
                                             <td class="td_title">{{item.course_title}}</td>
                                             <td scope="col" class="lorem_p">{{item.course_subtitle}}</td>
@@ -293,7 +302,7 @@
                                                 <a class="btn btn-active"> Active</a>
                                             </td>
                                             <td scope="col" class="td_field">
-                                                <i class="fa fa-pencil" aria-hidden="true" data-toggle="modal" data-target="#exampleModal" (click)="editDetail(item)"></i>
+                                                <i class="fa fa-pencil" aria-hidden="true" data-toggle="modal" data-target="#exampleModal" (click)="editSelectDetail(item)"></i>
                                                 <i class="fa fa-trash px-4" data-toggle="modal" data-target="#deleteModal" (click)="deleteDetail(item)" aria-hidden="true"></i>
                                                 <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                                             </td>
@@ -481,22 +490,22 @@
                                             <p class="pt-3 mb-2"><b>Type question here</b></p>
                                             <div class="form-row ">
                                                 <div class="form-group col">
-                                                    <input type="text" formControlName="question" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.question.errors }" class="form-control frm-wi input_bg p-4 " placeholder="IPO Road">
+                                                    <input type="text" formControlName="question" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.question.errors }" class="form-control frm-wi input_bg p-4 " placeholder="Add your question">
                                                     <div *ngIf="quizFormsubmitted && quizF.question.errors" class="invalid-feedback">
                                                         <div *ngIf="quizF.question.errors.required">Question is required</div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-row">
+                                            <!-- <div class="form-row">
                                                 <div class="back_radio">
                                                     <input class="radio_btn " type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
                                                     <div class="form-group col mb-0 ml-3">
                                                         <input type="text" class="form-control frm-wi input_bg p-4" placeholder="Answer choices">
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="radio_input ">
-                                                <!-- <span> <input type="radio" id="first" name="fav_language" value="first"> </span> -->
+                                                <span> <input type="radio" id="optionFirst" name="selectAnswer" value="quizForm.value.optionFirst" (change)="check($event)"> </span>
                                                 <input class="ml-2" formControlName="optionFirst" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.optionFirst.errors }" class="inp_option" placeholder="Option 1" type="text">
                                                 <div *ngIf="quizFormsubmitted && quizF.optionFirst.errors" class="invalid-feedback">
                                                     <div *ngIf="quizF.optionFirst.errors.required">Option first is required</div>
@@ -504,7 +513,7 @@
                                             </div>
 
                                             <div class="radio_input ">
-                                                <!-- <span> <input type="radio" id="second" name="fav_language" value="second"> </span> -->
+                                                <span> <input type="radio" id="optionSec" name="selectAnswer" value="quizForm.value.optionSec" (change)="check($event)"> </span>
                                                 <input class="ml-2" formControlName="optionSec" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.optionSec.errors }" class="inp_option" placeholder="Option 2" type="text">
                                                 <div *ngIf="quizFormsubmitted && quizF.optionSec.errors" class="invalid-feedback">
                                                     <div *ngIf="quizF.optionSec.errors.required">Option second is required</div>
@@ -512,7 +521,7 @@
                                             </div>
 
                                             <div class="radio_input ">
-                                                <!-- <span> <input type="radio" id="third" name="fav_language" value="third"> </span> -->
+                                                <span> <input type="radio" id="optionThird" name="selectAnswer" value="quizForm.value.optionThird" (change)="check($event)"> </span>
                                                 <input class="ml-2" formControlName="optionThird" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.optionThird.errors }" class="inp_option" placeholder="Option 3" type="text">
                                                 <div *ngIf="quizFormsubmitted && quizF.optionThird.errors" class="invalid-feedback">
                                                     <div *ngIf="quizF.optionThird.errors.required">Option third is required</div>
@@ -520,7 +529,7 @@
                                             </div>
 
                                             <div class="radio_input ">
-                                                <!-- <span> <input type="radio" id="fourth" name="fav_language" value="fourth"> </span> -->
+                                                <span> <input type="radio" id="optionForth" name="selectAnswer" value="" (change)="check($event)"> </span>
                                                 <input class="ml-2" formControlName="optionForth" class="form-control" [ngClass]="{ 'is-invalid': quizFormsubmitted && quizF.optionForth.errors }" class="inp_option" placeholder="Option 4" type="text">
                                                 <div *ngIf="quizFormsubmitted && quizF.optionForth.errors" class="invalid-feedback">
                                                     <div *ngIf="quizF.optionForth.errors.required">First Option fourth is required</div>
@@ -529,7 +538,9 @@
                                         </div>
                                         <div class="d-grid gap-2 d-flex  justify-content-end">
                                             <button class="btn btn-secondary3 me-md-2 mt-5 p-3 mr-4">Cancel</button>
-                                            <button class="btn  cp-desh-button2 me-md-2 mt-5 p-3 mr-4" type="button" (click)="quizAdd()">Add question</button>
+                                            <button class="btn  cp-desh-button2 me-md-2 mt-5 p-3 mr-4" type="button">Add question</button>
+                                            <button class="btn  cp-desh-button2 me-md-2 mt-5 p-3 mr-4" type="button" [disabled]="quizForm.value.optionForth == ''" (click)="quizAdd()">Create curriculum
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -1270,6 +1281,7 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" (click)="tabChange('profile')" role="tab" aria-controls="profile" aria-selected="false">Add curriculum</a>
+                                <!-- [disabled]="showId == ''" -->
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="contact-tab" data-toggle="tab" (click)="tabChange('contact')" role="tab" aria-controls="contact" aria-selected="false">Add a price</a>

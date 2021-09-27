@@ -19,6 +19,7 @@ export class GobalService {
   globalService = this.globalBehaviour.asObservable();
 
   constructor(private https: HttpClient) {
+    this.token = localStorage.getItem('token')
     let getUserdetail: any = localStorage.getItem('userDetail');
     let parseDetail: any = JSON.parse(getUserdetail)
     if(parseDetail === null){
@@ -43,7 +44,6 @@ export class GobalService {
   getSignUpData(data: any) {
     this.globalObject.signup_data = data;
     this.globalBehaviour.next(this.globalObject)
-    console.log("after", data)
     return this.https.post(environment.lmsApiBaseUrl + 'signup', data).pipe(map(res => <any>res));
   }
   // getSocialLogin(data:any){
@@ -51,20 +51,16 @@ export class GobalService {
   //   return this.https.post(environment.lmsApiBaseUrl + 'socialLogin',data).pipe(map(res => <any>res));
   // }
   getSocialLogin(data: any) {
-    console.log("Working Global record" , data)
     return this.https.post(environment.lmsApiBaseUrl + 'social_login', data).pipe(map(res => <any>res));
   }
   getLinkedInLogin(data: any) {
-    console.log("after", data)
     return this.https.post(environment.lmsApiBaseUrl + 'linkedLogin', data).pipe(map(res => <any>res));
   }
 
   getSignUpEmail(data: any) {
-    console.log("after", data)
     return this.https.post(environment.lmsApiBaseUrl + 'signup', data).pipe(map(res => <any>res));
   }
   postFacebookLogin(data: any) {
-    console.log("after", data)
     return this.https.post(environment.lmsApiBaseUrl + 'fbLogin', data).pipe(map(res => <any>res));
   }
 
@@ -75,8 +71,6 @@ export class GobalService {
       // Authorization: this.token,
       mimeType: 'multipart/form-data'
     });
-    console.log(headers, "profile update 57")
-
     return this.https.post(environment.lmsApiBaseUrl + 'upload', data, { headers }).pipe(map(res => <any>res));
   }
 
@@ -85,6 +79,8 @@ export class GobalService {
       'Content-Type': 'application/json',
       'Authorization': this.token,
     });
+    console.log(this.token)
+    console.log('profile header :',headers)
     return this.https.get(environment.lmsApiBaseUrl + 'showProfile', { headers }).pipe(map(res => <any>res));
 
   }
@@ -153,7 +149,6 @@ export class GobalService {
       'Content-Type': 'application/json',
       'Authorization': this.token,
     });
-    console.log("check header add lecture =>",headers)
     const url = `${environment.lmsApiBaseUrl}showall_quiz/${id}`;
     return this.https.get(url,{headers}).pipe(map(res => <any>res));
    }

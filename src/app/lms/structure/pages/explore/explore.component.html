@@ -91,72 +91,16 @@
                         <div class="row mt-3">
                             <div class="col-md-12 pl-4">
                                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                                    <!-- <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-          <img src="{{ slide.img }}" alt="" width="100%" />
-        </div> -->
-                                    <div ngxSlickItem class="slide-2">
-                                        <!-- <img
-                  class="slick-img"
-                  src="../../../assets/images/Rectangle 75.png"
-                  alt=""
-                /> -->
-                                        <iframe class="iframe_video" src="https://www.youtube.com/embed/2nmTwxMFfPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div ngxSlickItem class="slide-2" *ngFor="let item of lecture">
+                                        <!-- <img class="slick-img" src="{{item.videoUrl}}" alt="" /> -->
+                                        <!-- <iframe src="{{item.videoUrl}}" frameborder="0"></iframe> -->
+                                        <iframe width="560" height="315" [src]="'{{item.videoUrl}}'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         <a routerLink="/lms/app/course-preview">
                                             <h6 class="pt-3 font-weight-bold mast_h6">
-                                                Mastering Capital Wisdom
+                                                {{item.course_title}}
                                             </h6>
-                                            <small class="pre_par_sm">Preparation</small>
+                                            <small class="pre_par_sm">{{item.course_subtitle}}</small>
                                         </a>
-                                    </div>
-                                    <div ngxSlickItem class="slide-2">
-                                        <!-- <img
-                  class="slick-img"
-                  src="../../../assets/images/Rectangle 76.png"
-                  alt=""
-                /> -->
-                                        <iframe class="iframe_video" src="https://www.youtube.com/embed/2nmTwxMFfPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        <a routerLink="/lms/app/course-preview">
-                                            <h6 class="pt-3 font-weight-bold mast_h6">Road To IPO</h6>
-                                            <small class="pre_par_sm">Preparation</small>
-                                        </a>
-                                    </div>
-                                    <div ngxSlickItem class="slide-2">
-                                        <!-- <img
-                  class="slick-img"
-                  src="../../../assets/images/Rectangle 77.png"
-                  alt=""
-                /> -->
-                                        <iframe class="iframe_video" src="https://www.youtube.com/embed/2nmTwxMFfPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        <a routerLink="/lms/app/course-preview">
-                                            <h6 class="pt-3 font-weight-bold mast_h6">
-                                                Coinbase's Insane IPO
-                                            </h6>
-                                            <small class="pre_par_sm">Preparation</small>
-                                        </a>
-                                    </div>
-                                    <div ngxSlickItem class="slide-2">
-                                        <!-- <img
-                  class="slick-img"
-                  src="../../../assets/images/Rectangle 78.png"
-                  alt=""
-                /> -->
-                                        <iframe class="iframe_video" src="https://www.youtube.com/embed/2nmTwxMFfPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        <a routerLink="/lms/app/course-preview">
-                                            <h6 class="pt-3 font-weight-bold mast_h6">
-                                                Alibaba IPO: Stock
-                                            </h6>
-                                            <small class="pre_par_sm">Preparation</small>
-                                        </a>
-                                    </div>
-                                    <div ngxSlickItem class="slide-2">
-                                        <!-- <img
-                  class="slick-img"
-                  src="../../../assets/images/Rectangle 71.png"
-                  alt=""
-                /> -->
-                                        <iframe class="iframe_video" src="https://www.youtube.com/embed/2nmTwxMFfPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        <h6 class="pt-3 font-weight-bold mast_h6">Road To IPO</h6>
-                                        <small class="pre_par_sm">Preparation</small>
                                     </div>
                                 </ngx-slick-carousel>
                             </div>
