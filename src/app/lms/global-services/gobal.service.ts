@@ -20,15 +20,12 @@ export class GobalService {
   constructor(private https: HttpClient) {
     let getUserdetail: any = localStorage.getItem('userDetail');
     let parseDetail: any = JSON.parse(getUserdetail)
-    
-    console.log("Global service token", localStorage.getItem('socialtoken'))
 
-    if(parseDetail === null){
-      let socialToken = localStorage.getItem('socialtoken');
-      let parsesocialToken:any = JSON.stringify(socialToken)
-      if(parsesocialToken.social){
-        this.token = parsesocialToken.token
-      }
+    let socialToken = localStorage.getItem('socialtoken');
+    let parsesocialToken: any = JSON.stringify(socialToken)
+
+    if (parsesocialToken.social) {
+      this.token = parsesocialToken.token
     }
     else {
       this.token = localStorage.getItem('token')
@@ -52,7 +49,7 @@ export class GobalService {
   //   return this.https.post(environment.lmsApiBaseUrl + 'socialLogin',data).pipe(map(res => <any>res));
   // }
   getSocialLogin(data: any) {
-    console.log("Working Global record" , data)
+    console.log("Working Global record", data)
     return this.https.post(environment.lmsApiBaseUrl + 'social_login', data).pipe(map(res => <any>res));
   }
   getLinkedInLogin(data: any) {
@@ -90,83 +87,83 @@ export class GobalService {
 
   }
 
-   profileUpdate(data:any){
-   let headers :any = new HttpHeaders({
-     'Content-Type': 'application/json',
-     'Authorization': this.token,
-   });
-   return this.https.put(environment.lmsApiBaseUrl + 'updateUserProfile',data,{headers}).pipe(map(res => <any>res));
+  profileUpdate(data: any) {
+    let headers: any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token,
+    });
+    return this.https.put(environment.lmsApiBaseUrl + 'updateUserProfile', data, { headers }).pipe(map(res => <any>res));
   }
 
   // Course provider / developer API start
-   createCourse(data:any){
-   let headers :any = new HttpHeaders({
-     'Content-Type': 'application/json',
-     'Authorization': this.token,
-   });
-   return this.https.post(environment.lmsApiBaseUrl + 'createCourse',data,{headers}).pipe(map(res => <any>res));
+  createCourse(data: any) {
+    let headers: any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token,
+    });
+    return this.https.post(environment.lmsApiBaseUrl + 'createCourse', data, { headers }).pipe(map(res => <any>res));
   }
-   getCourse(){
-   let headers :any = new HttpHeaders({
-     'Content-Type': 'application/json',
-     'Authorization': this.token,
-   });
-   return this.https.get(environment.lmsApiBaseUrl + 'getAllCourse',{headers}).pipe(map(res => <any>res));
+  getCourse() {
+    let headers: any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token,
+    });
+    return this.https.get(environment.lmsApiBaseUrl + 'getAllCourse', { headers }).pipe(map(res => <any>res));
   }
-   updateCourse(data:any,id:any){
-   let headers :any = new HttpHeaders({
-     'Content-Type': 'application/json',
-     'Authorization': this.token,
-   });
-   const url = `${environment.lmsApiBaseUrl}updateCourse/${id}`;
-   return this.https.put(url, data,{headers}).pipe(map(res => <any>res));
+  updateCourse(data: any, id: any) {
+    let headers: any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token,
+    });
+    const url = `${environment.lmsApiBaseUrl}updateCourse/${id}`;
+    return this.https.put(url, data, { headers }).pipe(map(res => <any>res));
   }
-   deleteCourse(id:any){
-   let headers :any = new HttpHeaders({
-     'Content-Type': 'application/json',
-     'Authorization': this.token,
-   });
-   const url = `${environment.lmsApiBaseUrl}deleteCourse/${id}`;
-   return this.https.get(url,{headers}).pipe(map(res => <any>res));
+  deleteCourse(id: any) {
+    let headers: any = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token,
+    });
+    const url = `${environment.lmsApiBaseUrl}deleteCourse/${id}`;
+    return this.https.get(url, { headers }).pipe(map(res => <any>res));
   }
 
   // Add leacture
-  addLecture(data:any,id:any){
-    let headers :any = new HttpHeaders({
+  addLecture(data: any, id: any) {
+    let headers: any = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.token,
     });
     const url = `${environment.lmsApiBaseUrl}addLecture/${id}`;
-    return this.https.post(url, data,{headers}).pipe(map(res => <any>res));
-   }
-   // Add quiz
-   addQuiz(data:any,id:any){
-    let headers :any = new HttpHeaders({
+    return this.https.post(url, data, { headers }).pipe(map(res => <any>res));
+  }
+  // Add quiz
+  addQuiz(data: any, id: any) {
+    let headers: any = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.token,
     });
     const url = `${environment.lmsApiBaseUrl}create_quiz/${id}`;
-    return this.https.post(url, data,{headers}).pipe(map(res => <any>res));
-   }
-   // Quiz list
-   quizList(id:any){
-    let headers :any = new HttpHeaders({
+    return this.https.post(url, data, { headers }).pipe(map(res => <any>res));
+  }
+  // Quiz list
+  quizList(id: any) {
+    let headers: any = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.token,
     });
-    console.log("check header add lecture =>",headers)
+    console.log("check header add lecture =>", headers)
     const url = `${environment.lmsApiBaseUrl}showall_quiz/${id}`;
-    return this.https.get(url,{headers}).pipe(map(res => <any>res));
-   }
-   // lecture list
-   lectureList(id:any){
-    let headers :any = new HttpHeaders({
+    return this.https.get(url, { headers }).pipe(map(res => <any>res));
+  }
+  // lecture list
+  lectureList(id: any) {
+    let headers: any = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.token,
     });
-    console.log("check header add lecture =>",headers)
+    console.log("check header add lecture =>", headers)
     const url = `${environment.lmsApiBaseUrl}readLecture/${id}`;
-    return this.https.get(url,{headers}).pipe(map(res => <any>res));
-   }
+    return this.https.get(url, { headers }).pipe(map(res => <any>res));
+  }
 
 }
