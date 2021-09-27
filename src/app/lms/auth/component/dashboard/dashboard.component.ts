@@ -216,12 +216,10 @@ export class DashboardComponent implements OnInit {
     if (data.provider === 'GOOGLE') {
       request['social_id'] = data.idToken;
     } else if (data.provider === 'FACEBOOK') {
-      console.log("Dashboard 215", data.email);
       if (data.email === undefined) {
         this.fbLogin(data)
       }
       request['social_id'] = data.id;
-      console.log("fb auth", data.authToken)
     } else if (data.provider === 'LINKEDIN') {
       request['social_id'] = data.userId;
     }
@@ -235,6 +233,7 @@ export class DashboardComponent implements OnInit {
         // this.router.navigateByUrl('/lms/auth/user-group')
         window.location.href = "/lms/auth/user-group";
       } else {
+        console.log("Already exist" , response)
         let request: any = {
           email: data.email,
         }
@@ -243,14 +242,16 @@ export class DashboardComponent implements OnInit {
         } else if (data.provider === 'FACEBOOK') {
           request['social_id'] = data.authToken;
         }
+        else if (data.provider === 'LINKEDIN') {
+          request['social_id'] = data.userId;
+        }
 
         localStorage.setItem('Testdashboard', JSON.stringify(request))
 
         this._service.getSocialLogin(request).subscribe(res => {
           let response = res;
 
-          //localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res.data.tokens }))
-          localStorage.setItem('socialtoken', JSON.stringify(res))
+          localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res.data.tokens }))
           console.log('social login 257', response)
           window.location.href = "/lms/app/home";
         })
