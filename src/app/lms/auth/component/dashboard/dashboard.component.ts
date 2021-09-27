@@ -234,6 +234,7 @@ export class DashboardComponent implements OnInit {
         window.location.href = "/lms/auth/user-group";
       } else {
         console.log("Already exist" , response)
+        localStorage.setItem("alreadyexist" , JSON.stringify(response))
         let request: any = {
           email: data.email,
         }
