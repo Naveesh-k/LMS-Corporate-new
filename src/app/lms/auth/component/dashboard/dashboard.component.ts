@@ -243,24 +243,23 @@ export class DashboardComponent implements OnInit {
         }
         if (data.provider === 'GOOGLE') {
           request['social_id'] = response.data.social_id;
+          this.socialLogin(request)
         } else if (data.provider === 'FACEBOOK') {
           //request['social_id'] = data.authToken;
           if (data.email === '') {
             this.fbLogin(data)
           }
-          request['social_id'] = response.data.social_id;
+          else{
+            request['social_id'] = response.data.social_id;
+            this.socialLogin(request)
+          }
         }
         else if (data.provider === 'LINKEDIN') {
           //request['social_id'] = data.userId;
           request['social_id'] = response.data.social_id;
+          this.socialLogin(request)
         }
 
-        this.socialLogin(request)
-        this._service.getSocialLogin(request).subscribe(res => {
-
-          localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res.data.tokens }))
-          window.location.href = "/lms/app/home";
-        })
       }
     })
   }
