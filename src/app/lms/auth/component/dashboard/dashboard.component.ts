@@ -219,8 +219,8 @@ export class DashboardComponent implements OnInit {
       if (data.email === undefined) {
         request['social_id'] = data.id
         if (data.id !== '') {
-          this.router.navigateByUrl('/lms/auth/user-group')
-        }
+          this.fbLogin(data)
+        } 
       }
       else {
         request['social_id'] = data.id;
