@@ -217,11 +217,9 @@ export class DashboardComponent implements OnInit {
       request['social_id'] = data.idToken;
     } else if (data.provider === 'FACEBOOK') {
       if (data.email === undefined) {
-        localStorage.setItem("dashboardmobile",JSON.stringify(data))
-        if (data.id !== '') {
-          
-        }
+         
         request['social_id'] = data.id
+        this.fbLogin(data, request)
       }
       else {
         request['social_id'] = data.id;
@@ -274,6 +272,8 @@ export class DashboardComponent implements OnInit {
     }
     this._service.postFacebookLogin(requestlogin).subscribe(res => {
       let response = res;
+
+      localStorage.setItem('FBlogin', JSON.stringify(response))
 
       if (response.email === "") {
         this.spinner.hide();
