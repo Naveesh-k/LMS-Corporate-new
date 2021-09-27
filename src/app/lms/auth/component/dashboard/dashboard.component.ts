@@ -217,9 +217,12 @@ export class DashboardComponent implements OnInit {
       request['social_id'] = data.idToken;
     } else if (data.provider === 'FACEBOOK') {
       if (data.email === undefined) {
-        this.fbLogin(data)
+       
+        request['social_id'] = data.id
       }
-      request['social_id'] = data.id;
+      else {
+        request['social_id'] = data.id;
+      }
     } else if (data.provider === 'LINKEDIN') {
       request['social_id'] = data.userId;
     }
@@ -240,6 +243,9 @@ export class DashboardComponent implements OnInit {
           request['social_id'] = response.data.social_id;
         } else if (data.provider === 'FACEBOOK') {
           //request['social_id'] = data.authToken;
+          if(data.email === ''){
+            this.fbLogin(data)
+          }
           request['social_id'] = response.data.social_id;
         }
         else if (data.provider === 'LINKEDIN') {
@@ -270,7 +276,7 @@ export class DashboardComponent implements OnInit {
       let response = res;
 
       localStorage.setItem('fbresponse', JSON.stringify(response))
-      
+
       if (response.email === "") {
         this.spinner.hide();
         // this.router.navigateByUrl('/lms/auth/sign-up')
