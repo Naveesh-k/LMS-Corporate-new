@@ -21,6 +21,7 @@ export class GobalService {
   constructor(private https: HttpClient) {
     let getUserdetail: any = localStorage.getItem('userDetail');
     let parseDetail: any = JSON.parse(getUserdetail)
+
     if(parseDetail === null){
       let socialToken = localStorage.getItem('socialtoken');
       let parsesocialToken:any = JSON.stringify(socialToken)
@@ -29,8 +30,7 @@ export class GobalService {
       }
     }
     else {
-      this.token = parseDetail.idToken
-      //this.token = parseDetail.authToken
+      this.token = localStorage.getItem('token')
     }
   }
 
