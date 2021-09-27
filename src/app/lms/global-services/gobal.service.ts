@@ -27,12 +27,12 @@ export class GobalService {
     console.log("Global at 27" , parseDetail)
     console.log("Global at 28" ,parsesocialToken )
 
-    if(parseDetail === null){
+    if(parseDetail !== null){
       if(parsesocialToken.social){
         console.log("============================")
         console.log(parsesocialToken.token)
         console.log("===========================")
-        
+
 
 
         this.token = parsesocialToken.token
