@@ -201,7 +201,6 @@ export class SignUpComponent implements OnInit {
   signUp() {
 
     if (this.checkSignUptype) {
-      console.log("it goes from social 200", this.checkSignUptype)
       localStorage.setItem('signupMode', 'true')
       this.showPasswordField = false;
       let extraVariable = {
@@ -219,27 +218,25 @@ export class SignUpComponent implements OnInit {
       this.signUpData['profile'] = this.profilepic
       this.signUpData['social_id'] = this.tokenId
       this.signUpData['provider'] = this.provider
-      console.log('this is sign up data', this.signUpData);
+
+      localStorage.setItem("inSignuprequest", JSON.stringify(this.signUpData))
+
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
+        localStorage.setItem('Signupresponse', JSON.stringify(response))
         localStorage.setItem('token', response.data.tokens)
-        console.log('230 signUp', response)
         if (response.success) {
-          // this.router.navigateByUrl('/lms/app/home')
-          localStorage.setItem("userType", 'false');
-          console.log('social sign me if condition run 235 signup page')
-          console.log("228 checkuser type", localStorage.getItem("userType"))
           window.location.href = "/lms/app/home";
-          this.profileData()
+         // this.profileData()
         }
         else {
+          localStorage.setItem("Signup", 'User exist')
           console.log("Exist User", response.success);
-          console.log('social sign me else condition run 241 signup page')
-          // this.router.navigateByUrl('/lms/app/home')
+          this.router.navigateByUrl('/lms/app/home')
           this.toastr.success('message', response.message);
           localStorage.setItem("userType", 'true');
-          window.location.href = "/lms/app/home";
-          this.profileData()
+         // window.location.href = "/lms/app/home";
+          //this.profileData()
         }
       })
     }
@@ -284,7 +281,7 @@ export class SignUpComponent implements OnInit {
         console.log('280 signUp', response)
 
         localStorage.setItem('token', response.data.tokens)
-        this.profileData()
+        //this.profileData()
         if (response.success === true) {
           console.log(response.success)
           // this.router.navigateByUrl('/lms/app/home')
@@ -312,7 +309,6 @@ export class SignUpComponent implements OnInit {
 
   done() {
     this.signUpData['customize_topic'] = this.customizeTopic
-    console.log("run")
     this.signUp()
   }
 
@@ -337,17 +333,17 @@ export class SignUpComponent implements OnInit {
     })
   }
 
-  profileData() {
-    this._service.profileDataShow().subscribe(res => {
-      let profileObj: any = {}
-      console.log(res, 'signup ts 341 profile data')
-      this.profileRecord = res.data
-      this.profileRecord.forEach((el: any) => {
-        profileObj = el
-      })
-      this.profileName = profileObj.first_name + ' ' + profileObj.last_name
-      console.log(profileObj.companyName, 'sadaaaaaaaaa')
-    })
-  }
+  // profileData() {
+  //   this._service.profileDataShow().subscribe(res => {
+  //     let profileObj: any = {}
+  //     console.log(res, 'signup ts 341 profile data')
+  //     this.profileRecord = res.data
+  //     this.profileRecord.forEach((el: any) => {
+  //       profileObj = el
+  //     })
+  //     this.profileName = profileObj.first_name + ' ' + profileObj.last_name
+  //     console.log(profileObj.companyName, 'sadaaaaaaaaa')
+  //   })
+  // }
 
 }

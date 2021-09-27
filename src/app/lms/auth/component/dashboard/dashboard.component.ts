@@ -216,12 +216,15 @@ export class DashboardComponent implements OnInit {
     if (data.provider === 'GOOGLE') {
       request['social_id'] = data.idToken;
     } else if (data.provider === 'FACEBOOK') {
-      console.log("Dashboard 215", data.email);
       if (data.email === undefined) {
-        this.fbLogin(data)
+        request['social_id'] = data.id
+        if (data.id !== '') {
+          this.fbLogin(data)
+        } 
       }
-      request['social_id'] = data.id;
-      console.log("fb auth", data.authToken)
+      else {
+        request['social_id'] = data.id;
+      }
     } else if (data.provider === 'LINKEDIN') {
       request['social_id'] = data.userId;
     }
@@ -239,18 +242,22 @@ export class DashboardComponent implements OnInit {
           email: data.email,
         }
         if (data.provider === 'GOOGLE') {
-          request['social_id'] = data.idToken;
+          request['social_id'] = response.data.social_id;
         } else if (data.provider === 'FACEBOOK') {
-          request['social_id'] = data.authToken;
+          //request['social_id'] = data.authToken;
+          if (data.email === '') {
+            this.fbLogin(data)
+          }
+          request['social_id'] = response.data.social_id;
+        }
+        else if (data.provider === 'LINKEDIN') {
+          //request['social_id'] = data.userId;
+          request['social_id'] = response.data.social_id;
         }
 
-        localStorage.setItem('Testdashboard', JSON.stringify(request))
-
         this._service.getSocialLogin(request).subscribe(res => {
-          let response = res;
 
           localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res.data.tokens }))
-          console.log('social login 257', response)
           window.location.href = "/lms/app/home";
         })
       }
@@ -260,22 +267,19 @@ export class DashboardComponent implements OnInit {
   // if user are already exist
 
   fbLogin(data: any) {
-    console.log(data)
+    this.spinner.show();
     let request: any = {
       social_id: data.id,
     }
-    console.log('fb login', request)
-    this.spinner.show();
     this._service.postFacebookLogin(request).subscribe(res => {
       let response = res;
-      console.log(response, response.email)
       if (response.email === "") {
         this.spinner.hide();
-        // this.router.navigateByUrl('/lms/auth/sign-up')
-        window.location.href = "/lms/auth/sign-up";
+        this.router.navigateByUrl('/lms/auth/sign-up')
+        //window.location.href = "/lms/auth/sign-up";
       } else if (response.email != "") {
-        // this.router.navigateByUrl('/lms/app/home')
-        window.location.href = "/lms/app/home";
+        this.router.navigateByUrl('/lms/app/home')
+        //window.location.href = "/lms/app/home";
       }
     })
   }

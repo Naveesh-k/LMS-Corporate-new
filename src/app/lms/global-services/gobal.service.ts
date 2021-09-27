@@ -10,7 +10,6 @@ import { environment } from '../../../environments/environment';
 export class GobalService {
   token: any = ''
 
-
   globalObject: any = {
     signup_data: '',
     signupType: false
@@ -22,17 +21,29 @@ export class GobalService {
     this.token = localStorage.getItem('token')
     let getUserdetail: any = localStorage.getItem('userDetail');
     let parseDetail: any = JSON.parse(getUserdetail)
-    if(parseDetail === null){
-      let socialToken = localStorage.getItem('socialtoken');
-      let parsesocialToken:any = JSON.stringify(socialToken)
+    
+    let socialToken:any = localStorage.getItem('socialtoken');
+    let parsesocialToken:any = JSON.parse(socialToken)
+    
+    console.log("Global at 27" , parseDetail)
+    console.log("Global at 28" ,parsesocialToken )
+
+    if(parseDetail !== null){
       if(parsesocialToken.social){
+        console.log("============================")
+        console.log(parsesocialToken.token)
+        console.log("===========================")
+
+
+
         this.token = parsesocialToken.token
       }
     }
     else {
-      this.token = parseDetail.idToken
-      //this.token = parseDetail.authToken
+      this.token = localStorage.getItem('token')
     }
+
+    console.log("Global at service" , this.token)
   }
 
   checkSignupType() {
