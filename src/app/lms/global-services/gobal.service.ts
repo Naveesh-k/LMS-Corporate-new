@@ -25,16 +25,8 @@ export class GobalService {
     let socialToken: any = localStorage.getItem('socialtoken');
     let parsesocialToken: any = JSON.parse(socialToken)
 
-    console.log("Global at 27", parseDetail)
-    console.log("Global at 28", parsesocialToken)
-
     if (parseDetail !== null) {
-      if(parsesocialToken === null){
-        if(parsesocialToken.provider === 'FACEBOOK'){
-           this.token = parsesocialToken.authToken
-        }
-      }
-      else{
+      if (parsesocialToken !== null) {
         if (parsesocialToken.social) {
           this.token = parsesocialToken.token
         }
