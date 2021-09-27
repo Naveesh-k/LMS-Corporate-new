@@ -241,10 +241,12 @@ export class DashboardComponent implements OnInit {
         if (data.provider === 'GOOGLE') {
           request['social_id'] = response.data.social_id;
         } else if (data.provider === 'FACEBOOK') {
-          request['social_id'] = data.authToken;
+          //request['social_id'] = data.authToken;
+          request['social_id'] = response.data.social_id;
         }
         else if (data.provider === 'LINKEDIN') {
-          request['social_id'] = data.userId;
+          //request['social_id'] = data.userId;
+          request['social_id'] = response.data.social_id;
         }
 
         localStorage.setItem('Testdashboard', JSON.stringify(request))
