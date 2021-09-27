@@ -273,6 +273,8 @@ export class DashboardComponent implements OnInit {
     }
     this._service.postFacebookLogin(request).subscribe(res => {
       let response = res;
+      localStorage.setItem("fblogin", JSON.stringify(response))
+      
       if (response.email === "") {
         this.spinner.hide();
         //this.router.navigateByUrl('/lms/auth/sign-up')
