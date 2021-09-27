@@ -239,7 +239,7 @@ export class DashboardComponent implements OnInit {
           email: data.email,
         }
         if (data.provider === 'GOOGLE') {
-          request['social_id'] = data.idToken;
+          request['social_id'] = response.data.social_id;
         } else if (data.provider === 'FACEBOOK') {
           request['social_id'] = data.authToken;
         }
