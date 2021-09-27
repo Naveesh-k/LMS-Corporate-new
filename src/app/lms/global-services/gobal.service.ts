@@ -21,8 +21,8 @@ export class GobalService {
     let getUserdetail: any = localStorage.getItem('userDetail');
     let parseDetail: any = JSON.parse(getUserdetail)
     
-    let socialToken = localStorage.getItem('socialtoken');
-    let parsesocialToken:any = JSON.stringify(socialToken)
+    let socialToken:any = localStorage.getItem('socialtoken');
+    let parsesocialToken:any = JSON.parse(socialToken)
     
     console.log("Global at 27" , parseDetail)
     console.log("Global at 28" ,parsesocialToken )
