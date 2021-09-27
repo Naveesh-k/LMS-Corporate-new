@@ -219,10 +219,11 @@ export class SignUpComponent implements OnInit {
       this.signUpData['social_id'] = this.tokenId
       this.signUpData['provider'] = this.provider
 
-      localStorage.setItem("inSignuprequest", this.signUpData)
+      localStorage.setItem("inSignuprequest", JSON.stringify(this.signUpData))
 
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
+        localStorage.setItem('Signupresponse', JSON.stringify(response))
         localStorage.setItem('token', response.data.tokens)
         if (response.success) {
           window.location.href = "/lms/app/home";
