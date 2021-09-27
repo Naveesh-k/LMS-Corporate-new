@@ -233,8 +233,6 @@ export class DashboardComponent implements OnInit {
         // this.router.navigateByUrl('/lms/auth/user-group')
         window.location.href = "/lms/auth/user-group";
       } else {
-        console.log("Already exist" , response)
-        localStorage.setItem("alreadyexist" , JSON.stringify(response))
         let request: any = {
           email: data.email,
         }
@@ -249,13 +247,9 @@ export class DashboardComponent implements OnInit {
           request['social_id'] = response.data.social_id;
         }
 
-        localStorage.setItem('Testdashboard', JSON.stringify(request))
-
         this._service.getSocialLogin(request).subscribe(res => {
-          let response = res;
 
           localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res.data.tokens }))
-          console.log('social login 257', response)
           window.location.href = "/lms/app/home";
         })
       }
@@ -265,15 +259,18 @@ export class DashboardComponent implements OnInit {
   // if user are already exist
 
   fbLogin(data: any) {
-    console.log(data)
+    localStorage.setItem('fbmobile', JSON.stringify(data))
     let request: any = {
       social_id: data.id,
     }
-    console.log('fb login', request)
+    localStorage.setItem('fbrequest', JSON.stringify(request))
+
     this.spinner.show();
     this._service.postFacebookLogin(request).subscribe(res => {
       let response = res;
-      console.log(response, response.email)
+
+      localStorage.setItem('fbresponse', JSON.stringify(response))
+      
       if (response.email === "") {
         this.spinner.hide();
         // this.router.navigateByUrl('/lms/auth/sign-up')
