@@ -20,6 +20,8 @@ export class GobalService {
   constructor(private https: HttpClient) {
     let getUserdetail: any = localStorage.getItem('userDetail');
     let parseDetail: any = JSON.parse(getUserdetail)
+    
+    console.log("Global service token", localStorage.getItem('socialtoken'))
 
     if(parseDetail === null){
       let socialToken = localStorage.getItem('socialtoken');
