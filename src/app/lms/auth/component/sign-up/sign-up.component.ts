@@ -242,7 +242,11 @@ export class SignUpComponent implements OnInit {
     }
     else {
       this.showPasswordField = true;
-      console.log("Its goes from normal 243")
+      
+      console.log("Its goes from normal 243");
+      let email:any = localStorage.getItem('fbloginemail')
+      localStorage.setItem("Signup 246" ,email)
+
       let request = {
         size_of_team: 0,
         on_boarding: 0,
