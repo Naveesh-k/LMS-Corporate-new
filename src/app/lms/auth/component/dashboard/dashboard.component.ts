@@ -219,7 +219,7 @@ export class DashboardComponent implements OnInit {
       if (data.email === undefined) {
         request['social_id'] = data.id
         if (data.id !== '') {
-          this.fbLogin(data)
+          this.fbLogin(data, request)
         }
       }
       else {
@@ -247,7 +247,7 @@ export class DashboardComponent implements OnInit {
         } else if (data.provider === 'FACEBOOK') {
           //request['social_id'] = data.authToken;
           if (data.email === '') {
-            this.fbLogin(data)
+            this.fbLogin(data, request)
           }
           else{
             request['social_id'] = response.data.social_id;
@@ -266,12 +266,12 @@ export class DashboardComponent implements OnInit {
 
   // if user are already exist
 
-  fbLogin(data: any) {
+  fbLogin(data: any, request:any) {
     this.spinner.show();
-    let request: any = {
+    let requestlogin: any = {
       social_id: data.id,
     }
-    this._service.postFacebookLogin(request).subscribe(res => {
+    this._service.postFacebookLogin(requestlogin).subscribe(res => {
       let response = res;
       localStorage.setItem("fbloginemail", response.email)
 
@@ -285,6 +285,8 @@ export class DashboardComponent implements OnInit {
       }
     })
   }
+
+  
 
   socialLogin(request: any) {
     this._service.getSocialLogin(request).subscribe(res => {
