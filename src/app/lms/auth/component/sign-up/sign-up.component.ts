@@ -227,16 +227,16 @@ export class SignUpComponent implements OnInit {
         localStorage.setItem('token', response.data.tokens)
         if (response.success) {
           window.location.href = "/lms/app/home";
-          this.profileData()
+         // this.profileData()
         }
         else {
           localStorage.setItem("Signup", 'User exist')
           console.log("Exist User", response.success);
-          this.router.navigateByUrl('/lms/auth')
+          this.router.navigateByUrl('/lms/app/home')
           this.toastr.success('message', response.message);
           localStorage.setItem("userType", 'true');
          // window.location.href = "/lms/app/home";
-          this.profileData()
+          //this.profileData()
         }
       })
     }
@@ -281,7 +281,7 @@ export class SignUpComponent implements OnInit {
         console.log('280 signUp', response)
 
         localStorage.setItem('token', response.data.tokens)
-        this.profileData()
+        //this.profileData()
         if (response.success === true) {
           console.log(response.success)
           // this.router.navigateByUrl('/lms/app/home')
@@ -333,17 +333,17 @@ export class SignUpComponent implements OnInit {
     })
   }
 
-  profileData() {
-    this._service.profileDataShow().subscribe(res => {
-      let profileObj: any = {}
-      console.log(res, 'signup ts 341 profile data')
-      this.profileRecord = res.data
-      this.profileRecord.forEach((el: any) => {
-        profileObj = el
-      })
-      this.profileName = profileObj.first_name + ' ' + profileObj.last_name
-      console.log(profileObj.companyName, 'sadaaaaaaaaa')
-    })
-  }
+  // profileData() {
+  //   this._service.profileDataShow().subscribe(res => {
+  //     let profileObj: any = {}
+  //     console.log(res, 'signup ts 341 profile data')
+  //     this.profileRecord = res.data
+  //     this.profileRecord.forEach((el: any) => {
+  //       profileObj = el
+  //     })
+  //     this.profileName = profileObj.first_name + ' ' + profileObj.last_name
+  //     console.log(profileObj.companyName, 'sadaaaaaaaaa')
+  //   })
+  // }
 
 }
