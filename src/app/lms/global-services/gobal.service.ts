@@ -32,6 +32,7 @@ export class GobalService {
         console.log("============================")
         console.log(parsesocialToken.token)
         console.log("===========================")
+        
 
 
         this.token = parsesocialToken.token
