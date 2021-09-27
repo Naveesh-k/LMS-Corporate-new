@@ -24,7 +24,8 @@ export class GobalService {
     let socialToken = localStorage.getItem('socialtoken');
     let parsesocialToken:any = JSON.stringify(socialToken)
     
-    console.log()
+    console.log("Global at 27" , parseDetail)
+    console.log("Global at 28" ,parsesocialToken )
 
     if(parseDetail === null){
       if(parsesocialToken.social){
@@ -32,7 +33,7 @@ export class GobalService {
         console.log(parsesocialToken.token)
         console.log("===========================")
 
-        
+
         this.token = parsesocialToken.token
       }
     }
