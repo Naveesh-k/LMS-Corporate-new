@@ -219,7 +219,7 @@ export class DashboardComponent implements OnInit {
       if (data.email === undefined) {
         request['social_id'] = data.id
         if (data.id !== '') {
-          this.fbLogin(data, request)
+          request['social_id'] = data.id
         }
       }
       else {
