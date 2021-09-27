@@ -217,7 +217,7 @@ export class DashboardComponent implements OnInit {
       request['social_id'] = data.idToken;
     } else if (data.provider === 'FACEBOOK') {
       if (data.email === undefined) {
-        localStorage.setItem("dashboardmobile",data)
+        localStorage.setItem("dashboardmobile",JSON.stringify(data))
         if (data.id !== '') {
           
         }
