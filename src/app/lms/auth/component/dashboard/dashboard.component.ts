@@ -217,8 +217,10 @@ export class DashboardComponent implements OnInit {
       request['social_id'] = data.idToken;
     } else if (data.provider === 'FACEBOOK') {
       if (data.email === undefined) {
-       
         request['social_id'] = data.id
+        if (data.id !== '') {
+          this.router.navigateByUrl('/lms/auth/user-group')
+        }
       }
       else {
         request['social_id'] = data.id;
@@ -243,7 +245,7 @@ export class DashboardComponent implements OnInit {
           request['social_id'] = response.data.social_id;
         } else if (data.provider === 'FACEBOOK') {
           //request['social_id'] = data.authToken;
-          if(data.email === ''){
+          if (data.email === '') {
             this.fbLogin(data)
           }
           request['social_id'] = response.data.social_id;
