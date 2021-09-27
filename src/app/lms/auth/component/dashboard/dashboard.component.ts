@@ -281,7 +281,11 @@ export class DashboardComponent implements OnInit {
         window.location.href = "/lms/auth/sign-up";
       } else if (response.email != "") {
         this.spinner.hide();
-        this.socialLogin(request)
+
+        this.socialLogin({
+          email: response.email,
+          social_id: data.id
+        })
       }
     })
   }
