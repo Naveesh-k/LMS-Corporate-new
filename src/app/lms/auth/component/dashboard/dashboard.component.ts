@@ -267,25 +267,19 @@ export class DashboardComponent implements OnInit {
   // if user are already exist
 
   fbLogin(data: any) {
-    localStorage.setItem('fbmobile', JSON.stringify(data))
+    this.spinner.show();
     let request: any = {
       social_id: data.id,
     }
-    localStorage.setItem('fbrequest', JSON.stringify(request))
-
-    this.spinner.show();
     this._service.postFacebookLogin(request).subscribe(res => {
       let response = res;
-
-      localStorage.setItem('fbresponse', JSON.stringify(response))
-
       if (response.email === "") {
         this.spinner.hide();
-        // this.router.navigateByUrl('/lms/auth/sign-up')
-        window.location.href = "/lms/auth/sign-up";
+        this.router.navigateByUrl('/lms/auth/sign-up')
+        //window.location.href = "/lms/auth/sign-up";
       } else if (response.email != "") {
-        // this.router.navigateByUrl('/lms/app/home')
-        window.location.href = "/lms/app/home";
+        this.router.navigateByUrl('/lms/app/home')
+        //window.location.href = "/lms/app/home";
       }
     })
   }
