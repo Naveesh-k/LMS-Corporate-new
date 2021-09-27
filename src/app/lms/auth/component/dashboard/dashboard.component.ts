@@ -276,8 +276,8 @@ export class DashboardComponent implements OnInit {
       let response = res;
       if (response.email === "") {
         this.spinner.hide();
-        this.router.navigateByUrl('/lms/auth/sign-up')
-        //window.location.href = "/lms/auth/sign-up";
+        //this.router.navigateByUrl('/lms/auth/sign-up')
+        window.location.href = "/lms/auth/sign-up";
       } else if (response.email != "") {
         this.spinner.hide();
         this.socialLogin(request)
