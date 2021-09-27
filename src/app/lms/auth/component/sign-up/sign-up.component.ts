@@ -232,7 +232,7 @@ export class SignUpComponent implements OnInit {
         else {
           localStorage.setItem("Signup", 'User exist')
           console.log("Exist User", response.success);
-          this.router.navigateByUrl('/lms/app/home')
+          this.router.navigateByUrl('/lms/auth')
           this.toastr.success('message', response.message);
           localStorage.setItem("userType", 'true');
          // window.location.href = "/lms/app/home";
