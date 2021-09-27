@@ -10,7 +10,6 @@ import { environment } from '../../../environments/environment';
 export class GobalService {
   token: any = ''
 
-
   globalObject: any = {
     signup_data: '',
     signupType: false
