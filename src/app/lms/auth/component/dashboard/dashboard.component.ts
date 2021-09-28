@@ -217,10 +217,9 @@ export class DashboardComponent implements OnInit {
       request['social_id'] = data.idToken;
     } else if (data.provider === 'FACEBOOK') {
       if (data.email === undefined) {
+         
         request['social_id'] = data.id
-        if (data.id !== '') {
-          this.fbLogin(data)
-        } 
+        this.fbLogin(data, request)
       }
       else {
         request['social_id'] = data.id;
@@ -243,44 +242,61 @@ export class DashboardComponent implements OnInit {
         }
         if (data.provider === 'GOOGLE') {
           request['social_id'] = response.data.social_id;
+          this.socialLogin(request)
         } else if (data.provider === 'FACEBOOK') {
           //request['social_id'] = data.authToken;
           if (data.email === '') {
-            this.fbLogin(data)
+            this.fbLogin(data, request)
           }
-          request['social_id'] = response.data.social_id;
+          else {
+            request['social_id'] = response.data.social_id;
+            this.socialLogin(request)
+          }
         }
         else if (data.provider === 'LINKEDIN') {
           //request['social_id'] = data.userId;
           request['social_id'] = response.data.social_id;
+          this.socialLogin(request)
         }
 
-        this._service.getSocialLogin(request).subscribe(res => {
-
-          localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res.data.tokens }))
-          window.location.href = "/lms/app/home";
-        })
       }
     })
   }
 
   // if user are already exist
 
-  fbLogin(data: any) {
+  fbLogin(data: any, request: any) {
     this.spinner.show();
-    let request: any = {
+    let requestlogin: any = {
       social_id: data.id,
     }
-    this._service.postFacebookLogin(request).subscribe(res => {
+    this._service.postFacebookLogin(requestlogin).subscribe(res => {
       let response = res;
+
+      localStorage.setItem('FBlogin', JSON.stringify(response))
+
       if (response.email === "") {
         this.spinner.hide();
-        this.router.navigateByUrl('/lms/auth/sign-up')
-        //window.location.href = "/lms/auth/sign-up";
+        //this.router.navigateByUrl('/lms/auth/sign-up')
+        window.location.href = "/lms/auth/sign-up";
       } else if (response.email != "") {
-        this.router.navigateByUrl('/lms/app/home')
-        //window.location.href = "/lms/app/home";
+        this.spinner.hide();
+
+        this.socialLogin({
+          email: response.email,
+          social_id: data.id
+        })
       }
+    })
+  }
+
+
+
+  socialLogin(request: any) {
+    this._service.getSocialLogin(request).subscribe(res => {
+
+      localStorage.setItem('socialtoken', JSON.stringify({ social: true, token: res.data.tokens }))
+      window.location.href = "/lms/app/home";
     })
   }
 
