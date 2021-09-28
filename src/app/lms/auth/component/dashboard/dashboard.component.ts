@@ -217,7 +217,7 @@ export class DashboardComponent implements OnInit {
       request['social_id'] = data.idToken;
     } else if (data.provider === 'FACEBOOK') {
       if (data.email === undefined) {
-         
+
         request['social_id'] = data.id
         this.fbLogin(data, request)
       }
@@ -234,7 +234,6 @@ export class DashboardComponent implements OnInit {
       console.log('Dashboard 231', response)
       localStorage.setItem('signupMode', 'true')
       if (response.success == true) {
-        // this.router.navigateByUrl('/lms/auth/user-group')
         window.location.href = "/lms/auth/user-group";
       } else {
         let request: any = {
@@ -244,7 +243,6 @@ export class DashboardComponent implements OnInit {
           request['social_id'] = response.data.social_id;
           this.socialLogin(request)
         } else if (data.provider === 'FACEBOOK') {
-          //request['social_id'] = data.authToken;
           if (data.email === '') {
             this.fbLogin(data, request)
           }
@@ -254,7 +252,6 @@ export class DashboardComponent implements OnInit {
           }
         }
         else if (data.provider === 'LINKEDIN') {
-          //request['social_id'] = data.userId;
           request['social_id'] = response.data.social_id;
           this.socialLogin(request)
         }

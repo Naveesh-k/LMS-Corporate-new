@@ -45,6 +45,7 @@ export class CpDashboardComponent implements OnInit {
   imageFile: any;
   videoPath: any;
   videoFile: any;
+  isActiveTab: boolean =false;
   topics: any = [{
     'name': 'Course',
     'para': 'With a course, you can build a curriculum for your students that can be self-paced or guided directly by you, the instructor.',
@@ -58,7 +59,7 @@ export class CpDashboardComponent implements OnInit {
     'image': `${environment.assetPath}/images/computer frame.png`,
     'active':false,
   }];
-  customizeTopic : any = [];
+  customizeTopic : boolean =true;
   editor:any = Editor;
   html: any ='';
 
@@ -110,8 +111,8 @@ export class CpDashboardComponent implements OnInit {
   }
 
   tabChange(tabname:any){
-    console.log('tab',tabname)
     this.changeTab = tabname
+    this.isActiveTab ? 'false' : 'true'
   }
 
   editSelectDetail(data:any){
@@ -122,11 +123,15 @@ export class CpDashboardComponent implements OnInit {
       startDate: data.start_date,
       status: data.status,
     })
+    this.isActiveTab = true;
     this.showId = data.id
     localStorage.setItem('courseId', this.showId)
     console.log(data)
   }
 
+  withoutAction(){
+    this.toastr.info('Message','Please select any course')
+  }
 
   deleteDetail(data:any){
    this.showId = data.id
@@ -136,19 +141,11 @@ export class CpDashboardComponent implements OnInit {
 // Single select
   selectedTopics(item:any){
     this.topics.forEach((element:any)=>{
-       if(item.name === element.name){
-        element.active = true;
-        let index = this.customizeTopic.indexOf(element.name)
-        element.active ?
-          this.customizeTopic.push(element.name):
-          this.customizeTopic.splice(index, 1)
-          console.log('145',this.customizeTopic)
-       }
-       else {
-        console.log('148',this.customizeTopic)
-        element.active = false;
-       }
+      element.active =  item.name === element.name
+
+      this.customizeTopic =false
     })
+
   }
 
   get f() { return this.createCourseForm.controls; }
@@ -163,7 +160,11 @@ export class CpDashboardComponent implements OnInit {
     }
 }
 
-
+showCourseList(){
+        this.showCourse = false;
+        this.show = true;
+        this.showCurru= true;
+}
 
 // Creating course API
   courseCreate() {
@@ -327,8 +328,12 @@ listOfLecture() {
       this.videoFile = this.videoPath[0]
     }
     console.log(formData)
+    this.spinner.show();
     this._service.uploadFile(formData).subscribe(res => {
       this.uploadedVideo = res.image
+      if(res){
+      this.spinner.hide();
+      }
     })
   }
 

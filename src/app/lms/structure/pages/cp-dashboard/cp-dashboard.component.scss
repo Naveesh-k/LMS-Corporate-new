@@ -159,10 +159,18 @@ p.with_para {
     margin: 0;
 }
 
-a.btn_next {
+button.btn_next {
     background: #229ca7;
     color: #fff;
     width: 25%;
+    border-radius: 12px;
+    padding: 10px 0;
+}
+
+button.btn-show {
+    background: #229ca7;
+    color: #fff;
+    width: 15%;
     border-radius: 12px;
     padding: 10px 0;
 }
