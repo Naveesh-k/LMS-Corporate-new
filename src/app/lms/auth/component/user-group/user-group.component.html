@@ -11,17 +11,17 @@
                         <h5 class="h5_just">Please Indicate Your User Group</h5>
                         <div class="mar_t" *ngFor="let topic of topics; index as i">
                             <a *ngIf="topic.name === 'Free user'" [ngClass]="[ 'btn ', topic.active === true ? 'bg-grenish-box' : 'btn_free_user'
-                          ]" (click)="selectOne(topic)">Free user</a>
+                          ]" (click)="selectOne(topic,$event)">Free user</a>
                             <div class="form-group col select_dropdown" *ngIf="topic.name === 'Subscriber'">
                                 <select [ngClass]="[ 'form-control ', topic.active === true ? 'select_field_green' : 'select_field'
-                                ]" (click)="selectOne(topic)">
+                                ]" (click)="selectOne(topic,$event)">
                                   <option class="drop_option" selected>Subscriber</option>
-                                  <option class="drop_option">Normal</option>
-                                  <option class="drop_option">Enterprise</option>
+                                  <option class="drop_option" value="normal">Normal</option>
+                                  <option class="drop_option" value="enterprise">Enterprise</option>
                                 </select>
                             </div>
                             <a *ngIf="topic.name === 'Courses Provider'" [ngClass]="[ 'btn ', topic.active === true ? 'bg-grenish-box' : 'btn_free_user'
-                            ]" (click)="selectOne(topic)">Courses Provider</a>
+                            ]" (click)="selectOne(topic,$event)">Courses Provider</a>
                         </div>
                         <div>
                             <a class="btn btn_next" (click)="getSignUp()">Next</a>

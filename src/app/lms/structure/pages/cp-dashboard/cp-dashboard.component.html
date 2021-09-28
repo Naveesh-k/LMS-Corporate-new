@@ -180,6 +180,7 @@
                                             <div class="row mt-5">
                                                 <div class="col-md-12 text-center">
                                                     <a class="btn btn_next" (click)="show_createForm()">Next</a>
+                                                    <!-- [disabled]="customizeTopic == ''" -->
                                                 </div>
                                             </div>
                                         </div>
@@ -232,10 +233,8 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-12">
                                                         <label class="title-label">Select Url</label>
-                                                        <input type="text" formControlName="selectUrl" class="form-control form-input" [ngClass]="{ 'is-invalid': submitted && f.selectUrl.errors }" />
-                                                        <div *ngIf="submitted && f.selectUrl.errors" class="invalid-feedback">
-                                                            <div *ngIf="f.selectUrl.errors.required">Select Author is required</div>
-                                                        </div>
+                                                        <br>
+                                                        <input type="file" class="file_type" formControlName="selectUrl" (change)="videoUplaoad($event)" accept=".mp4">
                                                     </div>
                                                 </div>
 
@@ -276,7 +275,7 @@
                                             <td scope="col" class="td_title">Course Title</td>
                                             <td scope="col" class="lorem_p">Course Subtitle</td>
                                             <td scope="col"></td>
-                                            <td scope="col"></td>
+                                            <td scope="col"> Author</td>
                                             <td scope="col"></td>
                                             <td scope="col" class="td_field_btn">
                                                 <a class="btn btn-draft"> Draft</a>
@@ -296,7 +295,7 @@
                                             <td class="td_title">{{item.course_title}}</td>
                                             <td scope="col" class="lorem_p">{{item.course_subtitle}}</td>
                                             <td></td>
-                                            <td></td>
+                                            <td>{{item.select_author}}</td>
                                             <td></td>
                                             <td scope="col" class="td_field_btn">
                                                 <a class="btn btn-active"> Active</a>

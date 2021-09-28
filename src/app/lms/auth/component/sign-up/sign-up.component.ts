@@ -67,6 +67,7 @@ export class SignUpComponent implements OnInit {
   imageFile: any;
   uploadedImage: any;
   profileName: any;
+  userType:any;
   profileRecord: any = [];
 
   constructor(public router: Router,
@@ -78,6 +79,12 @@ export class SignUpComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+        // ----------------------------------add paramter for userType
+    let user :any = localStorage.getItem('typeOfUser');
+    this.userType = JSON.parse(user)
+    console.log(this.userType.user_type)
+        // ----------------------------------add paramter for userType
 
     let checkSignup: any = localStorage.getItem('signupType')
     this.checkSignUptype = checkSignup === 'true'
@@ -242,7 +249,7 @@ export class SignUpComponent implements OnInit {
     }
     else {
       this.showPasswordField = true;
-      
+
       console.log("Its goes from normal 243");
       let email:any = localStorage.getItem('fbloginemail')
       localStorage.setItem("Signup 246" ,email)
@@ -272,6 +279,11 @@ export class SignUpComponent implements OnInit {
         group_val: "",
         category: "",
         topic: "",
+        // ----------------------------------add paramter for userType
+        user_type: this.userType.user_type,
+        subscriber_type: this.userType.subscriber_type
+        // ----------------------------------add paramter for userType
+
       }
 
       console.log(request, '274')
