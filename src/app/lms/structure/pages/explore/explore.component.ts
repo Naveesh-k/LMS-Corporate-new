@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 
@@ -12,7 +13,7 @@ export class ExploreComponent implements OnInit {
   darkMode: boolean = false;
   showId:any = localStorage.getItem('courseId');
   lecture:any
-  constructor(public _service: GobalService,
+  constructor(public _service: GobalService,public router: Router,
     public mode: ColorModeService // dark-light
   ) {}
 
@@ -42,10 +43,14 @@ export class ExploreComponent implements OnInit {
     try{
       this._service.getCourse().subscribe(res => {
         this.lecture  = res.data;
-        console.log(this.lecture)
+        console.log(this.lecture[0].videoUrl)
       })
     } catch(error){
       console.log(error)
     }
+}
+
+routePage(){
+  this.router.navigateByUrl('/lms/app/dash-var')
 }
 }

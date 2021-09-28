@@ -91,10 +91,20 @@
                         <div class="row mt-3">
                             <div class="col-md-12 pl-4">
                                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                                    <div ngxSlickItem class="slide-2" *ngFor="let item of lecture">
-                                        <!-- <img class="slick-img" src="{{item.videoUrl}}" alt="" /> -->
-                                        <!-- <iframe src="{{item.videoUrl}}" frameborder="0"></iframe> -->
-                                        <iframe width="560" height="315" [src]="'{{item.videoUrl}}'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div ngxSlickItem class="slide-2" *ngFor="let item of lecture" (click)="routePage()">
+                                        <video id="player" class="video_plyr" playsinline controls data-poster="../../../../../assets/images/Rectangle 72.png">
+                                          <source src="{{item.videoUrl}}" type="video/mp4" />
+                                          <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
+                                        </video>
+                                        <!-- <div class="plyr__video-embed" id="player">
+                                            <iframe src="{{item.videoUrl}}" allowfullscreen allowtransparency allow="autoplay"></iframe>
+                                        </div> -->
+
+
+
+                                        <!-- <iframe width="200" height="150" [src]="'{{item.videoUrl}}'"></iframe> -->
+
+
                                         <a routerLink="/lms/app/course-preview">
                                             <h6 class="pt-3 font-weight-bold mast_h6">
                                                 {{item.course_title}}
