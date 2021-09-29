@@ -318,37 +318,6 @@ export class SignUpComponent implements OnInit {
 
   }
 
-  updateProfile() {
-    let request = {
-
-      first_name: this.registerForm.value.firstName,
-      last_name: this.registerForm.value.lastName,
-      profile: this.uploadedImage.location,
-      customize_topic: this.customizeTopic,
-      position: this.registerForm.value.position,
-      industry: this.registerForm.value.industry,
-      job_title: this.registerForm.value.jobTitle,
-      location: this.registerForm.value.location,
-      market: this.registerForm.value.market,
-      provider: this.registerForm.value.provider,
-      contact_number: this.registerForm.value.contactNumber,
-      experience: 9,
-         email: this.registerForm.value.email,
-         password: this.registerForm.value.password,
-         companyName: this.registerForm.value.companyName,
-         social_id: this.tokenId,
-         group_val: "",
-         category: "",
-         topic: "",
-         on_boarding: 0,
-    }
-
-    this._service.profileUpdate(request).subscribe(res => {
-      let response = res;
-      console.log('134 update profile', response)
-    })
-  }
-
   selectedTopics(item: any) {
     this.topics.forEach((element: any) => {
       if (item.name === element.name) {
@@ -364,12 +333,7 @@ export class SignUpComponent implements OnInit {
 
   done() {
     this.signUpData['customize_topic'] = this.customizeTopic
-    if(this.checkSignUptype){
-      this.updateProfile()
-    }else {
-      this.signUp()
-    }
-
+    this.signUp()
   }
 
   imageUplaoad(event: any) {
