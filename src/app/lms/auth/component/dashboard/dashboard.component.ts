@@ -278,6 +278,7 @@ export class DashboardComponent implements OnInit {
       } else if (response.email != "") {
         this.spinner.hide();
 
+
         this.socialLogin({
           email: response.email,
           social_id: data.id
