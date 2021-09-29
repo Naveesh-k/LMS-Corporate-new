@@ -91,7 +91,7 @@ export class SignUpComponent implements OnInit {
     this.checkSignUptype = checkSignup === 'true'
     let getLocalStorage: any = localStorage.getItem('userDetail');
     let signUpData: any = JSON.parse(getLocalStorage);
-    console.log(signUpData, 94)
+    console.log(signUpData, '94')
     if (signUpData && signUpData.photoUrl) {
       this.profilepic = this.checkSignUptype ? signUpData.photoUrl : '';
       let idToken = ''
