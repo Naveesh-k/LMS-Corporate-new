@@ -219,7 +219,11 @@ export class SignUpComponent implements OnInit {
         category: '',
         password: '',
         topic: '',
-        on_boarding: '1'
+        on_boarding: '1',
+        // -------check navish
+        first_name:  this.registerForm.value.firstName,
+        last_name:  this.registerForm.value.lastName
+        // -------check navish
       }
       this.signUpData = { ...this.signUpData, ...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value }
       this.signUpData['profile'] = this.profilepic
