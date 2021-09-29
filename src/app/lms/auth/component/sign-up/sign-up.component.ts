@@ -86,59 +86,83 @@ export class SignUpComponent implements OnInit {
     console.log(this.userType.user_type)
         // ----------------------------------add paramter for userType
 
-        let checkSignup: any = localStorage.getItem('signupType')
-        this.checkSignUptype = checkSignup === 'true'
-        let getLocalStorage: any = localStorage.getItem('userDetail');
-        let signUpData: any = JSON.parse(getLocalStorage);
-        if (signUpData && signUpData.photoUrl) {
-          this.profilepic = this.checkSignUptype ? signUpData.photoUrl : '';
-          let idToken = ''
-          if (signUpData.provider === 'GOOGLE') {
-            idToken = signUpData.idToken
-          } else if (signUpData.provider === 'FACEBOOK') {
-            idToken = signUpData.id
-          } else if (signUpData.provider === 'LINKEDIN') {
-            idToken = signUpData.userId
-          }
-          this.tokenId = idToken ? idToken : '';
-          this.provider = this.checkSignUptype ? signUpData.provider : '';
+    let checkSignup: any = localStorage.getItem('signupType')
+    console.log(checkSignup,'90')
+    this.checkSignUptype = checkSignup === 'true'
+    let getLocalStorage: any = localStorage.getItem('userDetail');
+    let signUpData: any = JSON.parse(getLocalStorage);
+    console.log(signUpData, 94)
+    if (signUpData && signUpData.photoUrl) {
+      this.profilepic = this.checkSignUptype ? signUpData.photoUrl : '';
+      let idToken = ''
+      if (signUpData.provider === 'GOOGLE') {
+        idToken = signUpData.idToken
+      } else if (signUpData.provider === 'FACEBOOK') {
+        idToken = signUpData.id
+      } else if (signUpData.provider === 'LINKEDIN') {
+        idToken = signUpData.userId
+      }
+      this.tokenId = idToken ? idToken : '';
+      this.provider = this.checkSignUptype ? signUpData.provider : '';
 
 
 
-          console.log(this.provider)
-        }
+      console.log(this.provider)
+    }
 
-        this.registerForm = this.formBuilder.group({
-          firstName: this.checkSignUptype ? signUpData.firstName : '',
-          lastName: this.checkSignUptype ? signUpData.lastName : '',
-          email: this.checkSignUptype ? signUpData.email : '',
-          profile: '',
-          password: '',
-          social_id: '',
-          group_val: '',
-          category: '',
-          topic: '',
-          industry: '',
-          position: '',
-          jobTitle: '',
-          companyName: '',
-          location: '',
-          teamSize: '',
-          experience: '',
-          market: '',
-          provider: '',
-          contactNumber: '',
-          customizeTopic: []
-        });
-      // dark-light
-      this.mode.currentMode.subscribe((res) => {
-        if (res == 'light') {
-          this.darkMode = false;
-        } else {
-          this.darkMode = true;
-        }
-      });
-      //end dark-light
+    this.registerForm = this.formBuilder.group({
+      firstName: this.checkSignUptype ? signUpData.firstName : '',
+      lastName: this.checkSignUptype ? signUpData.lastName : '',
+      email: this.checkSignUptype ? signUpData.email : '',
+      profile: '',
+      password: '',
+      social_id: '',
+      group_val: '',
+      category: '',
+      topic: '',
+      industry: '',
+      position: '',
+      jobTitle: '',
+      companyName: '',
+      location: '',
+      teamSize: '',
+      experience: '',
+      market: '',
+      provider: '',
+      contactNumber: '',
+      customizeTopic: []
+    });
+
+    // -----------------------------------------------------------------
+    // let unamePattern = "^[a-z0-9_-]{8,15}$";
+    // let emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
+    // this.registerForm = new FormGroup({
+    //     firstName : new FormControl('',[Validators.pattern(unamePattern)]),
+    //     lastname  : new FormControl('',[Validators.pattern(unamePattern)]),
+    //     email     : new FormControl('',[Validators.pattern(emailPattern)]),
+    //     profile   : new FormControl('',[Validators.required]),
+    //     password  : new FormControl('',[Validators.required]),
+    //     social_id : new FormControl(''),
+    //     provider  : new FormControl('',[Validators.required]),
+    //     category  : new FormControl('',[Validators.required]),
+    //     topic     : new FormControl('',[Validators.required]),
+    //     industry  : new FormControl('',[Validators.required]),
+    //     position  : new FormControl('',[Validators.required]),
+    //     job_title : new FormControl('',[Validators.required])
+    // })
+
+    // -----------------------------------------------------------------
+
+
+    // dark-light
+    this.mode.currentMode.subscribe((res) => {
+      if (res == 'light') {
+        this.darkMode = false;
+      } else {
+        this.darkMode = true;
+      }
+    });
+    //end dark-light
   }
 
   // convenience getter for easy access to form fields
@@ -197,7 +221,11 @@ export class SignUpComponent implements OnInit {
         category: '',
         password: '',
         topic: '',
-        on_boarding: '1'
+        on_boarding: '1',
+        // -------check navish
+        // first_name:  this.registerForm.value.firstName,
+        // last_name:  this.registerForm.value.lastName
+        // -------check navish
       }
       this.signUpData = { ...this.signUpData, ...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value }
       this.signUpData['profile'] = this.profilepic
@@ -205,6 +233,7 @@ export class SignUpComponent implements OnInit {
       this.signUpData['provider'] = this.provider
 
       localStorage.setItem("inSignuprequest", JSON.stringify(this.signUpData))
+
 
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
@@ -257,6 +286,11 @@ export class SignUpComponent implements OnInit {
         group_val: "",
         category: "",
         topic: "",
+        // ----------------------------------add paramter for userType
+        user_type: this.userType.user_type,
+        subscriber_type: this.userType.subscriber_type
+        // ----------------------------------add paramter for userType
+
       }
 
       console.log(request, '274')
@@ -283,8 +317,6 @@ export class SignUpComponent implements OnInit {
     }
 
   }
-
-
   selectedTopics(item: any) {
     this.topics.forEach((element: any) => {
       if (item.name === element.name) {
