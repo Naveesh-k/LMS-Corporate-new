@@ -226,6 +226,8 @@ export class SignUpComponent implements OnInit {
         password: '',
         topic: '',
         on_boarding: '1',
+        user_type: '1',
+        subscriber_type:'2'
         // -------check navish
         // first_name:  this.registerForm.value.firstName,
         // last_name:  this.registerForm.value.lastName
