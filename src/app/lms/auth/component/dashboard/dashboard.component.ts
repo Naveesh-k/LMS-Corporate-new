@@ -287,7 +287,7 @@ export class DashboardComponent implements OnInit {
   }
 
 
-
+// if already exist
   socialLogin(request: any) {
     this._service.getSocialLogin(request).subscribe(res => {
 
