@@ -81,9 +81,9 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
 
         // ----------------------------------add paramter for userType
-    let user :any = localStorage.getItem('typeOfUser');
-    this.userType = JSON.parse(user)
-    console.log(this.userType.user_type)
+    // let user :any = localStorage.getItem('typeOfUser');
+    // this.userType = JSON.parse(user)
+    // console.log(this.userType.user_type)
         // ----------------------------------add paramter for userType
 
     let checkSignup: any = localStorage.getItem('signupType')
