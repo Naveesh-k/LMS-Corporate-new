@@ -132,9 +132,9 @@ export class SignUpComponent implements OnInit {
       contactNumber: '',
       customizeTopic: [],
       // user_type:this.userType.user_type,
-      user_type: '1',
+      user_type: 1,
       // subscriber_type:this.userType.subscriber_type
-      subscriber_type:'2'
+      subscriber_type:2
     });
 
     // -----------------------------------------------------------------
@@ -226,8 +226,8 @@ export class SignUpComponent implements OnInit {
         password: '',
         topic: '',
         on_boarding: '1',
-        user_type: '1',
-        subscriber_type:'2'
+        user_type: 1,
+        subscriber_type: 2
         // -------check navish
         // first_name:  this.registerForm.value.firstName,
         // last_name:  this.registerForm.value.lastName
