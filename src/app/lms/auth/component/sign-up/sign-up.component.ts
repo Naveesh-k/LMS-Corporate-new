@@ -131,8 +131,10 @@ export class SignUpComponent implements OnInit {
       provider: '',
       contactNumber: '',
       customizeTopic: [],
-      user_type:this.userType.user_type,
-      subscriber_type:this.userType.subscriber_type
+      // user_type:this.userType.user_type,
+      user_type: '1',
+      // subscriber_type:this.userType.subscriber_type
+      subscriber_type:'2'
     });
 
     // -----------------------------------------------------------------
