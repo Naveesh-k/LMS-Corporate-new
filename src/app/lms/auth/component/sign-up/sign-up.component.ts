@@ -91,7 +91,7 @@ export class SignUpComponent implements OnInit {
     this.checkSignUptype = checkSignup === 'true'
     let getLocalStorage: any = localStorage.getItem('userDetail');
     let signUpData: any = JSON.parse(getLocalStorage);
-    console.log(signUpData, '94')
+    console.log(signUpData, 94)
     if (signUpData && signUpData.photoUrl) {
       this.profilepic = this.checkSignUptype ? signUpData.photoUrl : '';
       let idToken = ''
@@ -111,8 +111,8 @@ export class SignUpComponent implements OnInit {
     }
 
     this.registerForm = this.formBuilder.group({
-      first_name: this.checkSignUptype ? signUpData.firstName : '',
-      last_name: this.checkSignUptype ? signUpData.lastName : '',
+      firstName: this.checkSignUptype ? signUpData.firstName : '',
+      lastName: this.checkSignUptype ? signUpData.lastName : '',
       email: this.checkSignUptype ? signUpData.email : '',
       profile: '',
       password: '',
@@ -223,8 +223,8 @@ export class SignUpComponent implements OnInit {
         topic: '',
         on_boarding: '1',
         // -------check navish
-        // first_name:  this.registerForm.value.firstName,
-        // last_name:  this.registerForm.value.lastName
+        first_name:  this.registerForm.value.firstName,
+        last_name:  this.registerForm.value.lastName
         // -------check navish
       }
       this.signUpData = { ...this.signUpData, ...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value }
