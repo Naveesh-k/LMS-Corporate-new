@@ -287,8 +287,8 @@ export class SignUpComponent implements OnInit {
         category: "",
         topic: "",
         // ----------------------------------add paramter for userType
-        user_type: this.userType.user_type,
-        subscriber_type: this.userType.subscriber_type
+        // user_type: this.userType.user_type,
+        // subscriber_type: this.userType.subscriber_type
         // ----------------------------------add paramter for userType
 
       }
@@ -317,6 +317,38 @@ export class SignUpComponent implements OnInit {
     }
 
   }
+
+  updateProfile() {
+    let request = {
+
+      first_name: this.registerForm.value.firstName,
+      last_name: this.registerForm.value.lastName,
+      profile: this.uploadedImage.location,
+      customize_topic: this.customizeTopic,
+      position: this.registerForm.value.position,
+      industry: this.registerForm.value.industry,
+      job_title: this.registerForm.value.jobTitle,
+      location: this.registerForm.value.location,
+      market: this.registerForm.value.market,
+      provider: this.registerForm.value.provider,
+      contact_number: this.registerForm.value.contactNumber,
+      experience: 9,
+         email: this.registerForm.value.email,
+         password: this.registerForm.value.password,
+         companyName: this.registerForm.value.companyName,
+         social_id: this.tokenId,
+         group_val: "",
+         category: "",
+         topic: "",
+         on_boarding: 0,
+    }
+
+    this._service.profileUpdate(request).subscribe(res => {
+      let response = res;
+      console.log('134 update profile', response)
+    })
+  }
+
   selectedTopics(item: any) {
     this.topics.forEach((element: any) => {
       if (item.name === element.name) {
@@ -332,7 +364,12 @@ export class SignUpComponent implements OnInit {
 
   done() {
     this.signUpData['customize_topic'] = this.customizeTopic
-    this.signUp()
+    if(this.checkSignUptype){
+      this.updateProfile()
+    }else {
+      this.signUp()
+    }
+
   }
 
   imageUplaoad(event: any) {
