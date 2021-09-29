@@ -104,11 +104,12 @@ export class DashboardComponent implements OnInit {
     // -----------------------------
     let getLocalStorage: any = localStorage.getItem('userDetail');
     let signUpData: any = JSON.parse(getLocalStorage);
+    console.log(this.signUpData, 'dashboard 107')
     if (signUpData && signUpData.photoUrl) {
       this.profilepic = signUpData.photoUrl;
       this.tokenId = signUpData.idToken
       this.provider = signUpData.provider
-      console.log(this.provider)
+      console.log(this.signUpData, 'dashboard 111')
     }
     // -----------------------------
 
