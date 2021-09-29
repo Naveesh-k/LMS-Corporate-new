@@ -132,9 +132,9 @@ export class SignUpComponent implements OnInit {
       contactNumber: '',
       customizeTopic: [],
       // user_type:this.userType.user_type,
-      user_type: 1,
+      // user_type: 1,
       // subscriber_type:this.userType.subscriber_type
-      subscriber_type:2
+      // subscriber_type:2
     });
 
     // -----------------------------------------------------------------
@@ -214,6 +214,7 @@ export class SignUpComponent implements OnInit {
   signUp() {
 
     if (this.checkSignUptype) {
+      console.log('Gooooooo')
       localStorage.setItem('signupMode', 'true')
       this.showPasswordField = false;
       let extraVariable = {
@@ -233,6 +234,8 @@ export class SignUpComponent implements OnInit {
         // last_name:  this.registerForm.value.lastName
         // -------check navish
       }
+      console.log(extraVariable.user_type, '237....')
+      console.log(extraVariable.subscriber_type, '238....')
       this.signUpData = { ...this.signUpData, ...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value }
       this.signUpData['profile'] = this.profilepic
       this.signUpData['social_id'] = this.tokenId
