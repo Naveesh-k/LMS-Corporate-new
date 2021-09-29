@@ -179,7 +179,8 @@
                                             </div>
                                             <div class="row mt-5">
                                                 <div class="col-md-12 text-center">
-                                                    <a class="btn btn_next" (click)="show_createForm()">Next</a>
+                                                    <button class="btn btn_next" [disabled]="customizeTopic" (click)="show_createForm()">Next</button>
+                                                    <!-- [disabled]="customizeTopic == ''" -->
                                                 </div>
                                             </div>
                                         </div>
@@ -189,9 +190,13 @@
                         </section>
                     </div>
                     <div class="pl-2 pt-2 pb-2 pad" *ngIf="showCourse">
+
                         <div class="row mt-4 px-3">
                             <div class="col-md-12 border-bottom pb-1 px-0">
-                                <h4>Course Information </h4>
+                                <div class="d-flex justify-content-between">
+                                    <h4>Course Information </h4>
+                                    <button class="btn btn-show" (click)="showCourseList()">Show Course List</button>
+                                </div>
                             </div>
                             <p class="lorem_p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
                                 a type specimen book.</p>
@@ -232,10 +237,8 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-12">
                                                         <label class="title-label">Select Url</label>
-                                                        <input type="text" formControlName="selectUrl" class="form-control form-input" [ngClass]="{ 'is-invalid': submitted && f.selectUrl.errors }" />
-                                                        <div *ngIf="submitted && f.selectUrl.errors" class="invalid-feedback">
-                                                            <div *ngIf="f.selectUrl.errors.required">Select Author is required</div>
-                                                        </div>
+                                                        <br>
+                                                        <input type="file" class="file_type" formControlName="selectUrl" (change)="videoUplaoad($event)" accept=".mp4">
                                                     </div>
                                                 </div>
 
@@ -276,7 +279,7 @@
                                             <td scope="col" class="td_title">Course Title</td>
                                             <td scope="col" class="lorem_p">Course Subtitle</td>
                                             <td scope="col"></td>
-                                            <td scope="col"></td>
+                                            <td scope="col"> Author</td>
                                             <td scope="col"></td>
                                             <td scope="col" class="td_field_btn">
                                                 <a class="btn btn-draft"> Draft</a>
@@ -296,7 +299,7 @@
                                             <td class="td_title">{{item.course_title}}</td>
                                             <td scope="col" class="lorem_p">{{item.course_subtitle}}</td>
                                             <td></td>
-                                            <td></td>
+                                            <td>{{item.select_author}}</td>
                                             <td></td>
                                             <td scope="col" class="td_field_btn">
                                                 <a class="btn btn-active"> Active</a>
@@ -1277,14 +1280,14 @@
                     <div>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" (click)="tabChange('home')" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Add information</a>
+                                <a class="nav-link active" id="home-tab" (click)="isActiveTab? tabChange('home'):withoutAction()" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Add information</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" (click)="tabChange('profile')" role="tab" aria-controls="profile" aria-selected="false">Add curriculum</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" (click)="isActiveTab? tabChange('profile'):withoutAction()" role="tab" aria-controls="profile" aria-selected="false">Add curriculum</a>
                                 <!-- [disabled]="showId == ''" -->
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab" (click)="tabChange('contact')" role="tab" aria-controls="contact" aria-selected="false">Add a price</a>
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" (click)="isActiveTab? tabChange('contact'):withoutAction()" role="tab" aria-controls="contact" aria-selected="false">Add a price</a>
                             </li>
                         </ul>
                     </div>

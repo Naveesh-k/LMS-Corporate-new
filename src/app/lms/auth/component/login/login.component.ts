@@ -93,8 +93,15 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('userType','true')
           this.toastr.success('message', this.login.message)
           localStorage.setItem('lms_isLogedIn', 'true')
-          // this.router.navigateByUrl('/lms/app/home')
           window.location.href = "/lms/app/home";
+// ------------------------------
+// if(this.login.data.user_type === 1 ||this.login.data.user_type === 2 ){
+//           window.location.href = "/lms/app/home";
+// } else if(this.login.data.user_type === 3 ){
+//   window.location.href = "/lms/app/cp-dash";
+// }
+// ------------------------------
+
         } else if (this.login.success === false){
           this.toastr.error('message', this.login.message)
           }

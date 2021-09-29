@@ -36,12 +36,16 @@ export class CpDashboardComponent implements OnInit {
   lectureList:any;
   listOfCourse:any = [];
   uploadedImage: any;
+  uploadedVideo: any;
   lecture: any = {
     addFile: '',
     addTextEditor: ''
   }
   imagePath: any;
   imageFile: any;
+  videoPath: any;
+  videoFile: any;
+  isActiveTab: boolean =false;
   topics: any = [{
     'name': 'Course',
     'para': 'With a course, you can build a curriculum for your students that can be self-paced or guided directly by you, the instructor.',
@@ -55,7 +59,7 @@ export class CpDashboardComponent implements OnInit {
     'image': `${environment.assetPath}/images/computer frame.png`,
     'active':false,
   }];
-  customizeTopic : any = [];
+  customizeTopic : boolean =true;
   editor:any = Editor;
   html: any ='';
 
@@ -107,8 +111,8 @@ export class CpDashboardComponent implements OnInit {
   }
 
   tabChange(tabname:any){
-    console.log('tab',tabname)
     this.changeTab = tabname
+    this.isActiveTab ? 'false' : 'true'
   }
 
   editSelectDetail(data:any){
@@ -119,11 +123,15 @@ export class CpDashboardComponent implements OnInit {
       startDate: data.start_date,
       status: data.status,
     })
+    this.isActiveTab = true;
     this.showId = data.id
     localStorage.setItem('courseId', this.showId)
     console.log(data)
   }
 
+  withoutAction(){
+    this.toastr.info('Message','Please select any course')
+  }
 
   deleteDetail(data:any){
    this.showId = data.id
@@ -133,17 +141,11 @@ export class CpDashboardComponent implements OnInit {
 // Single select
   selectedTopics(item:any){
     this.topics.forEach((element:any)=>{
-       if(item.name === element.name){
-        element.active = true;
-        let index = this.customizeTopic.indexOf(element.name)
-        element.active ?
-          this.customizeTopic.push(element.name):
-          this.customizeTopic.splice(index, 1)
-       }
-       else {
-        element.active = false;
-       }
+      element.active =  item.name === element.name
+
+      this.customizeTopic =false
     })
+
   }
 
   get f() { return this.createCourseForm.controls; }
@@ -158,7 +160,11 @@ export class CpDashboardComponent implements OnInit {
     }
 }
 
-
+showCourseList(){
+        this.showCourse = false;
+        this.show = true;
+        this.showCurru= true;
+}
 
 // Creating course API
   courseCreate() {
@@ -173,7 +179,7 @@ export class CpDashboardComponent implements OnInit {
         select_author   : this.createCourseForm.value.selectAuthor,
         start_date      : '14/12/12',
         status          : '1',
-        videoUrl        : this.createCourseForm.value.selectUrl,
+        videoUrl        : this.uploadedVideo.location,
       }
       this._service.createCourse(request).subscribe(res => {
         let response = res;
@@ -293,7 +299,7 @@ listOfLecture() {
 
     var formData = new FormData();
     formData.append('image', event.target.files[0]);
-
+    console.log(event.target.files[0])
     if (
       event.target.files[0] &&
       allowedMimeTypes.includes(event.target.files[0].type)
@@ -301,11 +307,33 @@ listOfLecture() {
       this.imagePath = event.target.files;
       this.imageFile = this.imagePath[0];
     }
-
+    console.log(formData)
     this._service.uploadImage(formData).subscribe(res => {
-      console.log("profile 184", res)
       this.uploadedImage = res.image
       localStorage.setItem('profileImg', this.uploadedImage)
+    })
+  }
+
+ videoUplaoad(event: any) {
+   console.log(event)
+    const allowedMimeTypes = ['video/mp4'];
+
+    var formData = new FormData();
+    formData.append('image', event.target.files[0]);
+    if (
+      event.target.files[0] &&
+      allowedMimeTypes.includes(event.target.files[0].type)
+    ) {
+      this.videoPath = event.target.files;
+      this.videoFile = this.videoPath[0]
+    }
+    console.log(formData)
+    this.spinner.show();
+    this._service.uploadFile(formData).subscribe(res => {
+      this.uploadedVideo = res.image
+      if(res){
+      this.spinner.hide();
+      }
     })
   }
 

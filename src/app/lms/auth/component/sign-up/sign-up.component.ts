@@ -67,6 +67,7 @@ export class SignUpComponent implements OnInit {
   imageFile: any;
   uploadedImage: any;
   profileName: any;
+  userType:any;
   profileRecord: any = [];
 
   constructor(public router: Router,
@@ -79,10 +80,18 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
 
+        // ----------------------------------add paramter for userType
+    let user :any = localStorage.getItem('typeOfUser');
+    this.userType = JSON.parse(user)
+    console.log(this.userType.user_type)
+        // ----------------------------------add paramter for userType
+
     let checkSignup: any = localStorage.getItem('signupType')
+    console.log(checkSignup,'90')
     this.checkSignUptype = checkSignup === 'true'
     let getLocalStorage: any = localStorage.getItem('userDetail');
     let signUpData: any = JSON.parse(getLocalStorage);
+    console.log(signUpData, 94)
     if (signUpData && signUpData.photoUrl) {
       this.profilepic = this.checkSignUptype ? signUpData.photoUrl : '';
       let idToken = ''
@@ -212,7 +221,11 @@ export class SignUpComponent implements OnInit {
         category: '',
         password: '',
         topic: '',
-        on_boarding: '1'
+        on_boarding: '1',
+        // -------check navish
+        // first_name:  this.registerForm.value.firstName,
+        // last_name:  this.registerForm.value.lastName
+        // -------check navish
       }
       this.signUpData = { ...this.signUpData, ...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value }
       this.signUpData['profile'] = this.profilepic
@@ -220,6 +233,7 @@ export class SignUpComponent implements OnInit {
       this.signUpData['provider'] = this.provider
 
       localStorage.setItem("inSignuprequest", JSON.stringify(this.signUpData))
+
 
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
@@ -242,7 +256,7 @@ export class SignUpComponent implements OnInit {
     }
     else {
       this.showPasswordField = true;
-      
+
       console.log("Its goes from normal 243");
       let email:any = localStorage.getItem('fbloginemail')
       localStorage.setItem("Signup 246" ,email)
@@ -272,6 +286,11 @@ export class SignUpComponent implements OnInit {
         group_val: "",
         category: "",
         topic: "",
+        // ----------------------------------add paramter for userType
+        user_type: this.userType.user_type,
+        subscriber_type: this.userType.subscriber_type
+        // ----------------------------------add paramter for userType
+
       }
 
       console.log(request, '274')

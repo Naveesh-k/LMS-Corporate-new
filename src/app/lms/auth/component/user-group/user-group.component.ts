@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { ColorModeService } from 'src/app/service/color-mode.service';
 
 @Component({
@@ -9,6 +10,9 @@ import { ColorModeService } from 'src/app/service/color-mode.service';
 })
 export class UserGroupComponent implements OnInit {
   darkMode: boolean = false;
+  imagePath: any;
+  imageFile: any;
+  uploadedImage: any;
   topics: any = [{
     name: 'Free user',
     active:false,
@@ -22,9 +26,34 @@ export class UserGroupComponent implements OnInit {
     active:false,
   }
 ];
+selectOptions:any = [
+  {
+    name: 'Free user',
+    value: 1
+  },
+  {
+    name: 'Subscriber',
+    value: 2,
+    children: [
+      {
+        name:'normal',
+        value:1
+      },
+      {
+        name:'enterprise',
+        value:2
+      }
+    ]
+  },
+  {
+    name: 'Courses Provider',
+    value: 3
+  }
+]
 linkName:any;
 customizeTopic : any = [];
   constructor(
+    public _service: GobalService,
     public router :Router,
     public mode: ColorModeService // dark-light
   ) { }
@@ -64,18 +93,41 @@ customizeTopic : any = [];
    console.log(getSocialLogin)
   }
 
-  // getSignUp(){
-  //   if(this.linkName.name === 'Courses Provider'){
-  //     this.router.navigateByUrl('/lms/auth/cp-sign-up')
-  //   }else{
-  //     let getSocialLogin = localStorage.getItem("socailSignUp");
-  //     this.router.navigateByUrl('/lms/auth/sign-up')
-  //     console.log(getSocialLogin)
-  //   }
-  // }
-
-  selectOne(item: any){
+  selectOne(item: any, event: any){
     this.linkName = item.name
+    console.log(event.target.value)
+    console.log(item)
+    let typeRecord = {
+      user_type: 0,
+      subscriber_type: 0
+    }
+
+    this.selectOptions.forEach((el:any)=>{
+       if(item.name === el.name) {
+         if(event.target.value === undefined){
+
+            typeRecord.user_type = el.value,
+            typeRecord.subscriber_type = 0
+      }
+      else{
+        typeRecord.user_type = el.value
+        if(el.children){
+          el.children.forEach((elcld:any)=>{
+              if(elcld.name === event.target.value){
+                  typeRecord.subscriber_type = elcld.value
+              }
+          })
+        }
+      }
+
+         }
+
+    })
+
+    console.log(typeRecord)
+    localStorage.setItem('typeOfUser',JSON.stringify(typeRecord))
+
+
     localStorage.setItem("pageLink",this.linkName);
     this.topics.forEach((element:any)=>{
       if(item.name !== element.name){
@@ -85,17 +137,25 @@ customizeTopic : any = [];
    item.active = true;
   }
 
-//   selectOne(item: any){
-//     console.log( item)
-//     this.linkName = item
-//     console.log(this.linkName)
+  imageUplaoad(event: any) {
+    const allowedMimeTypes = ['image/png', 'image/jpeg', 'image/jpg'];
 
-//     this.topics.forEach((element:any)=>{
-//       if(item.name !== element.name){
-//        element.active = false;
-//       }
-//    })
-//    item.active = true;
-// }
+    var formData = new FormData();
+    formData.append('image', event.target.files[0]);
+
+    if (
+      event.target.files[0] &&
+      allowedMimeTypes.includes(event.target.files[0].type)
+    ) {
+      this.imagePath = event.target.files;
+      this.imageFile = this.imagePath[0];
+    }
+
+    console.log(formData)
+    this._service.uploadImage(formData).subscribe(res => {
+      this.uploadedImage = res.image
+      localStorage.setItem('profileImg', this.uploadedImage.location)
+    })
+  }
 
 }

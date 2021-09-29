@@ -35,8 +35,6 @@ export class GobalService {
     else {
       this.token = localStorage.getItem('token')
     }
-
-    console.log("Global at service", this.token)
   }
 
   checkSignupType() {
@@ -50,10 +48,6 @@ export class GobalService {
     this.globalBehaviour.next(this.globalObject)
     return this.https.post(environment.lmsApiBaseUrl + 'signup', data).pipe(map(res => <any>res));
   }
-  // getSocialLogin(data:any){
-  //    console.log("after" , data)
-  //   return this.https.post(environment.lmsApiBaseUrl + 'socialLogin',data).pipe(map(res => <any>res));
-  // }
   getSocialLogin(data: any) {
     return this.https.post(environment.lmsApiBaseUrl + 'social_login', data).pipe(map(res => <any>res));
   }
@@ -78,13 +72,18 @@ export class GobalService {
     return this.https.post(environment.lmsApiBaseUrl + 'upload', data, { headers }).pipe(map(res => <any>res));
   }
 
+  uploadFile(data: any) {
+    let headers: any = new HttpHeaders({
+       mimeType: 'multipart/form-data ',
+    });
+    return this.https.post(environment.lmsApiBaseUrl + 'upload', data, { headers }).pipe(map(res => <any>res));
+  }
+
   profileDataShow() {
     let headers: any = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.token,
     });
-    console.log(this.token)
-    console.log('profile header :', headers)
     return this.https.get(environment.lmsApiBaseUrl + 'showProfile', { headers }).pipe(map(res => <any>res));
 
   }
@@ -162,7 +161,6 @@ export class GobalService {
       'Content-Type': 'application/json',
       'Authorization': this.token,
     });
-    console.log("check header add lecture =>", headers)
     const url = `${environment.lmsApiBaseUrl}readLecture/${id}`;
     return this.https.get(url, { headers }).pipe(map(res => <any>res));
   }

@@ -80,7 +80,7 @@ export class ProfileComponent implements OnInit {
       this.profileRecord.forEach((el: any) => {
         this.profileResponse = el
       })
-
+      console.log(this.profileResponse, '83 profle')
       this.uploadedImage = this.profileResponse.profile
       this.patchUpdateValues();
     })
