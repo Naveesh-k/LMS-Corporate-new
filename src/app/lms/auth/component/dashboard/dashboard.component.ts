@@ -213,7 +213,9 @@ export class DashboardComponent implements OnInit {
       industry: "",
       position: "",
       job_title: "",
-      customize_topic: []
+      customize_topic: [],
+      user_type: 1,
+      subscriber_type: 2
     }
 
     console.log(request, '219 dashboard')
