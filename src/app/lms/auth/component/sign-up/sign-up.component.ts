@@ -223,8 +223,8 @@ export class SignUpComponent implements OnInit {
         topic: '',
         on_boarding: '1',
         // -------check navish
-        first_name:  this.registerForm.value.firstName,
-        last_name:  this.registerForm.value.lastName
+        // first_name:  this.registerForm.value.firstName,
+        // last_name:  this.registerForm.value.lastName
         // -------check navish
       }
       this.signUpData = { ...this.signUpData, ...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value }
