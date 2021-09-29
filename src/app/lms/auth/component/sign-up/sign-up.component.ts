@@ -86,7 +86,8 @@ export class SignUpComponent implements OnInit {
     console.log(this.userType.user_type)
         // ----------------------------------add paramter for userType
 
-    let checkSignup: any = localStorage.getItem('signupType')
+    //let checkSignup: any = localStorage.getItem('signupType')
+    let checkSignup: any = localStorage.getItem('signupMode')
     console.log(checkSignup,'90')
     this.checkSignUptype = checkSignup === 'true'
     let getLocalStorage: any = localStorage.getItem('userDetail');
@@ -111,8 +112,8 @@ export class SignUpComponent implements OnInit {
     }
 
     this.registerForm = this.formBuilder.group({
-      firstName: this.checkSignUptype ? signUpData.firstName : '',
-      lastName: this.checkSignUptype ? signUpData.lastName : '',
+      first_name: this.checkSignUptype ? signUpData.firstName : '',
+      last_name: this.checkSignUptype ? signUpData.lastName : '',
       email: this.checkSignUptype ? signUpData.email : '',
       profile: '',
       password: '',
@@ -133,25 +134,6 @@ export class SignUpComponent implements OnInit {
       customizeTopic: []
     });
 
-    // -----------------------------------------------------------------
-    // let unamePattern = "^[a-z0-9_-]{8,15}$";
-    // let emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
-    // this.registerForm = new FormGroup({
-    //     firstName : new FormControl('',[Validators.pattern(unamePattern)]),
-    //     lastname  : new FormControl('',[Validators.pattern(unamePattern)]),
-    //     email     : new FormControl('',[Validators.pattern(emailPattern)]),
-    //     profile   : new FormControl('',[Validators.required]),
-    //     password  : new FormControl('',[Validators.required]),
-    //     social_id : new FormControl(''),
-    //     provider  : new FormControl('',[Validators.required]),
-    //     category  : new FormControl('',[Validators.required]),
-    //     topic     : new FormControl('',[Validators.required]),
-    //     industry  : new FormControl('',[Validators.required]),
-    //     position  : new FormControl('',[Validators.required]),
-    //     job_title : new FormControl('',[Validators.required])
-    // })
-
-    // -----------------------------------------------------------------
 
 
     // dark-light
@@ -222,10 +204,6 @@ export class SignUpComponent implements OnInit {
         password: '',
         topic: '',
         on_boarding: '1',
-        // -------check navish
-        // first_name:  this.registerForm.value.firstName,
-        // last_name:  this.registerForm.value.lastName
-        // -------check navish
       }
       this.signUpData = { ...this.signUpData, ...this.registerFormSec.value, ...extraVariable, ...this.registerForm.value }
       this.signUpData['profile'] = this.profilepic
@@ -266,8 +244,8 @@ export class SignUpComponent implements OnInit {
         on_boarding: 0,
         experience: this.registerForm.value.experience,
 
-        first_name: this.registerForm.value.firstName,
-        last_name: this.registerForm.value.lastName,
+        first_name: this.registerForm.value.first_name,
+        last_name: this.registerForm.value.last_name,
         email: this.registerForm.value.email,
         customize_topic: this.customizeTopic,
         position: this.registerForm.value.position,
