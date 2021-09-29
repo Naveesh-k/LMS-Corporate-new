@@ -111,8 +111,8 @@ export class SignUpComponent implements OnInit {
     }
 
     this.registerForm = this.formBuilder.group({
-      firstName: this.checkSignUptype ? signUpData.firstName : '',
-      lastName: this.checkSignUptype ? signUpData.lastName : '',
+      first_name: this.checkSignUptype ? signUpData.firstName : '',
+      last_name: this.checkSignUptype ? signUpData.lastName : '',
       email: this.checkSignUptype ? signUpData.email : '',
       profile: '',
       password: '',
