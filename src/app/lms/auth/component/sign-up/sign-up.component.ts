@@ -234,6 +234,7 @@ export class SignUpComponent implements OnInit {
 
       localStorage.setItem("inSignuprequest", JSON.stringify(this.signUpData))
 
+
       this._service.getSignUpData(this.signUpData).subscribe(res => {
         let response = res
         localStorage.setItem('Signupresponse', JSON.stringify(response))
