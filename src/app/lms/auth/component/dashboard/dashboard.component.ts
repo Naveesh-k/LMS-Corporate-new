@@ -87,7 +87,9 @@ export class DashboardComponent implements OnInit {
         setTimeout(() => {
           this.signOut();
         }, 1000);
+        console.log(this.user, '')
         localStorage.setItem("userDetail", JSON.stringify(this.user));
+
       }
 
     });
@@ -198,9 +200,9 @@ export class DashboardComponent implements OnInit {
       size_of_team: 0,
       on_boarding: 0,
       experience: 0,
-      first_name: "",
+      first_name: data.firstName,
       id: data.id,
-      last_name: "",
+      last_name: data.lastName,
       password: "",
       group_val: "",
       market: "",
@@ -213,6 +215,8 @@ export class DashboardComponent implements OnInit {
       job_title: "",
       customize_topic: []
     }
+
+    console.log(request, '219 dashboard')
     if (data.provider === 'GOOGLE') {
       request['social_id'] = data.idToken;
     } else if (data.provider === 'FACEBOOK') {
