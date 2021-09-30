@@ -279,8 +279,8 @@ export class SignUpComponent implements OnInit {
         on_boarding: 0,
         experience: this.registerForm.value.experience,
 
-        first_name: this.registerForm.value.firstName,
-        last_name: this.registerForm.value.lastName,
+        first_name: this.registerForm.value.first_name,
+        last_name: this.registerForm.value.last_name,
         email: this.registerForm.value.email,
         customize_topic: this.customizeTopic,
         position: this.registerForm.value.position,
