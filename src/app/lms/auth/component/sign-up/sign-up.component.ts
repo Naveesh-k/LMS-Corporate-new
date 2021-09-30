@@ -327,7 +327,6 @@ export class SignUpComponent implements OnInit {
           // --------------- For user group
           window.location.href = "/lms/app/home";
         } else if (response.success === false && response.message === 'employee email already exist') {
-          // this.router.navigateByUrl('/lms/app/home')
           window.location.href = "/lms/app/home";
         }
       })

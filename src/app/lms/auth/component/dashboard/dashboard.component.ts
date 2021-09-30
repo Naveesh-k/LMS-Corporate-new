@@ -320,8 +320,8 @@ userGroupCheck(request:any,data:any){
 
       if (response.email === "") {
         this.spinner.hide();
-        //this.router.navigateByUrl('/lms/auth/sign-up')
-        window.location.href = "/lms/auth/sign-up";
+        // window.location.href = "/lms/auth/sign-up";
+        window.location.href = "/lms/auth/user-group";
       } else if (response.email != "") {
         this.spinner.hide();
 
