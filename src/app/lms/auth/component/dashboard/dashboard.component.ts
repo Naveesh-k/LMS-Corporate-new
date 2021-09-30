@@ -221,6 +221,8 @@ export class DashboardComponent implements OnInit {
     console.log(request, '219 dashboard')
     if (data.provider === 'GOOGLE') {
       request['social_id'] = data.idToken;
+      this.userGroupCheck(request,data)
+
     } else if (data.provider === 'FACEBOOK') {
       if (data.email === undefined) {
 
@@ -229,42 +231,80 @@ export class DashboardComponent implements OnInit {
       }
       else {
         request['social_id'] = data.id;
+        this.userGroupCheck(request,data)
       }
     } else if (data.provider === 'LINKEDIN') {
       request['social_id'] = data.userId;
+      this.userGroupCheck(request,data)
     }
 
-    this._service.getSignUpData(request).subscribe(res => {
+    // this._service.getSignUpData(request).subscribe(res => {
 
-      let response = res;
-      console.log('Dashboard 231', response)
-      localStorage.setItem('signupMode', 'true')
-      if (response.success == true) {
-        window.location.href = "/lms/auth/user-group";
-      } else {
-        let request: any = {
-          email: data.email,
-        }
-        if (data.provider === 'GOOGLE') {
-          request['social_id'] = response.data.social_id;
-          this.socialLogin(request)
-        } else if (data.provider === 'FACEBOOK') {
-          if (data.email === '') {
-            this.fbLogin(data, request)
-          }
-          else {
-            request['social_id'] = response.data.social_id;
-            this.socialLogin(request)
-          }
-        }
-        else if (data.provider === 'LINKEDIN') {
-          request['social_id'] = response.data.social_id;
-          this.socialLogin(request)
-        }
+    //   let response = res;
+    //   console.log('Dashboard 231', response)
+    //   localStorage.setItem('signupMode', 'true')
+    //   if (response.success == true) {
+    //     window.location.href = "/lms/auth/user-group";
+    //   } else {
+    //     let request: any = {
+    //       email: data.email,
+    //     }
+    //     if (data.provider === 'GOOGLE') {
+    //       request['social_id'] = response.data.social_id;
+    //       this.socialLogin(request)
+    //     } else if (data.provider === 'FACEBOOK') {
+    //       if (data.email === '') {
+    //         this.fbLogin(data, request)
+    //       }
+    //       else {
+    //         request['social_id'] = response.data.social_id;
+    //         this.socialLogin(request)
+    //       }
+    //     }
+    //     else if (data.provider === 'LINKEDIN') {
+    //       request['social_id'] = response.data.social_id;
+    //       this.socialLogin(request)
+    //     }
 
-      }
-    })
+    //   }
+    // })
   }
+
+// -------------------------------------------------------------------------
+userGroupCheck(request:any,data:any){
+
+  this._service.getSignUpData(request).subscribe(res => {
+
+    let response = res;
+    console.log('Dashboard 231', response)
+    localStorage.setItem('signupMode', 'true')
+    if (response.success == true) {
+      window.location.href = "/lms/auth/user-group";
+    } else {
+      let request: any = {
+        email: data.email,
+      }
+      if (data.provider === 'GOOGLE') {
+        request['social_id'] = response.data.social_id;
+        this.socialLogin(request)
+      } else if (data.provider === 'FACEBOOK') {
+        if (data.email === '') {
+          this.fbLogin(data, request)
+        }
+        else {
+          request['social_id'] = response.data.social_id;
+          this.socialLogin(request)
+        }
+      }
+      else if (data.provider === 'LINKEDIN') {
+        request['social_id'] = response.data.social_id;
+        this.socialLogin(request)
+      }
+
+    }
+  })
+}
+// -------------------------------------------------------------------------
 
   // if user are already exist
 
