@@ -15,7 +15,9 @@ import { environment } from '../../../../../environments/environment';
 export class CpDashboardComponent implements OnInit {
   quizForm:any = FormGroup;
     quizFormsubmitted = false;
-
+ profileRecord: any = []
+ profileCompany: any ;
+ profileImage: any ;
   paginateData: any[] = [];
   myreportData: any =[];
   page = 1;
@@ -68,6 +70,7 @@ export class CpDashboardComponent implements OnInit {
     public _service: GobalService,private toastr: ToastrService, ) { }
 
   ngOnInit(): void {
+    this.profileData()
     this.courseList()
     this.listOfLecture()
      // dark-light
@@ -368,4 +371,21 @@ listOfLecture() {
   getPaginationdData(){
     this.paginateData = this.myreportData.slice((this.page - 1)  *this.pageSize, (this.page - 1)  *this.pageSize + this.pageSize);
   }
+
+  profileData() {
+    // this.spinner.show();
+    this._service.profileDataShow().subscribe(res => {
+        let profileObj:any = {}
+
+        this.profileRecord = res.data
+        this.profileRecord.forEach((el:any)=>{
+          profileObj = el
+        })
+        // this.spinner.hide();
+        this.profileName = profileObj.first_name+' '+profileObj.last_name
+        this.profileCompany = profileObj.companyName
+        this.profileImage =profileObj.profile
+        console.log(this.profileImage)
+      })
+   }
 }
