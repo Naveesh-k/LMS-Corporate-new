@@ -132,7 +132,7 @@ export class SignUpComponent implements OnInit {
       market: '',
       provider: '',
       contactNumber: '',
-      customizeTopic: [],
+      // customizeTopic: [],
     });
 
     // -----------------------------------------------------------------
