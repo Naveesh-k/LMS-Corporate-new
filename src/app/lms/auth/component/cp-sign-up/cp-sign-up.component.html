@@ -62,15 +62,16 @@
                             </div>
                         </form>
 
-                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="hide">
+                        <form [formGroup]="registerForm" (ngSubmit)="signUp()" *ngIf="hide">
                             <div class="form-row">
                                 <div class="form-group col">
                                     <label class="fnt_wigt">Select your location</label>
+                                    <!-- <input type="text" formControlName="location" class="form-control form-control input_bg" [ngClass]="{ 'is-invalid': submitted && f.location.errors }" /> -->
                                     <select formControlName="location" class="form-control input_bg" [ngClass]="{ 'is-invalid': submitted && f.location.errors }">
                                           <option class="drop_option" selected>Select</option>
-                                          <option class="drop_option" >a</option>
-                                          <option class="drop_option" >b</option>
-                                          <option class="drop_option" >c</option>
+                                          <option class="drop_option" value="US">US</option>
+                                          <option class="drop_option" value="UN">UN</option>
+                                          <option class="drop_option" value="UK">UK</option>
                                     </select>
                                     <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
                                         <div *ngIf="f.location.errors.required">Location is required</div>
@@ -81,9 +82,9 @@
                                 <div class="form-group col">
                                     <label class="fnt_wigt"> Size of your team</label>
                                     <select formControlName="team" class="form-control input_bg" [ngClass]="{ 'is-invalid': submitted && f.team.errors }">
-                                      <option class="drop_option" selected>x</option>
-                                      <option class="drop_option" >y</option>
-                                      <option class="drop_option" >z</option>
+                                      <option class="drop_option" value="5" selected>5</option>
+                                      <option class="drop_option" value="10">10</option>
+                                      <option class="drop_option" value="15">15</option>
                                 </select>
                                     <div *ngIf="submitted && f.team.errors" class="invalid-feedback">
                                         <div *ngIf="f.team.errors.required">Team is required</div>

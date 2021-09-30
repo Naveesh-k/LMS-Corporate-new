@@ -5,6 +5,7 @@ import { GobalService } from 'src/app/lms/global-services/gobal.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { DataManipulationService } from '../../Service/data-manipulation.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -75,6 +76,7 @@ export class SignUpComponent implements OnInit {
     private toastr: ToastrService,
     private formBuilder: FormBuilder,
     public _service: GobalService, // api
+    public _dataService: DataManipulationService,
     public mode: ColorModeService // dark-light
   ) { }
 
@@ -131,10 +133,6 @@ export class SignUpComponent implements OnInit {
       provider: '',
       contactNumber: '',
       customizeTopic: [],
-      // user_type:this.userType.user_type,
-      // user_type: 1,
-      // subscriber_type:this.userType.subscriber_type
-      // subscriber_type:2
     });
 
     // -----------------------------------------------------------------
@@ -180,8 +178,9 @@ export class SignUpComponent implements OnInit {
   // for next page
   onSubmit() {
     let checkLink = localStorage.getItem("pageLink")
+    this.registerForm.value
+    this._dataService.signupDataSend(this.registerForm.value)
     if (checkLink === 'Courses Provider') {
-      // this.router.navigateByUrl('/lms/auth/cp-sign-up')
       window.location.href = "/lms/auth/cp-sign-up";
     } else {
       this.submitted = true;
@@ -189,6 +188,8 @@ export class SignUpComponent implements OnInit {
       this.hideFilledForm1 = true;
       this.showSelect = false;
       this.signUpData = this.registerForm.value
+
+
     }
   }
 
@@ -321,7 +322,9 @@ export class SignUpComponent implements OnInit {
         //this.profileData()
         if (response.success === true) {
           console.log(response.success)
-          // this.router.navigateByUrl('/lms/app/home')
+          // --------------- For user group
+
+          // --------------- For user group
           window.location.href = "/lms/app/home";
         } else if (response.success === false && response.message === 'employee email already exist') {
           // this.router.navigateByUrl('/lms/app/home')

@@ -80,7 +80,8 @@ export class CpDashboardComponent implements OnInit {
     });
     //end dark-light
 
-    this.profileName = localStorage.getItem('loginUserFname')+' '+localStorage.getItem('loginUserLname')
+    // this.profileName = localStorage.getItem('loginUserFname')+' '+localStorage.getItem('loginUserLname')
+    this.profileName = localStorage.getItem('firstName')+' '+localStorage.getItem('lastName')
 
     this.createCourseForm = this.formBuilder.group({
       title: ['', Validators.required],

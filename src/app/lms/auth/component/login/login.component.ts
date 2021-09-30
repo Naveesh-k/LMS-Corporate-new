@@ -95,11 +95,11 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('lms_isLogedIn', 'true')
           window.location.href = "/lms/app/home";
 // ------------------------------
-// if(this.login.data.user_type === 1 ||this.login.data.user_type === 2 ){
-//           window.location.href = "/lms/app/home";
-// } else if(this.login.data.user_type === 3 ){
-//   window.location.href = "/lms/app/cp-dash";
-// }
+if(this.login.data.user_type === 1 ||this.login.data.user_type === 2 ){
+          window.location.href = "/lms/app/home";
+} else if(this.login.data.user_type === 3 ){
+  window.location.href = "/lms/app/cp-dash";
+}
 // ------------------------------
 
         } else if (this.login.success === false){
