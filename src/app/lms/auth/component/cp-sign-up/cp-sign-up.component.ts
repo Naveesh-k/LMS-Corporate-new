@@ -175,11 +175,13 @@ export class CpSignUpComponent implements OnInit {
         subscriber_type: this.userType.subscriber_type,
         first_name: getCpSignUpData.signUpData.first_name,
         last_name: getCpSignUpData.signUpData.last_name,
+        email: getCpSignUpData.signUpData.email,
       }
       console.log(extraVariable.user_type, '237....')
       console.log(extraVariable.subscriber_type, '238....')
       console.log(extraVariable.first_name, '238....')
       console.log(extraVariable.last_name, '238....')
+      console.log(extraVariable.email, '238....')
       this.signUpData = { ...this.signUpData, ...extraVariable, ...this.registerForm.value }
       this.signUpData['profile'] = this.profilepic
       this.signUpData['social_id'] = this.tokenId
