@@ -14,13 +14,14 @@ export class DashVarComponent implements OnInit {
   showId:any =localStorage.getItem('courseId');
   lectureList:any;
   video:any;
+  quiz:any;
   constructor(
     public _service: GobalService,
     public mode: ColorModeService // dark-light
   ) {}
 
   ngOnInit(): void {
-
+    // this.listOfQuiz()
     console.log(localStorage.getItem('courseId'))
     this.listOfLecture()
     // dark-light
@@ -57,4 +58,20 @@ listOfLecture() {
 htmlToPlaintext(text:any) {
   return String(text).replace(/<[^>]+>/gm, '')
 }
+
+// listOfQuiz() {
+//   console.log(this.showId, '62')
+//   this._service.quizList(this.showId).subscribe(res => {
+//     this.quiz = res.data;
+//     console.log(this.quiz, '64')
+//     res.data.forEach((el:any)=>{
+//       let check = el.questions
+//       check.
+//     })
+//     console.log(this.lectureList)
+
+//   })
+// }
+
+
 }
