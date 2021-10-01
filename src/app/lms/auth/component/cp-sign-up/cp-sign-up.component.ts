@@ -154,7 +154,9 @@ export class CpSignUpComponent implements OnInit {
     let getCpSignUpData =JSON.parse(data)
     this.profileImg = localStorage.getItem('profileImg')
 
-    let userType:any = localStorage.getItem('typeOfUser')
+    let user:any = localStorage.getItem('typeOfUser')
+    this.userType = JSON.parse(user)
+    console.log(this.userType.user_type)
 
     if (this.checkSignUptype) {
       console.log('Gooooooo')
