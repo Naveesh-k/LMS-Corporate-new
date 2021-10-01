@@ -25,22 +25,12 @@
                                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <ul class="video_list">
-                                                <li class="li_fnt cp" (click)="showHide()">
+                                                <!-- <li class="li_fnt cp" (click)="showHide()">
                                                     Introduction to Business Breakthrough <br> (4 minutes)
-                                                </li>
-                                                <li class="li_fnt cp" (click)="showHide()">
-                                                    What is a Breakthrough? <br /> (3 minutes)
-                                                </li>
-
-                                                <li class="li_fnt cp" (click)="showHide()">
-                                                    Who can Breakthrough? <br /> (3 minutes)
-                                                </li>
-
-                                                <li class="li_fnt cp" (click)="showHide()">
-                                                    Breakthrough with Confidence <br /> (5 minutes)
-                                                </li>
-                                                <li class="li_fnt cp" (click)="showHide()">
-                                                    PIF’s mission and vision <br /> (4 minutes)
+                                                </li> -->
+                                                <li class="li_fnt cp" (click)="showHide()" *ngFor="let item of lectureList">
+                                                    {{item.key_point}}
+                                                    <br> (4 minutes)
                                                 </li>
                                                 <li class="li_fnt cp" (click)="hideShow()">Quiz</li>
                                             </ul>
@@ -117,6 +107,11 @@
                             <div class="card card_pad-1">
                                 <div class="card_body">
                                     <iframe class="iframe-video" src="https://www.youtube.com/embed/2nmTwxMFfPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <!-- <video id="player" playsinline controls data-poster="/path/to/poster.jpg" *ngFor="let item of lectureList">
+                                      <source src="{{item.url}}" type="video/mp4" />
+
+                                      <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
+                                    </video> -->
                                 </div>
 
                                 <div class="d-grid gap-2 d-md-flex p-3 justify-content-between">

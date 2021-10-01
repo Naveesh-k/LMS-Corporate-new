@@ -260,20 +260,30 @@ quizAdd() {
   if (this.quizForm.invalid) {
       return;
   }
-  let request = [
-    {
-    question: this.quizForm.value.question,
-    options: [
-      {
-        choice1: this.quizForm.value.optionFirst,
-        choice2: this.quizForm.value.optionSec,
-        choice3: this.quizForm.value.optionThird,
-        choice4: this.quizForm.value.optionForth
-      }
-    ],
-    answer: ''
-    }
-  ]
+  let request =
+  {
+    questions: [
+        {
+            question: this.quizForm.value.question,
+            options: [
+                {
+                    choice1: this.quizForm.value.optionFirst
+                },
+                {
+                    choice2: this.quizForm.value.optionSec
+                },
+                {
+                    choice3: this.quizForm.value.optionThird
+                },
+                {
+                    choice4: this.quizForm.value.optionForth
+                }
+            ],
+            answer: ''
+        }
+    ]
+}
+
   console.log(request)
   this._service.addQuiz(request,this.showId).subscribe(res => {
     let response = res;
