@@ -169,8 +169,8 @@ export class CpSignUpComponent implements OnInit {
         password: '',
         topic: '',
         on_boarding: '1',
-        user_type: userType.user_type,
-        subscriber_type: userType.subscriber_type,
+        user_type: this.userType.user_type,
+        subscriber_type: this.userType.subscriber_type,
         first_name: getCpSignUpData.signUpData.first_name,
         last_name: getCpSignUpData.signUpData.last_name,
       }
