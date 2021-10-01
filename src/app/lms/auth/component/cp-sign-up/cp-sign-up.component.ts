@@ -176,6 +176,8 @@ export class CpSignUpComponent implements OnInit {
       }
       console.log(extraVariable.user_type, '237....')
       console.log(extraVariable.subscriber_type, '238....')
+      console.log(extraVariable.first_name, '238....')
+      console.log(extraVariable.last_name, '238....')
       this.signUpData = { ...this.signUpData, ...extraVariable, ...this.registerForm.value }
       this.signUpData['profile'] = this.profilepic
       this.signUpData['social_id'] = this.tokenId
@@ -203,7 +205,7 @@ export class CpSignUpComponent implements OnInit {
       })
     }
     else {
-
+      console.log('simple goooo')
 
       let data:any =localStorage.getItem('cpSignUp')
       let getCpSignUpData =JSON.parse(data)
